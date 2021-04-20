@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My Apps
-    Accounts
+    'accounts',
+    'app',
+    'dashboard',
+    'forms',
 ]
 
 MIDDLEWARE = [
@@ -164,5 +167,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Routes
 
+LOGIN_URL = 'login/'
 

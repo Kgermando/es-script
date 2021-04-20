@@ -28,7 +28,10 @@ handler503 = 'scripting.views_errors_page.handler503'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
+    path('', include('accounts.urls')),
+    path('app/', include('app.urls')),
+    path('dashboard/', include('dashboard.urls')),
+    path('forms', include('forms.urls')),
 ]
 
 if settings.DEBUG:

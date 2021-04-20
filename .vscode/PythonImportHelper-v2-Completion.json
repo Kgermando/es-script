@@ -104,6 +104,30 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -145,11 +169,43 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "UserAdmin",
         "importPath": "django.contrib.auth.admin",
         "description": "django.contrib.auth.admin",
         "isExtraImport": true,
         "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -209,6 +265,30 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -238,6 +318,54 @@
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -329,11 +457,75 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "index_view",
+        "importPath": "app.views",
+        "description": "app.views",
+        "isExtraImport": true,
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_view",
+        "importPath": "dashboard.views",
+        "description": "dashboard.views",
+        "isExtraImport": true,
+        "detail": "dashboard.views",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "forms_view",
+        "importPath": "forms.views",
+        "description": "forms.views",
+        "isExtraImport": true,
+        "detail": "forms.views",
         "documentation": {}
     },
     {
@@ -591,6 +783,87 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "kind": 6,
+        "importPath": "app.apps",
+        "description": "app.apps",
+        "peekOfCode": "class AppConfig(AppConfig):\n    name = 'app'",
+        "detail": "app.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "app.urls",
+        "description": "app.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', index_view, name='index'),\n]",
+        "detail": "app.urls",
+        "documentation": {}
+    },
+    {
+        "label": "index_view",
+        "kind": 2,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "def index_view(request):\n    context = {}\n    template_name = 'pages/app/index.html'\n    return render(request, template_name, context)",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "DashboardConfig",
+        "kind": 6,
+        "importPath": "dashboard.apps",
+        "description": "dashboard.apps",
+        "peekOfCode": "class DashboardConfig(AppConfig):\n    name = 'dashboard'",
+        "detail": "dashboard.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "dashboard.urls",
+        "description": "dashboard.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', dashboard_view, name='dashboard'),\n]",
+        "detail": "dashboard.urls",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_view",
+        "kind": 2,
+        "importPath": "dashboard.views",
+        "description": "dashboard.views",
+        "peekOfCode": "def dashboard_view(request):\n    context = {}\n    template_name = 'pages/dashboard/dashboard_view.html'\n    return render(request, template_name, context)",
+        "detail": "dashboard.views",
+        "documentation": {}
+    },
+    {
+        "label": "FormsConfig",
+        "kind": 6,
+        "importPath": "forms.apps",
+        "description": "forms.apps",
+        "peekOfCode": "class FormsConfig(AppConfig):\n    name = 'forms'",
+        "detail": "forms.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "forms.urls",
+        "description": "forms.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', forms_view, name='forms_view'),\n]",
+        "detail": "forms.urls",
+        "documentation": {}
+    },
+    {
+        "label": "forms_view",
+        "kind": 2,
+        "importPath": "forms.views",
+        "description": "forms.views",
+        "peekOfCode": "def forms_view(request):\n    context = {}\n    template_name = 'pages/forms/forms_view.html'\n    return render(request, template_name, context)",
+        "detail": "forms.views",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "scripting.asgi",
@@ -640,7 +913,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # My Apps\n    Accounts\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # My Apps\n    'accounts',\n    'app',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -802,7 +1075,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -811,7 +1084,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -820,7 +1093,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -829,7 +1102,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -838,7 +1111,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -847,7 +1120,16 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Routes\nLOGIN_URL = 'login/'",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_URL",
+        "kind": 5,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "LOGIN_URL = 'login/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -856,7 +1138,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler400 = 'scripting.views_errors_page.handler400'\nhandler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:",
+        "peekOfCode": "handler400 = 'scripting.views_errors_page.handler400'\nhandler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -865,7 +1147,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,",
+        "peekOfCode": "handler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms', include('forms.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -874,7 +1156,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,\n                          document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "handler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms', include('forms.urls')),\n]",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -883,7 +1165,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,\n                          document_root=settings.STATIC_ROOT)\n    urlpatterns += static(settings.MEDIA_URL,",
+        "peekOfCode": "handler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms', include('forms.urls')),\n]\nif settings.DEBUG:",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -892,7 +1174,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,\n                          document_root=settings.STATIC_ROOT)\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "handler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms', include('forms.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -901,7 +1183,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,\n                          document_root=settings.STATIC_ROOT)\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms', include('forms.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.STATIC_ROOT,\n                          document_root=settings.STATIC_ROOT)",
         "detail": "scripting.urls",
         "documentation": {}
     },

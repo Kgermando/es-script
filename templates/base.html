@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripting | {% block title %}{% endblock title %} </title>
+
+    <meta name="keywords" content="Scripting Web Application" />
+    <meta name="Germain Kataku" content="https://eventdrc.com" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+    
+    {% include 'static/css.html' %}
+    
+        
+</head>
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+    
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+    
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            {% include 'nav/header.html' %}
+        
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                {% include 'nav/sidebar.html' %}
+                
+                <div class="pcoded-content">
+                  {% block content %}  {% endblock content %}    
+                </div>
+                
+            </div>
+            
+        </div>
+            {% include 'nav/footer.html' %}   
+        </div>
+    </div>
+
+    {% include 'static/js.html' %}
+</body>
+</html>
