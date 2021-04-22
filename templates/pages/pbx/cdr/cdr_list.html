@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Details des appels de {{user.username}} {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">CDR</h5>
+                    <p class="m-b-0">Details d'appels de {{user.username}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">PBX</a></li>
+                    <li class="breadcrumb-item"><a href="#!">CDR</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">                            
+                    <!-- Hover table card start -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Details des appels</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-trash close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Date d'appel</th>
+                                            <th>Agent</th>
+                                            <th>Source</th>
+                                            <th>Destination</th>
+                                            <th>Durée/Sec.</th>
+                                            <th>Temps</th>
+                                            <th>lastapp</th>
+                                            <th>Disposition</th>
+                                            <th>amaflags</th>
+                                            <th>Unique id</th>
+                                            <th>Coûts/CDF</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                
+                                        {% for cdr in cdr_list %}
+                                            <tr>
+                                                <th><a href="{% url 'pbx:cdr_detail' cdr.uniqueid %} ">{{cdr.calldate|timesince}}</a></th>
+                                                <td>{{cdr.clid}}</td>
+                                                <td>{{cdr.src}}</td>
+                                                <td>{{cdr.dst}}</td>
+                                                <td>{{cdr.duration}}</td>
+                                                <td>{{cdr.billsec_norm}}</td>
+                                                <td>{{cdr.lastapp}}</td>
+                                                <td>{{cdr.disposition}}</td>
+                                                <td>{{cdr.amaflags}}</td>
+                                                <td>{{cdr.uniqueid}}</td>
+                                                <td>{{cdr.duration_cout}} FC</td>
+                                            </tr>
+                                        {% endfor %}
+                                
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover table card end -->
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+    
+        <div id="styleSelector"></div>
+    </div>
+
+
+        <div id="styleSelector"> </div>
+    </div>
+</div>
+
+{% endblock content %}

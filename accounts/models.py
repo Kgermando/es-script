@@ -12,13 +12,13 @@ class Profile(models.Model):
     CLIENT = 'Client'
 
     ROLE_CHOICES = (
-        (ADMIN, 'Admin'),
-        (SUPERVISOR, 'Supervisor'),
-        (AGENT, 'Agent'),
-        (CLIENT, 'Client'),
+        ('ADMIN', 'Admin'),
+        ('SUPERVISOR', 'Supervisor'),
+        ('AGENT', 'Agent'),
+        ('CLIENT', 'Client'),
     )
     
-    profile_picture = models.ImageField(upload_to = 'user-profile/', default='images/form-user.png')
+    profile_picture = models.ImageField(upload_to = 'user-profile/', default='images/user-bg.jpg')
     user            = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     role            = models.CharField(choices=ROLE_CHOICES, max_length=100, null=True, blank=True)
     birthdate       = models.DateField(null=True, blank=True)

@@ -7,7 +7,7 @@
             <div class="main-menu-header">
                 <img class="img-80 img-radius" src="{{user.profile.profile_picture.url}}" height="60px" >
                 <div class="user-details">
-                    <span id="more-details">{{user.username}}<i class="fa fa-caret-down"></i></span>
+                    <span id="more-details">{{user.profile.role}} <{{user.username}}><i class="fa fa-caret-down"></i></span>
                 </div>
             </div>
             <div class="main-menu-content">
@@ -32,15 +32,31 @@
         {% with request.resolver_match.url_name as url_name %}
             <div class="pcoded-navigation-label">Navigation</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == 'dashboard' %}active{% endif %}"">
+                <li class="{% if url_name == 'dashboard' %}active{% endif %}">
                     <a href="{% url 'dashboard:dashboard' %}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                         <span class="pcoded-mtext">Dashboard</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
+                <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
+                    <a href=" {% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                    <span class="pcoded-mtext">Dashboard Admin</span>
+                    <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                {% if user.staff %}
+                    <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
+                        <a href="{% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-home"></i><b>DA</b></span>
+                            <span class="pcoded-mtext">Dashboard Admin</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                {% endif%}
             </ul>
-            <div class="pcoded-navigation-label">Forms</div>
+            <!-- <div class="pcoded-navigation-label">Forms</div>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="{% if url_name == 'forms_view' %}active{% endif %}">
                     <a href="{% url 'forms:forms_view' %}" class="waves-effect waves-dark">
@@ -49,28 +65,28 @@
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-            </ul>
-            <div class="pcoded-navigation-label">UI Element</div>
+            </ul> -->
+            <div class="pcoded-navigation-label">Forms</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == '' %}active{% endif %}"">
+                <li class="">
                     <li class="pcoded-hasmenu">
                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                            <span class="pcoded-mtext">Basic</span>
+                            <span class="pcoded-mtext">Forms</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                         <ul class="pcoded-submenu">
-                            <li class=" ">
-                                <a href="breadcrumb.html" class="waves-effect waves-dark">
+                            <li class="{% if url_name == 'forms_view' %}active{% endif %}">
+                                <a href="{% url 'forms:forms_view' %}" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Breadcrumbs</span>
+                                    <span class="pcoded-mtext">Scripts</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
-                            <li class=" ">
-                                <a href="button.html" class="waves-effect waves-dark">
+                            <li class="{% if url_name == 'enquetes_view' %}active{% endif %}">
+                                <a href="{% url 'forms:enquetes_view' %}" class="waves-effect waves-dark">
                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Button</span>
+                                    <span class="pcoded-mtext">Enquêtes</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
@@ -81,48 +97,7 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
-                            <li class=" ">
-                                <a href="tabs.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Tabs</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="color.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Color</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="label-badge.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Label Badge</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="tooltip.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Tooltip And Popover</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="typography.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Typography</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="notification.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Notifications</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </li>  
                 </li>
@@ -130,10 +105,19 @@
             
             <div class="pcoded-navigation-label">Tables</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="">
-                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
-                        <span class="pcoded-mtext">Table</span>
+                <li class="{% if url_name == 'cdr_view' %}active{% endif %}">
+                    <a href="{% url 'pbx:cdr_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>C</b></span>
+                        <span class="pcoded-mtext">Détails d'appels</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pcoded-item pcoded-left-item">
+                <li class="{% if url_name == 'cel_view' %}active{% endif %}">
+                    <a href="{% url 'pbx:cel_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-leaf" aria-hidden="true"></i><b>E</b></span>
+                        <span class="pcoded-mtext">Evennements d'appels</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>

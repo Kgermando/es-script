@@ -12,14 +12,14 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <div class="page-header-title">
-                        <h5 class="m-b-10">Dashboard</h5>
-                        <p class="m-b-0">Welcome to Material Able</p>
+                        <h5 class="m-b-10">Tableau de bord</h5>
+                        <p class="m-b-0">Bienvenue sur votre Tableau de bord</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                            <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
                         </li>
                         <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                         </li>
@@ -44,22 +44,22 @@
                                         <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                             <div class="row align-items-center text-center">
                                                 <div class="col-4 p-r-0">
-                                                    <i class="far fa-user text-c-purple f-24"></i>
+                                                    <i class="bi bi-telephone-inbound text-c-purple f-24"></i>
                                                 </div>
                                                 <div class="col-8 p-l-0">
-                                                    <h5>10K</h5>
-                                                    <p class="text-muted m-b-0">Visitors</p>
+                                                    <h5>{{cdr_answered}}</h5>
+                                                    <p class="text-muted m-b-0">Appels réçus</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 p-b-20 p-t-20">
                                             <div class="row align-items-center text-center">
                                                 <div class="col-4 p-r-0">
-                                                    <i class="fas fa-volume-down text-c-green f-24"></i>
+                                                    <i class="bi bi-telephone-outbound text-c-green f-24"></i>
                                                 </div>
                                                 <div class="col-8 p-l-0">
-                                                    <h5>100%</h5>
-                                                    <p class="text-muted m-b-0">Volume</p>
+                                                    <h5>{{cdr_no_answer}}</h5>
+                                                    <p class="text-muted m-b-0">Appels occupés</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,11 +79,11 @@
                                         <div class="col-sm-6 p-b-20 p-t-20">
                                             <div class="row align-items-center text-center">
                                                 <div class="col-4 p-r-0">
-                                                    <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                    <i class="fa fa-phone text-c-blue f-24"></i>
                                                 </div>
                                                 <div class="col-8 p-l-0">
-                                                    <h5>120</h5>
-                                                    <p class="text-muted m-b-0">Mails</p>
+                                                    <h5>{{cdr_total}}</h5>
+                                                    <p class="text-muted m-b-0">Totals d'appels</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +183,7 @@
                         <div class="col-xl-6 col-md-12">
                             <div class="card table-card">
                                 <div class="card-header">
-                                    <h5>Member’s performance</h5>
+                                    <h5>Historique d'appels</h5>
                                     <div class="card-header-right">
                                         <ul class="list-unstyled card-option">
                                             <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -198,70 +198,27 @@
                                     <div class="table-responsive">
                                         <table class="table table-hover m-b-0 without-header">
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-inline-block align-middle">
-                                                            <img src="{% static 'images/avatar-4.jpg' %}" alt="user image"
-                                                                class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>Shirley Hoe</h6>
-                                                                <p class="text-muted m-b-0">Sales executive , NY</p>
+                                                
+                                                {% for cdr in cdr_list %}
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-inline-block align-middle">
+                                                                <div class="d-inline-block">
+                                                                    <h6>{{cdr.dst}}</h6>
+                                                                    <p class="text-muted m-b-0">{{cdr.billsec_norm}}</p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <h6 class="f-w-700">$78.001<i
-                                                                class="fas fa-level-down-alt text-c-red m-l-10"></i></h6>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-inline-block align-middle">
-                                                            <img src="{% static 'images/avatar-2.jpg' %}" alt="user image"
-                                                                class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>James Alexander</h6>
-                                                                <p class="text-muted m-b-0">Sales executive , EL</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <h6 class="f-w-700">$89.051<i
-                                                                class="fas fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-inline-block align-middle">
-                                                            <img src="{% static 'images/avatar-4.jpg' %}" alt="user image"
-                                                                class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>Shirley Hoe</h6>
-                                                                <p class="text-muted m-b-0">Sales executive , NY</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <h6 class="f-w-700">$89.051<i
-                                                                class="fas fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-inline-block align-middle">
-                                                            <img src="{% static 'images/avatar-2.jpg' %}" alt="user image"
-                                                                class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>Nick Xander</h6>
-                                                                <p class="text-muted m-b-0">Sales executive , EL</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <h6 class="f-w-700">$89.051<i
-                                                                class="fas fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <h6 class="f-w-700">
+                                                                {{cdr.calldate|timesince}}
+                                                                <i class="fa fa-clock-o fa-2x text-c-red m-l-10" aria-hidden="true"></i>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                                
+                                                
                                             </tbody>
                                         </table>
     
@@ -276,20 +233,22 @@
                                 <div class="col-md-6">
                                     <div class="card text-center order-visitor-card">
                                         <div class="card-block">
-                                            <h6 class="m-b-0">Total Subscription</h6>
-                                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>7652
+                                            <h6 class="m-b-0">Coûts Inbound</h6>
+                                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>
+                                                {{cdr_answered_cout.duration_cout_total}} FC
                                             </h4>
-                                            <p class="m-b-0">48% From Last 24 Hours</p>
+                                            <p class="m-b-0">Update </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card text-center order-visitor-card">
                                         <div class="card-block">
-                                            <h6 class="m-b-0">Order Status</h6>
-                                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i>6325
+                                            <h6 class="m-b-0">Coûts Outbound</h6>
+                                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i>
+                                                {{cdr_no_answer_cout.duration_cout}} FC
                                             </h4>
-                                            <p class="m-b-0">36% From Last 6 Months</p>
+                                            <p class="m-b-0">Update {{cdr_no_answer_cout.calldate}}</p>
                                         </div>
                                     </div>
                                 </div>

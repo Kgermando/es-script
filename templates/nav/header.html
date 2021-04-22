@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <a href="index.html">
+            <a href="{% url 'dashboard:dashboard' %}">
                 <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="Theme-Logo" />
             </a>
             <a class="mobile-options waves-effect waves-light">
@@ -59,28 +59,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="waves-effect waves-light">
-                            <div class="media">
-                                <img class="d-flex align-self-center img-radius" src="{% static 'images/avatar-4.jpg' %}"
-                                    alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <h5 class="notification-user">Joseph William</h5>
-                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                    <span class="notification-time">30 minutes ago</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="waves-effect waves-light">
-                            <div class="media">
-                                <img class="d-flex align-self-center img-radius" src="{% static 'images/avatar-3.jpg' %}"
-                                    alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <h5 class="notification-user">Sara Soudein</h5>
-                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                    <span class="notification-time">30 minutes ago</span>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </li>
                 <li class="user-profile header-notification">
@@ -101,12 +79,12 @@
                             </a>
                         </li>
                         <li class="waves-effect waves-light">
-                            <a href="email-inbox.html">
+                            <a href="">
                                 <i class="ti-email"></i> My Messages
                             </a>
                         </li>
                         <li class="waves-effect waves-light">
-                            <a href="{% url 'logout' %}>
+                            <a href="{% url 'logout' %}">
                                 <i class="ti-layout-sidebar-left"></i> Déconnexion
                             </a>
                         </li>

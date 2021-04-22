@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'app',
     'dashboard',
     'forms',
+    'pbx',
+    'agenda',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +112,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_SQLITE
+DATABASES = DATABASES_MARIADB
 
 
 

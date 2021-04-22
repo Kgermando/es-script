@@ -31,7 +31,9 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('app/', include('app.urls')),
     path('dashboard/', include('dashboard.urls')),
-    path('forms', include('forms.urls')),
+    path('forms/', include('forms.urls')),
+    path('pbx/', include('pbx.urls')),
+    path('agenda/', include('agenda.urls')),
 ]
 
 if settings.DEBUG:
