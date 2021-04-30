@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Notes rapide {% endblock title %}
+
+
+{% block content %}
+
+<!--**********************************
+        Content body start
+    ***********************************-->
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Agenda</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Notes rapide</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-title m-4">
+                <h3><strong>Suppression ?</strong></h3>
+            </div>
+            <div class="card-body">
+                <form action="" method="post">{% csrf_token %}
+                    <p>Voulez-vous vraiment supprimer cette note?</p>
+                    
+                    <button class="btn btn-danger ml-2" type="submit">Oui</button>
+                    <a href="{% url 'agenda:note_view' %}" class="btn btn-info text-white ml-2">Non</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+<!--**********************************
+        Content body end
+    ***********************************-->
+
+
+
+
+
+{% endblock content %}
+
+
+

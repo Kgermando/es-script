@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'scripting.wsgi.application'
 DATABASES_SQLITE = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'crm.sqlite3',
     }
 }
 
@@ -107,15 +107,15 @@ DATABASES_MARIADB = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'asterisk',
-        'USER': 'asterisk',
-        'PASSWORD': 'asterisk',
-        'HOST': '192.168.43.19',
+        'USER': 'crm',
+        'PASSWORD': 'gk0838',
+        'HOST': '192.168.43.7',
         'PORT': '3306',
     }
 }
 
 
-DATABASES = DATABASES_MARIADB
+DATABASES = DATABASES_SQLITE
 
 
 
@@ -164,7 +164,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media-root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

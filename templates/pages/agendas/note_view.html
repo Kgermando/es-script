@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Notes rapide {% endblock title %}
+
+
+{% block content %}
+
+<!--**********************************
+        Content body start
+    ***********************************-->
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Agenda</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Notes rapide</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        {% include 'notifications/toastr.html' %}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-title m-4">
+                        <h3><strong>Liste des Notes</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="todo-list">
+                            <div class="tdl-holder">
+                                <div class="tdl-content2 tdl-content--no-label">
+                                    <ul>
+                                        
+                                        {% for note in note_list %}
+                                            <li class="d-sm-flex justify-content-between mb-2">
+                                                <div class="{{note.theme}} text-white p-2">
+                                                    {{note.created_date}}
+                                                </div>
+                                                <div>
+                                                    <!-- {{ forloop.counter }} -->
+                                                    <a href='{{note.get_absolute_url}} ' class="">{{note.title}}</a>
+                                                </div>
+                                                <div>
+                                                    <a href="{% url 'agenda:remove_note' note.id %}" class="p-2">
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </li> 
+                                        {% endfor %}
+                                            
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-title m-4">
+                        <h3><strong>Notes rapide</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form action="{% url 'agenda:note_view' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="title">Titre</label>
+                                    {{form.title}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="theme">Theme</label>
+                                    {{form.theme}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    {{form.description}}
+                                </div>
+                                <button type="submit" class="btn btn-dark">Soumettre</button>
+                            </form>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+<!--**********************************
+        Content body end
+    ***********************************-->
+
+
+
+
+
+{% endblock content %}
