@@ -50,6 +50,7 @@
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="card-block table-border-style">
                             <div class="table-responsive">
                                 <table class="table table-hover">
@@ -89,6 +90,20 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <!-- Pagination -->
+                            <nav class="mb-50">
+                                <ul class="pagination justify-content-center">
+                                    {% if cdr_list.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    {% endif %}
+                                    <span class="current">
+                                        <li class="page-item"><a class="page-link" href="#">{{ cdr_list.number }}</a></li>
+                                    </span>
+                                    {% if cdr_list.has_next %}
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <!-- Hover table card end -->

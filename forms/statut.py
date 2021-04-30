@@ -9,5 +9,4 @@ STATUTS = (
     ('Absent', 'Absent'),
     ('Faux numéro', 'Faux numéro'),
     ('Réfléchir', 'Réfléchir'),
-
 )

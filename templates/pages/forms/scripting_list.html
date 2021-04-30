@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Liste scripting {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Scripting list</h5>
+                    <p class="m-b-0">Liste des contacts </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">SCRIPTING</a></li>
+                    <li class="breadcrumb-item"><a href="#!">CONTACTS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Scripting list</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table caption-top table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date de création</th>
+                                        <th>Nom socièté</th>
+                                        <th>Nom</th>
+                                        <th>Post Nom</th>
+                                        <th>Prénom</th>
+                                        <th>Adresse</th>
+                                        <th>Province</th>
+                                        <th>Pays</th>
+                                        <th>Téléphone 1</th>
+                                        <th>Téléphone 2</th>
+                                        <th>Email</th>
+                                        <th>Site Web</th>
+                                        <th>Facebook</th>
+                                        <th>Instagram</th>
+                                        <th>Twitter</th>
+                                        <th>LinkedIn</th>
+                                        <th>Statut</th>
+                                        <th>Remarques</th>
+                                        <th>Commentaires</th>
+                                        <th>questions 1</th>
+                                        <th>questions 2</th>
+                                        <th>questions 3</th>
+                                        <th>questions 4</th>
+                                        <th>questions 5</th>
+                                        <th>questions 7</th>
+                                        <th>questions 8</th>
+                                        <th>questions 9</th>
+                                        <th>questions 10</th>
+                                        <th>questions 12</th>
+                                        <th>questions 13</th>
+                                        <th>questions 15</th>
+                                        <th>questions 16</th>
+                                        <th>Commentaire Q17</th>
+                                        <th>Concurrent</th>
+                                        <th>Temps à recontacter</th>
+                                        <th>Montant de prêt</th>
+                                        <th>Durée de crédit</th>
+                                        <th>Montant à rembourser chaque mois</th>
+                                        <th>Montant des ventes bonne journée</th>
+                                        <th>montant des ventes mauvaise journée</th>
+                                        <th>Date à laquelle recevoir le credit</th>
+                                        <th>Nom du garant</th>
+                                        <th>Activité</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for kyc in kyc_list %}
+                                    <tr>
+                                        <td scope="row">{{kyc.created_date}}</td>
+                                        <td><a href="">{{kyc.Nom_societe}}</a></td>
+                                        <td>{{kyc.Nom}}</td>
+                                        <td>{{kyc.Post_Nom}}</td>
+                                        <td>{{kyc.Prenom}}</td>
+                                        <td>N°{{kyc.Numero}} {{kyc.Quartier}} {{kyc.Commune}}</td>
+                                        <td>{{kyc.Province}}</td>
+                                        <td>{{kyc.Pays}}</td>
+                                        <td>{{kyc.Tel1}}</td>
+                                        <td>{{kyc.Tel2}}</td>
+                                        <td>{{kyc.Email}}</td>
+                                        <td>{{kyc.Website}}</td>
+                                        <td>{{kyc.Facebook}}</td>
+                                        <td>{{kyc.Instagram}}</td>
+                                        <td>{{kyc.Twitter}}</td>
+                                        <td>{{kyc.LinkedIn}}</td>
+                                        <td>{{kyc.Statut}}</td>
+                                        <td>{{kyc.Remarque}}</td>
+                                        <td>{{kyc.Commentaire}}</td>
+                                        <td>{{kyc.questions1}}</td>
+                                        <td>{{kyc.questions2}}</td>
+                                        <td>{{kyc.questions3}}</td>
+                                        <td>{{kyc.questions4}}</td>
+                                        <td>{{kyc.questions5}}</td>
+                                        <td>{{kyc.questions7}}</td>
+                                        <td>{{kyc.questions8}}</td>
+                                        <td>{{kyc.questions9}}</td>
+                                        <td>{{kyc.questions10}}</td>
+                                        <td>{{kyc.questions12}}</td>
+                                        <td>{{kyc.questions13}}</td>
+                                        <td>{{kyc.questions15}}</td>
+                                        <td>{{kyc.questions16}}</td>
+                                        <td>{{kyc.CommentaireQ17}}</td>
+                                        <td>{{kyc.Concurrent}}</td>
+                                        <td>{{kyc.Q19temps_a_contacter}}</td>
+                                        <td>{{kyc.montant_de_pret}}</td>
+                                        <td>{{kyc.duree_de_crédit}}</td>
+                                        <td>{{kyc.montant_a_rembourser_chaque_mois}}</td>
+                                        <td>{{kyc.montant_des_ventes_bonne_journée}}</td>
+                                        <td>{{kyc.montant_des_ventes_mauvaise_journee}}</td>
+                                        <td>{{kyc.date_a_laquelle_recevoir_credit}}</td>
+                                        <td>{{kyc.Nom_du_garant}}</td>
+                                        <td>{{kyc.Activite}}</td>
+                                        <td>
+                                            <a href="{% url 'forms:scripting_forms_edit' kyc.id %} ">
+                                             <i class="fa fa-edit"></i>   
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Pagination -->
+                        <nav class="mb-50">
+                            <ul class="pagination justify-content-center">
+                                {% if kyc_list.has_previous %}
+                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+                                </li>
+                                {% endif %}
+                                <span class="current">
+                                    <li class="page-item"><a class="page-link" href="#">{{ kyc_list.number }}</a></li>
+                                </span>
+                                {% if kyc_list.has_next %}
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                            class="fa fa-angle-right"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

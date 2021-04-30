@@ -1,0 +1,163 @@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#q2').hide();
+        $('#q3').hide();
+        $('#q4').hide();
+        $('#q5').hide();
+        $('#q6').hide();
+        $('#q7').hide();
+        $('#q8').hide();
+        $('#q9').hide();
+        $('#q10').hide();
+        $('#q11').hide();
+        $('#q12').hide();
+        $('#q13').hide();
+        $('#q14').hide();
+        $('#q15').hide();
+        $('#q16').hide();
+        $('#q17').hide();
+        $('#q18').hide();
+        $('#q19').hide();
+        $('#q20').hide();
+        $('#q21').hide();
+
+        $("input[name=questons1]").change(function () {
+
+            if ($("#questons1OUI").is(':checked')) {
+                $("#q2").show();
+                $("#q21").hide();
+            } else if ($("#questons1NON").is(':checked')) {
+                $("#q2").hide();
+                $("#q21").show();
+            } else if ($("#reset").is(':checked')) {
+                $("#q2").hide();
+                $("#q21").hide();
+                $('#q3').hide();
+                $('#q4').hide();
+                $('#q5').hide();
+                $('#q6').hide();
+                $('#q7').hide();
+                $('#q8').hide();
+                $('#q9').hide();
+                $('#q10').hide();
+                $('#q11').hide();
+                $('#q12').hide();
+                $('#q13').hide();
+                $('#q14').hide();
+                $('#q15').hide();
+                $('#q16').hide();
+                $('#q17').hide();
+                $('#q18').hide();
+                $('#q19').hide();
+                $('#q20').hide();
+                $('#q21').hide();
+            }
+        });
+
+        $("input[name=questons2]").change(function () {
+
+            if ($("#questons2OUI").is(':checked')) {
+                $("#q3").show();
+                $("#q21").hide();
+                $("#q10").hide();
+                $("#q19").hide();
+                $("#q11").hide();
+                $("#q12").hide();
+                $("#q13").hide();
+
+            } else if ($("#questons2OUIAPRES").is(':checked')) {
+                $("#q3").hide();
+                $("#q19").show();
+                $("#q21").show();
+                $("#q10").hide();
+                $("#q11").hide();
+                $("#q12").hide();
+                $("#q13").hide();
+
+            } else if ($("#questons2NON").is(':checked')) {
+                $("#q3").hide();
+                $("#q10").show();
+                $("#q11").show();
+                $("#q12").show();
+                $("#q13").show();
+                $("#q21").hide();
+                $("#q19").hide();
+                
+            }
+        });
+
+        $("input[name=questons3]").change(function () {
+
+            if ($("#questons3OUI").is(':checked')) {
+                $("#q4").show();
+                $("#q21").hide();
+                $("#q10").hide();
+                $("#q19").hide();
+                $('#q5').show();
+
+            } else if ($("#questons3NON").is(':checked')) {
+                $("#q4").hide();
+                $("#q19").show();
+                $("#q21").show();
+                $('#q5').hide();
+            }
+        });
+
+        $("input[name=questons5]").change(function () {
+
+            if ($("#questons5OUI").is(':checked')) {
+                $("#q7").show();
+                $("#q6").hide();
+                $("#q9").show();
+
+            } else if ($("#questons5NON").is(':checked')) {
+                $("#q7").hide();
+                $("#q6").show();
+                $("#q8").hide();
+                $("#q9").show();
+                $("#q21").show();
+            }
+        });
+
+        $("input[name=questons7]").change(function () {
+
+            if ($("#questons7OUI").is(':checked')) {
+                $("#q8").show();
+                $("#q9").show();
+                $("#q21").show();
+
+            } else if ($("#questons7NON").is(':checked')) {
+                $("#q8").hide();
+                $("#q9").show();
+                $("#q21").show();
+            }
+        });
+
+        $("input[name=questons13]").change(function () {
+
+            if ($("#questons13OUI").is(':checked')) {
+                $("#q14").show();
+                $("#q15").show();
+                $("#q16").show();
+                $("#q17").show();
+                $("#q18").show();
+                $("#q19").show();
+                $("#q20").show();
+                $("#q21").show();
+
+            } else if ($("#questons13NON").is(':checked')) {
+                $("#q14").hide();
+                $("#q15").show();
+                $("#q16").show();
+                $("#q17").show();
+                $("#q18").show();
+                $("#q19").show();
+                $("#q20").show();
+                $("#q21").show();
+            }
+        });
+    });
+
+
+</script>

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Details des appels de {{user.username}} {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">CDR</h5>
+                    <p class="m-b-0">Details d'appels de {{user.username}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">PBX</a></li>
+                    <li class="breadcrumb-item"><a href="#!">CDR</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <!-- Hover table card start -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Call Event Logging</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Eventtime</th>
+                                        <th>Unique id</th>
+                                        <th>Amaflags</th>
+                                        <th>Eventtype</th>
+                                        <th>cid_num</th>
+                                        <th>exten</th>
+                                        <th>context</th>
+                                        <th>channame</th>
+                                        <th>linkedid</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                            
+                                    {% for cel in cel_list %}
+                                    <tr>
+                                        <th><a href="{% url 'pbx:cel_detail' cel.uniqueid %} ">{{cel.eventtime}}</a>
+                                        </th>
+                                        <td>{{cel.uniqueid}}</td>
+                                        <td>{{cel.amaflags}}</td>
+                                        <td>{{cel.eventtype}}</td>
+                                        <td>{{cel.cid_num}}</td>
+                                        <td>{{cel.exten}}</td>
+                                        <td>{{cel.context}}</td>
+                                        <td>{{cel.channame}}</td>
+                                        <td>{{cel.linkedid}}</td>
+                                    </tr>
+                                    {% endfor %}
+                            
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Pagination -->
+                            <nav class="mb-50">
+                                <ul class="pagination justify-content-center">
+                                    {% if cel_list.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    {% endif %}
+                                    <span class="current">
+                                        <li class="page-item"><a class="page-link" href="#">{{ cel_list.number }}</a></li>
+                                    </span>
+                                    {% if cel_list.has_next %}
+                                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

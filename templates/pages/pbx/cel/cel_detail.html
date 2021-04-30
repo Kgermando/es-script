@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Details d'appels de {{user.username}} {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">CDR</h5>
+                    <p class="m-b-0">Evenements d'appels de {{user.username}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">PBX</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'pbx:cdr_view' %}">CEL</a></li>
+                    <li class="breadcrumb-item"><a href="#!">{{cel.uniqueid}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Il y a {{cel.eventtime}}</h5>
+                                <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> -->
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li>
+                                            <i class="fa fa fa-wrench open-card-option"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-window-maximize full-card"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-minus minimize-card"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-refresh reload-card"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-trash close-card"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <ul>
+                                    <li><strong>uniqueid:</strong> {{cel.uniqueid}}</li>
+                                    <li><strong>eventtime:</strong> {{cel.eventtime}}</li>
+                                    <li><strong>eventtype:</strong> {{cel.eventtype}}</li>
+                                    <li><strong>userdeftype:</strong> {{cel.userdeftype}}</li>
+                                    <li><strong>cid_name:</strong> {{cel.cid_name}}</li>
+                                    <li><strong>cid_num:</strong> {{cel.cid_num}}</li>
+                                    <li><strong>cid_ani:</strong> {{cel.cid_ani}}</li>
+                                    <li><strong>cid_rdnis:</strong> {{cel.cid_rdnis}}</li>
+                                    <li><strong>cid_dnid:</strong> {{cel.cid_dnid}}</li>
+                                    <li><strong>exten:</strong> {{cel.exten}}</li>
+                                    <li><strong>context:</strong> {{cel.context}}</li>
+                                    <li><strong>channame:</strong> {{cel.channame}}</li>
+                                    <li><strong>appname:</strong> {{cel.appname}}</li>
+                                    <li><strong>appdata:</strong> {{cel.appdata}}</li>
+                                    <li><strong>accountcode:</strong> {{cel.accountcode}}</li>
+                                    <li><strong>peeraccount:</strong> {{cel.peeraccount}}</li>
+                                    <li><strong>linkedid:</strong> {{cel.linkedid}}</li>
+                                    <li><strong>amaflags:</strong> {{cel.amaflags}}</li>
+                                    <li><strong>userfield:</strong> {{cel.userfield}}</li>
+                                    <li><strong>peer:</strong> {{cel.peer}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="styleSelector"></div>
+
+{% endblock content %}

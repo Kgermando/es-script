@@ -14345,8 +14345,3 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
 		box-shadow: 0 0 0 0 rgba(4, 169, 245, 0)
 	}
 }
-
-.script {
-	border-bottom: 5px #0057ff;
-	border-top: 5px #0057ff;
-}

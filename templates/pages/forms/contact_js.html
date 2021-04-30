@@ -1,0 +1,36 @@
+
+<script>
+    $(document).on('submit', '#post-form', function(e){
+        $.ajax({
+            type:'POST',
+            url:'{% url "forms:contact_view" %}',
+            data:{
+                Nom:$('#Nom').val(),
+                Post_Nom:$('#Post_Nom').val(),
+                Prenom: $('#Prenom').val(),
+                Numero: $('#Numero').val(),
+                Quartier: $('#Quartier').val(),
+                Commune: $('#Commune').val(),
+                Province: $('#Province').val(),
+                Pays: $('#Pays').val(),
+                Tel1: $('#Tel1').val(),
+                Tel2: $('#Tel2').val(),
+                Email: $('#Email').val(),
+                Website: $('#Website').val(),
+                Facebook: $('#Facebook').val(),
+                Instagram: $('#Instagram').val(),
+                Twitter: $('#Twitter').val(),
+                LinkedIn: $('#LinkedIn').val(),
+                Remarque: $('#Remarque').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post' 
+            },
+            success:function(json){
+                document.getElementById("post-form").reset();
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+    });
+</script>

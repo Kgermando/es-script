@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Forms {% endblock title %}
+{% block title %} Modification du Scripting {{ scripting.id }} {% endblock title %}
 
 
 {% block content %}
@@ -17,22 +17,24 @@
                 </div>
                 <div class="card-body">
                     <div class="card-block">
-                        <form action="{% url 'forms:scripting_forms' %}" method="POST" enctype="multipart/form-data" class="form-material">
+                        <form action="{% url 'forms:scripting_forms_edit' %}" method="POST" enctype="multipart/form-data"
+                            class="form-material">
                             {% csrf_token %}
                             <div class="script pb-4" id="q1">
                                 <h5>Question 1</h5>
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Bonjour, c'est Mr/Mme <strong>{{ user.first_name | upper}} </strong> de Advans.
+                                            Bonjour, c'est Mr/Mme <strong>{{ user.first_name | upper}} </strong> de
+                                            Advans.
                                             Nous souhaiterions parler avec Mr/Mme X
                                         </p>
                                         <div class="pl-4">
-                                           <!-- <input type="checkbox" name="questons1" name="questons1" class="form-check-input" value="">  -->
+                                            <!-- <input type="checkbox" name="questons1" name="questons1" class="form-check-input" value="">  -->
                                             <label class="radio-inline mr-3">
                                                 <input type="radio" id="questons1OUI" name="questons1" value="OUI"> OUI
                                             </label>
-                                            <label class="radio-inline mr-3"> 
+                                            <label class="radio-inline mr-3">
                                                 <input type="radio" id="questons1NON" name="questons1" value="NON"> NON
                                             </label>
                                             <label class="radio-inline">
@@ -43,12 +45,13 @@
                                 </div>
                             </div>
 
-                            <div class="script pb-4" id="q2" >
+                            <div class="script pb-4" id="q2">
                                 <h5>Question 2</h5>
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Nous constatons que vous n'avez pas encore RECONDUIT votre CREDIT que vous avez soldé. Puis-je suggérer de fixer un
+                                            Nous constatons que vous n'avez pas encore RECONDUIT votre CREDIT que vous
+                                            avez soldé. Puis-je suggérer de fixer un
                                             rendez-vous avec notre commercial pour reconduire un nouveau crédit ?
                                         </p>
                                         <div class="pl-4">
@@ -56,12 +59,13 @@
                                                 <input type="radio" id="questons2OUI" name="questons2" value="OUI"> OUI
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" id="questons2OUIAPRES" name="questons2" value="OUIAPRES"> OUI MAIS PAS TOUT DE SUITE
+                                                <input type="radio" id="questons2OUIAPRES" name="questons2"
+                                                    value="OUIAPRES"> OUI MAIS PAS TOUT DE SUITE
                                             </label>
                                             <label class="radio-inline mr-3">
                                                 <input type="radio" id="questons2NON" name="questons2" value="NON"> NON
                                             </label>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -71,11 +75,15 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Merci de nous renouveler votre confiance. Si vous le voulez bien, je vais prendre les premiers éléments de votre
+                                            Merci de nous renouveler votre confiance. Si vous le voulez bien, je vais
+                                            prendre les premiers éléments de votre
                                             demande.
-                                            Avant de commencer, j'aimerais vous rappeler qu'un crédit est un engagement et doit être remboursé. Nous vous
-                                            expliquerons toutes les conditions du prêt qui correspond à vos besoins lorsque vous irez dans votre agence.
-                                            Remplir la demande de crédit aujourd'hui devrait prendre environ 10 à 15 minutes, n'est-ce pas grave?
+                                            Avant de commencer, j'aimerais vous rappeler qu'un crédit est un engagement
+                                            et doit être remboursé. Nous vous
+                                            expliquerons toutes les conditions du prêt qui correspond à vos besoins
+                                            lorsque vous irez dans votre agence.
+                                            Remplir la demande de crédit aujourd'hui devrait prendre environ 10 à 15
+                                            minutes, n'est-ce pas grave?
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
@@ -84,7 +92,7 @@
                                             <label class="radio-inline mr-3">
                                                 <input type="radio" id="questons3NON" name="questons3" value="NON"> NON
                                             </label>
-                                
+
                                         </div>
                                     </div>
                                 </div>
@@ -100,34 +108,51 @@
                                             <div class="pl-4">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label>1/ Tout d'abord quel montant de prêt souhaitez-vous demande</label>
-                                                        <input type="text" id="montant_de_prêt" name="montant_de_prêt" class="form-control" placeholder="1/">
+                                                        <label>1/ Tout d'abord quel montant de prêt souhaitez-vous
+                                                            demande</label>
+                                                        <input type="text" id="montant_de_prêt" name="montant_de_prêt"
+                                                            class="form-control" placeholder="1/">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label>2/ Quelle durée de crédit souhaiteriez-vous :</label>
-                                                        <input type="text" id="durée_de_crédit" name="durée_de_crédit" class="form-control" placeholder="2/">
+                                                        <input type="text" id="durée_de_crédit" name="durée_de_crédit"
+                                                            class="form-control" placeholder="2/">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label>3/ Combien pensez-vous pouvoir rembourser chaque mois?</label>
-                                                        <input type="text" id="montant_a_rembourser_chaque_mois" name="montant_a_rembourser_chaque_mois" class="form-control" placeholder="3/">
+                                                        <label>3/ Combien pensez-vous pouvoir rembourser chaque
+                                                            mois?</label>
+                                                        <input type="text" id="montant_a_rembourser_chaque_mois"
+                                                            name="montant_a_rembourser_chaque_mois" class="form-control"
+                                                            placeholder="3/">
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label>4/ Pouvez-vous me dire le montant des ventes que vous réalisez pendant une bonne journée pour votre entreprise ?</label>
-                                                        <input type="text" id="montant_des_ventes_bonne_journée" name="montant_des_ventes_bonne_journée" class="form-control" placeholder="4/">
+                                                        <label>4/ Pouvez-vous me dire le montant des ventes que vous
+                                                            réalisez pendant une bonne journée pour votre entreprise
+                                                            ?</label>
+                                                        <input type="text" id="montant_des_ventes_bonne_journée"
+                                                            name="montant_des_ventes_bonne_journée" class="form-control"
+                                                            placeholder="4/">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label>5/ Pouvez-vous me dire le montant des ventes que vous réalisez pendant une mauvaise journée pour votre entreprise ?</label>
-                                                        <input type="text" id="montant_des_ventes_mauvaise_journée" name="montant_des_ventes_mauvaise_journée" class="form-control" placeholder="5/">
+                                                        <label>5/ Pouvez-vous me dire le montant des ventes que vous
+                                                            réalisez pendant une mauvaise journée pour votre entreprise
+                                                            ?</label>
+                                                        <input type="text" id="montant_des_ventes_mauvaise_journée"
+                                                            name="montant_des_ventes_mauvaise_journée"
+                                                            class="form-control" placeholder="5/">
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label>6/ Est-ce que vous avez une date à laquelle vous aimeriez recevoir votre crédit?</label>
-                                                        <input type="text" id="date_a_laquelle_recevoir_credit" name="date_a_laquelle_recevoir_credit" class="form-control" placeholder="6/">
+                                                        <label>6/ Est-ce que vous avez une date à laquelle vous aimeriez
+                                                            recevoir votre crédit?</label>
+                                                        <input type="text" id="date_a_laquelle_recevoir_credit"
+                                                            name="date_a_laquelle_recevoir_credit" class="form-control"
+                                                            placeholder="6/">
                                                     </div>
-                                                </div>                                           
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +172,7 @@
                                             <label class="radio-inline mr-3">
                                                 <input type="radio" id="questons5NON" name="questons5" value="NON"> NON
                                             </label>
-                                
+
                                         </div>
                                     </div>
                                 </div>
@@ -164,11 +189,13 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Nom du garant</label> -->
-                                                        <input type="text" id="Nom_du_garant" name="Nom_du_garant" class="form-control" placeholder="Nom du garant">
+                                                        <input type="text" id="Nom_du_garant" name="Nom_du_garant"
+                                                            class="form-control" placeholder="Nom du garant">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Activité</label> -->
-                                                        <input type="text" id="Activite" name="Activite" class="form-control" placeholder="Activité">
+                                                        <input type="text" id="Activite" name="Activite"
+                                                            class="form-control" placeholder="Activité">
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,7 +208,8 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Est-ce que vous avez changé d’adresse d’entreprise depuis votre dernier crédit ?
+                                            Est-ce que vous avez changé d’adresse d’entreprise depuis votre dernier
+                                            crédit ?
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
@@ -206,35 +234,42 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                         <!-- <label>Nom de la société</label> -->
-                                                        <input type="text" id="Nom_societe" name="Nom_societe" class="form-control" placeholder="Nom_societe">
-                                                    </div> 
+                                                        <input type="text" id="Nom_societe" name="Nom_societe"
+                                                            class="form-control" placeholder="Nom_societe">
+                                                    </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
                                                         <!-- <label>Nom</label> -->
-                                                        <input type="text" id="Nom" name="Nom" class="form-control" placeholder="Nom">
+                                                        <input type="text" id="Nom" name="Nom" class="form-control"
+                                                            placeholder="Nom">
                                                     </div>
                                                     <div class="form-group col-md-4">
                                                         <!-- <label>Post Nom</label> -->
-                                                        <input type="text" id="Post_Nom" name="Post_Nom" class="form-control" placeholder="Post_Nom">
+                                                        <input type="text" id="Post_Nom" name="Post_Nom"
+                                                            class="form-control" placeholder="Post_Nom">
                                                     </div>
                                                     <div class="form-group col-md-4">
                                                         <!-- <label>Prénom</label> -->
-                                                        <input type="text" id="Prenom" name="Prenom" class="form-control" placeholder="Prenom">
+                                                        <input type="text" id="Prenom" name="Prenom"
+                                                            class="form-control" placeholder="Prenom">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-2">
                                                         <!-- <label>N°</label> -->
-                                                        <input type="text" id="Numero" name="Numero" class="form-control" placeholder="N°">
+                                                        <input type="text" id="Numero" name="Numero"
+                                                            class="form-control" placeholder="N°">
                                                     </div>
                                                     <div class="form-group col-md-2">
                                                         <!-- <label>Quartier</label> -->
-                                                        <input type="text" id="Quartier" name="Quartier" class="form-control" placeholder="Quartier">
+                                                        <input type="text" id="Quartier" name="Quartier"
+                                                            class="form-control" placeholder="Quartier">
                                                     </div>
                                                     <div class="form-group col-md-2">
                                                         <!-- <label>Commune</label> -->
-                                                        <input type="text" id="Commune" name="Commune" class="form-control" placeholder="Commune">
+                                                        <input type="text" id="Commune" name="Commune"
+                                                            class="form-control" placeholder="Commune">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label>Province</label>
@@ -248,48 +283,57 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Téléphone 1</label> -->
-                                                        <input type="text" id="Tel1" name="Tel1" class="form-control" placeholder="Tel 1">
+                                                        <input type="text" id="Tel1" name="Tel1" class="form-control"
+                                                            placeholder="Tel 1">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Téléphone 2</label> -->
-                                                        <input type="text" id="Tel2" name="Tel2" class="form-control" placeholder="Tel 2">
+                                                        <input type="text" id="Tel2" name="Tel2" class="form-control"
+                                                            placeholder="Tel 2">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Email</label> -->
-                                                        <input type="email" id="Email" name="Email" class="form-control" placeholder="Email">
+                                                        <input type="email" id="Email" name="Email" class="form-control"
+                                                            placeholder="Email">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <!-- <label>Site Web</label> -->
-                                                        <input type="text" id="Website" name="Website" class="form-control" placeholder="Site Web">
+                                                        <input type="text" id="Website" name="Website"
+                                                            class="form-control" placeholder="Site Web">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <!-- <label>Facebook</label> -->
-                                                        <input type="text" id="Facebook" name="Facebook" class="form-control" placeholder="Facebook">
+                                                        <input type="text" id="Facebook" name="Facebook"
+                                                            class="form-control" placeholder="Facebook">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <!-- <label>Instagram</label> -->
-                                                        <input type="text" id="Instagram" name="Instagram" class="form-control" placeholder="Instagram">
+                                                        <input type="text" id="Instagram" name="Instagram"
+                                                            class="form-control" placeholder="Instagram">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <!-- <label>Twitter</label> -->
-                                                        <input type="text" id="Twitter" name="Twitter" class="form-control" placeholder="Twitter">
+                                                        <input type="text" id="Twitter" name="Twitter"
+                                                            class="form-control" placeholder="Twitter">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <!-- <label>LinkedIn</label> -->
-                                                        <input type="text" id="LinkedIn" name="LinkedIn" class="form-control" placeholder="LinkedIn">
+                                                        <input type="text" id="LinkedIn" name="LinkedIn"
+                                                            class="form-control" placeholder="LinkedIn">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                         <!-- <label>Remarque</label> -->
-                                                        <input type="text" id="Remarque" name="Remarque" class="form-control" placeholder="Remarque">
-                                                    </div>   
+                                                        <input type="text" id="Remarque" name="Remarque"
+                                                            class="form-control" placeholder="Remarque">
+                                                    </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -301,7 +345,8 @@
                                     <div class="form-check col">
                                         <p>
                                             Merci, je pense que j’ai toutes les informations nécessaires. Je vais
-                                            transférer votre demande en agence et un de mes collègues vous contactera d’ici [date] pour poursuivre la démarche.
+                                            transférer votre demande en agence et un de mes collègues vous contactera
+                                            d’ici [date] pour poursuivre la démarche.
                                             Merci d’avoir choisi Advans, Bonne fin de journée.
                                         </p>
                                     </div>
@@ -312,27 +357,33 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            J’aimerais vous poser quelques questions sur votre décision de ne pas renouveler votre prêt. Cela devrait prendre entre
+                                            J’aimerais vous poser quelques questions sur votre décision de ne pas
+                                            renouveler votre prêt. Cela devrait prendre entre
                                             5 et 10 minutes, êtes-vous d’accord pour me répondre ?
-                                            Tout d’abord, pourriez-vous me donner la raison principale pour laquelle vous ne voulez pas un nouveau crédit ?
-                                          <br>  
-                                          <small>
-                                            (Ne pas proposer les réponses, laisser le client donner son avis spontanément)
-                                          </small>
+                                            Tout d’abord, pourriez-vous me donner la raison principale pour laquelle
+                                            vous ne voulez pas un nouveau crédit ?
+                                            <br>
+                                            <small>
+                                                (Ne pas proposer les réponses, laisser le client donner son avis
+                                                spontanément)
+                                            </small>
                                         </p>
                                         <div class="container">
                                             <div class="pl-4">
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="Je n’ai pas besoin d’un crédit"> Je n’ai pas besoin d’un crédit
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="Je n’ai pas besoin d’un crédit"> Je n’ai pas
+                                                            besoin d’un crédit
                                                         </label>
-                                                    </div>  
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="Les intérêts sont trop élevés"> 
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="Les intérêts sont trop élevés">
                                                             Les intérêts sont trop élevés
                                                         </label>
                                                     </div>
@@ -340,7 +391,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="L’échéancier de remboursement ne me convient pas"> 
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="L’échéancier de remboursement ne me convient pas">
                                                             L’échéancier de remboursement ne me convient pas
                                                         </label>
                                                     </div>
@@ -348,7 +400,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="J’ai eu des problèmes pour rembourser"> 
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="J’ai eu des problèmes pour rembourser">
                                                             J’ai eu des problèmes pour rembourser
                                                         </label>
                                                     </div>
@@ -356,7 +409,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="Le délai avant de recevoir le prêt est trop long">
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="Le délai avant de recevoir le prêt est trop long">
                                                             Le délai avant de recevoir le prêt est trop long
                                                         </label>
                                                     </div>
@@ -364,7 +418,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="Je n’ai pas de garantie suffisante">
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="Je n’ai pas de garantie suffisante">
                                                             Je n’ai pas de garantie suffisante
                                                         </label>
                                                     </div>
@@ -372,15 +427,18 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="J’ai des problèmes avec mon activité">
-                                                            J’ai des problèmes avec mon activité (difficultés économiques, saisonnalité)
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="J’ai des problèmes avec mon activité">
+                                                            J’ai des problèmes avec mon activité (difficultés
+                                                            économiques, saisonnalité)
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="J’ai des problèmes personnels">
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="J’ai des problèmes personnels">
                                                             J’ai des problèmes personnels (problèmes familiaux, maladie)
                                                         </label>
                                                     </div>
@@ -388,7 +446,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="radio-inline mr-3">
-                                                            <input type="radio" id="questons10" name="questons10" value="Je ne suis pas satisfait(e) du service client">
+                                                            <input type="radio" id="questons10" name="questons10"
+                                                                value="Je ne suis pas satisfait(e) du service client">
                                                             Je ne suis pas satisfait(e) du service client
                                                         </label>
                                                     </div>
@@ -403,9 +462,11 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Avez-vous d’autres commentaires sur la raison pour laquelle vous ne souhaitez pas reprendre un crédit ?
+                                            Avez-vous d’autres commentaires sur la raison pour laquelle vous ne
+                                            souhaitez pas reprendre un crédit ?
                                             <br> <small>
-                                                (S’il s’agit d’un problème ou d’une plaine, introduire une plainte dans le système selon la politique et procédure de
+                                                (S’il s’agit d’un problème ou d’une plaine, introduire une plainte dans
+                                                le système selon la politique et procédure de
                                                 plaintes. Le client est informé de la suite de sa plainte)
                                             </small>
                                         </p>
@@ -413,8 +474,9 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <!-- <label>Remarque</label> -->
-                                                    <input type="text" id="Commentaire" name="Commentaire" class="form-control" placeholder="Commentaire">
-                                                </div>   
+                                                    <input type="text" id="Commentaire" name="Commentaire"
+                                                        class="form-control" placeholder="Commentaire">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -425,14 +487,17 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Pensez-vous reprendre un crédit ou utiliser d’autres services Advans à l’avenir ?
+                                            Pensez-vous reprendre un crédit ou utiliser d’autres services Advans à
+                                            l’avenir ?
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons12OUI" name="questons12" value="OUI"> OUI
+                                                <input type="radio" id="questons12OUI" name="questons12" value="OUI">
+                                                OUI
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons12NON" name="questons12" value="NON"> NON
+                                                <input type="radio" id="questons12NON" name="questons12" value="NON">
+                                                NON
                                             </label>
                                         </div>
                                     </div>
@@ -443,14 +508,17 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Avez-vous contracté un crédit chez une autre institution financière depuis l’échéance de votre crédit chez Advans ?
+                                            Avez-vous contracté un crédit chez une autre institution financière depuis
+                                            l’échéance de votre crédit chez Advans ?
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons13OUI" name="questons13" value="OUI"> OUI
+                                                <input type="radio" id="questons13OUI" name="questons13" value="OUI">
+                                                OUI
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons13NON" name="questons13" value="NON"> NON
+                                                <input type="radio" id="questons13NON" name="questons13" value="NON">
+                                                NON
                                             </label>
                                         </div>
                                     </div>
@@ -467,7 +535,8 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <!-- <label>Remarque</label> -->
-                                                    <input type="text" id="Concurrent" name="Concurrent" class="form-control" placeholder="Concurrent">
+                                                    <input type="text" id="Concurrent" name="Concurrent"
+                                                        class="form-control" placeholder="Concurrent">
                                                 </div>
                                             </div>
                                         </div>
@@ -483,19 +552,24 @@
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15OUI" name="questons15" value="Très satisfait"> Très satisfait
+                                                <input type="radio" id="questons15OUI" name="questons15"
+                                                    value="Très satisfait"> Très satisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons15" value="Satisfait"> Satisfait
+                                                <input type="radio" id="questons15NON" name="questons15"
+                                                    value="Satisfait"> Satisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15OUI" name="questons15" value="Ni satisfait ni insatisfait"> Ni satisfait ni insatisfait
+                                                <input type="radio" id="questons15OUI" name="questons15"
+                                                    value="Ni satisfait ni insatisfait"> Ni satisfait ni insatisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons15" value="Insatisfait"> Insatisfait
+                                                <input type="radio" id="questons15NON" name="questons15"
+                                                    value="Insatisfait"> Insatisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons15" value="Très insatisfait"> Très insatisfait
+                                                <input type="radio" id="questons15NON" name="questons15"
+                                                    value="Très insatisfait"> Très insatisfait
                                             </label>
                                         </div>
                                     </div>
@@ -511,23 +585,28 @@
                                         </p>
                                         <div class="pl-4">
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15OUI" name="questons16" value="Très satisfait"> 
+                                                <input type="radio" id="questons15OUI" name="questons16"
+                                                    value="Très satisfait">
                                                 Très satisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons16" value="Satisfait"> 
+                                                <input type="radio" id="questons15NON" name="questons16"
+                                                    value="Satisfait">
                                                 Satisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15OUI" name="questons16" value="Ni satisfait ni insatisfait"> 
+                                                <input type="radio" id="questons15OUI" name="questons16"
+                                                    value="Ni satisfait ni insatisfait">
                                                 Ni satisfait ni insatisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons16" value="Insatisfait"> 
+                                                <input type="radio" id="questons15NON" name="questons16"
+                                                    value="Insatisfait">
                                                 Insatisfait
                                             </label>
                                             <label class="radio-inline mr-3">
-                                                <input type="radio" id="questons15NON" name="questons16" value="Très insatisfait"> 
+                                                <input type="radio" id="questons15NON" name="questons16"
+                                                    value="Très insatisfait">
                                                 Très insatisfait
                                             </label>
                                         </div>
@@ -545,7 +624,8 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <!-- <label>Remarque</label> -->
-                                                    <input type="text" id="CommentaireQ17" name="CommentaireQ17" class="form-control" placeholder="Commentaire">
+                                                    <input type="text" id="CommentaireQ17" name="CommentaireQ17"
+                                                        class="form-control" placeholder="Commentaire">
                                                 </div>
                                             </div>
                                         </div>
@@ -561,7 +641,8 @@
                                         </p>
                                         <div class="pl-4">
                                             <p>
-                                                Nous espérons que vous reviendrez vers nous à l’avenir. Bonne fin de journée.
+                                                Nous espérons que vous reviendrez vers nous à l’avenir. Bonne fin de
+                                                journée.
                                             </p>
                                         </div>
                                     </div>
@@ -572,13 +653,16 @@
                                 <div class="form-group">
                                     <div class="form-check col">
                                         <p>
-                                            Très bien, pouvez-vous m'indiquer dans combien de mois je peux vous contacter.
+                                            Très bien, pouvez-vous m'indiquer dans combien de mois je peux vous
+                                            contacter.
                                         </p>
                                         <div class="pl-4">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <!-- <label>Remarque</label> -->
-                                                    <input type="text" id="Q19temps_a_contacter" name="Q19temps_a_contacter" class="form-control" placeholder="Temps à contacter le client">
+                                                    <input type="text" id="Q19temps_a_contacter"
+                                                        name="Q19temps_a_contacter" class="form-control"
+                                                        placeholder="Temps à contacter le client">
                                                 </div>
                                             </div>
                                         </div>
@@ -591,7 +675,8 @@
                                     <div class="form-check col">
                                         <p class="alert alert-success">
                                             GOODBYE:
-                                            Merci d’avoir pris le temps de nous répondre. Advans vous dit à bientôt et Bonne fin de journée?
+                                            Merci d’avoir pris le temps de nous répondre. Advans vous dit à bientôt et
+                                            Bonne fin de journée?
                                         </p>
                                     </div>
                                 </div>

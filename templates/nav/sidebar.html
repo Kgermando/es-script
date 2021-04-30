@@ -21,13 +21,13 @@
             </div>
         </div>
         <div class="p-15 p-b-0">
-            <form class="form-material">
+            <!-- <form class="form-material">
                 <div class="form-group form-primary">
                     <input type="text" name="footer-email" class="form-control">
                     <span class="form-bar"></span>
                     <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
                 </div>
-            </form>
+            </form> -->
         </div>
         {% with request.resolver_match.url_name as url_name %}
             <div class="pcoded-navigation-label">Navigation</div>
@@ -40,13 +40,13 @@
                     </a>
                 </li>
                 <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
-                    <a href=" {% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                    <span class="pcoded-mtext">Dashboard Admin</span>
-                    <span class="pcoded-mcaret"></span>
+                    <a href="{% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="bi bi-graph-up"></i><b>DA</b></span>
+                        <span class="pcoded-mtext">Dashboard Admin</span>
+                        <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-                {% if user.staff %}
+                {% if request.user.is_Staff == True %}
                     <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
                         <a href="{% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-home"></i><b>DA</b></span>
@@ -56,54 +56,36 @@
                     </li>
                 {% endif%}
             </ul>
-            <!-- <div class="pcoded-navigation-label">Forms</div>
+            <div class="pcoded-navigation-label">Forms</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == 'forms_view' %}active{% endif %}">
-                    <a href="{% url 'forms:forms_view' %}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                        <span class="pcoded-mtext">Forms</span>
+                <li class="{% if url_name == 'scripting_forms' %}active{% endif %}">
+                    <a href="{% url 'forms:scripting_forms' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Scripting</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-            </ul> -->
-            <div class="pcoded-navigation-label">Forms</div>
+            </ul>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="">
-                    <li class="pcoded-hasmenu">
-                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                            <span class="pcoded-mtext">Forms</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                        <ul class="pcoded-submenu">
-                            <li class="{% if url_name == 'forms_view' %}active{% endif %}">
-                                <a href="{% url 'forms:forms_view' %}" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Scripts</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class="{% if url_name == 'enquetes_view' %}active{% endif %}">
-                                <a href="{% url 'forms:enquetes_view' %}" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Enquêtes</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="accordion.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext">Accordion</span>
-                                    <span class="pcoded-mcaret"></span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </li>  
+                <li class="{% if url_name == 'contact_view' %}active{% endif %}">
+                    <a href="{% url 'forms:contact_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="bi bi-person-lines-fill"></i></span>
+                        <span class="pcoded-mtext">Contacts</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
                 </li>
             </ul>
             
             <div class="pcoded-navigation-label">Tables</div>
+            <ul class="pcoded-item pcoded-left-item">
+                <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
+                    <a href="{% url 'forms:scripting_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>S</b></span>
+                        <span class="pcoded-mtext">Scripting list</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+            </ul>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="{% if url_name == 'cdr_view' %}active{% endif %}">
                     <a href="{% url 'pbx:cdr_view' %}" class="waves-effect waves-dark">

@@ -72,7 +72,7 @@ def logout_view(request):
         return redirect('login')
 
 
-@login_required
+@login_required(login_url='/login')
 def profile(request):
     # user = request.user
     # profile = Profile.objects.get(id=user.pk)
@@ -85,7 +85,7 @@ def profile(request):
     return render(request, template_name, context)
 
 
-@login_required
+@login_required(login_url='/login')
 def profile_edit(request):
     pk = request.user
     profile = Profile.objects.get(pk=pk)

@@ -1,14 +1,25 @@
 from django.shortcuts import render
+from datetime import timedelta, datetime, date, time as datetime_time
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from pbx.models import Cdr, Cel
+from pbx.forms import ReportFilterForm
 # Create your views here.
 def cdr_view(request):
      """
           CDR LIst
      """
      user = request.user
-     cdr_list = Cdr.objects.filter(src=user).order_by('-calldate')[:10]
+     cdr = Cdr.objects.filter(src=user).order_by('-calldate')[:10]
      # cdr_list = Cdr.objects.all()
+     paginator = Paginator(cdr, 10)
+     page = request.GET.get('page')
+     try:
+          cdr_list = paginator.page(page)
+     except PageNotAnInteger:
+          cdr_list = paginator.page(1)
+     except EmptyPage:
+          cdr_list = paginator.page(paginator.num_pages)
 
      context = {
           'cdr_list': cdr_list
@@ -30,7 +41,16 @@ def cel_view(request):
      """
           CEL LIst
      """
-     cel_list = Cel.objects.all()[:10]
+     user = request.user
+     cel = Cel.objects.filter(cid_num=user).order_by('-eventtime')[:10]
+     paginator = Paginator(cel, 10)
+     page = request.GET.get('page')
+     try:
+          cel_list = paginator.page(page)
+     except PageNotAnInteger:
+          cel_list = paginator.page(1)
+     except EmptyPage:
+          cel_list = paginator.page(paginator.num_pages)
 
      context = {
           'cel_list': cel_list
@@ -50,5 +70,4 @@ def cel_detail(request, uniqueid):
      }
      template_name = 'pages/pbx/cel/cel_detail.html'
      return render(request, template_name, context)
-
 

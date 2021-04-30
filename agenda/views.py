@@ -30,6 +30,7 @@ def agenda_detail(request, agenda_id):
     return render(request, template_name, context)
 
 def note_view(request):
+    user  = request.user
     form = NoteForm(request.POST)
 
     if request.method == 'POST':
@@ -44,10 +45,12 @@ def note_view(request):
         else:
             form = NoteForm()
 
-    note_list = Note.objects.all().order_by('-created_date')
+    note_list = Note.objects.filter(user=user).order_by('-created_date')
+    
     context = {
         'form': form,
-        'note_list': note_list
+        'note_list': note_list,
+        
     }
     template_name = 'pages/agendas/note_view.html'
     return render(request, template_name, context)

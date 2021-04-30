@@ -15,6 +15,8 @@ import datetime
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
+from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
+
 from pbx.models import (
     Ps_aors, Ps_auths, Endpoints, Contexts, Extensions, Cdr, Cel,
     IvrDetails, Contacts, AsteriskPublication, Endpoints_id_ips,
@@ -91,7 +93,7 @@ class CdrAdmin(admin.ModelAdmin):
     # linkplay.short_description = u''
 
     list_display = ('calldate', linkplay, linksrc, linkdst, 'dcontext', billsec_norm, 'disposition', cdr_detail,)
-    list_filter = ('dcontext', 'disposition', 'amaflags', 'calldate',)
+    list_filter = (('calldate', PastDateRangeFilter), 'dcontext', )
     search_fields = ('src','dst',)
     actions = [export_to_csv]
 
@@ -110,9 +112,11 @@ class CelAdmin(admin.ModelAdmin):
                     'context', 'accountcode', 'cid_name', 'exten')
     search_fields = ('uniqueid', 'exten')
     list_display_links = ('uniqueid',)
+    list_filter = (('eventtime', PastDateRangeFilter), 'cid_num', 'exten', )
     ordering = ['-eventtime', ]
     read_only_list = ('uniqueid', 'eventtime', 'amaflags',
                       'context', 'accountcode', 'cid_name', 'exten')
+    actions = [export_to_csv]
 
     def get_actions(self, request):
         """
@@ -170,13 +174,13 @@ class VoicemailAdmin(admin.ModelAdmin):
     ordering = ['mailbox', ]
     list_display_links = ('mailbox',)
 
-    def save_model(self, request, obj, form, change, *args, **kwargs):
-        if isinstance(obj.password, type(None)):
-            obj.password = ''
-        if len(obj.password) == 0:
-            obj.gen_passwd()
-        obj.payer = obj.mailbox.accountcode
-        obj.save()
+    # def save_model(self, request, obj, form, change, *args, **kwargs):
+    #     if isinstance(obj.password, type(None)):
+    #         obj.password = ''
+    #     if len(obj.password) == 0:
+    #         obj.gen_passwd()
+    #     obj.payer = obj.mailbox.accountcode
+    #     obj.save()
 
 
 class QueueAdmin(admin.ModelAdmin):
