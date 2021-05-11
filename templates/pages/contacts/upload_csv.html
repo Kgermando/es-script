@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Chargez un fichier de type CSV {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Contacts</h5>
+                    <p class="m-b-0">Chargez un fichier de type CSV</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="{% url 'forms:contact_view' %}">CONTACTS</a></li>
+                    <li class="breadcrumb-item"><a href="#!">CSV</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Contacts Upload file</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <form action="{% url 'forms:upload_csv' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div>
+                                <label for="name">File: </label>
+                                <div>
+                                    <input type="file" name="csv_file" required="True">
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div style="margin-bottom:10px;">
+                                    <button> <span style="margin-right:5px;"></span>Upload file </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+
+{% endblock content %}

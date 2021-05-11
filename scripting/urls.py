@@ -40,6 +40,7 @@ urlpatterns = [
     path('comptedormant/', include('comptedormant.urls')),
     path('recouvrement/', include('recouvrement.urls')),
     path('renouvellement/', include('renouvellement.urls')),
+    path('contacts/', include('contacts.urls')),
 ]
 
 if settings.DEBUG:
