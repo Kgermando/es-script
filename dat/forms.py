@@ -2,7 +2,6 @@ import bootstrap_datepicker_plus as datetimepicker
 from bootstrap_datepicker_plus import DatePickerInput
 from django import forms
 
-
 from dat.models import Dat, BOUND
 
 from forms.province import PROVINCES
