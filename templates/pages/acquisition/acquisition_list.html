@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Acquisition Liste scripting {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">ACQUISITION</h5>
+                    <p class="m-b-0">Liste des Scripting</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">Acquisition</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Listes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="row d-flex justify-content-end mb-4">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{% url 'acquisition:acquisition_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>ACQUISITION</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table caption-top table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date_de_création</th>
+                                        <th>Questions_1</th>
+                                        <th>Questions_3</th>
+                                        <th>Questions_4</th>
+                                        <th>Questions_5</th>
+                                        <th>Questions_6</th>
+                                        <th>Nom</th>
+                                        <th>Post_Nom</th>
+                                        <th>Prénom</th>
+                                        <th>Adresse</th>
+                                        <th>Ville</th>
+                                        <th>Province</th>
+                                        <th>Téléphone</th>
+                                        <th>Email</th>
+                                        <th>Statut</th>
+                                        <th>Remarque</th>
+                                        <th>CommentaireQ5</th>
+                                        <th>CommentaireQ6</th>
+                                        <th>Agent</th>
+                                        <th>Bound</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for acquisition in acquisition_list %}
+                                    <tr>
+                                        <td scope="row">{{acquisition.created_date}}</td>
+                                        <td>{{acquisition.questions1}}</td>
+                                        <td>{{acquisition.questions3}}</td>
+                                        <td>{{acquisition.questions4}}</td>
+                                        <td>{{acquisition.questions5}}</td>
+                                        <td>{{acquisition.questions6}}</td>
+                                        <td>{{acquisition.Nom}}</td>
+                                        <td>{{acquisition.Post_Nom}}</td>
+                                        <td>{{acquisition.Prenom}}</td>
+                                        <td>N°{{acquisition.Numero}} {{acquisition.Rue}} {{acquisition.Quartier}} {{acquisition.Commune}}</td>
+                                        <td>{{acquisition.Ville}}</td>
+                                        <td>{{acquisition.Province}}</td>
+                                        <td>{{acquisition.Tel1}}</td>
+                                        <td>{{acquisition.Email}}</td>
+                                        <td>{{acquisition.Statut}}</td>
+                                        <td>{{acquisition.Remarque}}</td>
+                                        <td>{{acquisition.CommentaireQ5}}</td>
+                                        <td>{{acquisition.CommentaireQ6}}</td>
+                                        <td>{{acquisition.user}}</td>
+                                        <td>{{acquisition.Bound}}</td>
+                                        <td>
+                                            <a href="{% url 'acquisition:acquisition_update' acquisition.id %} ">
+                                                <i class="fa fa-edit"></i> 
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'acquisition:acquisition_destroy' acquisition.id %} ">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p>Total: {{acquisition_count}} </p>
+                        </div>
+
+                        <nav class="mb-50">
+                            {% if acquisition_list.has_other_pages %}
+                            <ul class="pagination justify-content-center">
+                                {% if acquisition_list.has_previous %}
+                                <li class="page-item"><a class="page-link"
+                                        href="?page={{ acquisition_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                                {% endif %}
+                                {% for i in acquisition_list.paginator.page_range %}
+                                {% if acquisition_list.number == i %}
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        {{ i }}
+                                        <span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                                {% endfor %}
+                                {% if acquisition_list.has_next %}
+                                <li class="page-item"><a class="page-link"
+                                        href="?page={{ acquisition_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                            {% endif %}
+                        </nav>
+
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

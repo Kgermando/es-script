@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Liste scripting {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">COMMERCIALE-PROMOTION</h5>
+                    <p class="m-b-0">Commerciale-promotion</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">Commerciale-promotion</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Listes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="row d-flex justify-content-end mb-4">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{% url 'commprom:commprom_add' %}" style="color: aliceblue; font-weight: 700;">NOUVEAU</a>
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>COMMERCIALE-PROMOTION OUTBOUND-INBOUND</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table caption-top table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date_de_création</th>
+                                        <th>Questions_1</th>
+                                        <th>Questions_2</th>
+                                        <th>Nom</th>
+                                        <th>Post_Nom</th>
+                                        <th>Prénom</th>
+                                        <th>Adresse</th>
+                                        <th>Ville</th>
+                                        <th>Province</th>
+                                        <th>Téléphone</th>
+                                        <th>Email</th>
+                                        <th>Statut</th>
+                                        <th>Remarque</th>
+                                        <th>Agent</th>
+                                        <th>Bound</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for commprom in commprom_list %}
+                                    <tr>
+                                        <td scope="row">{{commprom.created_date}}</td>
+                                        <td>{{commprom.questions1}}</td>
+                                        <td>{{commprom.questions2}}</td>
+                                        <td>{{commprom.Nom}}</td>
+                                        <td>{{commprom.Post_Nom}}</td>
+                                        <td>{{commprom.Prenom}}</td>
+                                        <td>N°{{commprom.Numero}} {{commprom.Rue}} {{commprom.Quartier}} {{commprom.Commune}}</td>
+                                        <td>{{commprom.Ville}}</td>
+                                        <td>{{commprom.Province}}</td>
+                                        <td>{{commprom.Tel1}}</td>
+                                        <td>{{commprom.Email}}</td>
+                                        <td>{{commprom.Statut}}</td>
+                                        <td>{{commprom.Remarque}}</td>
+                                        <td>{{commprom.user}}</td>
+                                        <td>{{commprom.Bound}}</td>
+                                        <td>
+                                            <a href="{% url 'commprom:commprom_update' commprom.id %} ">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'commprom:commprom_destroy' commprom.id %} ">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p>Total: {{commprom_count}} </p>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav class="mb-50">
+                            {% if commprom_list.has_other_pages %}
+                            <ul class="pagination justify-content-center">
+                                {% if commprom_list.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ commprom_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                                {% endif %}
+                                {% for i in commprom_list.paginator.page_range %}
+                                    {% if commprom_list.number == i %}
+                                    <li class="page-item active">
+                                        <span class="page-link">
+                                            {{ i }}
+                                            <span class="sr-only">(current)</span>
+                                        </span>
+                                    </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if commprom_list.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ commprom_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                            {% endif %}
+                        </nav>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

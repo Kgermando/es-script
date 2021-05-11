@@ -1,5 +1,6 @@
 
 PAYS = (
+    ('--------', '--------'),
     ('Afrique du Sud','Afrique du Sud'),
     ('Afghanistan','Afghanistan'),
     ('Albanie','Albanie'),

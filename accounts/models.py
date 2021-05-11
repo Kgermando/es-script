@@ -30,11 +30,16 @@ class Profile(models.Model):
         ('HOMME', 'HOMME'),
     )
 
+    GENRE = (
+        ('Madame', 'Madame'),
+        ('Monsieur', 'Monsieur'),
+    )
+
     profile_picture = models.ImageField(upload_to = 'user-profile/', default='images/user-bg.jpg')
     user            = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     campagne        = models.ForeignKey(Campagne, on_delete=models.CASCADE, max_length=100, null=True, blank=True)
     role            = models.CharField(choices=ROLE_CHOICES, max_length=100, null=True, blank=True)
-    sexe            = models.CharField(choices=SEXE, max_length=100, null=True, blank=True)
+    sexe            = models.CharField(choices=GENRE, max_length=100, null=True, blank=True)
     experience      = models.TextField(null=True, blank=True)
     adresse         = models.CharField(max_length=100, null=True, blank=True)
     contact_no      = models.CharField(max_length=13, null=True, blank=True)

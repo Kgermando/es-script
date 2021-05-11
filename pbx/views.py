@@ -1,15 +1,17 @@
 from django.shortcuts import render
 from datetime import timedelta, datetime, date, time as datetime_time
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.contrib.auth.decorators import login_required
 
 from pbx.models import Cdr, Cel
 from pbx.forms import ReportFilterForm
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def cdr_view(request):
      """
           CDR LIst
      """
-     user = request.user
+     user = request.user.username
      cdr = Cdr.objects.filter(src=user).order_by('-calldate')[:10]
      # cdr_list = Cdr.objects.all()
      paginator = Paginator(cdr, 10)
@@ -27,7 +29,7 @@ def cdr_view(request):
      template_name = 'pages/pbx/cdr/cdr_list.html'
      return render(request, template_name, context)
 
-
+@login_required(login_url='/accounts/login/')
 def cdr_detail(request, uniqueid):
      cdr = Cdr.objects.get(uniqueid=uniqueid)
      context = {
@@ -36,7 +38,7 @@ def cdr_detail(request, uniqueid):
      template_name = 'pages/pbx/cdr/cdr_detail.html'
      return render(request, template_name, context)
 
-
+@login_required(login_url='/accounts/login/')
 def cel_view(request):
      """
           CEL LIst
@@ -58,7 +60,7 @@ def cel_view(request):
      template_name = 'pages/pbx/cel/cel_list.html'
      return render(request, template_name, context)
 
-
+@login_required(login_url='/accounts/login/')
 def cel_detail(request, uniqueid):
      """
           CEL detail

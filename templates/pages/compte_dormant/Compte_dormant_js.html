@@ -1,0 +1,113 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#outbound').hide();
+        $('#inbound').hide();
+        // Traffic Bound
+        $("input[name=bound]").change(function () {
+            if ($("#OUTBOUND").is(':checked')) {
+                $('#outbound').show();
+                $('#inbound').hide();
+            } else if ($("#INBOUND").is(':checked')) {
+                $('#outbound').hide();
+                $('#inbound').show();
+            }
+        });
+    }); 
+
+
+    $(document).ready(function () {
+        $('#q2').hide();
+        $('#q2a').hide();
+        $('#q3').hide();
+        $('#q4').hide();
+        $('#q5').hide();
+        $('#q6').hide();
+
+        // Traffic OUTBOUND
+        $("input[name='questions1']").click(function () {
+            if ($('input:radio[qs=q1OUI]').is(':checked')) {
+                $('#q2').show();
+            } else if ($('input:radio[qs=q1NON]').is(':checked')) {
+                $('#q2').hide();
+                $('#q2a').hide();
+                $('#q3').hide();
+                $('#q6').show();
+            }
+        });
+
+        $("input[name='questions2']").click(function () {
+            if ($('input:radio[qs=q2OUI]').is(':checked')) {
+                $('#q2a').show();
+                $('#q3').show();
+                $('#q6').show();
+            } else if ($('input:radio[qs=q2NON]').is(':checked')) {
+                $('#q2a').hide();
+                $('#q3').hide();
+                $('#q6').show();
+            }
+        });
+
+        $("input[name='questions3']").click(function () {
+            if ($('input:radio[qs=q3OUI]').is(':checked')) {
+                $('#q4').show();
+                $('#q5').show();
+                $('#q6').show();
+            } else if ($('input:radio[qs=q2NON]').is(':checked')) {
+                $('#q4').hide();
+                $('#q5').hide();
+                $('#q6').show();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#qin2').hide();
+        $('#qin2a').hide();
+        $('#qin3').hide();
+        $('#qin4').hide();
+        $('#qin5').hide();
+        $('#qin6').hide();
+
+        // Traffic OUTBOUND
+        $("input[name='questions1']").click(function () {
+            if ($('input:radio[qs=q1inOUI]').is(':checked')) {
+                $('#qin2').show();
+            } else if ($('input:radio[qs=q1inNON]').is(':checked')) {
+                $('#qin2').hide();
+                $('#qin2a').hide();
+                $('#qin3').hide();
+                $('#qin6').show();
+            }
+        });
+
+        $("input[name='questions2']").click(function () {
+            if ($('input:radio[qs=q2inOUI]').is(':checked')) {
+                $('#qin2a').hide();
+                $('#qin3').hide();
+                $('#qin4').show();
+                $('#qin5').show();
+                $('#qin6').show();
+            } else if ($('input:radio[qs=q2inNON]').is(':checked')) {
+                $('#qin2a').hide();
+                $('#qin3').hide();
+                $('#qin4').hide();
+                $('#qin5').hide();
+                $('#qin6').show();
+            }
+        });
+
+        // $("input[name='questions3']").click(function () {
+        //     if ($('input:radio[qs=q3OUI]').is(':checked')) {
+        //         $('#q4').show();
+        //         $('#q5').show();
+        //         $('#q6').show();
+        //     } else if ($('input:radio[qs=q2NON]').is(':checked')) {
+        //         $('#q4').hide();
+        //         $('#q5').hide();
+        //         $('#q6').show();
+        //     }
+        // });
+    });
+
+
+</script>

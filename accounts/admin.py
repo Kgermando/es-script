@@ -2,10 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
-admin.site.site_header = 'PBX ADMIN'
+admin.site.site_header = 'CRM ADMIN'
 admin.site.site_title = "Interface d'administration des comptes"
 
-from accounts.models import Profile
+from accounts.models import Profile, Campagne
 
 # Register your models here.
 class ProfileInline(admin.StackedInline):
@@ -16,12 +16,20 @@ class ProfileInline(admin.StackedInline):
 
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline, )
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_experience')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_experience', 'get_campagne', 'get_role',)
     list_select_related = ('profile', )
 
     def get_experience(self, instance):
         return instance.profile.experience
     get_experience.short_description = 'Experience'
+
+    def get_campagne(self, instance):
+        return instance.profile.campagne
+    get_campagne.short_description = 'Campagne'
+
+    def get_role(self, instance):
+        return instance.profile.role
+    get_role.short_description = 'Role'
 
     def get_inline_instances(self, request, obj=None):
         if not obj:
@@ -29,5 +37,9 @@ class CustomUserAdmin(UserAdmin):
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
 
 
+class CampagneAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
+admin.site.register(Campagne)

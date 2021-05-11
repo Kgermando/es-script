@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} ACQUISITION {% endblock title %}
+
+
+{% block content %}
+
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="col-lg-12">
+            
+            <div id="outbound">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>SCRIPTING ACQUISITION</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-block">
+                            <form action="{% url 'acquisition:acquisition_add' %}" method="POST" enctype="multipart/form-data"
+                                class="form-material">
+                                {% csrf_token %}
+                                <div class="pb-4" id="q1">
+                                    <h5>Question 1</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <P>
+                                                Bonjour Mr/Mme…………………..on nom …………………..et je vous appelle de la part du Centre d’appel d’Advans.
+                                            </P>
+                                            <P>
+                                                J'aimerais vous poser quelques questions simples sur votre intérêt pour Advans ?
+                                            </P>
+                                            <P>J’espère que je ne vous dérange pas ? Est-ce que vous seriez disponible pour répondre à quelques questions ?</P>
+                                            <div class="pl-4">
+                                                <label for="questions1OUI" class="radio-inline mr-3">
+                                                    <input type="radio" qs=q1OUI id="questions1OUI" name="questions1"
+                                                        value="OUI"> OUI
+                                                </label>
+                                                <label for="questions1NON" class="radio-inline mr-3">
+                                                    <input type="radio" qs=q1NON id="questions1NON" name="questions1"
+                                                        value="NON"> NON
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="script pb-4" id="q2">
+                                    <h5>Question 2</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <p>
+                                                Permettez-moi de vérifier vos coordonnées (KYC)
+                                            </p>
+                                            <div class="container">
+                                                <div class="pl-4">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" id="Nom" name="Nom" class="form-control"
+                                                                placeholder="Nom">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" id="Post_Nom" name="Post_Nom"
+                                                                class="form-control" placeholder="Post Nom">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" id="Prenom" name="Prenom"
+                                                                class="form-control" placeholder="Prénom">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" id="Numero" name="Numero"
+                                                                class="form-control" placeholder="N°">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" id="Rue" name="Rue" class="form-control"
+                                                                placeholder="Rue">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" id="Quartier" name="Quartier"
+                                                                class="form-control" placeholder="Quartier">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" id="Commune" name="Commune"
+                                                                class="form-control" placeholder="Commune">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" id="Ville" name="Ville"
+                                                                class="form-control" placeholder="Ville">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <!-- <label>Province</label> -->
+                                                            {{form.Province}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" id="Tel1" name="Tel1"
+                                                                class="form-control" placeholder="Téléphone">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <input type="email" id="Email" name="Email"
+                                                                class="form-control" placeholder="Email">
+                                                        </div> 
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <input type="text" id="Remarque" name="Remarque"
+                                                                class="form-control" placeholder="Remarque">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-4" id="q3">
+                                    <h5>Question 3</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <p>
+                                                Pouvez-vous m’indiquer lequel de nos services vous intéresse particulièrement ?
+                                            </p>
+                                            <div class="pl-4">
+                                                <div class="form-group form-default">
+                                                    <!-- <label class="col col-form-label">Statut</label> -->
+                                                    {{form.questions3}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-4" id="q4">
+                                    <h5>Question 4</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <P>
+                                                Puis je vous proposer de rencontrer notre commercial en agence sur nos produits et services.
+                                            </P>
+                                            <div class="pl-4">
+                                                <label for="questions4OUI" class="radio-inline mr-3">
+                                                    <input type="radio" qs=q4OUI id="questions4OUI" name="questions4" value="OUI"> OUI
+                                                </label>
+                                                <label for="questions4NON" class="radio-inline mr-3">
+                                                    <input type="radio" qs=q4NON id="questions4NON" name="questions4" value="NON"> NON
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-2" id="q5">
+                                    <h5>Question 5</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <p>
+                                                Quelles date et heure vous arrangent ?
+                                            </p>
+                                            <div class="pl-4">
+                                                
+                                                <di class="form-group col">
+                                                    <div class="col-md-12">
+                                                        <input type="text" id="date-format" name="questions5" class="form-control"
+                                                                                            placeholder="Lundi 24 Juin 2021 - 13:44" value="-">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="text" id="CommentaireQ5" name="CommentaireQ5" class="form-control" placeholder="CommentaireQ5" value="-">  
+                                                    </div>
+                                                </di>
+                                                <!-- <label class="m-t-40">Default Material Date Timepicker</label> -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-2" id="q6">
+                                    <h5>Question 6</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <p>
+                                            AVEZ-VOUS DAUTRES QUESTIONS. Puis je vous proposer de rencontrer notre commercial en agence sur nos autres produits et
+                                            services. Quelles date et heure vous arrangent ?
+                                            </p>
+                                            <div class="pl-4">
+                                            
+                                                <di class="form-group col">
+                                                    <div class="col-md-6">
+                                                        <input type="text" id="date-format" name="questions6" class="form-control"
+                                                            placeholder="Lundi 24 Juin 2021 - 13:44" value="-">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text" id="CommentaireQ6" name="CommentaireQ6" class="form-control" placeholder="CommentaireQ6"
+                                                            value="-">
+                                                    </div>
+                                                </di>
+                                                <!-- <label class="m-t-40">Default Material Date Timepicker</label> -->
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="pb-4" id="q7">
+                                    <h5>Question 7</h5>
+                                    <div class="form-group">
+                                        <div class="form-check col">
+                                            <p>
+                                                Merci pour votre temps aujourd'hui. Nous espérons que vous pourriez toujours être intéressé par Advans à l'avenir.
+                                            </p>
+                                            <p>
+                                                Ok parfait, nous avons tout noté. Une personne de votre agence la plus proche va vous contacter pour organiser un
+                                                rendez-vous directement. N'hésitez pas à nous contacter au [insérer le numéro du centre d'appel] si vous avez des
+                                                questions. Je vous remercie de votre disponibilité et bienvenue chez ADVANS. Bonne journée.
+                                            </p>
+                                            <div class="pl-4">
+                                                <div class="form-group form-default">
+                                                    <label class="col col-form-label">Statut</label>
+                                                    {{form.Statut}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-4" id="out">
+                                    <input type="text" hidden='true' id="Bound" name="Bound" class="form-control"
+                                        placeholder="Bound" value="OUTBOUND">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Soumettre</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Page body end -->
+    </div>
+</div>
+<!-- Main-body end -->
+<div id="styleSelector"></div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+{% include 'pages/acquisition/acquisition_js.html' %}
+
+{% endblock content %}

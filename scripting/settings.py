@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.19', '*']
+ALLOWED_HOSTS = ['192.168.11.104', '*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Extern Apps
     'daterangefilter',
+    'bootstrap_datepicker_plus',
 
     # My Apps
     'accounts',
@@ -49,6 +50,12 @@ INSTALLED_APPS = [
     'forms',
     'pbx',
     'agenda',
+    'dat',
+    'commprom',
+    'comptedormant',
+    'acquisition',
+    'recouvrement',
+    'renouvellement',
 ]
 
 MIDDLEWARE = [
@@ -97,7 +104,7 @@ DATABASES_PGSQL = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'asterisk',
         'USER': 'asterisk',
-        'HOST': '192.168.43.215',
+        'HOST': '192.168.11.104',
         'PASSWORD': 'asterisk',
         'PORT': '5432'
     }
@@ -107,15 +114,15 @@ DATABASES_MARIADB = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'asterisk',
-        'USER': 'crm',
-        'PASSWORD': 'gk0838',
-        'HOST': '192.168.43.7',
+        'USER': 'asterisk',
+        'PASSWORD': 'asterisk',
+        'HOST': '192.168.11.103',
         'PORT': '3306',
     }
 }
 
 
-DATABASES = DATABASES_SQLITE
+DATABASES = DATABASES_MARIADB
 
 
 
@@ -165,6 +172,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Use BOOTSTRAP3 if you are using Bootstrap 3
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

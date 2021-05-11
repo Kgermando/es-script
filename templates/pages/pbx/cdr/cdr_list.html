@@ -73,7 +73,7 @@
                                 
                                         {% for cdr in cdr_list %}
                                             <tr>
-                                                <th><a href="{% url 'pbx:cdr_detail' cdr.uniqueid %} ">{{cdr.calldate|timesince}}</a></th>
+                                                <th><a href="{% url 'pbx:cdr_detail' cdr.uniqueid %} ">{{cdr.calldate}}</a></th>
                                                 <td>{{cdr.clid}}</td>
                                                 <td>{{cdr.src}}</td>
                                                 <td>{{cdr.dst}}</td>

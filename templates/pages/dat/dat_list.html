@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} DAT Liste scripting {% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">DAT</h5>
+                    <p class="m-b-0">Liste des Scripting</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    {{ form.media }}
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">DAT</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Listes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="row d-flex justify-content-end mb-4">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{% url 'dat:dat_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
+                    </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'dat:export_dat_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'dat:export_dat_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>DAT OUTBOUND-INBOUND</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table caption-top table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date_de_création</th>
+                                        <th>Questions_1</th>
+                                        <th>Questions_2</th>
+                                        <th>Nom</th>
+                                        <th>Post_Nom</th>
+                                        <th>Prénom</th>
+                                        <th>Adresse</th>
+                                        <th>Ville</th>
+                                        <th>Province</th>
+                                        <th>Téléphone</th>
+                                        <th>Email</th>
+                                        <th>Statut</th>
+                                        <th>Remarque</th>
+                                        <th>Agent</th>
+                                        <th>Bound</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for dat in dat_list %}
+                                    <tr>
+                                        <td scope="row">{{dat.created_date}}</td>
+                                        <td>{{dat.questions1}}</td>
+                                        <td>{{dat.questions2}}</td>
+                                        <td>{{dat.Nom}}</td>
+                                        <td>{{dat.Post_Nom}}</td>
+                                        <td>{{dat.Prenom}}</td>
+                                        <td>N°{{dat.Numero}} {{dat.Rue}} {{dat.Quartier}} {{dat.Commune}}</td>
+                                        <td>{{dat.Ville}}</td>
+                                        <td>{{dat.Province}}</td>
+                                        <td>{{dat.Tel1}}</td>
+                                        <td>{{dat.Email}}</td>
+                                        <td>{{dat.Statut}}</td>
+                                        <td>{{dat.Remarque}}</td>
+                                        <td>{{dat.user}}</td>
+                                        <td>{{dat.Bound}}</td>
+                                        <td>
+                                            <a href="{% url 'dat:dat_update' dat.id %} ">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'dat:dat_destroy' dat.id %} ">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p>Total: {{dat_count}} </p>
+                        </div>
+
+                        <nav class="mb-50">
+                            {% if dat_list.has_other_pages %}
+                                <ul class="pagination justify-content-center">
+                                    {% if dat_list.has_previous %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ dat_list.previous_page_number }}">&laquo;</a></li>
+                                    {% else %}
+                                        <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in dat_list.paginator.page_range %}
+                                        {% if dat_list.number == i %}
+                                            <li class="page-item active">
+                                                <span class="page-link">
+                                                    {{ i }} 
+                                                    <span class="sr-only">(current)</span>
+                                                </span>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if dat_list.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ dat_list.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                        <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}  
+                        </nav>
+                        
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

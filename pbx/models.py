@@ -8,8 +8,30 @@ from pbx.extensionsApps import APPS, MUSICONHOLD
 # Create your models here.
 ranged = [(i,i) for i in range(11)]
 rangedAMAFLAGS = [(i,i) for i in range(6)]
-MAX_CONTACTS = ranged
-AMAFLAGS = rangedAMAFLAGS
+MAX_CONTACTS = (
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10), 
+)
+AMAFLAGS = (
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10), 
+)
 
 Q_FREQUENCE = (
     (30, 30),
@@ -694,7 +716,7 @@ class Sip_conf(models.Model):
     type = models.CharField(max_length=8, default='friend',
                             help_text='Type d\'utilisateur', choices=TYPE_SIP)
     accountcode = models.CharField(max_length=20, null=True, blank=True)
-    amaflags = models.CharField(max_length=20, default='billing', blank=False, null=False,
+    amaflags = models.CharField(max_length=20, default='billing', blank=True, null=True,
                                 help_text='indicateurs spéciaux pour contrôler le calcul par défaut', choices=AMAFLAGS)
     callgroup = models.CharField(
         max_length=40, blank=True, null=True, help_text='callgroup')

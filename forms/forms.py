@@ -95,7 +95,6 @@ class KycForm(forms.ModelForm):
                 )
         )
 
-
         questions8 = forms.CharField(
             label='',
             required=True,
@@ -522,7 +521,7 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = (
-            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', 'Pays', 'Tel1', 'Tel2',
+            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2',
             'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'
         )
 
@@ -570,6 +569,17 @@ class ContactForm(forms.ModelForm):
             )
         )
 
+        Rue = forms.CharField(
+            label='',
+            required=True,
+            widget=forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "name": "Rue",
+                }
+            )
+        )
+
         Quartier = forms.CharField(
             label='',
             required=True,
@@ -592,6 +602,17 @@ class ContactForm(forms.ModelForm):
             )
         )
 
+        Ville = forms.CharField(
+            label='',
+            required=True,
+            widget=forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "name": "Ville",
+                }
+            )
+        )
+
         Province = forms.ChoiceField(
             label='',
             required=True,
@@ -600,18 +621,6 @@ class ContactForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "name": "Province",
-                }
-            )
-        )
-
-        Pays = forms.ChoiceField(
-            label='',
-            required=True,
-            choices=PAYS,
-            widget=forms.Select(
-                attrs={
-                    "class": "form-control",
-                    "name": "Pays",
                 }
             )
         )

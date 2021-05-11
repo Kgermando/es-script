@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} renouvellement de credit{% endblock title %}
+
+
+{% block content %}
+
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">SCRIPTING RENOUVELLEMENT DU CREDIT</h5>
+                    <p class="m-b-0">Renouvellement du crédit</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">SCRIPTING RENOUVELLEMENT DU CREDIT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                {% include 'notifications/_alerts.html' %}
+                <!-- Hover table card start -->
+                <div class="row d-flex justify-content-end mb-4">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{% url 'renouvellement:renouvellement_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>SCRIPTING RENOUVELLEMENT DU CREDIT</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table caption-top table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date_de_création</th>
+                                        <th>Nom_socièté</th>
+                                        <th>Nom</th>
+                                        <th>Post_Nom</th>
+                                        <th>Prénom</th>
+                                        <th>Adresse</th>
+                                        <th>Province</th>
+                                        <th>Téléphone_1</th>
+                                        <th>Email</th>
+                                        <th>Statut</th>
+                                        <th>Remarques</th>
+                                        <th>Commentaires</th>
+                                        <th>Questions_1</th>
+                                        <th>Questions_2</th>
+                                        <th>Questions_3</th>
+                                        <th>Questions_4</th>
+                                        <th>Questions_5</th>
+                                        <th>Questions_7</th>
+                                        <th>Questions_8</th>
+                                        <th>Questions_9</th>
+                                        <th>Questions_10</th>
+                                        <th>Questions_12</th>
+                                        <th>Questions_13</th>
+                                        <th>Questions_15</th>
+                                        <th>Questions_16</th>
+                                        <th>Commentaire_Q17</th>
+                                        <th>Concurrent</th>
+                                        <th>Temps_à_recontacter</th>
+                                        <th>Montant_de_prêt</th>
+                                        <th>Durée_de_crédit</th>
+                                        <th>Montant_à_rembourser_chaque_mois</th>
+                                        <th>Montant_des_ventes_bonne_journée</th>
+                                        <th>Montant_des_ventes_mauvaise_journée</th>
+                                        <th>Date_à_laquelle_recevoir_le_credit</th>
+                                        <th>Nom_du_garant</th>
+                                        <th>Activité</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for renouvellement in renouvellement_list %}
+                                    <tr>
+                                        <td scope="row">{{renouvellement.created_date}}</td>
+                                        <td><a href="">{{renouvellement.Nom_societe}}</a></td>
+                                        <td>{{renouvellement.Nom}}</td>
+                                        <td>{{renouvellement.Post_Nom}}</td>
+                                        <td>{{renouvellement.Prenom}}</td>
+                                        <td>N°{{renouvellement.Numero}} {{renouvellement.Rue}} {{renouvellement.Quartier}} {{renouvellement.Ville}} {{renouvellement.Commune}}</td>
+                                        <td>{{renouvellement.Province}}</td>
+                                        <td>{{renouvellement.Tel1}}</td>
+                                        <td>{{renouvellement.Email}}</td>
+                                        <td>{{renouvellement.Statut}}</td>
+                                        <td>{{renouvellement.Remarque}}</td>
+                                        <td>{{renouvellement.Commentaire}}</td>
+                                        <td>{{renouvellement.questions1}}</td>
+                                        <td>{{renouvellement.questions2}}</td>
+                                        <td>{{renouvellement.questions3}}</td>
+                                        <td>{{renouvellement.questions4}}</td>
+                                        <td>{{renouvellement.questions5}}</td>
+                                        <td>{{renouvellement.questions7}}</td>
+                                        <td>{{renouvellement.questions8}}</td>
+                                        <td>{{renouvellement.questions9}}</td>
+                                        <td>{{renouvellement.questions10}}</td>
+                                        <td>{{renouvellement.questions12}}</td>
+                                        <td>{{renouvellement.questions13}}</td>
+                                        <td>{{renouvellement.questions15}}</td>
+                                        <td>{{renouvellement.questions16}}</td>
+                                        <td>{{renouvellement.CommentaireQ17}}</td>
+                                        <td>{{renouvellement.Concurrent}}</td>
+                                        <td>{{renouvellement.Q19temps_a_contacter}}</td>
+                                        <td>{{renouvellement.montant_de_pret}}</td>
+                                        <td>{{renouvellement.duree_de_crédit}}</td>
+                                        <td>{{renouvellement.montant_a_rembourser_chaque_mois}}</td>
+                                        <td>{{renouvellement.montant_des_ventes_bonne_journée}}</td>
+                                        <td>{{renouvellement.montant_des_ventes_mauvaise_journee}}</td>
+                                        <td>{{renouvellement.date_a_laquelle_recevoir_credit}}</td>
+                                        <td>{{renouvellement.Nom_du_garant}}</td>
+                                        <td>{{renouvellement.Activite}}</td>
+                                        <td>
+                                            <a href="{% url 'renouvellement:renouvellement_update' renouvellement.id %} ">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p>Total: {{renouvellement_count}} </p>
+                        </div>
+                        
+                        <nav class="mb-50">
+                            {% if renouvellement_list.has_other_pages %}
+                            <ul class="pagination justify-content-center">
+                                {% if renouvellement_list.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ renouvellement_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                                {% endif %}
+                                {% for i in renouvellement_list.paginator.page_range %}
+                                    {% if renouvellement_list.number == i %}
+                                        <li class="page-item active">
+                                            <span class="page-link">
+                                                {{ i }}
+                                                <span class="sr-only">(current)</span>
+                                            </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if renouvellement_list.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ renouvellement_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                            {% endif %}
+                        </nav>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+</div>
+
+
+<div id="styleSelector"> </div>
+</div>
+</div>
+
+{% endblock content %}

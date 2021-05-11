@@ -95,17 +95,17 @@
                             <div class="card mat-stat-card">
                                 <div class="card-block">
                                     <div class="row align-items-center b-b-default">
-                                        <!-- <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                        <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                             <div class="row align-items-center text-center">
                                                 <div class="col-4 p-r-0">
                                                     <i class="bi bi-people-fill text-c-purple f-24"></i>
                                                 </div>
                                                 <div class="col-8 p-l-0">
                                                     <h5>0</h5>
-                                                    <p class="text-muted m-b-0">Agents actifs</p>
+                                                    <p class="text-muted m-b-0">Agents Online</p>
                                                 </div>
                                             </div>
-                                        </div> -->
+                                        </div>
                                         <div class="col-sm-6 p-b-20 p-t-20">
                                             <div class="row align-items-center text-center">
                                                 <div class="col-4 p-r-0">
@@ -176,7 +176,134 @@
                         <!-- Material statustic card end -->
                         <!-- order-visitor start -->
     
-    
+                        <div class="col-xl-12 col-md-12">
+                        
+                            <div class="card table-card">
+                                <div class="card-header">
+                                    <h5>STATUT SCRIPTING</h5>
+                                    <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                            <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                            <li><i class="fa fa-window-maximize full-card"></i></li>
+                                            <li><i class="fa fa-minus minimize-card"></i></li>
+                                            <li><i class="fa fa-refresh reload-card"></i></li>
+                                            <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-block">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover m-b-0 without-header">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: 900;">STATUT</th>
+                                                    <th scope="col" style="font-weight: 900;">ACQUISITION</th>
+                                                    <th scope="col" style="font-weight: 900;">COMMERCIALE-PROMOTION</th>
+                                                    <th scope="col" style="font-weight: 900;">DAT</th>
+                                                    <th scope="col" style="font-weight: 900;">RECOUVREMENT</th>
+                                                    <th scope="col" style="font-weight: 900;">RENOUVELLEMENT CREDIT 2</th>
+                                                    <th scope="col" style="font-weight: 900;">COMPTE DORMANT</th>
+                        
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Statuts de reporting</td>
+                                                    <td>{{acquisition_1_user}}</td>
+                                                    <td>{{commprom_1_user}}</td>
+                                                    <td>{{dat_1_user}}</td>
+                                                    <td>{{recouvrement_1_user}}</td>
+                                                    <td>{{renouvellement_1_user}}</td>
+                                                    <td>{{compte_dormant__1_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Accord</td>
+                                                    <td>{{acquisition_2_user}}</td>
+                                                    <td>{{commprom_2_user}}</td>
+                                                    <td>{{dat_2_user}}</td>
+                                                    <td>{{recouvrement_2_user}}</td>
+                                                    <td>{{renouvellement_2_user}}</td>
+                                                    <td>{{compte_dormant__2_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Déjà payé son crédit</td>
+                                                    <td>{{acquisition_3_user}}</td>
+                                                    <td>{{commprom_3_user}}</td>
+                                                    <td>{{dat_3_user}}</td>
+                                                    <td>{{recouvrement_3_user}}</td>
+                                                    <td>{{renouvellement_3_user}}</td>
+                                                    <td>{{compte_dormant__3_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Refus</td>
+                                                    <td>{{acquisition_4_user}}</td>
+                                                    <td>{{commprom_4_user}}</td>
+                                                    <td>{{dat_4_user}}</td>
+                                                    <td>{{recouvrement_4_user}}</td>
+                                                    <td>{{renouvellement_4_user}}</td>
+                                                    <td>{{compte_dormant__4_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Rappel</td>
+                                                    <td>{{acquisition_5_user}}</td>
+                                                    <td>{{commprom_5_user}}</td>
+                                                    <td>{{dat_5_user}}</td>
+                                                    <td>{{recouvrement_5_user}}</td>
+                                                    <td>{{renouvellement_5_user}}</td>
+                                                    <td>{{compte_dormant__5_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Injoignable</td>
+                                                    <td>{{acquisition_6_user}}</td>
+                                                    <td>{{commprom_6_user}}</td>
+                                                    <td>{{dat_6_user}}</td>
+                                                    <td>{{recouvrement_6_user}}</td>
+                                                    <td>{{renouvellement_6_user}}</td>
+                                                    <td>{{compte_dormant__6_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Absent</td>
+                                                    <td>{{acquisition_7_user}}</td>
+                                                    <td>{{commprom_7_user}}</td>
+                                                    <td>{{dat_7_user}}</td>
+                                                    <td>{{recouvrement_7_user}}</td>
+                                                    <td>{{renouvellement_7_user}}</td>
+                                                    <td>{{compte_dormant__7_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Faux numéro</td>
+                                                    <td>{{acquisition_8_user}}</td>
+                                                    <td>{{commprom_8_user}}</td>
+                                                    <td>{{dat_8_user}}</td>
+                                                    <td>{{recouvrement_8_user}}</td>
+                                                    <td>{{renouvellement_8_user}}</td>
+                                                    <td>{{compte_dormant__8_user}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Réfléchir</td>
+                                                    <td>{{acquisition_9_user}}</td>
+                                                    <td>{{commprom_9_user}}</td>
+                                                    <td>{{dat_9_user}}</td>
+                                                    <td>{{recouvrement_9_user}}</td>
+                                                    <td>{{renouvellement_9_user}}</td>
+                                                    <td>{{compte_dormant__9_user}}</td>
+                                                </tr>
+                                                <tr style="font-weight: 900; font-size: 18px; color: green;">
+                                                    <td scope="row">TOTAL</td>
+                                                    <td>{{acquisition_total}}</td>
+                                                    <td>{{commprom_total}}</td>
+                                                    <td>{{dat_total}}</td>
+                                                    <td>{{recouvrement_total}}</td>
+                                                    <td>{{renouvellement_total}}</td>
+                                                    <td>{{compte_dormant_total}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- order-visitor end -->
     
                         <!--  sale analytics start -->

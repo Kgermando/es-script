@@ -7,7 +7,8 @@
             <div class="main-menu-header">
                 <img class="img-80 img-radius" src="{{user.profile.profile_picture.url}}" height="60px" >
                 <div class="user-details">
-                    <span id="more-details">{{user.profile.role}} <{{user.username}}><i class="fa fa-caret-down"></i></span>
+                    <span id="more-details">{{user.profile.role}} <{{user.username}}> <i class="fa fa-caret-down"></i></span>
+                    <span id="more-details" style="font-weight: 700; color: darkorange;">{{user.profile.campagne}}</span>
                 </div>
             </div>
             <div class="main-menu-content">
@@ -39,29 +40,64 @@
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-                <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
-                    <a href="{% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="bi bi-graph-up"></i><b>DA</b></span>
-                        <span class="pcoded-mtext">Dashboard Admin</span>
-                        <span class="pcoded-mcaret"></span>
-                    </a>
-                </li>
-                {% if request.user.is_Staff == True %}
+                {% if request.user.is_superuser == True %}
                     <li class="{% if url_name == 'dashboard_admin_view' %}active{% endif %}">
                         <a href="{% url 'dashboard:dashboard_admin_view' %}" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-home"></i><b>DA</b></span>
+                            <span class="pcoded-micon"><i class="bi bi-graph-up"></i><b>DA</b></span>
                             <span class="pcoded-mtext">Dashboard Admin</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                 {% endif%}
             </ul>
-            <div class="pcoded-navigation-label">Forms</div>
+            <div class="pcoded-navigation-label">Scripting</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == 'scripting_forms' %}active{% endif %}">
-                    <a href="{% url 'forms:scripting_forms' %}" class="waves-effect waves-dark">
+                <!-- <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
+                    <a href="{% url 'forms:scripting_list' %}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                         <span class="pcoded-mtext">Scripting</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li> -->
+                <li class="{% if url_name == 'dat_list' %}active{% endif %}">
+                    <a href="{% url 'dat:dat_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">DAT</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'commprom_list' %}active{% endif %}">
+                    <a href="{% url 'commprom:commprom_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Commerciale-Promotion</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'recouvrement_list' %}active{% endif %}">
+                    <a href="{% url 'recouvrement:recouvrement_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Recouvrement</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'renouvellement_list' %}active{% endif %}">
+                    <a href="{% url 'renouvellement:renouvellement_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Renouvellement crédit</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'compte_dormant_list' %}active{% endif %}">
+                    <a href="{% url 'compte_dormant:compte_dormant_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Compte dormant</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'dat' %}active{% endif %}">
+                    <a href="{% url 'acquisition:acquisition_list' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                        <span class="pcoded-mtext">Acquisition</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
@@ -75,7 +111,6 @@
                     </a>
                 </li>
             </ul>
-            
             <div class="pcoded-navigation-label">Tables</div>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
@@ -85,17 +120,13 @@
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-            </ul>
-            <ul class="pcoded-item pcoded-left-item">
                 <li class="{% if url_name == 'cdr_view' %}active{% endif %}">
                     <a href="{% url 'pbx:cdr_view' %}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>C</b></span>
+                        <span class="pcoded-micon"><i class="bi bi-wallet"></i><b>C</b></span>
                         <span class="pcoded-mtext">Détails d'appels</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
                 </li>
-            </ul>
-            <ul class="pcoded-item pcoded-left-item">
                 <li class="{% if url_name == 'cel_view' %}active{% endif %}">
                     <a href="{% url 'pbx:cel_view' %}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="fa fa-leaf" aria-hidden="true"></i><b>E</b></span>
@@ -104,6 +135,24 @@
                     </a>
                 </li>
             </ul>
+            <div class="pcoded-navigation-label">Agenda</div>
+            <ul class="pcoded-item pcoded-left-item">
+                <li class="{% if url_name == 'agenda_view' %}active{% endif %}"> 
+                    <a href="{% url 'agenda:agenda_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="bi bi-calendar-week"></i><b>S</b></span>
+                        <span class="pcoded-mtext">Rendez-vous</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+                <li class="{% if url_name == 'note_view' %}active{% endif %}">
+                    <a href="{% url 'agenda:note_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="bi bi-stickies"></i><b>C</b></span>
+                        <span class="pcoded-mtext">Notes rapides</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+            </ul>
+            
         {% endwith %}
     </div>
 </nav>

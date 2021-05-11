@@ -34,6 +34,12 @@ urlpatterns = [
     path('forms/', include('forms.urls')),
     path('pbx/', include('pbx.urls')),
     path('agenda/', include('agenda.urls')),
+    path('dat/', include('dat.urls')),
+    path('acquisition/', include('acquisition.urls')),
+    path('commprom/', include('commprom.urls')),
+    path('comptedormant/', include('comptedormant.urls')),
+    path('recouvrement/', include('recouvrement.urls')),
+    path('renouvellement/', include('renouvellement.urls')),
 ]
 
 if settings.DEBUG:

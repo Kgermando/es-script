@@ -44,7 +44,7 @@
                                     <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-telephone-inbound text-c-purple f-24"></i>
+                                                <i class="bi bi-telephone-inbound text-c-green f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
                                                 <h5>{{cdr_answered}}</h5>
@@ -55,7 +55,7 @@
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-telephone-outbound text-c-green f-24"></i>
+                                                <i class="bi bi-telephone-outbound text-c-purple f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
                                                 <h5>{{cdr_no_answer}}</h5>
@@ -98,22 +98,22 @@
                                     <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-people-fill text-c-purple f-24"></i>
+                                                <i class="bi bi-people-fill text-c-green f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>1</h5>
-                                                <p class="text-muted m-b-0">Agents actifs</p>
+                                                <h5>0</h5>
+                                                <p class="text-muted m-b-0">Agents Online</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-hourglass-split text-c-green f-24"></i>
+                                                <i class="bi bi-people-fill text-c-purple f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>0</h5>
-                                                <p class="text-muted m-b-0">Queues</p>
+                                                <h5>{{ user_list }}</h5>
+                                                <p class="text-muted m-b-0">Total Agents</p>
                                             </div>
                                         </div>
                                     </div>
@@ -122,22 +122,26 @@
                                     <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-person-lines-fill text-c-red f-24"></i>
+                                                <i class="bi bi-hourglass-split text-c-red f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{contact_list}}</h5>
-                                                <p class="text-muted m-b-0">Contacts</p>
+                                                <h5>0</h5>
+                                                <p class="text-muted m-b-0">File d'attente</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-people-fill text-c-blue f-24"></i>
+                                                <i class="bi bi-stopwatch-fill text-c-blue f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{user_list}}</h5>
-                                                <p class="text-muted m-b-0">Total Agents</p>
+                                                {% for cdr in cdr_duration %}
+                                                    <h5>{{cdr.billsec_norm}}</h5>
+                                                {% empty %}
+                                                    <h5>0</h5>
+                                                {% endfor %}
+                                                <p class="text-muted m-b-0">Durée du dernier appel</p>
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +179,135 @@
                     </div>
                     <!-- Material statustic card end -->
                     <!-- order-visitor start -->
-            
+
+                    <div class="col-xl-12 col-md-12">
+                        
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h5>STATUT SCRIPTING</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover m-b-0 without-header">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="font-weight: 900;">STATUT</th>
+                                                <th scope="col" style="font-weight: 900;">ACQUISITION</th>
+                                                <th scope="col" style="font-weight: 900;">COMMERCIALE-PROMOTION</th>
+                                                <th scope="col" style="font-weight: 900;">DAT</th>
+                                                <th scope="col" style="font-weight: 900;">RECOUVREMENT</th>
+                                                <th scope="col" style="font-weight: 900;">RENOUVELLEMENT CREDIT 2</th>
+                                                <th scope="col" style="font-weight: 900;">COMPTE DORMANT</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Statuts de reporting</td>
+                                                    <td>{{acquisition_1}}</td>
+                                                    <td>{{commprom_1}}</td>
+                                                    <td>{{dat_1}}</td>
+                                                    <td>{{recouvrement_1}}</td>
+                                                    <td>{{renouvellement_1}}</td>
+                                                    <td>{{compte_dormant__1}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Accord</td>
+                                                    <td>{{acquisition_2}}</td>
+                                                    <td>{{commprom_2}}</td>
+                                                    <td>{{dat_2}}</td>
+                                                    <td>{{recouvrement_2}}</td>
+                                                    <td>{{renouvellement_2}}</td>
+                                                    <td>{{compte_dormant__2}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Déjà payé son crédit</td>
+                                                    <td>{{acquisition_3}}</td>
+                                                    <td>{{commprom_3}}</td>
+                                                    <td>{{dat_3}}</td>
+                                                    <td>{{recouvrement_3}}</td>
+                                                    <td>{{renouvellement_3}}</td>
+                                                    <td>{{compte_dormant__3}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Refus</td>
+                                                    <td>{{acquisition_4}}</td>
+                                                    <td>{{commprom_4}}</td>
+                                                    <td>{{dat_4}}</td>
+                                                    <td>{{recouvrement_4}}</td>
+                                                    <td>{{renouvellement_4}}</td>
+                                                    <td>{{compte_dormant__4}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Rappel</td>
+                                                    <td>{{acquisition_5}}</td>
+                                                    <td>{{commprom_5}}</td>
+                                                    <td>{{dat_5}}</td>
+                                                    <td>{{recouvrement_5}}</td>
+                                                    <td>{{renouvellement_5}}</td>
+                                                    <td>{{compte_dormant__5}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Injoignable</td>
+                                                    <td>{{acquisition_6}}</td>
+                                                    <td>{{commprom_6}}</td>
+                                                    <td>{{dat_6}}</td>
+                                                    <td>{{recouvrement_6}}</td>
+                                                    <td>{{renouvellement_6}}</td>
+                                                    <td>{{compte_dormant__6}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Absent</td>
+                                                    <td>{{acquisition_7}}</td>
+                                                    <td>{{commprom_7}}</td>
+                                                    <td>{{dat_7}}</td>
+                                                    <td>{{recouvrement_7}}</td>
+                                                    <td>{{renouvellement_7}}</td>
+                                                    <td>{{compte_dormant__7}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Faux numéro</td>
+                                                    <td>{{acquisition_8}}</td>
+                                                    <td>{{commprom_8}}</td>
+                                                    <td>{{dat_8}}</td>
+                                                    <td>{{recouvrement_8}}</td>
+                                                    <td>{{renouvellement_8}}</td>
+                                                    <td>{{compte_dormant__8}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row" style="font-weight: 900;">Réfléchir</td>
+                                                    <td>{{acquisition_9}}</td>
+                                                    <td>{{commprom_9}}</td>
+                                                    <td>{{dat_9}}</td>
+                                                    <td>{{recouvrement_9}}</td>
+                                                    <td>{{renouvellement_9}}</td>
+                                                    <td>{{compte_dormant__9}}</td>
+                                                </tr>
+                                                <tr style="font-weight: 900; font-size: 18px; color: green;">
+                                                    <td scope="row">TOTAL</td>
+                                                    <td>{{acquisition_total}}</td>
+                                                    <td>{{commprom_total}}</td>
+                                                    <td>{{dat_total}}</td>
+                                                    <td>{{recouvrement_total}}</td>
+                                                    <td>{{renouvellement_total}}</td>
+                                                    <td>{{compte_dormant_total}}</td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             
                     <!-- order-visitor end -->
             
@@ -226,80 +358,60 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-12">
-                        <div class="row">
-                            <!-- sale card start -->
-            
-                            <div class="col-md-6">
-                                <div class="card text-center order-visitor-card">
-                                    <div class="card-block">
-                                        <h6 class="m-b-0">Coûts Inbound</h6>
-                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>
-                                            {{cdr_answered_cout.duration_cout_total}} FC
-                                        </h4>
-                                        <p class="m-b-0">Update </p>
-                                    </div>
+                    <!-- <div class="col-xl-6 col-md-12">
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h5>Statut scripting</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card text-center order-visitor-card">
-                                    <div class="card-block">
-                                        <h6 class="m-b-0">Coûts Outbound</h6>
-                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i>
-                                            {{cdr_no_answer_cout.duration_cout}} FC
-                                        </h4>
-                                        <p class="m-b-0">Update {{cdr_no_answer_cout.calldate}}</p>
-                                    </div>
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover m-b-0 without-header">
+                                        <thead>
+                                            <tr>
+                                                <th>STATUT</th>
+                                                <th>DAT</th>
+                                                <th>COMMERCIALE-PROMOTION</th>
+                                                <th>RECOUVREMENT</th>
+                                                <th>RENOUVELLEMENT CREDIT 2</th>
+                                                <th>COMPTE DORMANT</th>
+                                                <th>ACQUISITION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                            {% for acquisition in acquisition_list %}
+                                            <tr>
+                                                <td>Statuts de reporting</td>
+                                                <td>Accord</td>
+                                                <td>Déjà payé son crédit</td>
+                                                <td>Refus</td>
+                                                <td>Rappel</td>
+                                                <td>Injoignable</td>
+                                            </tr>
+                                            {% endfor %}
+                                        
+                                        </tbody>
+                                    </table>
+                    
                                 </div>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="card bg-c-red total-card">
-                                    <div class="card-block">
-                                        <div class="text-left">
-                                            <h4>489</h4>
-                                            <p class="m-0">Scripts</p>
-                                        </div>
-                                        <span class="label bg-c-red value-badges">15%</span>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-md-6">
-                                <div class="card bg-c-green total-card">
-                                    <div class="card-block">
-                                        <div class="text-left">
-                                            <h4>$5782</h4>
-                                            <p class="m-0">Income Status</p>
-                                        </div>
-                                        <span class="label bg-c-green value-badges">20%</span>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-md-6">
-                                <div class="card text-center order-visitor-card">
-                                    <div class="card-block">
-                                        <h6 class="m-b-0">Unique Visitors</h6>
-                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>652
-                                        </h4>
-                                        <p class="m-b-0">36% From Last 6 Months</p>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-md-6">
-                                <div class="card text-center order-visitor-card">
-                                    <div class="card-block">
-                                        <h6 class="m-b-0">Monthly Earnings</h6>
-                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i>5963
-                                        </h4>
-                                        <p class="m-b-0">36% From Last 6 Months</p>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- sale card end -->
                         </div>
-                    </div>
+                    </div> -->
             
-                    <!--  sale analytics end -->
-            
+                    <!--  sale analytics end -->   
+                </div>
+
+                <div class="row">
+                    
                 </div>
             </div>
             <!-- Page-body end -->

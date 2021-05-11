@@ -4,10 +4,12 @@ from django.contrib import messages  # for message
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 from forms.models import Kyc, Contact
 from forms.forms import KycForm, ContactForm
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def scripting_forms(request):
 
     form = KycForm(request.POST)
@@ -27,6 +29,7 @@ def scripting_forms(request):
     template_name = 'pages/forms/forms_view.html'
     return render(request, template_name, context)
 
+@login_required(login_url='/accounts/login/')
 def scripting_forms_edit(request, id):
     scripting = Kyc.objects.get(id=id)
     form = KycForm(request.POST)
@@ -48,6 +51,7 @@ def scripting_forms_edit(request, id):
     return render(request, template_name, context)
 
 
+@login_required(login_url='/accounts/login/')
 def scripting_list(request):
 
     user = request.user
@@ -59,7 +63,7 @@ def scripting_list(request):
     except PageNotAnInteger:
         kyc_list = paginator.page(1)
     except EmptyPage:
-        kyc_list = paginator.page(paginator.num_pages)
+        kyc_list = paginator.page(paginator.num_pages) 
 
     context = {
         'kyc_list': kyc_list,
@@ -67,7 +71,7 @@ def scripting_list(request):
     template_name = 'pages/forms/scripting_list.html'
     return render(request, template_name, context)
 
-
+@login_required(login_url='/accounts/login/')
 def contact_view(request):
 
     user = request.user
@@ -101,7 +105,7 @@ def contact_view(request):
     template_name = 'pages/forms/contact_view.html'
     return render(request, template_name, context)
 
-
+@login_required(login_url='/accounts/login/')
 def upload_csv(request):
 	data = {}
 	if "GET" == request.method:
@@ -129,21 +133,6 @@ def upload_csv(request):
 			# data_dict["Post_Nom"] = fields[1]
 			# data_dict["Prenom"] = fields[2]
 			# data_dict["Numero"] = fields[3]
-            # data_dict["Quartier"] = fields[4] 
-			# data_dict["Commune"] = fields[5]
-			# data_dict["Province"] = fields[6]
-			# data_dict["Pays"] = fields[7]
-            # data_dict["Tel1"] = fields[8]
-			# data_dict["Tel2"] = fields[9]
-			# data_dict["Email"] = fields[10]
-			# data_dict["Website"] = fields[11]
-            # data_dict["Facebook"] = fields[12]
-            # data_dict["Instagram"] = fields[13]
-            # data_dict["Twitter"] = fields[14]
-            # data_dict["LinkedIn"] = fields[15]
-            # data_dict["Remarque"] = fields[16]
-            # data_dict["user"] = fields[17]
-            # data_dict["created_date"] = fields[18]
 			try:
 				form = Contact(data_dict)
 				if form.is_valid():
@@ -160,7 +149,7 @@ def upload_csv(request):
  
 	return HttpResponseRedirect(reverse("forms:upload_csv"))
 
-
+@login_required(login_url='/accounts/login/')
 def enquetes_view(request):
 
     context = {}
@@ -168,3 +157,4 @@ def enquetes_view(request):
     return render(request, template_name, context)
 
 
+# class Dat()

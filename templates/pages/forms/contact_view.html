@@ -63,10 +63,12 @@
                                         <th>Post Nom</th>
                                         <th>Prénom</th>
                                         <th>N°</th>
+                                        <th>Rue</th>
                                         <th>Quartier</th>
                                         <th>Commune</th>
+                                        <th>Ville</th>
                                         <th>Province</th>
-                                        <th>Pays</th>
+                                        <!-- <th>Pays</th> -->
                                         <th>Téléphone 1</th>
                                         <th>Téléphone 2</th>
                                         <th>Email</th>
@@ -97,16 +99,19 @@
                                                 {{form.Numero}}
                                             </td>
                                             <td>
+                                                {{form.Rue}}
+                                            </td>
+                                            <td>
                                                 {{form.Quartier}}
                                             </td>
                                             <td>
                                                 {{form.Commune}}
                                             </td>
                                             <td>
-                                                {{form.Province}}
+                                                {{form.Ville}}
                                             </td>
                                             <td>
-                                                {{form.Pays}}
+                                                {{form.Province}}
                                             </td>
                                             <td>
                                                 {{form.Tel1}}
@@ -153,8 +158,8 @@
                                         <th>Post Nom</th>
                                         <th>Prénom</th>
                                         <th>Adresse</th>
+                                        <th>Ville</th>
                                         <th>Province</th>
-                                        <th>Pays</th>
                                         <th>Téléphone 1</th>
                                         <th>Téléphone 2</th>
                                         <th>Email</th>
@@ -175,9 +180,9 @@
                                         <td scope="row">{{contact.Nom}}</td>
                                         <td style="width: 150px;">{{contact.Post_Nom}}</td>
                                         <td style="width: 150px;">{{contact.Prenom}}</td>
-                                        <td style="width: 150px;">N°{{contact.Numero}} {{contact.Quartier}} {{contact.Commune}}</td>
+                                        <td style="width: 150px;">N°{{contact.Numero}} {{contact.Rue}} {{contact.Quartier}} {{contact.Commune}}</td>
+                                        <td style="width: 150px;">{{contact.Ville}}</td>
                                         <td style="width: 150px;">{{contact.Province}}</td>
-                                        <td>{{contact.Pays}}</td>
                                         <td>{{contact.Tel1}}</td>
                                         <td>{{contact.Tel2}}</td>
                                         <td>{{contact.Email}}</td>

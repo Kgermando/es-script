@@ -68,10 +68,12 @@ class Contact(models.Model):
     Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')
     Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')
     Numero          = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')
+    Rue             = models.CharField(max_length=100, null=True, blank=True, default='-')
     Quartier        = models.CharField(max_length=100, null=True, blank=True, default='-')
     Commune         = models.CharField(max_length=100, null=True, blank=True, default='-')
+    Ville           = models.CharField(max_length=100, null=True, blank=True, default='-')
     Province        = models.CharField(max_length=20, choices=PROVINCES, null=True, blank=True, default='-')
-    Pays            = models.CharField(max_length=100, choices=PAYS, null=True, blank=True, default='-')
+    # Pays            = models.CharField(max_length=100, choices=PAYS, null=True, blank=True, default='-')
     Tel1            = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 1")
     Tel2            = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 2")
     Email           = models.EmailField(null=True, blank=True, default='-')
@@ -85,19 +87,4 @@ class Contact(models.Model):
     def __str__(self):
         return self.Nom
 
-
-class Dat(models.Model):
-    pass
-
-class CommercialePromotion(models.Model):
-    pass
-
-class Recouvrement(models.Model):
-    pass
-
-class CompteDormant(models.Model):
-    pass
-
-class Acquisition(models.Model):
-    pass
 

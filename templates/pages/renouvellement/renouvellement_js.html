@@ -1,0 +1,344 @@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#outbound').hide();
+        $('#inbound').hide();
+        // Traffic Bound
+        $("input[name=bound]").change(function () {
+            if ($("#OUTBOUND").is(':checked')) {
+                $('#outbound').show();
+                $('#inbound').hide();
+            } else if ($("#INBOUND").is(':checked')) {
+                $('#outbound').hide();
+                $('#inbound').show();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        // French
+        $('#q2').hide();
+        $('#q3').hide();
+        $('#q4').hide();
+        $('#q5').hide();
+        $('#q6').hide();
+        $('#q7').hide();
+        $('#q8').hide();
+        $('#q9').hide();
+        $('#q10').hide();
+        $('#q11').hide();
+        $('#q12').hide();
+        $('#q13').hide();
+        $('#q14').hide();
+        $('#q15').hide();
+        $('#q16').hide();
+        $('#q17').hide();
+        $('#q18').hide();
+        $('#q19').hide();
+        $('#q20').hide();
+        $('#q21').hide();
+
+
+        $("input[name=questons1]").change(function () {
+
+            if ($("#questons1OUI").is(':checked')) {
+                $("#q2").show();
+                $("#q21").hide();
+            } else if ($("#questons1NON").is(':checked')) {
+                $("#q2").hide();
+                $("#q21").show();
+            } else if ($("#reset").is(':checked')) {
+                $("#q2").hide();
+                $("#q21").hide();
+                $('#q3').hide();
+                $('#q4').hide();
+                $('#q5').hide();
+                $('#q6').hide();
+                $('#q7').hide();
+                $('#q8').hide();
+                $('#q9').hide();
+                $('#q10').hide();
+                $('#q11').hide();
+                $('#q12').hide();
+                $('#q13').hide();
+                $('#q14').hide();
+                $('#q15').hide();
+                $('#q16').hide();
+                $('#q17').hide();
+                $('#q18').hide();
+                $('#q19').hide();
+                $('#q20').hide();
+                $('#q21').hide();
+            }
+        });
+
+        $("input[name=questons2]").change(function () {
+
+            if ($("#questons2OUI").is(':checked')) {
+                $("#q3").show();
+                $("#q21").hide();
+                $("#q10").hide();
+                $("#q19").hide();
+                $("#q11").hide();
+                $("#q12").hide();
+                $("#q13").hide();
+
+            } else if ($("#questons2OUIAPRES").is(':checked')) {
+                $("#q3").hide();
+                $("#q19").show();
+                $("#q21").show();
+                $("#q10").hide();
+                $("#q11").hide();
+                $("#q12").hide();
+                $("#q13").hide();
+
+            } else if ($("#questons2NON").is(':checked')) {
+                $("#q3").hide();
+                $("#q10").show();
+                $("#q11").show();
+                $("#q12").show();
+                $("#q13").show();
+                $("#q21").hide();
+                $("#q19").hide();
+
+            }
+        });
+
+        $("input[name=questons3]").change(function () {
+
+            if ($("#questons3OUI").is(':checked')) {
+                $("#q4").show();
+                $("#q21").hide();
+                $("#q10").hide();
+                $("#q19").hide();
+                $('#q5').show();
+
+            } else if ($("#questons3NON").is(':checked')) {
+                $("#q4").hide();
+                $("#q19").show();
+                $("#q21").show();
+                $('#q5').hide();
+            }
+        });
+
+        $("input[name=questons5]").change(function () {
+
+            if ($("#questons5OUI").is(':checked')) {
+                $("#q7").show();
+                $("#q6").hide();
+                $("#q9").show();
+
+            } else if ($("#questons5NON").is(':checked')) {
+                $("#q7").hide();
+                $("#q6").show();
+                $("#q8").hide();
+                $("#q9").show();
+                $("#q21").show();
+            }
+        });
+
+        $("input[name=questons7]").change(function () {
+
+            if ($("#questons7OUI").is(':checked')) {
+                $("#q8").show();
+                $("#q9").show();
+                $("#q21").show();
+
+            } else if ($("#questons7NON").is(':checked')) {
+                $("#q8").hide();
+                $("#q9").show();
+                $("#q21").show();
+            }
+        });
+
+        $("input[name=questons13]").change(function () {
+
+            if ($("#questons13OUI").is(':checked')) {
+                $("#q14").show();
+                $("#q15").show();
+                $("#q16").show();
+                $("#q17").show();
+                $("#q18").show();
+                $("#q19").show();
+                $("#q20").show();
+                $("#q21").show();
+
+            } else if ($("#questons13NON").is(':checked')) {
+                $("#q14").hide();
+                $("#q15").show();
+                $("#q16").show();
+                $("#q17").show();
+                $("#q18").show();
+                $("#q19").show();
+                $("#q20").show();
+                $("#q21").show();
+            }
+        });
+    });
+        
+
+
+
+    $(document).ready(function () {
+        // English
+        $('#qin2').hide();
+        $('#qin3').hide();
+        $('#qin4').hide();
+        $('#qin5').hide();
+        $('#qin6').hide();
+        $('#qin7').hide();
+        $('#qin8').hide();
+        $('#qin9').hide();
+        $('#qin10').hide();
+        $('#qin11').hide();
+        $('#qin12').hide();
+        $('#qin13').hide();
+        $('#qin14').hide();
+        $('#qin15').hide();
+        $('#qin16').hide();
+        $('#qin17').hide();
+        $('#qin18').hide();
+        $('#qin19').hide();
+        $('#qin20').hide();
+        $('#qin21').hide();
+
+        $("input[name=questions1]").change(function () {
+
+            if ($("#questions1inOUI").is(':checked')) {
+                $("#qin2").show();
+                $("#qin21").hide();
+            } else if ($("#questions1inNON").is(':checked')) {
+                $("#qin2").hide();
+                $("#qin21").show();
+            } else if ($("#resetin").is(':checked')) {
+                $("#qin2").hide();
+                $("#qin21").hide();
+                $('#qin3').hide();
+                $('#qin4').hide();
+                $('#qin5').hide();
+                $('#qin6').hide();
+                $('#qin7').hide();
+                $('#qin8').hide();
+                $('#qin9').hide();
+                $('#qin10').hide();
+                $('#qin11').hide();
+                $('#qin12').hide();
+                $('#qin13').hide();
+                $('#qin14').hide();
+                $('#qin15').hide();
+                $('#qin16').hide();
+                $('#qin17').hide();
+                $('#qin18').hide();
+                $('#qin19').hide();
+                $('#qin20').hide();
+                $('#qin21').hide();
+            }
+        });
+
+        $("input[name=questions2]").change(function () {
+
+            if ($("#questions2inOUI").is(':checked')) {
+                $("#qin3").show();
+                $("#qin21").hide();
+                $("#qin10").hide();
+                $("#qin19").hide();
+                $("#qin11").hide();
+                $("#qin12").hide();
+                $("#qin13").hide();
+
+            } else if ($("#questions2inOUIAPRES").is(':checked')) {
+                $("#qin3").hide();
+                $("#qin19").show();
+                $("#qin21").show();
+                $("#qin10").hide();
+                $("#qin11").hide();
+                $("#qin12").hide();
+                $("#qin13").hide();
+
+            } else if ($("#questions2inNON").is(':checked')) {
+                $("#qin3").hide();
+                $("#qin10").show();
+                $("#qin11").show();
+                $("#qin12").show();
+                $("#qin13").show();
+                $("#qin21").hide();
+                $("#qin19").hide();
+
+            }
+        });
+
+        $("input[name=questions3]").change(function () {
+
+            if ($("#questions3inOUI").is(':checked')) {
+                $("#qin4").show();
+                $("#qin21").hide();
+                $("#qin10").hide();
+                $("#qin19").hide();
+                $('#qin5').show();
+
+            } else if ($("#questions3inNON").is(':checked')) {
+                $("#qin4").hide();
+                $("#qin19").show();
+                $("#qin21").show();
+                $('#qin5').hide();
+            }
+        });
+
+        $("input[name=questions5]").change(function () {
+
+            if ($("#questions5inOUI").is(':checked')) {
+                $("#qin7").show();
+                $("#qin6").hide();
+                $("#qin9").show();
+
+            } else if ($("#questions5inNON").is(':checked')) {
+                $("#qin7").hide();
+                $("#qin6").show();
+                $("#qin8").hide();
+                $("#qin9").show();
+                $("#qin21").show();
+            }
+        });
+
+        $("input[name=questions7]").change(function () {
+
+            if ($("#questions7inOUI").is(':checked')) {
+                $("#qin8").show();
+                $("#qin9").show();
+                $("#qin21").show();
+
+            } else if ($("#questions7inNON").is(':checked')) {
+                $("#qin8").hide();
+                $("#qin9").show();
+                $("#qin21").show();
+            }
+        });
+
+        $("input[name=questions13]").change(function () {
+
+            if ($("#questions13inOUI").is(':checked')) {
+                $("#qin14").show();
+                $("#qin15").show();
+                $("#qin16").show();
+                $("#qin17").show();
+                $("#qin18").show();
+                $("#qin19").show();
+                $("#qin20").show();
+                $("#qin21").show();
+
+            } else if ($("#questions13inNON").is(':checked')) {
+                $("#qin14").hide();
+                $("#qin15").show();
+                $("#qin16").show();
+                $("#qin17").show();
+                $("#qin18").show();
+                $("#qin19").show();
+                $("#qin20").show();
+                $("#qin21").show();
+            }
+        });
+    });
+        
+
+
+</script>

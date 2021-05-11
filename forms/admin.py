@@ -58,8 +58,8 @@ class scriptAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
-        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', 
-        'Pays', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram', 
+        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 
+        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram', 
         'Twitter', 'LinkedIn', 'Remarque', 'created_date'
     )
 
