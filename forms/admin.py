@@ -7,11 +7,10 @@ from django.db.models.query import QuerySet
 from django.utils.encoding import smart_str
 from datetime import datetime, timedelta
 import csv
-import datetime
 
 from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
 
-from forms.models import Kyc, Contact
+from forms.models import Kyc
 # Register your models here.
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
@@ -50,23 +49,6 @@ class scriptAdmin(admin.ModelAdmin):
         # 'Nom_societe', 'Nom', 'Post_Nom', 'Prenom',
         ('created_date', PastDateRangeFilter), 
     )
-    actions = [export_to_csv]
-
-    ordering = ['-created_date', ]
-
-
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
-    list_display = (
-        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 
-        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram', 
-        'Twitter', 'LinkedIn', 'Remarque', 'created_date'
-    )
-
-    list_filter = (
-        ('created_date', PastDateRangeFilter),
-    )
-
     actions = [export_to_csv]
 
     ordering = ['-created_date', ]

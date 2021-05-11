@@ -88,179 +88,11 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -320,7 +152,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -472,6 +304,214 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -633,6 +673,14 @@
     },
     {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -945,6 +993,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1022,6 +1078,14 @@
         "description": "django.contrib.auth.admin",
         "isExtraImport": true,
         "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -1257,6 +1321,22 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -1457,6 +1537,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1546,6 +1634,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -1786,6 +1882,14 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -2121,6 +2225,30 @@
         "documentation": {}
     },
     {
+        "label": "PROVINCES",
+        "importPath": "forms.province",
+        "description": "forms.province",
+        "isExtraImport": true,
+        "detail": "forms.province",
+        "documentation": {}
+    },
+    {
+        "label": "PROVINCES",
+        "importPath": "forms.province",
+        "description": "forms.province",
+        "isExtraImport": true,
+        "detail": "forms.province",
+        "documentation": {}
+    },
+    {
+        "label": "STATUTS",
+        "importPath": "forms.statut",
+        "description": "forms.statut",
+        "isExtraImport": true,
+        "detail": "forms.statut",
+        "documentation": {}
+    },
+    {
         "label": "STATUTS",
         "importPath": "forms.statut",
         "description": "forms.statut",
@@ -2330,6 +2458,30 @@
     },
     {
         "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseNotFound",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -2890,6 +3042,22 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "importPath": "datetime",
         "description": "datetime",
@@ -3040,6 +3208,22 @@
         "description": "app.views",
         "isExtraImport": true,
         "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "PastDateRangeFilter",
+        "importPath": "daterangefilter.filters",
+        "description": "daterangefilter.filters",
+        "isExtraImport": true,
+        "detail": "daterangefilter.filters",
+        "documentation": {}
+    },
+    {
+        "label": "FutureDateRangeFilter",
+        "importPath": "daterangefilter.filters",
+        "description": "daterangefilter.filters",
+        "isExtraImport": true,
+        "detail": "daterangefilter.filters",
         "documentation": {}
     },
     {
@@ -3315,6 +3499,136 @@
         "documentation": {}
     },
     {
+        "label": "operator",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "operator",
+        "description": "operator",
+        "detail": "operator",
+        "documentation": {}
+    },
+    {
+        "label": "compile",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "compile",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "compile",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "compile",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
+        "label": "PAYS",
+        "importPath": "forms.pays",
+        "description": "forms.pays",
+        "isExtraImport": true,
+        "detail": "forms.pays",
+        "documentation": {}
+    },
+    {
+        "label": "PAYS",
+        "importPath": "forms.pays",
+        "description": "forms.pays",
+        "isExtraImport": true,
+        "detail": "forms.pays",
+        "documentation": {}
+    },
+    {
+        "label": "PAYS",
+        "importPath": "forms.pays",
+        "description": "forms.pays",
+        "isExtraImport": true,
+        "detail": "forms.pays",
+        "documentation": {}
+    },
+    {
+        "label": "PAYS",
+        "importPath": "forms.pays",
+        "description": "forms.pays",
+        "isExtraImport": true,
+        "detail": "forms.pays",
+        "documentation": {}
+    },
+    {
+        "label": "PAYS",
+        "importPath": "forms.pays",
+        "description": "forms.pays",
+        "isExtraImport": true,
+        "detail": "forms.pays",
+        "documentation": {}
+    },
+    {
+        "label": "contact_view",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "upload_csv",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
         "label": "dashboard_view",
         "importPath": "dashboard.views",
         "description": "dashboard.views",
@@ -3507,62 +3821,6 @@
         "documentation": {}
     },
     {
-        "label": "Contact",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Kyc",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contact",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contact",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Kyc",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Kyc",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contact",
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "isExtraImport": true,
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
         "label": "Dat",
         "importPath": "dat.models",
         "description": "dat.models",
@@ -3749,15 +4007,6 @@
         "documentation": {}
     },
     {
-        "label": "csv",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "csv",
-        "description": "csv",
-        "detail": "csv",
-        "documentation": {}
-    },
-    {
         "label": "DatForm",
         "importPath": "dat.forms",
         "description": "dat.forms",
@@ -3766,39 +4015,6 @@
         "documentation": {}
     },
     {
-        "label": "operator",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "operator",
-        "description": "operator",
-        "detail": "operator",
-        "documentation": {}
-    },
-    {
-        "label": "compile",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "compile",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "compile",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "QuerySet",
         "importPath": "django.db.models.query",
         "description": "django.db.models.query",
@@ -3847,35 +4063,27 @@
         "documentation": {}
     },
     {
-        "label": "PAYS",
-        "importPath": "forms.pays",
-        "description": "forms.pays",
+        "label": "Kyc",
+        "importPath": "forms.models",
+        "description": "forms.models",
         "isExtraImport": true,
-        "detail": "forms.pays",
+        "detail": "forms.models",
         "documentation": {}
     },
     {
-        "label": "PAYS",
-        "importPath": "forms.pays",
-        "description": "forms.pays",
+        "label": "Kyc",
+        "importPath": "forms.models",
+        "description": "forms.models",
         "isExtraImport": true,
-        "detail": "forms.pays",
+        "detail": "forms.models",
         "documentation": {}
     },
     {
-        "label": "PAYS",
-        "importPath": "forms.pays",
-        "description": "forms.pays",
+        "label": "Kyc",
+        "importPath": "forms.models",
+        "description": "forms.models",
         "isExtraImport": true,
-        "detail": "forms.pays",
-        "documentation": {}
-    },
-    {
-        "label": "PAYS",
-        "importPath": "forms.pays",
-        "description": "forms.pays",
-        "isExtraImport": true,
-        "detail": "forms.pays",
+        "detail": "forms.models",
         "documentation": {}
     },
     {
@@ -3911,31 +4119,7 @@
         "documentation": {}
     },
     {
-        "label": "contact_view",
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "isExtraImport": true,
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "upload_csv",
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "isExtraImport": true,
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
         "label": "KycForm",
-        "importPath": "forms.forms",
-        "description": "forms.forms",
-        "isExtraImport": true,
-        "detail": "forms.forms",
-        "documentation": {}
-    },
-    {
-        "label": "ContactForm",
         "importPath": "forms.forms",
         "description": "forms.forms",
         "isExtraImport": true,
@@ -5030,6 +5214,150 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "contacts.migrations.0001_initial",
+        "description": "contacts.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Contact',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "contacts.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "ContactAdmin",
+        "kind": 6,
+        "importPath": "contacts.admin",
+        "description": "contacts.admin",
+        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\n        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville',\n        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',\n        'Twitter', 'LinkedIn', 'Remarque', 'created_date'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter),\n    )\n    actions = [export_to_csv]",
+        "detail": "contacts.admin",
+        "documentation": {}
+    },
+    {
+        "label": "export_to_csv",
+        "kind": 2,
+        "importPath": "contacts.admin",
+        "description": "contacts.admin",
+        "peekOfCode": "def export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(\n                                          opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields(\n    ) if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information",
+        "detail": "contacts.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ContactsConfig",
+        "kind": 6,
+        "importPath": "contacts.apps",
+        "description": "contacts.apps",
+        "peekOfCode": "class ContactsConfig(AppConfig):\n    name = 'contacts'",
+        "detail": "contacts.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ContactForm",
+        "kind": 6,
+        "importPath": "contacts.forms",
+        "description": "contacts.forms",
+        "peekOfCode": "class ContactForm(forms.ModelForm):\n    class Meta:\n        model = Contact\n        fields = (\n            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',\n            'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'\n        )\n        Nom = forms.CharField(\n            label='',\n            required=True,",
+        "detail": "contacts.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "kind": 6,
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "peekOfCode": "class Contact(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date = models.DateTimeField(auto_now_add=True)\n    Nom             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Numero          = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')\n    Rue             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Quartier        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Commune         = models.CharField(max_length=100, null=True, blank=True, default='-')",
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "contacts.urls",
+        "description": "contacts.urls",
+        "peekOfCode": "urlpatterns = [\n    path('contact_view/', contact_view, name='contact_view'),\n    path('upload/csv/', upload_csv, name='upload_csv'),\n]",
+        "detail": "contacts.urls",
+        "documentation": {}
+    },
+    {
+        "label": "contact_view",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def contact_view(request):\n    user = request.user\n    contact = Contact.objects.filter(user=user).order_by('-created_date')\n    paginator = Paginator(contact, 10)\n    page = request.GET.get('page')\n    try:\n        contact_list = paginator.page(page)\n    except PageNotAnInteger:\n        contact_list = paginator.page(1)\n    except EmptyPage:",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "upload_csv",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def upload_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tdata",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcsv_file",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tfile_data",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tlines",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tfields",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tdata_dict",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tform",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:\n\t\tlogging.getLogger(\"error_logger\").error(\"Unable to upload file. \"+repr(e))",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
         "label": "DashboardConfig",
         "kind": 6,
         "importPath": "dashboard.apps",
@@ -5372,20 +5700,20 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "forms.migrations.0006_delete_contact",
+        "description": "forms.migrations.0006_delete_contact",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('forms', '0005_auto_20210506_1310'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='Contact',\n        ),\n    ]",
+        "detail": "forms.migrations.0006_delete_contact",
+        "documentation": {}
+    },
+    {
         "label": "scriptAdmin",
         "kind": 6,
         "importPath": "forms.admin",
         "description": "forms.admin",
         "peekOfCode": "class scriptAdmin(admin.ModelAdmin):\n    list_display = (\n        'id', 'questions1', 'questions2', 'questions3', 'questions4', 'questions5', 'questions6', 'questions7', 'questions8', 'questions9',\n        'questions10', 'questions12', 'questions13', 'questions15', 'questions16', 'Q19temps_a_contacter',\n        'montant_de_pret', 'duree_de_credit', 'montant_a_rembourser_chaque_mois', 'montant_des_ventes_bonne_journee',\n        'montant_des_ventes_mauvaise_journee', 'date_a_laquelle_recevoir_credit', 'Nom_du_garant', 'Activite',\n        'Remarque', 'Commentaire', 'Concurrent', 'CommentaireQ17',\n        'Nom_societe', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province',\n        'Pays', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Statut',\n    )",
-        "detail": "forms.admin",
-        "documentation": {}
-    },
-    {
-        "label": "ContactAdmin",
-        "kind": 6,
-        "importPath": "forms.admin",
-        "description": "forms.admin",
-        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\n        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', \n        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram', \n        'Twitter', 'LinkedIn', 'Remarque', 'created_date'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter),\n    )\n    actions = [export_to_csv]",
         "detail": "forms.admin",
         "documentation": {}
     },
@@ -5417,29 +5745,11 @@
         "documentation": {}
     },
     {
-        "label": "ContactForm",
-        "kind": 6,
-        "importPath": "forms.forms",
-        "description": "forms.forms",
-        "peekOfCode": "class ContactForm(forms.ModelForm):\n    class Meta:\n        model = Contact\n        fields = (\n            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2',\n            'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'\n        )\n        Nom = forms.CharField(\n            label='',\n            required=True,",
-        "detail": "forms.forms",
-        "documentation": {}
-    },
-    {
         "label": "Kyc",
         "kind": 6,
         "importPath": "forms.models",
         "description": "forms.models",
         "peekOfCode": "class Kyc(models.Model):\n    user            = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date    = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions3       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions4       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions5       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions6       = models.CharField(max_length=200, null=True, blank=True, default='-')\n    questions7       = models.CharField(max_length=200, null=True, blank=True, default='-')",
-        "detail": "forms.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contact",
-        "kind": 6,
-        "importPath": "forms.models",
-        "description": "forms.models",
-        "peekOfCode": "class Contact(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date = models.DateTimeField(auto_now_add=True)\n    Nom             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Numero          = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')\n    Rue             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Quartier        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Commune         = models.CharField(max_length=100, null=True, blank=True, default='-')",
         "detail": "forms.models",
         "documentation": {}
     },
@@ -5475,7 +5785,7 @@
         "kind": 5,
         "importPath": "forms.urls",
         "description": "forms.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', scripting_forms, name='scripting_forms'),\n    path('scripting_list/', scripting_list, name='scripting_list'),\n    path('scripting_forms_edit/<int:id>/', scripting_forms_edit, name='scripting_forms_edit'),\n    path('contact_view/', contact_view, name='contact_view'),\n    path('upload/csv/', upload_csv, name='upload_csv'),\n    path('enquetes_view/', enquetes_view, name='enquetes_view'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', scripting_forms, name='scripting_forms'),\n    path('scripting_list/', scripting_list, name='scripting_list'),\n    path('scripting_forms_edit/<int:id>/', scripting_forms_edit, name='scripting_forms_edit'),\n    path('enquetes_view/', enquetes_view, name='enquetes_view'),\n]",
         "detail": "forms.urls",
         "documentation": {}
     },
@@ -5507,92 +5817,11 @@
         "documentation": {}
     },
     {
-        "label": "contact_view",
-        "kind": 2,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "def contact_view(request):\n    user = request.user\n    contact = Contact.objects.filter(user=user).order_by('-created_date')\n    paginator = Paginator(contact, 10)\n    page = request.GET.get('page')\n    try:\n        contact_list = paginator.page(page)\n    except PageNotAnInteger:\n        contact_list = paginator.page(1)\n    except EmptyPage:",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "upload_csv",
-        "kind": 2,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "def upload_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/forms/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
         "label": "enquetes_view",
         "kind": 2,
         "importPath": "forms.views",
         "description": "forms.views",
         "peekOfCode": "def enquetes_view(request):\n    context = {}\n    template_name = 'pages/forms/enquetes_view.html'\n    return render(request, template_name, context)\n# class Dat()",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\tdata",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/forms/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tcsv_file",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tfile_data",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tlines",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\tfields",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\tdata_dict",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t",
-        "detail": "forms.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\t\tform",
-        "kind": 5,
-        "importPath": "forms.views",
-        "description": "forms.views",
-        "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:\n\t\tlogging.getLogger(\"error_logger\").error(\"Unable to upload file. \"+repr(e))",
         "detail": "forms.views",
         "documentation": {}
     },
@@ -6600,7 +6829,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES = DATABASES_MARIADB\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
+        "peekOfCode": "DATABASES = DATABASES_SQLITE\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
         "detail": "scripting.settings",
         "documentation": {}
     },

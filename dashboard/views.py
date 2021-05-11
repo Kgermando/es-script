@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from pbx.models import Cdr, Cel
 from agenda.models import Note
-from forms.models import Contact
+from contacts.models import Contact
 
 from acquisition.models import Acquisition
 from commprom.models import Commprom

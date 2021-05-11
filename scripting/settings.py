@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'acquisition',
     'recouvrement',
     'renouvellement',
+    'contacts'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_MARIADB
+DATABASES = DATABASES_SQLITE
 
 
 
