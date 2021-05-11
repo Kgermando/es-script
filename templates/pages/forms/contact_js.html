@@ -3,7 +3,7 @@
     $(document).on('submit', '#post-form', function(e){
         $.ajax({
             type:'POST',
-            url:'{% url "forms:contact_view" %}',
+            url:'{% url "contacts:contact_view" %}',
             data:{
                 Nom:$('#Nom').val(),
                 Post_Nom:$('#Post_Nom').val(),

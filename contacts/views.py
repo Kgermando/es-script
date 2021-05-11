@@ -1,8 +1,14 @@
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages  # for message
+from django.urls import reverse
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 from contacts.models import Contact
-fçrm contacts.forms import ContactForm
+from contacts.forms import ContactForm
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def contact_view(request):
@@ -26,7 +32,7 @@ def contact_view(request):
             contact.save()
             messages.success(request, "Contact enregistrées!")
             # redirect to a new URL:
-            return HttpResponseRedirect(reverse('forms:contact_view'))
+            return HttpResponseRedirect(reverse('contacts:contact_view'))
         else:
             form = ContactForm()
 
@@ -50,11 +56,11 @@ def upload_csv(request):
 		csv_file = request.FILES["csv_file"]
 		if not csv_file.name.endswith('.csv'):
 			messages.error(request,'File is not CSV type')
-			return HttpResponseRedirect(reverse("forms:upload_csv"))
+			return HttpResponseRedirect(reverse("contacts:upload_csv"))
     # if file is too large, return
 		if csv_file.multiple_chunks():
 			messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
-			return HttpResponseRedirect(reverse("forms:upload_csv"))
+			return HttpResponseRedirect(reverse("contacts:upload_csv"))
 
 		file_data = csv_file.read().decode("utf-8")		
  
@@ -82,4 +88,4 @@ def upload_csv(request):
 		logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
 		messages.error(request,"Unable to upload file. "+repr(e))
  
-	return HttpResponseRedirect(reverse("forms:upload_csv"))
+	return HttpResponseRedirect(reverse("contacts:upload_csv"))

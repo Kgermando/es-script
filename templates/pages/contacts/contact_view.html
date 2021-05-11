@@ -38,7 +38,7 @@
                 {% include 'notifications/_alerts.html' %}
                 <div class="row d-flex justify-content-end mb-4">
                     <button type="button" class="btn btn-primary">
-                        <a href="{% url 'forms:upload_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
+                        <a href="{% url 'contacts:upload_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
                     </button>
                     <div class="dropdown ml-2">
                         <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -47,8 +47,8 @@
                         </a>
                 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'dat:export_dat_xls' %}">Excel</a>
-                            <a class="dropdown-item" href="{% url 'dat:export_dat_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="">Excel</a>
+                            <a class="dropdown-item" href="">CSV</a>
                             <a class="dropdown-item" href="#">PDF</a>
                             <a class="dropdown-item" href="#">JSON</a>
                         </div>
@@ -74,7 +74,7 @@
                                 <thead>
                                     <tr>
                                         <th>Nom</th>
-                                        <th>Post Nom</th>
+                                        <th>Post_Nom</th>
                                         <th>Prénom</th>
                                         <th>N°</th>
                                         <th>Rue</th>
@@ -83,16 +83,17 @@
                                         <th>Ville</th>
                                         <th>Province</th>
                                         <!-- <th>Pays</th> -->
-                                        <th>Téléphone 1</th>
-                                        <th>Téléphone 2</th>
-                                        <th>Téléphone 3</th>
+                                        <th>Téléphone_1</th>
+                                        <th>Téléphone_2</th>
+                                        <th>Téléphone_3</th>
                                         <th>Email</th>
-                                        <th>Site Web</th>
+                                        <th>Site_Web</th>
                                         <th>Facebook</th>
                                         <th>Instagram</th>
                                         <th>Twitter</th>
                                         <th>LinkedIn</th>
                                         <th>Remarques</th>
+                                        <th>Date_de_creation</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -163,42 +164,15 @@
                                         </tr>
                                     </form>
 
-                                </tbody>
-                            </table>
-                        </div>
-                        <br><br>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 150px;">Nom</th>
-                                        <th>Post Nom</th>
-                                        <th>Prénom</th>
-                                        <th>Adresse</th>
-                                        <th>Ville</th>
-                                        <th>Province</th>
-                                        <th>Téléphone 1</th>
-                                        <th>Téléphone 2</th>
-                                        <th>Téléphone 3</th>
-                                        <th>Email</th>
-                                        <th>Site Web</th>
-                                        <th>Facebook</th>
-                                        <th>Instagram</th>
-                                        <th>Twitter</th>
-                                        <th>LinkedIn</th>
-                                        <th>Remarques</th>
-                                        <th>Date de création</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
                                     {% for contact in contact_list %}
                                     <tr>
                                         <td scope="row">{{contact.Nom}}</td>
                                         <td style="width: 150px;">{{contact.Post_Nom}}</td>
                                         <td style="width: 150px;">{{contact.Prenom}}</td>
-                                        <td style="width: 150px;">N°{{contact.Numero}} {{contact.Rue}}
-                                            {{contact.Quartier}} {{contact.Commune}}</td>
+                                        <td style="width: 150px;">{{contact.Numero}}</td>
+                                        <td style="width: 150px;">{{contact.Rue}}</td>
+                                        <td style="width: 150px;">{{contact.Quartier}}</td>
+                                        <td style="width: 150px;">{{contact.Commune}}</td>
                                         <td style="width: 150px;">{{contact.Ville}}</td>
                                         <td style="width: 150px;">{{contact.Province}}</td>
                                         <td>{{contact.Tel1}}</td>
@@ -218,6 +192,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                         <!-- Pagination -->
                         <nav class="mb-50">
                             <ul class="pagination justify-content-center">

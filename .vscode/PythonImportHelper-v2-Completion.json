@@ -985,6 +985,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1649,6 +1657,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1905,30 +1921,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1982,6 +1974,54 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -2489,6 +2529,30 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -2646,6 +2710,30 @@
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "EmptyPage",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "PageNotAnInteger",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
         "documentation": {}
     },
     {
@@ -3573,6 +3661,14 @@
         "documentation": {}
     },
     {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
         "label": "PAYS",
         "importPath": "forms.pays",
         "description": "forms.pays",
@@ -3626,6 +3722,14 @@
         "description": "contacts.views",
         "isExtraImport": true,
         "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "ContactForm",
+        "importPath": "contacts.forms",
+        "description": "contacts.forms",
+        "isExtraImport": true,
+        "detail": "contacts.forms",
         "documentation": {}
     },
     {
@@ -5290,7 +5394,7 @@
         "kind": 2,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "def upload_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))",
+        "peekOfCode": "def upload_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5299,7 +5403,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return",
+        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n    # if file is too large, return",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5308,7 +5412,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"forms:upload_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
+        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
         "detail": "contacts.views",
         "documentation": {}
     },
