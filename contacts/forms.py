@@ -1,7 +1,6 @@
 from django import forms
 
 from contacts.models import Contact
-
 from forms.province import PROVINCES 
 
 class ContactForm(forms.ModelForm):
