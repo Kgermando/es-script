@@ -420,7 +420,6 @@ class Cdr(models.Model):
     def duration_cout_total(self):
         return sum(item.duration_cout() for item in self.items.all())
 
-
 class IvrDetails(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     description = models.CharField(max_length=150, blank=True, null=True)
