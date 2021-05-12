@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 
+
 from pbx.models import Cdr, Cel
 from agenda.models import Note
 from contacts.models import Contact
