@@ -8,7 +8,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from acquisition.models import Acquisition
 from acquisition.forms import AcquisitionForm
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def acquisition_add(request):
     """
         Fonction Add new object
@@ -36,7 +36,7 @@ def acquisition_add(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def acquisition_list(request): 
     """
         Fonction List objects
@@ -62,7 +62,7 @@ def acquisition_list(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def acquisition_view(request, id):  
     """
         Fonction Detail
@@ -77,7 +77,7 @@ def acquisition_view(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def acquisition_update(request, id):
     """
         Fonction de Mis à jour
@@ -99,7 +99,7 @@ def acquisition_update(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def acquisition_destroy(request, id):
     """
         Fonction de Suppresion

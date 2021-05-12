@@ -128,6 +128,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -1233,6 +1249,14 @@
         "documentation": {}
     },
     {
+        "label": "Profile",
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "isExtraImport": true,
+        "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -1438,6 +1462,14 @@
         "description": "django.db.models.signals",
         "isExtraImport": true,
         "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
         "documentation": {}
     },
     {
@@ -2118,6 +2150,22 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "user_logged_in",
+        "importPath": "django.contrib.auth.signals",
+        "description": "django.contrib.auth.signals",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.signals",
+        "documentation": {}
+    },
+    {
+        "label": "user_logged_out",
+        "importPath": "django.contrib.auth.signals",
+        "description": "django.contrib.auth.signals",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.signals",
         "documentation": {}
     },
     {
@@ -4517,11 +4565,20 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0003_profile_is_online",
+        "description": "accounts.migrations.0003_profile_is_online",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0002_auto_20210502_1400'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='profile',\n            name='is_online',\n            field=models.BooleanField(default=False),\n        ),",
+        "detail": "accounts.migrations.0003_profile_is_online",
+        "documentation": {}
+    },
+    {
         "label": "ProfileInline",
         "kind": 6,
         "importPath": "accounts.admin",
         "description": "accounts.admin",
-        "peekOfCode": "class ProfileInline(admin.StackedInline):\n    model = Profile\n    can_delete = False\n    verbose_name_plural = 'Profile'\n    fk_name = 'user'\nclass CustomUserAdmin(UserAdmin):\n    inlines = (ProfileInline, )\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_experience', 'get_campagne', 'get_role',)\n    list_select_related = ('profile', )\n    def get_experience(self, instance):",
+        "peekOfCode": "class ProfileInline(admin.StackedInline):\n    model = Profile\n    can_delete = False\n    verbose_name_plural = 'Profile'\n    fk_name = 'user'\nclass CustomUserAdmin(UserAdmin):\n    inlines = (ProfileInline, )\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_is_online', 'get_campagne', 'get_role',)\n    list_select_related = ('profile', )\n    def get_is_online(self, instance):",
         "detail": "accounts.admin",
         "documentation": {}
     },
@@ -4530,7 +4587,7 @@
         "kind": 6,
         "importPath": "accounts.admin",
         "description": "accounts.admin",
-        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    inlines = (ProfileInline, )\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_experience', 'get_campagne', 'get_role',)\n    list_select_related = ('profile', )\n    def get_experience(self, instance):\n        return instance.profile.experience\n    get_experience.short_description = 'Experience'\n    def get_campagne(self, instance):\n        return instance.profile.campagne\n    get_campagne.short_description = 'Campagne'",
+        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    inlines = (ProfileInline, )\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_is_online', 'get_campagne', 'get_role',)\n    list_select_related = ('profile', )\n    def get_is_online(self, instance):\n        return instance.profile.is_online\n    get_is_online.short_description = 'is_online'\n    def get_campagne(self, instance):\n        return instance.profile.campagne\n    get_campagne.short_description = 'Campagne'",
         "detail": "accounts.admin",
         "documentation": {}
     },
@@ -4616,6 +4673,24 @@
         "documentation": {}
     },
     {
+        "label": "got_online",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def got_online(sender, user, request, **kwargs):    \n    user.profile.is_online = True\n    user.profile.save()\n@receiver(user_logged_out)\ndef got_offline(sender, user, request, **kwargs):   \n    user.profile.is_online = False\n    user.profile.save()\ndef login_view(request):\n    if request.method == 'POST':\n        username = request.POST['username']",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "got_offline",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def got_offline(sender, user, request, **kwargs):   \n    user.profile.is_online = False\n    user.profile.save()\ndef login_view(request):\n    if request.method == 'POST':\n        username = request.POST['username']\n        password = request.POST['password']\n        user = auth.authenticate(username=username, password=password)\n        if user is not None:\n            auth.login(request, user)",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
         "label": "login_view",
         "kind": 2,
         "importPath": "accounts.views",
@@ -4638,7 +4713,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def logout_view(request):\n    if request.method == 'GET':\n        auth.logout(request)\n        messages.success(request, \"Vous êtes déconnecté.\")\n        return redirect('login')\n    else:\n        return redirect('login')\n@login_required(login_url='/login')\ndef profile(request):\n    # user = request.user",
+        "peekOfCode": "def logout_view(request):\n    if request.method == 'GET':\n        auth.logout(request)\n        messages.success(request, \"Vous êtes déconnecté.\")\n        return redirect('/')\n    else:\n        return redirect('/')\n@login_required\ndef profile(request):\n    # user = request.user",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -4647,7 +4722,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def profile(request):\n    # user = request.user\n    # profile = Profile.objects.get(id=user.pk)\n    profile = Profile.objects.get(user=request.user)\n    context = {\n        'profile': profile\n    }\n    template_name='pages/accounts/profile.html'\n    return render(request, template_name, context)\n@login_required(login_url='/login')",
+        "peekOfCode": "def profile(request):\n    # user = request.user\n    # profile = Profile.objects.get(id=user.pk)\n    profile = Profile.objects.get(user=request.user)\n    context = {\n        'profile': profile\n    }\n    template_name='pages/accounts/profile.html'\n    return render(request, template_name, context)\n@login_required",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -4944,7 +5019,7 @@
         "kind": 2,
         "importPath": "agenda.views",
         "description": "agenda.views",
-        "peekOfCode": "def agenda_view(request):\n    context = {}\n    template_name = 'pages/agendas/agenda_view.html'\n    return render(request, template_name, context)\n@login_required(login_url='/accounts/login/')\ndef agenda_detail(request, agenda_id):\n    context = {}\n    template_name = 'pages/agendas/agenda_detail.html'\n    return render(request, template_name, context)\n@login_required(login_url='/accounts/login/')",
+        "peekOfCode": "def agenda_view(request):\n    context = {}\n    template_name = 'pages/agendas/agenda_view.html'\n    return render(request, template_name, context)\n@login_required\ndef agenda_detail(request, agenda_id):\n    context = {}\n    template_name = 'pages/agendas/agenda_detail.html'\n    return render(request, template_name, context)\n@login_required",
         "detail": "agenda.views",
         "documentation": {}
     },
@@ -4953,7 +5028,7 @@
         "kind": 2,
         "importPath": "agenda.views",
         "description": "agenda.views",
-        "peekOfCode": "def agenda_detail(request, agenda_id):\n    context = {}\n    template_name = 'pages/agendas/agenda_detail.html'\n    return render(request, template_name, context)\n@login_required(login_url='/accounts/login/')\ndef note_view(request):\n    user  = request.user\n    form = NoteForm(request.POST)\n    if request.method == 'POST':\n        if form.is_valid():",
+        "peekOfCode": "def agenda_detail(request, agenda_id):\n    context = {}\n    template_name = 'pages/agendas/agenda_detail.html'\n    return render(request, template_name, context)\n@login_required\ndef note_view(request):\n    user  = request.user\n    form = NoteForm(request.POST)\n    if request.method == 'POST':\n        if form.is_valid():",
         "detail": "agenda.views",
         "documentation": {}
     },
@@ -5484,7 +5559,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_view(request):\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.filter(src=user).filter(lastapp='HangUp').count()\n    cdr_answered_cout = Cdr.objects.all()\n    cdr_no_answer_cout = Cdr.objects.filter(src=user).filter(lastapp='HangUp')\n    cdr_total = Cdr.objects.filter(src=user).count()\n    cdr_list = Cdr.objects.filter(src=user).order_by('-calldate')[:5]\n    # Notes",
+        "peekOfCode": "def dashboard_view(request):\n    # online\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all()\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.filter(src=user).filter(lastapp='HangUp').count()\n    cdr_answered_cout = Cdr.objects.all()\n    cdr_no_answer_cout = Cdr.objects.filter(src=user).filter(lastapp='HangUp')",
         "detail": "dashboard.views",
         "documentation": {}
     },
@@ -5493,7 +5568,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.all().filter(lastapp='HangUp').count()\n    cdr_total = Cdr.objects.all().count()\n    cdr_list = Cdr.objects.all().order_by('-calldate')[:5]\n    cdr_duration = Cdr.objects.all().order_by('-calldate')[:1]\n    # Notes",
+        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.all().filter(lastapp='HangUp').count()\n    cdr_total = Cdr.objects.all().count()\n    cdr_list = Cdr.objects.all().order_by('-calldate')[:5]\n    cdr_duration = Cdr.objects.all().order_by('-calldate')[:1]",
         "detail": "dashboard.views",
         "documentation": {}
     },
@@ -6528,7 +6603,7 @@
         "kind": 2,
         "importPath": "pbx.views",
         "description": "pbx.views",
-        "peekOfCode": "def cdr_detail(request, uniqueid):\n     cdr = Cdr.objects.get(uniqueid=uniqueid)\n     context = {\n          'cdr': cdr\n     }\n     template_name = 'pages/pbx/cdr/cdr_detail.html'\n     return render(request, template_name, context)\n@login_required(login_url='/accounts/login/')\ndef cel_view(request):\n     \"\"\"",
+        "peekOfCode": "def cdr_detail(request, uniqueid):\n     cdr = Cdr.objects.get(uniqueid=uniqueid)\n     context = {\n          'cdr': cdr\n     }\n     template_name = 'pages/pbx/cdr/cdr_detail.html'\n     return render(request, template_name, context)\n@login_required\ndef cel_view(request):\n     \"\"\"",
         "detail": "pbx.views",
         "documentation": {}
     },
@@ -7050,7 +7125,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7059,7 +7134,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7068,7 +7143,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "BOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "BOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7077,7 +7152,34 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_URL",
+        "kind": 5,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "LOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "LOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGOUT_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },

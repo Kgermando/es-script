@@ -43,6 +43,7 @@ class Profile(models.Model):
     experience      = models.TextField(null=True, blank=True)
     adresse         = models.CharField(max_length=100, null=True, blank=True)
     contact_no      = models.CharField(max_length=13, null=True, blank=True)
+    is_online       = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

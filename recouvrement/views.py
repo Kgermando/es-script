@@ -9,7 +9,7 @@ from recouvrement.models import Recouvrement
 from recouvrement.forms import RecouvrementForm
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def recouvrement_add(request):
     """
         Fonction Add new object
@@ -37,7 +37,7 @@ def recouvrement_add(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def recouvrement_list(request): 
     """
         Fonction List objects
@@ -63,7 +63,7 @@ def recouvrement_list(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def recouvrement_view(request, id):  
     """
         Fonction Detail
@@ -78,7 +78,7 @@ def recouvrement_view(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def recouvrement_update(request, id):
     """
         Fonction de Mis à jour
@@ -100,7 +100,7 @@ def recouvrement_update(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def recouvrement_destroy(request, id):
     """
         Fonction de Suppresion

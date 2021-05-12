@@ -13,7 +13,7 @@ from dat.models import Dat
 from dat.forms import DatForm
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def dat_add(request):
     """
         Fonction Add new object
@@ -41,7 +41,7 @@ def dat_add(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dat_list(request): 
     """
         Fonction List objects
@@ -69,7 +69,7 @@ def dat_list(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dat_view(request, id):  
     """
         Fonction Detail
@@ -84,7 +84,7 @@ def dat_view(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dat_update(request, id):
     """
         Fonction de Mis à jour
@@ -106,7 +106,7 @@ def dat_update(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dat_destroy(request, id):
     """
         Fonction de Suppresion

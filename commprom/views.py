@@ -9,7 +9,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from commprom.models import Commprom
 from commprom.forms import CommpromForm
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def commprom_add(request):  
     """
         Fonction Add new object
@@ -36,7 +36,7 @@ def commprom_add(request):
     return render(request, template_name, context)  
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def commprom_list(request): 
     """
         Fonction List objects
@@ -62,7 +62,7 @@ def commprom_list(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def commprom_view(request, id):  
     """
         Fonction Detail
@@ -77,7 +77,7 @@ def commprom_view(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def commprom_update(request, id):
     """
         Fonction de Mis à jour
@@ -98,7 +98,7 @@ def commprom_update(request, id):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def commprom_destroy(request, id):
     """
         Fonction de Suppresion

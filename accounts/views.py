@@ -2,10 +2,22 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.signals import user_logged_in, user_logged_out
+from django.dispatch import receiver    
 
 from accounts.models import Profile
 
 # Create your views here.
+@receiver(user_logged_in)
+def got_online(sender, user, request, **kwargs):    
+    user.profile.is_online = True
+    user.profile.save()
+
+@receiver(user_logged_out)
+def got_offline(sender, user, request, **kwargs):   
+    user.profile.is_online = False
+    user.profile.save()
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -67,12 +79,12 @@ def logout_view(request):
     if request.method == 'GET':
         auth.logout(request)
         messages.success(request, "Vous êtes déconnecté.")
-        return redirect('login')
+        return redirect('/')
     else:
-        return redirect('login')
+        return redirect('/')
 
 
-@login_required(login_url='/login')
+@login_required
 def profile(request):
     # user = request.user
     # profile = Profile.objects.get(id=user.pk)
@@ -85,7 +97,7 @@ def profile(request):
     return render(request, template_name, context)
 
 
-@login_required(login_url='/login')
+@login_required
 def profile_edit(request):
     pk = request.user
     profile = Profile.objects.get(pk=pk)

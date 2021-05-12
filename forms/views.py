@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from forms.models import Kyc
 from forms.forms import KycForm
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def scripting_forms(request):
 
     form = KycForm(request.POST)
@@ -29,7 +29,7 @@ def scripting_forms(request):
     template_name = 'pages/forms/forms_view.html'
     return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def scripting_forms_edit(request, id):
     scripting = Kyc.objects.get(id=id)
     form = KycForm(request.POST)
@@ -51,7 +51,7 @@ def scripting_forms_edit(request, id):
     return render(request, template_name, context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def scripting_list(request):
 
     user = request.user
@@ -73,7 +73,7 @@ def scripting_list(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def enquetes_view(request):
 
     context = {}
