@@ -176,7 +176,7 @@ class Contexts(models.Model):
         db_table = 'contexts'
 
 class Ps_aors(models.Model):
-    id                  = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
+    id                  = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
     max_contacts        = models.PositiveIntegerField(u'max_contacts', choices=MAX_CONTACTS)
     qualify_frequency   = models.PositiveIntegerField(u'Qualites de Frequence', choices=Q_FREQUENCE)
     contact             = models.CharField(max_length=255, null=True, blank=True, db_column='contact')
@@ -203,7 +203,7 @@ class Ps_auths(models.Model):
     '''
         Module auth
     '''
-    id             = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
+    id             = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
     auth_type      = models.CharField(max_length=200, null=True, blank=True, default='userpass')
     nonce_lifetime = models.PositiveIntegerField(blank=True, null=True)
     md5_cred       = models.CharField(max_length=40, blank=True, null=True)
@@ -243,7 +243,7 @@ class Extensions(models.Model):
 
 
 class Endpoints(models.Model):
-    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
+    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
     transport = models.CharField(u'transport', max_length=40, choices=TRANSPORT, null=True)
     aors = models.PositiveIntegerField(unique=True, help_text='101', db_column='aors')
     auth = models.PositiveIntegerField(unique=True, help_text='101', db_column='auth')
@@ -706,7 +706,7 @@ class Sip_conf(models.Model):
     """
         Sip 
     """
-    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
+    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
     name = models.CharField(max_length=15, help_text='Numéro')
     host = models.CharField(max_length=25, default='dynamic',
                             help_text='Liaison à un hôte ou une adresse IP spécifique, ou \'dynamique \'')
@@ -815,7 +815,7 @@ class Sippeers(models.Model):
     """
         Sippeers
     """
-    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
+    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)
     name = models.CharField(max_length=15, help_text='Numéro')
     ipaddr = models.GenericIPAddressField(
         blank=True, null=True, help_text='Addresse IP')
@@ -981,7 +981,7 @@ class Sippeers(models.Model):
 
 
 class VoiceMail(models.Model):
-    id = models.IntegerField(unique=True, primary_key=True,
+    id = models.BigIntegerField(unique=True, primary_key=True,
                              serialize=False, verbose_name='Unique ID', editable=True)
     uniqueid = models.IntegerField(null=True, blank=True)
     context = models.ForeignKey(Contexts, on_delete=models.CASCADE, blank=True, null=True, help_text='le contexte', db_column='context')

@@ -768,6 +768,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -6032,6 +6048,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "pbx.migrations.0004_auto_20210512_1340",
+        "description": "pbx.migrations.0004_auto_20210512_1340",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pbx', '0003_auto_20210508_1159'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='endpoints',\n            name='id',\n            field=models.BigIntegerField(primary_key=True, serialize=False, unique=True, verbose_name='Unique ID'),\n        ),",
+        "detail": "pbx.migrations.0004_auto_20210512_1340",
+        "documentation": {}
+    },
+    {
         "label": "ContextsAdmin",
         "kind": 6,
         "importPath": "pbx.admin",
@@ -6207,7 +6232,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class Ps_aors(models.Model):\n    id                  = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    max_contacts        = models.PositiveIntegerField(u'max_contacts', choices=MAX_CONTACTS)\n    qualify_frequency   = models.PositiveIntegerField(u'Qualites de Frequence', choices=Q_FREQUENCE)\n    contact             = models.CharField(max_length=255, null=True, blank=True, db_column='contact')\n    default_expiration  = models.PositiveIntegerField(null=True, blank=True)\n    minimum_expiration  = models.PositiveIntegerField(null=True, blank=True)\n    remove_existing     = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    authenticate_qualify = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    maximum_expiration  = models.PositiveIntegerField(null=True, blank=True)",
+        "peekOfCode": "class Ps_aors(models.Model):\n    id                  = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    max_contacts        = models.PositiveIntegerField(u'max_contacts', choices=MAX_CONTACTS)\n    qualify_frequency   = models.PositiveIntegerField(u'Qualites de Frequence', choices=Q_FREQUENCE)\n    contact             = models.CharField(max_length=255, null=True, blank=True, db_column='contact')\n    default_expiration  = models.PositiveIntegerField(null=True, blank=True)\n    minimum_expiration  = models.PositiveIntegerField(null=True, blank=True)\n    remove_existing     = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    authenticate_qualify = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    maximum_expiration  = models.PositiveIntegerField(null=True, blank=True)",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6216,7 +6241,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class Ps_auths(models.Model):\n    '''\n        Module auth\n    '''\n    id             = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    auth_type      = models.CharField(max_length=200, null=True, blank=True, default='userpass')\n    nonce_lifetime = models.PositiveIntegerField(blank=True, null=True)\n    md5_cred       = models.CharField(max_length=40, blank=True, null=True)\n    password       = models.CharField(max_length=80)\n    realm          = models.CharField(max_length=40, blank=True, null=True)",
+        "peekOfCode": "class Ps_auths(models.Model):\n    '''\n        Module auth\n    '''\n    id             = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    auth_type      = models.CharField(max_length=200, null=True, blank=True, default='userpass')\n    nonce_lifetime = models.PositiveIntegerField(blank=True, null=True)\n    md5_cred       = models.CharField(max_length=40, blank=True, null=True)\n    password       = models.CharField(max_length=80)\n    realm          = models.CharField(max_length=40, blank=True, null=True)",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6234,7 +6259,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class Endpoints(models.Model):\n    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    transport = models.CharField(u'transport', max_length=40, choices=TRANSPORT, null=True)\n    aors = models.PositiveIntegerField(unique=True, help_text='101', db_column='aors')\n    auth = models.PositiveIntegerField(unique=True, help_text='101', db_column='auth')\n    context = models.ForeignKey(Contexts, on_delete=models.CASCADE, max_length=200, db_column='context')\n    disallow = models.CharField(max_length=200, null=True, blank=True, default='all', choices=ALLOW)\n    allow = models.CharField(max_length=200, null=True, blank=True, default='all', choices=ALLOW)\n    direct_media = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    deny = models.CharField(max_length=95, blank=True, null=True, default='0.0.0.0/0', verbose_name='sous-réseaux interdits')",
+        "peekOfCode": "class Endpoints(models.Model):\n    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    transport = models.CharField(u'transport', max_length=40, choices=TRANSPORT, null=True)\n    aors = models.PositiveIntegerField(unique=True, help_text='101', db_column='aors')\n    auth = models.PositiveIntegerField(unique=True, help_text='101', db_column='auth')\n    context = models.ForeignKey(Contexts, on_delete=models.CASCADE, max_length=200, db_column='context')\n    disallow = models.CharField(max_length=200, null=True, blank=True, default='all', choices=ALLOW)\n    allow = models.CharField(max_length=200, null=True, blank=True, default='all', choices=ALLOW)\n    direct_media = models.CharField(max_length=3, choices=YES_NO, null=True, blank=True)\n    deny = models.CharField(max_length=95, blank=True, null=True, default='0.0.0.0/0', verbose_name='sous-réseaux interdits')",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6342,7 +6367,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class Sip_conf(models.Model):\n    \"\"\"\n        Sip \n    \"\"\"\n    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    name = models.CharField(max_length=15, help_text='Numéro')\n    host = models.CharField(max_length=25, default='dynamic',\n                            help_text='Liaison à un hôte ou une adresse IP spécifique, ou \\'dynamique \\'')\n    nat = models.CharField(max_length=5, default='no',\n                           help_text='Autoriser ou non le travail via NAT', choices=NAT)",
+        "peekOfCode": "class Sip_conf(models.Model):\n    \"\"\"\n        Sip \n    \"\"\"\n    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    name = models.CharField(max_length=15, help_text='Numéro')\n    host = models.CharField(max_length=25, default='dynamic',\n                            help_text='Liaison à un hôte ou une adresse IP spécifique, ou \\'dynamique \\'')\n    nat = models.CharField(max_length=5, default='no',\n                           help_text='Autoriser ou non le travail via NAT', choices=NAT)",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6351,7 +6376,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class Sippeers(models.Model):\n    \"\"\"\n        Sippeers\n    \"\"\"\n    id = models.IntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    name = models.CharField(max_length=15, help_text='Numéro')\n    ipaddr = models.GenericIPAddressField(\n        blank=True, null=True, help_text='Addresse IP')\n    port = models.PositiveIntegerField(\n        blank=True, null=True, help_text='Port de clients non dynamiques')",
+        "peekOfCode": "class Sippeers(models.Model):\n    \"\"\"\n        Sippeers\n    \"\"\"\n    id = models.BigIntegerField(unique=True, primary_key=True, serialize=False, verbose_name='Unique ID', editable=True)\n    name = models.CharField(max_length=15, help_text='Numéro')\n    ipaddr = models.GenericIPAddressField(\n        blank=True, null=True, help_text='Addresse IP')\n    port = models.PositiveIntegerField(\n        blank=True, null=True, help_text='Port de clients non dynamiques')",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6360,7 +6385,7 @@
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
-        "peekOfCode": "class VoiceMail(models.Model):\n    id = models.IntegerField(unique=True, primary_key=True,\n                             serialize=False, verbose_name='Unique ID', editable=True)\n    uniqueid = models.IntegerField(null=True, blank=True)\n    context = models.ForeignKey(Contexts, on_delete=models.CASCADE, blank=True, null=True, help_text='le contexte', db_column='context')\n    mailbox = models.CharField(max_length=80, null=True, blank=True)\n    password = models.CharField(max_length=80, null=True, blank=True)\n    fullname = models.CharField(max_length=80, null=True, blank=True)\n    alias = models.CharField(max_length=80, null=True, blank=True)\n    email = models.CharField(max_length=80, null=True, blank=True)",
+        "peekOfCode": "class VoiceMail(models.Model):\n    id = models.BigIntegerField(unique=True, primary_key=True,\n                             serialize=False, verbose_name='Unique ID', editable=True)\n    uniqueid = models.IntegerField(null=True, blank=True)\n    context = models.ForeignKey(Contexts, on_delete=models.CASCADE, blank=True, null=True, help_text='le contexte', db_column='context')\n    mailbox = models.CharField(max_length=80, null=True, blank=True)\n    password = models.CharField(max_length=80, null=True, blank=True)\n    fullname = models.CharField(max_length=80, null=True, blank=True)\n    alias = models.CharField(max_length=80, null=True, blank=True)\n    email = models.CharField(max_length=80, null=True, blank=True)",
         "detail": "pbx.models",
         "documentation": {}
     },
