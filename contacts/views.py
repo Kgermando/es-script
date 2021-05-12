@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from contacts.models import Contact
 from contacts.forms import ContactForm
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def contact_view(request):
 
     user = request.user
@@ -46,7 +46,7 @@ def contact_view(request):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def upload_csv(request):
 	data = {}
 	if "GET" == request.method:

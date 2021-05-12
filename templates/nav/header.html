@@ -62,6 +62,11 @@
                     </ul>
                 </li>
                 <li class="user-profile header-notification">
+                    {% if user.profile.is_online %}
+                        <span class="badge bg-c-green"></span>
+                    {% else %}
+                        <span class="badge bg-c-red"></span>
+                    {% endif %}
                     <a href="#!" class="waves-effect waves-light">
                         <img src="{{user.profile.profile_picture.url}}" width="80px" height="40px" class="img-radius" >
                         <span>{{user.first_name}} {{user.last_name}}</span>

@@ -16,12 +16,12 @@ class ProfileInline(admin.StackedInline):
 
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline, )
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_experience', 'get_campagne', 'get_role',)
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_is_online', 'get_campagne', 'get_role',)
     list_select_related = ('profile', )
 
-    def get_experience(self, instance):
-        return instance.profile.experience
-    get_experience.short_description = 'Experience'
+    def get_is_online(self, instance):
+        return instance.profile.is_online
+    get_is_online.short_description = 'is_online'
 
     def get_campagne(self, instance):
         return instance.profile.campagne

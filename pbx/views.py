@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from pbx.models import Cdr, Cel
 from pbx.forms import ReportFilterForm
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def cdr_view(request):
      """
           CDR LIst
@@ -29,7 +29,7 @@ def cdr_view(request):
      template_name = 'pages/pbx/cdr/cdr_list.html'
      return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def cdr_detail(request, uniqueid):
      cdr = Cdr.objects.get(uniqueid=uniqueid)
      context = {
@@ -38,7 +38,7 @@ def cdr_detail(request, uniqueid):
      template_name = 'pages/pbx/cdr/cdr_detail.html'
      return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def cel_view(request):
      """
           CEL LIst
@@ -60,7 +60,7 @@ def cel_view(request):
      template_name = 'pages/pbx/cel/cel_list.html'
      return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def cel_detail(request, uniqueid):
      """
           CEL detail

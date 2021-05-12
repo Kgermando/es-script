@@ -17,21 +17,21 @@ from agenda.models import Note
 from agenda.forms import NoteForm
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+@login_required
 def agenda_view(request):
 
     context = {}
     template_name = 'pages/agendas/agenda_view.html'
     return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def agenda_detail(request, agenda_id):
 
     context = {}
     template_name = 'pages/agendas/agenda_detail.html'
     return render(request, template_name, context)
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def note_view(request):
     user  = request.user
     form = NoteForm(request.POST)
@@ -58,7 +58,7 @@ def note_view(request):
     return render(request, template_name, context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def note_detail(request, id):
     note = Note.objects.get(id=id)
 

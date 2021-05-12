@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from pbx.models import Cdr, Cel
 from agenda.models import Note
 from contacts.models import Contact
+from accounts.models import Profile
 
 from acquisition.models import Acquisition
 from commprom.models import Commprom
@@ -29,10 +30,14 @@ statut_8  = 'Faux numéro'
 statut_9  = 'Réfléchir'
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dashboard_view(request):
-    user = request.user
+    
+    # online
+    users_online = Profile.objects.filter(is_online=True).count()
+    user_list = User.objects.all()
 
+    user = request.user
     # report CDR 
     cdr_answered = Cdr.objects.filter(src=user).filter(lastapp='Dial').count()
     cdr_no_answer = Cdr.objects.filter(src=user).filter(lastapp='HangUp').count()
@@ -113,6 +118,8 @@ def dashboard_view(request):
     compte_dormant__9_user = Compte_dormant.objects.filter(user=user).filter(Statut=statut_9).count()
     
     context = {
+        'user_list': user_list,
+        'users_online': users_online,
         'cdr_answered': cdr_answered,
         'cdr_no_answer': cdr_no_answer,
         'cdr_answered_cout' : cdr_answered_cout,
@@ -196,10 +203,11 @@ def dashboard_view(request):
     return render(request, template_name, context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def dashboard_admin_view(request):
 
     user = request.user
+    users_online = Profile.objects.filter(is_online=True).count()
     user_list = User.objects.all().count()
     # report CDR 
     cdr_answered = Cdr.objects.all().filter(lastapp='Dial').count()
@@ -286,6 +294,7 @@ def dashboard_admin_view(request):
 
 
     context = {
+        'users_online': users_online,
         'user_list': user_list,
         'cdr_answered': cdr_answered,
         'cdr_no_answer': cdr_no_answer,

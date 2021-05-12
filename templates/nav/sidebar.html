@@ -5,7 +5,13 @@
     <div class="pcoded-inner-navbar main-menu">
         <div class="">
             <div class="main-menu-header">
+                {% if user.profile.is_online %}
+                <span class="badge bg-c-green"></span>
+                {% else %}
+                <span class="badge bg-c-red"></span>
+                {% endif %}
                 <img class="img-80 img-radius" src="{{user.profile.profile_picture.url}}" height="60px" >
+                
                 <div class="user-details">
                     <span id="more-details">{{user.profile.role}} <{{user.username}}> <i class="fa fa-caret-down"></i></span>
                     <span id="more-details" style="font-weight: 700; color: darkorange;">{{user.profile.campagne}}</span>
