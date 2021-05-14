@@ -1,0 +1,551 @@
+
+; extensions.conf - the Asterisk dial plan
+;
+; Static extension configuration file, used by
+; the pbx_config module. This is where you configure all your
+; inbound and outbound calls in Asterisk.
+;
+; This configuration file is reloaded
+; - With the "dialplan reload" command in the CLI
+; - With the "reload" command (that reloads everything) in the CLI
+
+;
+; The "General" category is for certain variables.
+;
+[general]
+;
+
+;
+static=yes
+;
+; if static=yes and writeprotect=no, you can save dialplan by
+; CLI command "dialplan save" too
+;
+writeprotect=no
+RECDIR=/mnt/record	; Repertoire d'enregistrements
+
+clearglobalvars=no
+
+[globals]
+CONSOLE=Console/dsp				; Console interface for demo
+;CONSOLE=DAHDI/1
+;CONSOLE=Phone/phone0
+IAXINFO=guest					; IAXtel username/password
+;IAXINFO=myuser:mypass
+TRUNK=DAHDI/G2					; Trunk interface
+
+;
+TRUNKMSD=1					; MSD digits to strip (usually 1 or 0)
+;TRUNK=IAX2/user:pass@provider
+
+;
+; Sample entries for extensions.conf
+;
+;
+[dundi-e164-canonical]
+;include => stdexten
+;
+; List canonical entries here
+;
+;exten => 12564286000,1,Gosub(6000,stdexten(IAX2/foo))
+;exten => 12564286000,n,Goto(default,s,1)	; exited Voicemail
+;exten => _125642860XX,1,Dial(IAX2/otherbox/${EXTEN:7})
+
+[dundi-e164-customers]
+;
+; If you are an ITSP or Reseller, list your customers here.
+;
+;exten => _12564286000,1,Dial(SIP/customer1)
+;exten => _12564286001,1,Dial(IAX2/customer2)
+
+[dundi-e164-via-pstn]
+;
+; If you are freely delivering calls to the PSTN, list them here
+;
+;exten => _1256428XXXX,1,Dial(DAHDI/G2/${EXTEN:7}) ; Expose all of 256-428
+;exten => _1256325XXXX,1,Dial(DAHDI/G2/${EXTEN:7}) ; Ditto for 256-325
+
+[dundi-e164-local]
+;
+; Context to put your dundi IAX2 or SIP user in for
+; full access
+;
+include => dundi-e164-canonical
+include => dundi-e164-customers
+include => dundi-e164-via-pstn
+
+[dundi-e164-switch]
+;
+; Just a wrapper for the switch
+;
+switch => DUNDi/e164
+
+[dundi-e164-lookup]
+;
+; Locally to lookup, try looking for a local E.164 solution
+; then try DUNDi if we don't have one.
+;
+include => dundi-e164-local
+include => dundi-e164-switch
+;
+; DUNDi can also be implemented as a Macro instead of using
+; the Local channel driver.
+;
+[macro-dundi-e164]
+;
+
+; an underscore.
+exten => s,1,Goto(${ARG1},1)
+include => dundi-e164-lookup
+
+;
+; Here are the entries you need to participate in the IAXTEL
+; call routing system.  Most IAXTEL numbers begin with 1-700, but
+; there are exceptions.  For more information, and to sign
+; up, please go to www.gnophone.com or www.iaxtel.com
+;
+[iaxtel700]
+exten => _91700XXXXXXX,1,Dial(IAX2/${GLOBAL(IAXINFO)}@iaxtel.com/${EXTEN:1}@iaxtel)
+
+;
+; The SWITCH statement permits a server to share the dialplan with
+; another server. Use with care: Reciprocal switch statements are not
+; allowed (e.g. both A -> B and B -> A), and the switched server needs
+; to be on-line or else dialing can be severly delayed.
+;
+[iaxprovider]
+;switch => IAX2/user:[key]@myserver/mycontext
+
+[trunkint]
+;
+; International long distance through trunk
+;
+exten => _9011.,1,Macro(dundi-e164,${EXTEN:4})
+exten => _9011.,n,Dial(${GLOBAL(TRUNK)}/${FILTER(0-9,${EXTEN:${GLOBAL(TRUNKMSD)}})})
+
+[trunkld]
+;
+; Long distance context accessed through trunk
+;
+exten => _91NXXNXXXXXX,1,Macro(dundi-e164,${EXTEN:1})
+exten => _91NXXNXXXXXX,n,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+
+[trunklocal]
+;
+; Local seven-digit dialing accessed through trunk interface
+;
+exten => _9NXXXXXX,1,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+
+[trunktollfree]
+;
+; Long distance context accessed through trunk interface
+;
+exten => _91800NXXXXXX,1,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+exten => _91888NXXXXXX,1,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+exten => _91877NXXXXXX,1,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+exten => _91866NXXXXXX,1,Dial(${GLOBAL(TRUNK)}/${EXTEN:${GLOBAL(TRUNKMSD)}})
+
+[international]
+;
+; Master context for international long distance
+;
+ignorepat => 9
+include => longdistance
+include => trunkint
+
+[longdistance]
+;
+; Master context for long distance
+;
+ignorepat => 9
+include => local
+include => trunkld
+
+[local]
+;
+; Master context for local, toll-free, and iaxtel calls only
+;
+ignorepat => 9
+include => default
+include => trunklocal
+include => iaxtel700
+include => trunktollfree
+include => iaxprovider
+
+;Include parkedcalls (or the context you define in features conf)
+;to enable call parking.
+include => parkedcalls
+;
+
+[outbound-freenum]
+
+;
+exten => _X*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+exten => _XX*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+exten => _XXX*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+exten => _XXXX*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+exten => _XXXXX*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+exten => _XXXXXX*X!,1,Goto(outbound-freenum2,${EXTEN},1)
+
+[outbound-freenum2]
+; This is the handler which performs the dialing logic. It is called
+; from the [outbound-freenum] context
+;
+exten => _X!,1,Verbose(2,Performing ISN lookup for ${EXTEN})
+same => n,Set(SUFFIX=${CUT(EXTEN,*,2-)})                                ; make sure the suffix is all digits as well
+same => n,GotoIf($["${FILTER(0-9,${SUFFIX})}" != "${SUFFIX}"]?fn-CONGESTION,1)
+                                                                        ; filter out bad characters per the README-SERIOUSLY.best-practices.txt document
+same => n,Set(TIMEOUT(absolute)=10800)
+same => n,Set(isnresult=${ENUMLOOKUP(${EXTEN},sip,,1,freenum.org)})     ; perform our lookup with freenum.org
+same => n,GotoIf($["${isnresult}" != ""]?from)
+same => n,Set(DIALSTATUS=CONGESTION)
+same => n,Goto(fn-CONGESTION,1)
+same => n(from),Set(__SIPFROMUSER=${CALLERID(num)})
+same => n,GotoIf($["${GLOBAL(FREENUMDOMAIN)}" = ""]?dial)               ; check if we set the FREENUMDOMAIN global variable in [global]
+same => n,Set(__SIPFROMDOMAIN=${GLOBAL(FREENUMDOMAIN)})                 ;    if we did set it, then we'll use it for our outbound dialing domain
+same => n(dial),Dial(SIP/${isnresult},40)
+same => n,Goto(fn-${DIALSTATUS},1)
+
+exten => fn-BUSY,1,Busy()
+
+exten => _f[n]-.,1,NoOp(ISN: ${DIALSTATUS})
+same => n,Congestion()
+
+[macro-trunkdial]
+;
+; Standard trunk dial macro (hangs up on a dialstatus that should
+; terminate call)
+;   ${ARG1} - What to dial
+;
+exten => s,1,Dial(${ARG1})
+exten => s,n,Goto(s-${DIALSTATUS},1)
+exten => s-NOANSWER,1,Hangup()
+exten => s-BUSY,1,Hangup()
+exten => _s-.,1,NoOp
+
+[stdexten]
+;
+;
+exten => _X.,50000(stdexten),NoOp(Start stdexten)
+exten => _X.,n,Set(LOCAL(ext)=${EXTEN})
+exten => _X.,n,Set(LOCAL(dev)=${ARG1})
+exten => _X.,n,Set(LOCAL(cntx)=${ARG2})
+exten => _X.,n,Set(LOCAL(mbx)=${ext}${IF($[!${ISNULL(${cntx})}]?@${cntx})})
+exten => _X.,n,Dial(${dev},20)				; Ring the interface, 20 seconds maximum
+exten => _X.,n,Goto(stdexten-${DIALSTATUS},1)		; Jump based on status (NOANSWER,BUSY,CHANUNAVAIL,CONGESTION,ANSWER)
+
+exten => stdexten-NOANSWER,1,VoiceMail(${mbx},u)	; If unavailable, send to voicemail w/ unavail announce
+exten => stdexten-NOANSWER,n,Return()			; If they press #, return to start
+
+exten => stdexten-BUSY,1,VoiceMail(${mbx},b)		; If busy, send to voicemail w/ busy announce
+exten => stdexten-BUSY,n,Return()			; If they press #, return to start
+
+exten => _stde[x]te[n]-.,1,Goto(stdexten-NOANSWER,1)	; Treat anything else as no answer
+
+exten => a,1,VoiceMailMain(${mbx})			; If they press *, send the user into VoicemailMain
+exten => a,n,Return()
+
+[stdPrivacyexten]
+;
+; See above note in stdexten about priority handling on exit.
+;
+exten => _X.,60000(stdPrivacyexten),NoOp(Start stdPrivacyexten)
+exten => _X.,n,Set(LOCAL(ext)=${ARG1})
+exten => _X.,n,Set(LOCAL(dev)=${ARG2})
+exten => _X.,n,Set(LOCAL(dontcntx)=${ARG3})
+exten => _X.,n,Set(LOCAL(tortcntx)=${ARG4})
+exten => _X.,n,Set(LOCAL(cntx)=${ARG5})
+
+exten => _X.,n,Set(LOCAL(mbx)="${ext}"$["${cntx}" ? "@${cntx}" :: ""])
+exten => _X.,n,Dial(${dev},20,p)			; Ring the interface, 20 seconds maximum, call screening
+						; option (or use P for databased call _X.creening)
+exten => _X.,n,Goto(stdexten-${DIALSTATUS},1)		; Jump based on status (NOANSWER,BUSY,CHANUNAVAIL,CONGESTION,ANSWER)
+
+exten => stdexten-NOANSWER,1,VoiceMail(${mbx},u)	; If unavailable, send to voicemail w/ unavail announce
+exten => stdexten-NOANSWER,n,NoOp(Finish stdPrivacyexten NOANSWER)
+exten => stdexten-NOANSWER,n,Return()			; If they press #, return to start
+
+exten => stdexten-BUSY,1,VoiceMail(${mbx},b)		; If busy, send to voicemail w/ busy announce
+exten => stdexten-BUSY,n,NoOp(Finish stdPrivacyexten BUSY)
+exten => stdexten-BUSY,n,Return()			; If they press #, return to start
+
+exten => stdexten-DONTCALL,1,Goto(${dontcntx},s,1)	; Callee chose to send this call to a polite "Don't call again" script.
+
+exten => stdexten-TORTURE,1,Goto(${tortcntx},s,1)	; Callee chose to send this call to a telemarketer torture script.
+
+exten => _stde[x]te[n]-.,1,Goto(stdexten-NOANSWER,1)	; Treat anything else as no answer
+
+exten => a,1,VoiceMailMain(${mbx})		; If they press *, send the user into VoicemailMain
+exten => a,n,Return()
+
+[macro-page]
+;
+; Paging macro:
+;
+;       Check to see if SIP device is in use and DO NOT PAGE if they are
+;
+;   ${ARG1} - Device to page
+
+exten => s,1,ChanIsAvail(${ARG1},s)			; s is for ANY call
+exten => s,n,GotoIf($[${AVAILSTATUS} = "1"]?autoanswer:fail)
+exten => s,n(autoanswer),Set(_ALERT_INFO="RA")			; This is for the PolyComs
+exten => s,n,SIPAddHeader(Call-Info: Answer-After=0)	; This is for the Grandstream, Snoms, and Others
+exten => s,n,NoOp()					; Add others here and Post on the Wiki!!!!
+exten => s,n,Dial(${ARG1})
+exten => s,n(fail),Hangup()
+
+
+[demo]
+include => stdexten
+;
+; We start with what to do when a call first comes in.
+;
+exten => s,1,Wait(1)			; Wait a second, just for fun
+exten => s,n,Answer()			; Answer the line
+exten => s,n,Set(TIMEOUT(digit)=5)	; Set Digit Timeout to 5 seconds
+exten => s,n,Set(TIMEOUT(response)=10)	; Set Response Timeout to 10 seconds
+exten => s,n(restart),BackGround(demo-congrats)	; Play a congratulatory message
+exten => s,n(instruct),BackGround(demo-instruct)	; Play some instructions
+exten => s,n,WaitExten()		; Wait for an extension to be dialed.
+
+exten => 2,1,BackGround(demo-moreinfo)	; Give some more information.
+exten => 2,n,Goto(s,instruct)
+
+exten => 3,1,Set(CHANNEL(language)=fr)		; Set language to french
+exten => 3,n,Goto(s,restart)		; Start with the congratulations
+
+exten => 1000,1,Goto(default,s,1)
+;
+; We also create an example user, 1234, who is on the console and has
+; voicemail, etc.
+;
+exten => 1234,1,Playback(transfer,skip)		; "Please hold while..."
+					; (but skip if channel is not up)
+exten => 1234,n,Gosub(${EXTEN},stdexten(${GLOBAL(CONSOLE)}))
+exten => 1234,n,Goto(default,s,1)		; exited Voicemail
+
+exten => 1235,1,VoiceMail(1234,u)		; Right to voicemail
+
+exten => 1236,1,Dial(Console/dsp)		; Ring forever
+exten => 1236,n,VoiceMail(1234,b)		; Unless busy
+
+;
+; # for when they're done with the demo
+;
+exten => #,1,Playback(demo-thanks)	; "Thanks for trying the demo"
+exten => #,n,Hangup()			; Hang them up.
+
+;
+; A timeout and "invalid extension rule"
+;
+exten => t,1,Goto(#,1)			; If they take too long, give up
+exten => i,1,Playback(invalid)		; "That's not valid, try again"
+
+;
+; Create an extension, 500, for dialing the
+; Asterisk demo.
+;
+exten => 500,1,Playback(demo-abouttotry)	; Let them know what's going on
+exten => 500,n,Dial(IAX2/guest@pbx.digium.com/s@default)	; Call the Asterisk demo
+exten => 500,n,Playback(demo-nogo)	; Couldn't connect to the demo site
+exten => 500,n,Goto(s,6)		; Return to the start over message.
+
+;
+; Create an extension, 600, for evaluating echo latency.
+;
+exten => 600,1,Playback(demo-echotest)	; Let them know what's going on
+exten => 600,n,Echo()			; Do the echo test
+exten => 600,n,Playback(demo-echodone)	; Let them know it's over
+exten => 600,n,Goto(s,6)		; Start over
+
+;
+;	You can use the Macro Page to intercom a individual user
+exten => 76245,1,Macro(page,SIP/Grandstream1)
+; or if your peernames are the same as extensions
+exten => _7XXX,1,Macro(page,SIP/${EXTEN})
+;
+;
+; System Wide Page at extension 7999
+;
+exten => 7999,1,Set(TIMEOUT(absolute)=60)
+exten => 7999,2,Page(Local/Grandstream1@page&Local/Xlite1@page&Local/1234@page/n,d)
+
+; Give voicemail at extension 8500
+;
+exten => 8500,1,VoiceMailMain()
+exten => 8500,n,Goto(s,6)
+
+;
+[page]
+exten => _X.,1,Macro(page,SIP/${EXTEN})
+
+
+[public]
+;
+; ATTENTION: If your Asterisk is connected to the internet and you do
+; not have allowguest=no in sip.conf, everybody out there may use your
+; public context without authentication.  In that case you want to
+; double check which services you offer to the world.
+;
+include => demo
+
+[default]
+;
+; By default we include the demo.  In a production system, you
+; probably don't want to have the demo there.
+;
+include => demo
+
+
+[time]
+exten => _X.,30000(time),NoOp(Time: ${EXTEN} ${timezone})
+exten => _X.,n,Wait(0.25)
+exten => _X.,n,Answer()
+; the amount of delay is set for English; you may need to adjust this time
+; for other languages if there's no pause before the synchronizing beep.
+exten => _X.,n,Set(FUTURETIME=$[${EPOCH} + 12])
+exten => _X.,n,SayUnixTime(${FUTURETIME},Zulu,HNS)
+exten => _X.,n,SayPhonetic(z)
+; use the timezone associated with the extension (sip only), or system-wide
+; default if one hasn't been set.
+exten => _X.,n,SayUnixTime(${FUTURETIME},${timezone},HNS)
+exten => _X.,n,Playback(spy-local)
+exten => _X.,n,WaitUntil(${FUTURETIME})
+exten => _X.,n,Playback(beep)
+exten => _X.,n,Return()
+
+;
+; ANI context: use in the same way as "time" above
+;
+
+[ani]
+exten => _X.,40000(ani),NoOp(ANI: ${EXTEN})
+exten => _X.,n,Wait(0.25)
+exten => _X.,n,Answer()
+exten => _X.,n,Playback(vm-from)
+exten => _X.,n,SayDigits(${CALLERID(ani)})
+exten => _X.,n,Wait(1.25)
+exten => _X.,n,SayDigits(${CALLERID(ani)})	; playback again in case of missed digit
+exten => _X.,n,Return()
+
+; For more information on applications, just type "core show applications" at your
+; friendly Asterisk CLI prompt.
+;
+; "core show application <command>" will show details of how you
+; use that particular application in this file, the dial plan.
+; "core show functions" will list all dialplan functions
+; "core show function <COMMAND>" will show you more information about
+; one function. Remember that function names are UPPER CASE.
+[global]
+exten => 900,1,Goto(ivr_1,s,1)
+
+[crm]
+include => global
+exten => _1[0-8]x,1,Ringing
+exten => _1[0-8]x,2,Wait()
+exten => _1[0-8]x,3,Answer()
+exten => _1[0-8]x,4,Set(CHANNEL(musicclass)=ulaw)
+exten => _1[0-8]x,5,PlayBack(/var/lib/asterisk/sounds/fr/silence/1)
+exten => _1[0-8]x,6,Dial(PJSIP/${EXTEN},30)
+exten => _1[0-8]x,7,Voicemail(${EXTEN}@default)
+exten => _1[0-8]x,8,HangUp()
+
+exten => 199,1,Answer()
+exten => 199,2,VoiceMailMain(${CALLERID(num)}@default)
+
+; # Appel inter context
+exten => _2xx,1,Goto(dept_2, ${EXTEN},1)
+
+[dept_2]
+exten => _2[0-8]X,1,Dial(SIP/${EXTEN},40)
+exten => _2[0-8]X,2,Voicemail(${EXTEN}@dept_2_vm)
+
+exten => 299,1,Answer()
+exten => 299,2,VoiceMailMain(${CALLERID(num)}@dept_2_vm)
+exten => _1XX,1,Goto(local,${EXTEN},1)
+
+[ivr_1]
+exten => s,1,Answer()
+exten => s,2,Set(TIMEOUT(response)=10)
+exten => s,3,agi(googletts.agi,"Bonjour et bienvenue chez NetworkLab !",fr,any)
+exten => s,4,agi(googletts.agi,"Pour joindre Marc Aubert, taper 1.",fr,any)
+exten => s,5,agi(googletts.agi,"Pour joindre Alain Aldric, taper 2.",fr,any)
+exten => s,6,agi(googletts.agi,"Pour joindre Leon Morgan, taper 3.",fr,any)
+exten => s,7,WaitExten()
+
+exten => 1,1,Goto(crm,171,1)
+exten => 2,1,Goto(crm,172,1)
+exten => 3,1,Goto(dept_2,200,1)
+
+exten => _[04-9*#],1,agi(googletts.agi,"Entrée invalide",fr,any)
+exten => _[04-9*#],2,Goto(ivr_1,s,1)
+
+exten => t,1,Goto(ivr_1,s,3)
+
+[mytrunk]
+exten => _NXXXXXXXXX,1,Dial(PJSIP/mytrunk/sip:${EXTEN:1}@192.168.11.100:5060)
+exten => _NXXXXXXXXX,1,Dial(PJSIP/${EXTEN:0}@192.168.11.100,,r)
+exten => _NXXXXXXXXX,1,Dial(PJSIP/${EXTEN:0}@192.168.11.100,,r)
+exten => _NXXXXXXXXX,1,Dial(PJSIP/${EXTEN:0}@192.168.11.100,,r)
+
+[goip-04]
+include => global
+include => crm
+include => mytrunk
+exten => _XXXX,1,Answer()
+exten => _XXXX,n,Dial(PJSIP/${EXTEN},20)
+exten => _XXXX,n,VoiceMail(${EXTEN})
+exten => _XXXX,n,Hangup()
+
+exten => _xxxxxx,1,Dial(PJSIP/${EXTEN:3},20)
+exten => _xxxxxx,n,Hangup()
+
+exten => _xxxxxxxxxx,1,Ringing
+exten => _xxxxxxxxxx,2,Wait()
+exten => _xxxxxxxxxx,3,Answer()
+exten => _xxxxxxxxxx,4,Set(CHANNEL(musicclass)=ulaw)
+exten => _xxxxxxxxxx,5,PlayBack(/var/lib/asterisk/sounds/fr/silence/1)
+exten => _xxxxxxxxxx,6,Dial(PJSIP/${EXTEN},30)
+exten => _xxxxxxxxxx,7,Voicemail(${EXTEN}@default)
+exten => _xxxxxxxxxx,8,HangUp()
+
+exten => _nxxxxxxxxx,1,Dial(PjSIP/${EXTEN}@goip-04)
+exten => _nxxxxxxxxx,n,Hangup()
+
+exten => _0XXXXXXXXX,1, Answer()
+exten => _0XXXXXXXXX,1, Hangup()
+
+exten => _1[0-8]X,1,Dial(SIP/${EXTEN},30)
+exten => _1[0-8]X,2,Voicemail(${EXTEN}@dept_1_vm)
+
+
+exten => _29999,1,VoiceMail(${CALLERID(num)}@default)
+
+[from-internal]
+exten => _9X.,1,Dial(PJSIP/${EXTEN:1}@trunk,60,trU(sub-monitor,s,1)
+exten => _9X.,n,Hangup
+
+[sub-monitor]
+exten => s,1,Noop(**rec to mount**)
+exten => s,n,MixMonitor(${RECDIR}/${UNIQUEID}.wav)
+exten => s,n,Return
+
+
+[testing]
+exten => _1XX,1,NoOp()
+ same => n,Dial(${PJSIP_DIAL_CONTACTS(${EXTEN})})
+ same => n,GotoIf($["${DIALSTATUS}" = "BUSY"]?busy:unavail)
+ same => n(unavail),Voicemail(${EXTEN}@default,u)
+ same => n,Hangup()
+ same => n(busy),VoiceMail(${EXTEN}@default,b)
+ same => n,Hangup()
+
+;Retrieve Voicemail message
+exten => *97,1,NoOp(Retrieve VM from Extension ${CALLERID(number)})
+ same => n,Answer()
+ same => n,VoiceMailMain(${CALLERID(num)}@default)
+
+
+USE asterisk;
+INSERT INTO extensions VALUES (1, 'mycontext', '_8921.', 1, 'Dial', 'SIP/sipnet/${EXTEN}');
+INSERT INTO extensions VALUES (NULL, 'mycontext', '_8911.', 2, 'Dial', 'SIP/sipnet/${EXTEN}');
