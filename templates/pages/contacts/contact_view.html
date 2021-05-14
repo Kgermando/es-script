@@ -37,9 +37,26 @@
             <div class="page-body">
                 {% include 'notifications/_alerts.html' %}
                 <div class="row d-flex justify-content-end mb-4">
-                    <button type="button" class="btn btn-primary">
-                        <a href="{% url 'contacts:upload_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
-                    </button>
+                    <div class="card-block table-border-style">
+                        <form action="{% url 'contacts:upload_contact_csv' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div>
+                                <label for="name">File: </label>
+                                <div>
+                                    <input type="file" name="csv_file" required="True">
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div style="margin-bottom:10px;">
+                                    <button> <span style="margin-right:5px;"></span>Upload file </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <button type="button" class="btn btn-primary">
+                        <a href="{% url 'contacts:upload_contact_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
+                    </button> -->
                     <div class="dropdown ml-2">
                         <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -47,10 +64,10 @@
                         </a>
                 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="">Excel</a>
-                            <a class="dropdown-item" href="">CSV</a>
-                            <a class="dropdown-item" href="#">PDF</a>
-                            <a class="dropdown-item" href="#">JSON</a>
+                            <a class="dropdown-item" href="{% url 'contacts:export_contact_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'contacts:export_contact_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="{% url 'contacts:export_contact_pdf' %}">PDF</a>
+                            <a class="dropdown-item" href="#!">JSON</a>
                         </div>
                     </div>
                 </div>

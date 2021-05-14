@@ -7,7 +7,6 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 import xlwt
 import csv
-from django.http import HttpResponse
 
 from dat.models import Dat
 from dat.forms import DatForm

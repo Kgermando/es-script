@@ -7,6 +7,9 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
+import xlwt
+import csv
+
 from contacts.models import Contact
 from contacts.forms import ContactForm
 # Create your views here.
@@ -47,20 +50,20 @@ def contact_view(request):
 
 
 @login_required
-def upload_csv(request):
+def upload_contact_csv(request):
 	data = {}
 	if "GET" == request.method:
-		return render(request, "pages/contacts/upload_csv.html", data)
+		return render(request, "pages/contacts/upload_contact_csv.html", data)
     # if not GET, then proceed
 	try:
 		csv_file = request.FILES["csv_file"]
 		if not csv_file.name.endswith('.csv'):
 			messages.error(request,'File is not CSV type')
-			return HttpResponseRedirect(reverse("contacts:upload_csv"))
+			return HttpResponseRedirect(reverse("contacts:upload_contact_csv"))
     # if file is too large, return
 		if csv_file.multiple_chunks():
 			messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
-			return HttpResponseRedirect(reverse("contacts:upload_csv"))
+			return HttpResponseRedirect(reverse("contacts:upload_contact_csv"))
 
 		file_data = csv_file.read().decode("utf-8")		
  
@@ -77,7 +80,8 @@ def upload_csv(request):
 			try:
 				form = Contact(data_dict)
 				if form.is_valid():
-					form.save()					
+					form.save()	
+					return HttpResponseRedirect(reverse("contacts:contact_view"))				
 				else:
 					logging.getLogger("error_logger").error(form.errors.as_json())												
 			except Exception as e:
@@ -88,4 +92,59 @@ def upload_csv(request):
 		logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
 		messages.error(request,"Unable to upload file. "+repr(e))
  
-	return HttpResponseRedirect(reverse("contacts:upload_csv"))
+	return HttpResponseRedirect(reverse("contacts:upload_contact_csv"))
+
+
+
+def export_contact_xls(request):
+    user = request.user
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="contact.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Contact')
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+
+    columns = ['Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Téléphone 1', 'Téléphone 2', 
+	'Téléphone 3', 'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque']
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+
+    # Sheet body, remaining rows
+    font_style = xlwt.XFStyle()
+
+    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',
+            'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, row[col_num], font_style)
+
+    wb.save(response)
+    return response
+
+
+def export_contact_csv(request):
+    user = request.user
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="contact.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Téléphone 1', 'Téléphone 2', 
+	'Téléphone 3', 'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'])
+
+    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',
+            'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque')
+    for row in rows:
+        writer.writerow(row)
+
+    return response
+
+def export_contact_pdf(request):
+	pass

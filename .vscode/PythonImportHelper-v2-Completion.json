@@ -2649,14 +2649,6 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "HttpResponseNotFound",
         "importPath": "django.http",
         "description": "django.http",
@@ -3781,11 +3773,44 @@
         "documentation": {}
     },
     {
-        "label": "upload_csv",
+        "label": "upload_contact_csv",
         "importPath": "contacts.views",
         "description": "contacts.views",
         "isExtraImport": true,
         "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_csv",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_xls",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_pdf",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "xlwt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "xlwt",
+        "description": "xlwt",
+        "detail": "xlwt",
         "documentation": {}
     },
     {
@@ -4163,15 +4188,6 @@
         "description": "dat.views",
         "isExtraImport": true,
         "detail": "dat.views",
-        "documentation": {}
-    },
-    {
-        "label": "xlwt",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "xlwt",
-        "description": "xlwt",
-        "detail": "xlwt",
         "documentation": {}
     },
     {
@@ -5467,7 +5483,7 @@
         "kind": 5,
         "importPath": "contacts.urls",
         "description": "contacts.urls",
-        "peekOfCode": "urlpatterns = [\n    path('contact_view/', contact_view, name='contact_view'),\n    path('upload/csv/', upload_csv, name='upload_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('contact_view/', contact_view, name='contact_view'),\n    path('upload/csv/', upload_contact_csv, name='upload_contact_csv'),\n    path('export/xls/', export_contact_xls, name='export_contact_xls'), \n    path('export/csv/', export_contact_csv, name='export_contact_csv'),\n    path('export/pdf/', export_contact_pdf, name='export_contact_pdf'),\n]",
         "detail": "contacts.urls",
         "documentation": {}
     },
@@ -5481,11 +5497,38 @@
         "documentation": {}
     },
     {
-        "label": "upload_csv",
+        "label": "upload_contact_csv",
         "kind": 2,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "def upload_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))",
+        "peekOfCode": "def upload_contact_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_contact_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_xls",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def export_contact_xls(request):\n    user = request.user\n    response = HttpResponse(content_type='application/ms-excel')\n    response['Content-Disposition'] = 'attachment; filename=\"contact.xls\"'\n    wb = xlwt.Workbook(encoding='utf-8')\n    ws = wb.add_sheet('Contact')\n    # Sheet header, first row\n    row_num = 0\n    font_style = xlwt.XFStyle()\n    font_style.font.bold = True",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_csv",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def export_contact_csv(request):\n    user = request.user\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment; filename=\"contact.csv\"'\n    writer = csv.writer(response)\n    writer.writerow(['Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Téléphone 1', 'Téléphone 2', \n\t'Téléphone 3', 'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'])\n    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',\n            'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque')\n    for row in rows:",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "export_contact_pdf",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def export_contact_pdf(request):\n\tpass",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5494,7 +5537,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n    # if file is too large, return",
+        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_contact_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n    # if file is too large, return",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5503,7 +5546,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
+        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5539,7 +5582,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t",
+        "peekOfCode": "\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5548,7 +5591,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:\n\t\tlogging.getLogger(\"error_logger\").error(\"Unable to upload file. \"+repr(e))",
+        "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\n\t\t\t\t\treturn HttpResponseRedirect(reverse(\"contacts:contact_view\"))\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:",
         "detail": "contacts.views",
         "documentation": {}
     },
