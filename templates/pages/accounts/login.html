@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <!-- Authentication card start -->
-
+                {% include 'notifications/_alerts.html' %}
                 <form action="{% url 'login' %}" method="POST" class="md-float-material form-material">
                     {% csrf_token %}
                     <div class="text-center">
