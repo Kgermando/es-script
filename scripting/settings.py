@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.11.102', '*']
+ALLOWED_HOSTS = ['192.168.43.106', '*']
 
 
 # Application definition
@@ -114,11 +114,11 @@ DATABASES_PGSQL = {
 DATABASES_MARIADB = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'asterisk',
+        'NAME': 'root',
         'USER': 'asterisk',
-        'PASSWORD': 'asterisk',
-        'HOST': '192.168.11.103',
-        'PORT': '3306',
+        'PASSWORD': 'gk0838',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
