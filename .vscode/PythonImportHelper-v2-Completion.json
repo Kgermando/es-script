@@ -3805,12 +3805,37 @@
         "documentation": {}
     },
     {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "pisa",
+        "importPath": "xhtml2pdf",
+        "description": "xhtml2pdf",
+        "isExtraImport": true,
+        "detail": "xhtml2pdf",
+        "documentation": {}
+    },
+    {
         "label": "xlwt",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "xlwt",
         "description": "xlwt",
         "detail": "xlwt",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -5528,7 +5553,7 @@
         "kind": 2,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "def export_contact_pdf(request):\n\tpass",
+        "peekOfCode": "def export_contact_pdf(request):\n\tuser = request.user\n\ttemplate_path = 'pages/contacts/export_contact_pdf.html'\n\tcontact_list = Contact.objects.filter(user=user)\n\tcontext = {\n\t\t'contact_list': contact_list\n\t}\n\t# Create a Django response object, and specify content_type as pdf\n\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5592,6 +5617,87 @@
         "importPath": "contacts.views",
         "description": "contacts.views",
         "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\n\t\t\t\t\treturn HttpResponseRedirect(reverse(\"contacts:contact_view\"))\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tuser",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tuser = request.user\n\ttemplate_path = 'pages/contacts/export_contact_pdf.html'\n\tcontact_list = Contact.objects.filter(user=user)\n\tcontext = {\n\t\t'contact_list': contact_list\n\t}\n\t# Create a Django response object, and specify content_type as pdf\n\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download\n\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\ttemplate_path",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\ttemplate_path = 'pages/contacts/export_contact_pdf.html'\n\tcontact_list = Contact.objects.filter(user=user)\n\tcontext = {\n\t\t'contact_list': contact_list\n\t}\n\t# Create a Django response object, and specify content_type as pdf\n\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download\n\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'\n\t# find the template and render it.",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tcontact_list",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tcontact_list = Contact.objects.filter(user=user)\n\tcontext = {\n\t\t'contact_list': contact_list\n\t}\n\t# Create a Django response object, and specify content_type as pdf\n\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download\n\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'\n\t# find the template and render it.\n\ttemplate = get_template(template_path)",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tcontext",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tcontext = {\n\t\t'contact_list': contact_list\n\t}\n\t# Create a Django response object, and specify content_type as pdf\n\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download\n\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'\n\t# find the template and render it.\n\ttemplate = get_template(template_path)\n\thtml = template.render(context)",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tresponse",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tresponse = HttpResponse(content_type='application/pdf')\n\t# If download\n\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'\n\t# find the template and render it.\n\ttemplate = get_template(template_path)\n\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tresponse['Content-Disposition']",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tresponse['Content-Disposition'] = 'attachment; filename=\"contacts.pdf\"'\n\t# find the template and render it.\n\ttemplate = get_template(template_path)\n\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\ttemplate",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\ttemplate = get_template(template_path)\n\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\thtml",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "\tpisa_status",
+        "kind": 5,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
         "detail": "contacts.views",
         "documentation": {}
     },

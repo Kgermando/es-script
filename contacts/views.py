@@ -6,9 +6,11 @@ from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 import xlwt
 import csv
+import logging
 
 from contacts.models import Contact
 from contacts.forms import ContactForm
@@ -146,5 +148,27 @@ def export_contact_csv(request):
 
     return response
 
+
+
 def export_contact_pdf(request):
-	pass
+	user = request.user
+	template_path = 'pages/contacts/export_contact_pdf.html'
+	contact_list = Contact.objects.filter(user=user)
+	context = {
+		'contact_list': contact_list
+	}
+	# Create a Django response object, and specify content_type as pdf
+	response = HttpResponse(content_type='application/pdf')
+	# If download
+	response['Content-Disposition'] = 'attachment; filename="contacts.pdf"'
+
+	# find the template and render it.
+	template = get_template(template_path)
+	html = template.render(context)
+
+	# create a pdf
+	pisa_status = pisa.CreatePDF(html, dest=response)
+	# if error then show some funy view
+	if pisa_status.err:
+		return HttpResponse('We had some errors <pre>' + html + '</pre>')
+	return response
