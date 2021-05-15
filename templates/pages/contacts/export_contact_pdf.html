@@ -35,46 +35,11 @@
         <div class="page-wrapper">
             <!-- Page-body start -->
             <div class="page-body">
-                {% include 'notifications/_alerts.html' %}
-                <div class="row d-flex justify-content-end mb-4">
-                    <div class="card-block table-border-style">
-                        <form action="{% url 'contacts:upload_contact_csv' %}" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div>
-                                <label for="name">File: </label>
-                                <div>
-                                    <input type="file" name="csv_file" required="True">
-                                </div>
-                            </div>
-                            <br>
-                            <div>
-                                <div style="margin-bottom:10px;">
-                                    <button> <span style="margin-right:5px;"></span>Upload file </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- <button type="button" class="btn btn-primary">
-                        <a href="{% url 'contacts:upload_contact_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
-                    </button> -->
-                    <div class="dropdown ml-2">
-                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            REPORTING
-                        </a>
                 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'contacts:export_contact_xls' %}">Excel</a>
-                            <a class="dropdown-item" href="{% url 'contacts:export_contact_csv' %}">CSV</a>
-                            <a class="dropdown-item" href="{% url 'contacts:export_contact_pdf' %}">PDF</a>
-                            <a class="dropdown-item" href="#!">JSON</a>
-                        </div>
-                    </div>
-                </div>
                 <!-- Hover table card start -->
                 <div class="card">
                     <div class="card-header">
-                        <h5>CONTACTS LISTE</h5>
+                        <h5>LISTE DES CONTACTS </h5>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -115,72 +80,6 @@
                                 </thead>
                                 <tbody>
 
-                                    <form method="POST" id="post-form">
-                                        {% csrf_token %}
-                                        <tr>
-                                            <td scope="row">
-                                                {{form.Nom}}
-                                            </td>
-                                            <td>
-                                                {{form.Post_Nom}}
-                                            </td>
-                                            <td>
-                                                {{form.Prenom}}
-                                            </td>
-                                            <td>
-                                                {{form.Numero}}
-                                            </td>
-                                            <td>
-                                                {{form.Rue}}
-                                            </td>
-                                            <td>
-                                                {{form.Quartier}}
-                                            </td>
-                                            <td>
-                                                {{form.Commune}}
-                                            </td>
-                                            <td>
-                                                {{form.Ville}}
-                                            </td>
-                                            <td>
-                                                {{form.Province}}
-                                            </td>
-                                            <td>
-                                                {{form.Tel1}}
-                                            </td>
-                                            <td>
-                                                {{form.Tel2}}
-                                            </td>
-                                            <td>
-                                                {{form.Tel3}}
-                                            </td>
-                                            <td>
-                                                {{form.Email}}
-                                            </td>
-                                            <td>
-                                                {{form.Website}}
-                                            </td>
-                                            <td>
-                                                {{form.Facebook}}
-                                            </td>
-                                            <td>
-                                                {{form.Instagram}}
-                                            </td>
-                                            <td>
-                                                {{form.Twitter}}
-                                            </td>
-                                            <td>
-                                                {{form.LinkedIn}}
-                                            </td>
-                                            <td>
-                                                {{form.Remarque}}
-                                            </td>
-                                            <td>
-                                                <button type="submit" class="btn btn-primary">Soumettre</button>
-                                            </td>
-                                        </tr>
-                                    </form>
-
                                     {% for contact in contact_list %}
                                     <tr>
                                         <td scope="row">{{contact.Nom}}</td>
@@ -209,7 +108,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <!-- Pagination -->
                         <nav class="mb-50">
                             <ul class="pagination justify-content-center">
