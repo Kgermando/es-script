@@ -35,7 +35,7 @@ class Profile(models.Model):
         ('Monsieur', 'Monsieur'),
     )
 
-    profile_picture = models.ImageField(upload_to = 'user-profile/', default='images/user-bg.jpg')
+    profile_picture = models.ImageField(upload_to = 'user-profile/', default='avatar.jpg')
     user            = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     campagne        = models.ForeignKey(Campagne, on_delete=models.CASCADE, max_length=100, null=True, blank=True)
     role            = models.CharField(choices=ROLE_CHOICES, max_length=100, null=True, blank=True)

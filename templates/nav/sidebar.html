@@ -20,8 +20,13 @@
             <div class="main-menu-content">
                 <ul>
                     <li class="more-details">
-                        <a href="{% url 'profile' %}"><i class="ti-user"></i>View Profile</a>
-                        <a href="#!"><i class="ti-settings"></i>Settings</a>
+                        
+                        {% if request.user.is_superuser == True %}
+                            <a href="https://192.168.43.232"><i class="ti-settings"></i>IPBX</a>
+                            <a href="/admin"><i class="bi bi-gear-fill"></i>Admin</a>
+                        {% endif %}
+                            
+                        <a href="{% url 'profile' %}"><i class="ti-user"></i>Mon Profile</a>
                         <a href="{% url 'logout' %}"><i class="ti-layout-sidebar-left"></i>Déconnexion</a>
                     </li>
                 </ul>

@@ -144,6 +144,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -4740,6 +4772,24 @@
         "description": "accounts.migrations.0003_profile_is_online",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0002_auto_20210502_1400'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='profile',\n            name='is_online',\n            field=models.BooleanField(default=False),\n        ),",
         "detail": "accounts.migrations.0003_profile_is_online",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0004_auto_20210516_1704",
+        "description": "accounts.migrations.0004_auto_20210516_1704",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0003_profile_is_online'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='profile',\n            name='profile_picture',\n            field=models.ImageField(default='static/images/avatar.jpg', upload_to='user-profile/'),\n        ),",
+        "detail": "accounts.migrations.0004_auto_20210516_1704",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "accounts.migrations.0005_auto_20210516_1713",
+        "description": "accounts.migrations.0005_auto_20210516_1713",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('accounts', '0004_auto_20210516_1704'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='profile',\n            name='profile_picture',\n            field=models.ImageField(default='avatar.jpg', upload_to='user-profile/'),\n        ),",
+        "detail": "accounts.migrations.0005_auto_20210516_1713",
         "documentation": {}
     },
     {

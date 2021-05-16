@@ -122,11 +122,8 @@ DATABASES_MARIADB = {
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8',
+            'sql_mode': 'traditional',
             'use_unicode': True,
-            'init_command': 'SET '
-                'storage_engine=INNODB,'
-                'character_set_connection=utf8,'
-                'collation_connection=utf8_bin'
         },
     }
 }
