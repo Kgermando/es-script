@@ -15,27 +15,14 @@ import datetime
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
-from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
-
 from pbx.models import (
-    Ps_aors, Ps_auths, Endpoints, Contexts, Extensions, Cdr, Cel,
+    Ps_aors, Ps_auths, Endpoints, Contexts, Extensions,
     IvrDetails, Contacts, AsteriskPublication, Endpoints_id_ips,
     Queue, QueueMember, QueuesConfig, QueueRules, Sip_conf, Sippeers,
     VoiceMail
 )
 
 # Register your models here.
-def cdr_detail(obj):
-    return mark_safe('<a href="{}">View</a>'.format(
-        reverse('pbx:cdr_detail', args=[obj.uniqueid])))
-
-def cdr_pdf(obj):
-    return mark_safe('<a href="{}">PDF</a>'.format(
-        reverse('pbx:cdr_detail', args=[obj.uniqueid])))
-cdr_pdf.allow_tags = True
-cdr_pdf.short_description = 'PDF bill'
-
-
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')
@@ -68,64 +55,6 @@ export_to_csv.short_description = 'Export to CSV'
 
 class ContextsAdmin(admin.ModelAdmin):
     list_display = ('name', 'full_name', 'incoming',)
-
-class CdrAdmin(admin.ModelAdmin):
-    def billsec_norm(obj):
-        return timedelta(seconds=obj.billsec)
-    billsec_norm.short_description = u'Min.'
-
-    def linksrc(self):
-        return u"""<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>""" % (self.accountcode, self.src, self.src)
-    linksrc.allow_tags = True
-    linksrc.short_description = u'Numéro sortant | Filtre'
-
-    def linkdst(self):
-        return u"""%s<a href='?dst=%s'><img style='float: right' src='/media/img/filter.png'></a>""" % (self.dst, self.dst)
-    linkdst.allow_tags = True
-    linkdst.short_description = u'Numéro sortant | Filtre'
-
-    def linkplay(self):
-        if self.recordingfile:
-            return mark_safe("<a href='#' onClick=\"set('/sounds/rec/%s', 'Appel de %s, sur: %s', $(this)); return false;\"><img src='/media/img/play.png' alt='Perdre' /></a>" % (self.recordingfile.name, self.src, self.dst))
-        else:
-            return(u"&nbsp;")
-    linkplay.allow_tags = True
-    # linkplay.short_description = u''
-
-    list_display = ('calldate', linkplay, linksrc, linkdst, 'dcontext', billsec_norm, 'disposition', cdr_detail,)
-    list_filter = (('calldate', PastDateRangeFilter), 'dcontext', )
-    search_fields = ('src','dst',)
-    actions = [export_to_csv]
-
-    ordering = ['-calldate',]
-
-    def get_actions(self, request):
-        """
-            Fonction pour Retirer la barre de suppression
-        """
-        actions = super(CdrAdmin, self).get_actions(request)
-        del actions['delete_selected']
-        return actions
-
-class CelAdmin(admin.ModelAdmin):
-    list_display = ('uniqueid', 'eventtime', 'amaflags',
-                    'context', 'accountcode', 'cid_name', 'exten')
-    search_fields = ('uniqueid', 'exten')
-    list_display_links = ('uniqueid',)
-    list_filter = (('eventtime', PastDateRangeFilter), 'cid_num', 'exten', )
-    ordering = ['-eventtime', ]
-    read_only_list = ('uniqueid', 'eventtime', 'amaflags',
-                      'context', 'accountcode', 'cid_name', 'exten')
-    actions = [export_to_csv]
-
-    def get_actions(self, request):
-        """
-            Retirer la barre de suppression
-        """
-        actions = super(CelAdmin, self).get_actions(request)
-        del actions['delete_selected']
-        return actions
-
 
 class ExtensionsAdmin(admin.ModelAdmin):
     list_display = ('id', 'context', 'exten', 'priority', 'app', 'appdata', )
@@ -192,8 +121,6 @@ admin.site.register(Ps_auths)
 admin.site.register(Endpoints, EndpointsAdmin)
 admin.site.register(Contexts, ContextsAdmin)
 admin.site.register(Extensions, ExtensionsAdmin)
-admin.site.register(Cdr, CdrAdmin)
-admin.site.register(Cel, CelAdmin)
 admin.site.register(IvrDetails)
 admin.site.register(Contacts)
 admin.site.register(AsteriskPublication)

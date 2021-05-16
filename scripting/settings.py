@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'acquisition',
     'recouvrement',
     'renouvellement',
-    'contacts'
+    'contacts',
+    'issabel',
 ]
 
 MIDDLEWARE = [
@@ -114,16 +115,24 @@ DATABASES_PGSQL = {
 DATABASES_MARIADB = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'root',
-        'USER': 'asterisk',
+        'NAME': 'asteriskcdrdb',
+        'USER': 'root',
         'PASSWORD': 'gk0838',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': '192.168.43.232',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8',
+            'use_unicode': True,
+            'init_command': 'SET '
+                'storage_engine=INNODB,'
+                'character_set_connection=utf8,'
+                'collation_connection=utf8_bin'
+        },
     }
 }
 
 
-DATABASES = DATABASES_SQLITE
+DATABASES = DATABASES_MARIADB
 
 
 # Password validation

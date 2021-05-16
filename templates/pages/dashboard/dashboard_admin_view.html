@@ -48,18 +48,18 @@
                                             </div>
                                             <div class="col-8 p-l-0">
                                                 <h5>{{cdr_answered}}</h5>
-                                                <p class="text-muted m-b-0">Appels effectués</p>
+                                                <p class="text-muted m-b-0">ANSWERED</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-telephone-outbound text-c-purple f-24"></i>
+                                                <i class="bi bi-telephone-outbound text-c-red f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{cdr_no_answer}}</h5>
-                                                <p class="text-muted m-b-0">Appels occupés</p>
+                                                <h5>{{cdr_busy}}</h5>
+                                                <p class="text-muted m-b-0">BUSY</p>
                                             </div>
                                         </div>
                                     </div>
@@ -68,22 +68,22 @@
                                     <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-telephone-x text-c-red f-24"></i>
+                                                <i class="bi bi-telephone-x text-c-purple f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>0</h5>
-                                                <p class="text-muted m-b-0">Appels échoués</p>
+                                                <h5>{{cdr_failed}}</h5>
+                                                <p class="text-muted m-b-0">FAILED</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-telephone-plus text-c-blue f-24"></i>
+                                                <i class="bi bi-telephone-x text-c-blue f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{cdr_total}}</h5>
-                                                <p class="text-muted m-b-0">Totals d'appels</p>
+                                                <h5>{{cdr_congestion}}</h5>
+                                                <p class="text-muted m-b-0">CONGESTION</p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,54 +98,51 @@
                                     <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-people-fill text-c-green f-24"></i> 
+                                                <i class="bi bi-telephone-plus text-c-green f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{users_online}}</h5>
-                                                <p class="text-muted m-b-0">Agents Online</p>
+                                                <h5>{{cdr_total}}</h5>
+                                                <p class="text-muted m-b-0">TOTAL APPELS</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="bi bi-people-fill text-c-purple f-24"></i>
+                                                <i class="bi bi-people-fill text-c-green f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>{{ user_list }}</h5>
+                                                <h5>{{ users_online }}</h5>
+                    
+                                                <p class="text-muted m-b-0">AGENTS ONLINE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row align-items-center">
+                                    <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-signal text-c-red f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>0</h5>
+                                                <p class="text-muted m-b-0">IVR</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <i class="fas fa-wifi text-c-blue f-24"></i>
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>100%</h5>
                                                 <p class="text-muted m-b-0">Total Agents</p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row align-items-center">
-                                    <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
-                                        <div class="row align-items-center text-center">
-                                            <div class="col-4 p-r-0">
-                                                <i class="bi bi-hourglass-split text-c-red f-24"></i>
-                                            </div>
-                                            <div class="col-8 p-l-0">
-                                                <h5>0</h5>
-                                                <p class="text-muted m-b-0">File d'attente</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 p-b-20 p-t-20">
-                                        <div class="row align-items-center text-center">
-                                            <div class="col-4 p-r-0">
-                                                <i class="bi bi-stopwatch-fill text-c-blue f-24"></i>
-                                            </div>
-                                            <div class="col-8 p-l-0">
-                                                {% for cdr in cdr_duration %}
-                                                    <h5>{{cdr.billsec_norm}}</h5>
-                                                {% empty %}
-                                                    <h5>0</h5>
-                                                {% endfor %}
-                                                <p class="text-muted m-b-0">Durée du dernier appel</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

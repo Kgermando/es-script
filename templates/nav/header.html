@@ -73,11 +73,19 @@
                         <i class="ti-angle-down"></i>
                     </a>
                     <ul class="show-notification profile-notification">
-                        <li class="waves-effect waves-light">
-                            <a href="#!">
-                                <i class="ti-settings"></i> Settings
-                            </a>
-                        </li>
+                        
+                        {% if request.user.is_superuser == True %}
+                            <li class="waves-effect waves-light">
+                                <a href="https://192.168.43.232" target="_blank">
+                                    <i class="ti-settings"></i> IPBX
+                                </a>
+                            </li>
+                            <li class="waves-effect waves-light">
+                                <a href="/admin" target="_blank">
+                                    <i class="ti-settings"></i> Admin
+                                </a>
+                            </li>
+                        {% endif %}
                         <li class="waves-effect waves-light">
                             <a href="{% url 'profile' %}">
                                 <i class="ti-user"></i> Profile

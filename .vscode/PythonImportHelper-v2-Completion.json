@@ -736,14 +736,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -752,7 +744,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -1081,6 +1073,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1377,6 +1377,22 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -1494,6 +1510,14 @@
         "description": "django.dispatch",
         "isExtraImport": true,
         "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -1769,6 +1793,22 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -2010,6 +2050,14 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -2721,6 +2769,30 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponseNotFound",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
@@ -3202,6 +3274,46 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "importPath": "datetime",
         "description": "datetime",
@@ -3227,38 +3339,6 @@
     },
     {
         "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "time",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -3312,6 +3392,14 @@
         "description": "django.views",
         "isExtraImport": true,
         "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "mark_safe",
+        "importPath": "django.utils.safestring",
+        "description": "django.utils.safestring",
+        "isExtraImport": true,
+        "detail": "django.utils.safestring",
         "documentation": {}
     },
     {
@@ -3684,6 +3772,14 @@
         "documentation": {}
     },
     {
+        "label": "compile",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "csv",
         "kind": 6,
         "isExtraImport": true,
@@ -3864,178 +3960,50 @@
     },
     {
         "label": "Cdr",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
         "label": "Cel",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Ps_aors",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Ps_auths",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Endpoints",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contexts",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Extensions",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
         "label": "Cdr",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
         "label": "Cel",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "IvrDetails",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Contacts",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "AsteriskPublication",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Endpoints_id_ips",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Queue",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "QueueMember",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "QueuesConfig",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "QueueRules",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Sip_conf",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Sippeers",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "VoiceMail",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
         "label": "Cdr",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
         "label": "Cel",
-        "importPath": "pbx.models",
-        "description": "pbx.models",
+        "importPath": "issabel.models",
+        "description": "issabel.models",
         "isExtraImport": true,
-        "detail": "pbx.models",
+        "detail": "issabel.models",
         "documentation": {}
     },
     {
@@ -4248,6 +4216,22 @@
         "documentation": {}
     },
     {
+        "label": "QuerySet",
+        "importPath": "django.db.models.query",
+        "description": "django.db.models.query",
+        "isExtraImport": true,
+        "detail": "django.db.models.query",
+        "documentation": {}
+    },
+    {
+        "label": "smart_str",
+        "importPath": "django.utils.encoding",
+        "description": "django.utils.encoding",
+        "isExtraImport": true,
+        "detail": "django.utils.encoding",
+        "documentation": {}
+    },
+    {
         "label": "smart_str",
         "importPath": "django.utils.encoding",
         "description": "django.utils.encoding",
@@ -4353,6 +4337,14 @@
         "documentation": {}
     },
     {
+        "label": "choice",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
         "label": "randint",
         "importPath": "random",
         "description": "random",
@@ -4369,6 +4361,166 @@
         "documentation": {}
     },
     {
+        "label": "cdr_issabel",
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "isExtraImport": true,
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cel_issabel",
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "isExtraImport": true,
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_issabel_detail",
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "isExtraImport": true,
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cel_issabel_detail",
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "isExtraImport": true,
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "Ps_aors",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Ps_auths",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Endpoints",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contexts",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Extensions",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "IvrDetails",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contacts",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsteriskPublication",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Endpoints_id_ips",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "QueueMember",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "QueuesConfig",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "QueueRules",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sip_conf",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sippeers",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
+        "label": "VoiceMail",
+        "importPath": "pbx.models",
+        "description": "pbx.models",
+        "isExtraImport": true,
+        "detail": "pbx.models",
+        "documentation": {}
+    },
+    {
         "label": "APPS",
         "importPath": "pbx.extensionsApps",
         "description": "pbx.extensionsApps",
@@ -4382,46 +4534,6 @@
         "description": "pbx.extensionsApps",
         "isExtraImport": true,
         "detail": "pbx.extensionsApps",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_view",
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "isExtraImport": true,
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_detail",
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "isExtraImport": true,
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cel_view",
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "isExtraImport": true,
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cel_detail",
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "isExtraImport": true,
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "ReportFilterForm",
-        "importPath": "pbx.forms",
-        "description": "pbx.forms",
-        "isExtraImport": true,
-        "detail": "pbx.forms",
         "documentation": {}
     },
     {
@@ -5724,7 +5836,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_view(request):\n    # online\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all()\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.filter(src=user).filter(lastapp='HangUp').count()\n    cdr_answered_cout = Cdr.objects.all()\n    cdr_no_answer_cout = Cdr.objects.filter(src=user).filter(lastapp='HangUp')",
+        "peekOfCode": "def dashboard_view(request):\n    # online\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all()\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.filter(src=user).filter(disposition='BUSY').count()\n    cdr_failed = Cdr.objects.filter(src=user).filter(disposition='FAILED').count()\n    cdr_congestion = Cdr.objects.filter(src=user).filter(disposition='CONGESTION').count()",
         "detail": "dashboard.views",
         "documentation": {}
     },
@@ -5733,7 +5845,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(lastapp='Dial').count()\n    cdr_no_answer = Cdr.objects.all().filter(lastapp='HangUp').count()\n    cdr_total = Cdr.objects.all().count()\n    cdr_list = Cdr.objects.all().order_by('-calldate')[:5]\n    cdr_duration = Cdr.objects.all().order_by('-calldate')[:1]",
+        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.all().filter(disposition='BUSY').count()\n    cdr_failed = Cdr.objects.all().filter(disposition='FAILED').count()\n    cdr_congestion = Cdr.objects.all().filter(disposition='CONGESTION').count()\n    cdr_total = Cdr.objects.all().count()",
         "detail": "dashboard.views",
         "documentation": {}
     },
@@ -6172,6 +6284,168 @@
     {
         "label": "Migration",
         "kind": 6,
+        "importPath": "issabel.migrations.0001_initial",
+        "description": "issabel.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Cdr',\n            fields=[\n                ('uniqueid', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='Unique ID')),\n                ('calldate', models.DateTimeField()),",
+        "detail": "issabel.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "CdrAdmin",
+        "kind": 6,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "class CdrAdmin(admin.ModelAdmin):\n    def billsec_norm(obj):\n        return timedelta(seconds=obj.billsec)\n    billsec_norm.short_description = u'Min.'\n    def linksrc(self):\n        return u\"\"\"<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.accountcode, self.src, self.src)\n    linksrc.allow_tags = True\n    linksrc.short_description = u'Numéro sortant | Filtre'\n    def linkdst(self):\n        return u\"\"\"%s<a href='?dst=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.dst, self.dst)",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CelAdmin",
+        "kind": 6,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "class CelAdmin(admin.ModelAdmin):\n    list_display = ('uniqueid', 'eventtime', 'amaflags',\n                    'context', 'accountcode', 'cid_name', 'exten')\n    search_fields = ('uniqueid', 'exten')\n    list_display_links = ('uniqueid',)\n    list_filter = (('eventtime', PastDateRangeFilter), 'cid_num', 'exten', )\n    ordering = ['-eventtime', ]\n    read_only_list = ('uniqueid', 'eventtime', 'amaflags',\n                      'context', 'accountcode', 'cid_name', 'exten')\n    actions = [export_to_csv]",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_detail",
+        "kind": 2,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "def cdr_detail(obj):\n    return mark_safe('<a href=\"{}\">View</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ndef cdr_pdf(obj):\n    return mark_safe('<a href=\"{}\">PDF</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ncdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_pdf",
+        "kind": 2,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "def cdr_pdf(obj):\n    return mark_safe('<a href=\"{}\">PDF</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ncdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "export_to_csv",
+        "kind": 2,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "def export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information\n    writer.writerow([field.verbose_name for field in fields])\n    # Write data rows",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_pdf.allow_tags",
+        "kind": 5,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "cdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_pdf.short_description",
+        "kind": 5,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "cdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information\n    writer.writerow([field.verbose_name for field in fields])",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "export_to_csv.short_description",
+        "kind": 5,
+        "importPath": "issabel.admin",
+        "description": "issabel.admin",
+        "peekOfCode": "export_to_csv.short_description = 'Export to CSV'\nclass CdrAdmin(admin.ModelAdmin):\n    def billsec_norm(obj):\n        return timedelta(seconds=obj.billsec)\n    billsec_norm.short_description = u'Min.'\n    def linksrc(self):\n        return u\"\"\"<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.accountcode, self.src, self.src)\n    linksrc.allow_tags = True\n    linksrc.short_description = u'Numéro sortant | Filtre'\n    def linkdst(self):",
+        "detail": "issabel.admin",
+        "documentation": {}
+    },
+    {
+        "label": "IssabelConfig",
+        "kind": 6,
+        "importPath": "issabel.apps",
+        "description": "issabel.apps",
+        "peekOfCode": "class IssabelConfig(AppConfig):\n    name = 'issabel'",
+        "detail": "issabel.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Cdr",
+        "kind": 6,
+        "importPath": "issabel.models",
+        "description": "issabel.models",
+        "peekOfCode": "class Cdr(models.Model):\n    calldate        = models.DateTimeField()\n    clid            = models.CharField(max_length=80, null=False, blank=True)\n    src             = models.CharField(max_length=80, null=False, blank=True)\n    dst             = models.CharField(max_length=80, null=False, blank=True)\n    dcontext        = models.CharField(max_length=80, null=False, blank=True)\n    channel         = models.CharField(max_length=80, null=False, blank=True)\n    dstchannel      = models.CharField(max_length=80, null=False, blank=True)\n    lastapp         = models.CharField(max_length=80, null=False, blank=True)\n    lastdata        = models.CharField(max_length=80, null=False, blank=True)",
+        "detail": "issabel.models",
+        "documentation": {}
+    },
+    {
+        "label": "Cel",
+        "kind": 6,
+        "importPath": "issabel.models",
+        "description": "issabel.models",
+        "peekOfCode": "class Cel(models.Model):\n    \"\"\"\n       SQL CREATE TABLE cel\n    \"\"\"\n    eventtime = models.DateTimeField(auto_now_add=True, blank=True, null=False)\n    eventtype = models.CharField(max_length=80, default='', blank=True, null=False)\n    userdeftype = models.CharField(max_length=80, default='', blank=True, null=False)\n    cid_name = models.CharField(max_length=80, default='', blank=True, null=False)\n    cid_num = models.CharField(max_length=80, default='', blank=True, null=False)\n    cid_ani = models.CharField(max_length=80, default='', blank=True, null=False)",
+        "detail": "issabel.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "issabel.urls",
+        "description": "issabel.urls",
+        "peekOfCode": "app_name = 'issabel'\nurlpatterns = [\n    path('issabel/cdr/', cdr_issabel, name='cdr_issabel'),\n    path('issabel/cdr/<int:uniqueid>/', cdr_issabel_detail, name='cdr_issabel_detail'),\n    path('issabel/cel/', cel_issabel, name='cel_issabel'),\n    path('issabel/cel/<int:uniqueid>/', cel_issabel_detail, name='cel_issabel_detail'),\n]",
+        "detail": "issabel.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "issabel.urls",
+        "description": "issabel.urls",
+        "peekOfCode": "urlpatterns = [\n    path('issabel/cdr/', cdr_issabel, name='cdr_issabel'),\n    path('issabel/cdr/<int:uniqueid>/', cdr_issabel_detail, name='cdr_issabel_detail'),\n    path('issabel/cel/', cel_issabel, name='cel_issabel'),\n    path('issabel/cel/<int:uniqueid>/', cel_issabel_detail, name='cel_issabel_detail'),\n]",
+        "detail": "issabel.urls",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_issabel",
+        "kind": 2,
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "peekOfCode": "def cdr_issabel(request):\n     \"\"\"\n          CDR LIst\n     \"\"\"\n     user = request.user.username\n     cdr = Cdr.objects.filter(src=user).order_by('-calldate')[:10]\n     # cdr_list = Cdr.objects.all()\n     paginator = Paginator(cdr, 10)\n     page = request.GET.get('page')\n     try:",
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cdr_issabel_detail",
+        "kind": 2,
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "peekOfCode": "def cdr_issabel_detail(request, uniqueid):\n    user = request.user\n    cdr = Cdr.objects.filter(src=user).get(uniqueid=uniqueid)\n    context = {\n        'cdr': cdr\n    }\n    template_name = 'pages/pbx/cdr/cdr_detail.html'\n    return render(request, template_name, context)\n@login_required\ndef cel_issabel(request):",
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cel_issabel",
+        "kind": 2,
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "peekOfCode": "def cel_issabel(request):\n    \"\"\"\n        CEL LIst\n    \"\"\"\n    user = request.user\n    cel = Cel.objects.filter(cid_num=user).order_by('-eventtime')[:10]\n    paginator = Paginator(cel, 10)\n    page = request.GET.get('page')\n    try:\n        cel_list = paginator.page(page)",
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "cel_issabel_detail",
+        "kind": 2,
+        "importPath": "issabel.views",
+        "description": "issabel.views",
+        "peekOfCode": "def cel_issabel_detail(request, uniqueid):\n    \"\"\"\n        CEL detail\n    \"\"\"\n    user = request.user\n    cel = Cel.objects.filter(cid_num=user).get(uniqueid=uniqueid)\n    context = {\n        'cel': cel\n    }\n    template_name = 'pages/pbx/cel/cel_detail.html'",
+        "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
         "importPath": "pbx.migrations.0001_initial",
         "description": "pbx.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='AsteriskPublication',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('devicestate_publish', models.CharField(blank=True, max_length=40, null=True)),",
@@ -6179,56 +6453,11 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "pbx.migrations.0002_auto_20210508_1156",
-        "description": "pbx.migrations.0002_auto_20210508_1156",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pbx', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='cdr',\n            name='amaflags',\n            field=models.PositiveIntegerField(choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10)], db_index=True, default=0),\n        ),",
-        "detail": "pbx.migrations.0002_auto_20210508_1156",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "pbx.migrations.0003_auto_20210508_1159",
-        "description": "pbx.migrations.0003_auto_20210508_1159",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pbx', '0002_auto_20210508_1156'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='sip_conf',\n            name='amaflags',\n            field=models.CharField(blank=True, choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10)], default='billing', help_text='indicateurs spéciaux pour contrôler le calcul par défaut', max_length=20, null=True),\n        ),",
-        "detail": "pbx.migrations.0003_auto_20210508_1159",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "pbx.migrations.0004_auto_20210512_1340",
-        "description": "pbx.migrations.0004_auto_20210512_1340",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pbx', '0003_auto_20210508_1159'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='endpoints',\n            name='id',\n            field=models.BigIntegerField(primary_key=True, serialize=False, unique=True, verbose_name='Unique ID'),\n        ),",
-        "detail": "pbx.migrations.0004_auto_20210512_1340",
-        "documentation": {}
-    },
-    {
         "label": "ContextsAdmin",
         "kind": 6,
         "importPath": "pbx.admin",
         "description": "pbx.admin",
-        "peekOfCode": "class ContextsAdmin(admin.ModelAdmin):\n    list_display = ('name', 'full_name', 'incoming',)\nclass CdrAdmin(admin.ModelAdmin):\n    def billsec_norm(obj):\n        return timedelta(seconds=obj.billsec)\n    billsec_norm.short_description = u'Min.'\n    def linksrc(self):\n        return u\"\"\"<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.accountcode, self.src, self.src)\n    linksrc.allow_tags = True\n    linksrc.short_description = u'Numéro sortant | Filtre'",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
-        "label": "CdrAdmin",
-        "kind": 6,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "class CdrAdmin(admin.ModelAdmin):\n    def billsec_norm(obj):\n        return timedelta(seconds=obj.billsec)\n    billsec_norm.short_description = u'Min.'\n    def linksrc(self):\n        return u\"\"\"<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.accountcode, self.src, self.src)\n    linksrc.allow_tags = True\n    linksrc.short_description = u'Numéro sortant | Filtre'\n    def linkdst(self):\n        return u\"\"\"%s<a href='?dst=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.dst, self.dst)",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
-        "label": "CelAdmin",
-        "kind": 6,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "class CelAdmin(admin.ModelAdmin):\n    list_display = ('uniqueid', 'eventtime', 'amaflags',\n                    'context', 'accountcode', 'cid_name', 'exten')\n    search_fields = ('uniqueid', 'exten')\n    list_display_links = ('uniqueid',)\n    list_filter = (('eventtime', PastDateRangeFilter), 'cid_num', 'exten', )\n    ordering = ['-eventtime', ]\n    read_only_list = ('uniqueid', 'eventtime', 'amaflags',\n                      'context', 'accountcode', 'cid_name', 'exten')\n    actions = [export_to_csv]",
+        "peekOfCode": "class ContextsAdmin(admin.ModelAdmin):\n    list_display = ('name', 'full_name', 'incoming',)\nclass ExtensionsAdmin(admin.ModelAdmin):\n    list_display = ('id', 'context', 'exten', 'priority', 'app', 'appdata', )\n    ordering = ['context__name', 'exten', 'priority', ]\n    search_fields = ('=app', 'appdata')\n    list_filter = ('context', 'exten')\n    # list_editable = ('context', 'exten','priority', 'app', 'appdata', )\n    list_display_links = ('id',)\nclass Sip_confAdmin(admin.ModelAdmin):",
         "detail": "pbx.admin",
         "documentation": {}
     },
@@ -6273,25 +6502,7 @@
         "kind": 6,
         "importPath": "pbx.admin",
         "description": "pbx.admin",
-        "peekOfCode": "class QueueAdmin(admin.ModelAdmin):\n    list_display = ('id', 'context', 'musiconhold', 'name',)\nadmin.site.register(Ps_aors)\nadmin.site.register(Ps_auths)\nadmin.site.register(Endpoints, EndpointsAdmin)\nadmin.site.register(Contexts, ContextsAdmin)\nadmin.site.register(Extensions, ExtensionsAdmin)\nadmin.site.register(Cdr, CdrAdmin)\nadmin.site.register(Cel, CelAdmin)\nadmin.site.register(IvrDetails)",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_detail",
-        "kind": 2,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "def cdr_detail(obj):\n    return mark_safe('<a href=\"{}\">View</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ndef cdr_pdf(obj):\n    return mark_safe('<a href=\"{}\">PDF</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ncdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_pdf",
-        "kind": 2,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "def cdr_pdf(obj):\n    return mark_safe('<a href=\"{}\">PDF</a>'.format(\n        reverse('pbx:cdr_detail', args=[obj.uniqueid])))\ncdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)",
+        "peekOfCode": "class QueueAdmin(admin.ModelAdmin):\n    list_display = ('id', 'context', 'musiconhold', 'name',)\nadmin.site.register(Ps_aors)\nadmin.site.register(Ps_auths)\nadmin.site.register(Endpoints, EndpointsAdmin)\nadmin.site.register(Contexts, ContextsAdmin)\nadmin.site.register(Extensions, ExtensionsAdmin)\nadmin.site.register(IvrDetails)\nadmin.site.register(Contacts)\nadmin.site.register(AsteriskPublication)",
         "detail": "pbx.admin",
         "documentation": {}
     },
@@ -6305,29 +6516,11 @@
         "documentation": {}
     },
     {
-        "label": "cdr_pdf.allow_tags",
-        "kind": 5,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "cdr_pdf.allow_tags = True\ncdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_pdf.short_description",
-        "kind": 5,
-        "importPath": "pbx.admin",
-        "description": "pbx.admin",
-        "peekOfCode": "cdr_pdf.short_description = 'PDF bill'\ndef export_to_csv(modeladmin, request, queryset):\n    opts = modeladmin.model._meta\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment;' \\\n                                      'filename={}.csv'.format(opts.verbose_name)\n    writer = csv.writer(response)\n    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]\n    # Write a first row with header information\n    writer.writerow([field.verbose_name for field in fields])",
-        "detail": "pbx.admin",
-        "documentation": {}
-    },
-    {
         "label": "export_to_csv.short_description",
         "kind": 5,
         "importPath": "pbx.admin",
         "description": "pbx.admin",
-        "peekOfCode": "export_to_csv.short_description = 'Export to CSV'\nclass ContextsAdmin(admin.ModelAdmin):\n    list_display = ('name', 'full_name', 'incoming',)\nclass CdrAdmin(admin.ModelAdmin):\n    def billsec_norm(obj):\n        return timedelta(seconds=obj.billsec)\n    billsec_norm.short_description = u'Min.'\n    def linksrc(self):\n        return u\"\"\"<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>\"\"\" % (self.accountcode, self.src, self.src)\n    linksrc.allow_tags = True",
+        "peekOfCode": "export_to_csv.short_description = 'Export to CSV'\nclass ContextsAdmin(admin.ModelAdmin):\n    list_display = ('name', 'full_name', 'incoming',)\nclass ExtensionsAdmin(admin.ModelAdmin):\n    list_display = ('id', 'context', 'exten', 'priority', 'app', 'appdata', )\n    ordering = ['context__name', 'exten', 'priority', ]\n    search_fields = ('=app', 'appdata')\n    list_filter = ('context', 'exten')\n    # list_editable = ('context', 'exten','priority', 'app', 'appdata', )\n    list_display_links = ('id',)",
         "detail": "pbx.admin",
         "documentation": {}
     },
@@ -6413,29 +6606,11 @@
         "documentation": {}
     },
     {
-        "label": "Cdr",
-        "kind": 6,
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "peekOfCode": "class Cdr(models.Model):\n    calldate        = models.DateTimeField()\n    clid            = models.CharField(max_length=80, null=True, blank=True)\n    src             = models.CharField(max_length=80, null=True, blank=True)\n    dst             = models.CharField(max_length=80, null=True, blank=True)\n    dcontext        = models.CharField(max_length=80, null=True, blank=True)\n    channel         = models.CharField(max_length=80, null=True, blank=True)\n    dstchannel      = models.CharField(max_length=80, null=True, blank=True)\n    lastapp         = models.CharField(max_length=80, null=True, blank=True)\n    lastdata        = models.CharField(max_length=80, null=True, blank=True)",
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
         "label": "IvrDetails",
         "kind": 6,
         "importPath": "pbx.models",
         "description": "pbx.models",
         "peekOfCode": "class IvrDetails(models.Model):\n    name = models.CharField(max_length=50, blank=True, null=True)\n    description = models.CharField(max_length=150, blank=True, null=True)\n    announcement = models.IntegerField(blank=True, null=True)\n    directdial = models.CharField(max_length=50, blank=True, null=True)\n    invalid_loops = models.CharField(max_length=10, blank=True, null=True)\n    invalid_retry_recording = models.CharField(max_length=25, blank=True, null=True)\n    invalid_destination = models.CharField(max_length=50, blank=True, null=True)\n    timeout_enabled = models.CharField(max_length=50, blank=True, null=True)\n    invalid_recording = models.CharField(max_length=25, blank=True, null=True)",
-        "detail": "pbx.models",
-        "documentation": {}
-    },
-    {
-        "label": "Cel",
-        "kind": 6,
-        "importPath": "pbx.models",
-        "description": "pbx.models",
-        "peekOfCode": "class Cel(models.Model):\n    \"\"\"\n       SQL CREATE TABLE cel\n    \"\"\"\n    eventtime = models.DateTimeField(auto_now_add=True, blank=True, null=True)\n    eventtype = models.CharField(max_length=80, default='', blank=True, null=True)\n    userdeftype = models.CharField(max_length=80, default='', blank=True, null=True)\n    cid_name = models.CharField(max_length=80, default='', blank=True, null=True)\n    cid_num = models.CharField(max_length=80, default='', blank=True, null=True)\n    cid_ani = models.CharField(max_length=80, default='', blank=True, null=True)",
         "detail": "pbx.models",
         "documentation": {}
     },
@@ -6750,7 +6925,7 @@
         "kind": 5,
         "importPath": "pbx.urls",
         "description": "pbx.urls",
-        "peekOfCode": "app_name = 'pbx'\nurlpatterns = [\n    path('pbx/cdr/', cdr_view, name='cdr_view'),\n    path('pbx/cdr/<int:uniqueid>/', cdr_detail, name='cdr_detail'),\n    path('pbx/cel/', cel_view, name='cel_view'),\n    path('pbx/cel/<int:uniqueid>/', cel_detail, name='cel_detail'),\n]",
+        "peekOfCode": "app_name = 'pbx'\nurlpatterns = [\n    # path('pbx/cdr/', cdr_view, name='cdr_view'),\n    # path('pbx/cdr/<int:uniqueid>/', cdr_detail, name='cdr_detail'),\n    # path('pbx/cel/', cel_view, name='cel_view'),\n    # path('pbx/cel/<int:uniqueid>/', cel_detail, name='cel_detail'),\n]",
         "detail": "pbx.urls",
         "documentation": {}
     },
@@ -6759,44 +6934,8 @@
         "kind": 5,
         "importPath": "pbx.urls",
         "description": "pbx.urls",
-        "peekOfCode": "urlpatterns = [\n    path('pbx/cdr/', cdr_view, name='cdr_view'),\n    path('pbx/cdr/<int:uniqueid>/', cdr_detail, name='cdr_detail'),\n    path('pbx/cel/', cel_view, name='cel_view'),\n    path('pbx/cel/<int:uniqueid>/', cel_detail, name='cel_detail'),\n]",
+        "peekOfCode": "urlpatterns = [\n    # path('pbx/cdr/', cdr_view, name='cdr_view'),\n    # path('pbx/cdr/<int:uniqueid>/', cdr_detail, name='cdr_detail'),\n    # path('pbx/cel/', cel_view, name='cel_view'),\n    # path('pbx/cel/<int:uniqueid>/', cel_detail, name='cel_detail'),\n]",
         "detail": "pbx.urls",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_view",
-        "kind": 2,
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "peekOfCode": "def cdr_view(request):\n     \"\"\"\n          CDR LIst\n     \"\"\"\n     user = request.user.username\n     cdr = Cdr.objects.filter(src=user).order_by('-calldate')[:10]\n     # cdr_list = Cdr.objects.all()\n     paginator = Paginator(cdr, 10)\n     page = request.GET.get('page')\n     try:",
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cdr_detail",
-        "kind": 2,
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "peekOfCode": "def cdr_detail(request, uniqueid):\n     cdr = Cdr.objects.get(uniqueid=uniqueid)\n     context = {\n          'cdr': cdr\n     }\n     template_name = 'pages/pbx/cdr/cdr_detail.html'\n     return render(request, template_name, context)\n@login_required\ndef cel_view(request):\n     \"\"\"",
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cel_view",
-        "kind": 2,
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "peekOfCode": "def cel_view(request):\n     \"\"\"\n          CEL LIst\n     \"\"\"\n     user = request.user\n     cel = Cel.objects.filter(cid_num=user).order_by('-eventtime')[:10]\n     paginator = Paginator(cel, 10)\n     page = request.GET.get('page')\n     try:\n          cel_list = paginator.page(page)",
-        "detail": "pbx.views",
-        "documentation": {}
-    },
-    {
-        "label": "cel_detail",
-        "kind": 2,
-        "importPath": "pbx.views",
-        "description": "pbx.views",
-        "peekOfCode": "def cel_detail(request, uniqueid):\n     \"\"\"\n          CEL detail\n     \"\"\"\n     cel = Cel.objects.get(uniqueid=uniqueid)\n     context = {\n          'cel': cel\n     }\n     template_name = 'pages/pbx/cel/cel_detail.html'\n     return render(request, template_name, context)",
-        "detail": "pbx.views",
         "documentation": {}
     },
     {
@@ -7173,7 +7312,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'root',\n        'USER': 'asterisk',\n        'PASSWORD': 'gk0838',\n        'HOST': 'localhost',\n        'PORT': '',\n    }\n}",
+        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.43.232',\n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7182,7 +7321,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES = DATABASES_SQLITE\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
+        "peekOfCode": "DATABASES = DATABASES_MARIADB\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
         "detail": "scripting.settings",
         "documentation": {}
     },
