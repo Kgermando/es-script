@@ -25,7 +25,7 @@ def cdr_issabel(request):
      context = {
           'cdr_list': cdr_list
      }
-     template_name = 'pages/pbx/cdr/cdr_list.html'
+     template_name = 'pages/issabel/cdr/cdr_list.html'
      return render(request, template_name, context)
 
 @login_required
@@ -35,7 +35,7 @@ def cdr_issabel_detail(request, uniqueid):
     context = {
         'cdr': cdr
     }
-    template_name = 'pages/pbx/cdr/cdr_detail.html'
+    template_name = 'pages/issabel/cdr/cdr_detail.html'
     return render(request, template_name, context)
 
 
@@ -58,7 +58,7 @@ def cel_issabel(request):
     context = {
         'cel_list': cel_list
     }
-    template_name = 'pages/pbx/cel/cel_list.html'
+    template_name = 'pages/issabel/cel/cel_list.html'
     return render(request, template_name, context)
 
 @login_required
@@ -72,6 +72,6 @@ def cel_issabel_detail(request, uniqueid):
     context = {
         'cel': cel
     }
-    template_name = 'pages/pbx/cel/cel_detail.html'
+    template_name = 'pages/issabel/cel/cel_detail.html'
     return render(request, template_name, context)
 

@@ -66,14 +66,14 @@
                                             <th>Disposition</th>
                                             <th>amaflags</th>
                                             <th>Unique id</th>
-                                            <th>Coûts/CDF</th>
+                                            <!-- <th>Coûts/CDF</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
                                 
                                         {% for cdr in cdr_list %}
                                             <tr>
-                                                <th><a href="{% url 'pbx:cdr_detail' cdr.uniqueid %} ">{{cdr.calldate}}</a></th>
+                                                <th><a href="{% url 'issabel:cdr_issabel_detail' cdr.uniqueid %} ">{{cdr.calldate}}</a></th>
                                                 <td>{{cdr.clid}}</td>
                                                 <td>{{cdr.src}}</td>
                                                 <td>{{cdr.dst}}</td>
@@ -83,7 +83,7 @@
                                                 <td>{{cdr.disposition}}</td>
                                                 <td>{{cdr.amaflags}}</td>
                                                 <td>{{cdr.uniqueid}}</td>
-                                                <td>{{cdr.duration_cout}} FC</td>
+                                                <!-- <td>{{cdr.duration_cout}} FC</td> -->
                                             </tr>
                                         {% endfor %}
                                 

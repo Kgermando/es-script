@@ -6471,7 +6471,7 @@
         "kind": 2,
         "importPath": "issabel.views",
         "description": "issabel.views",
-        "peekOfCode": "def cdr_issabel_detail(request, uniqueid):\n    user = request.user\n    cdr = Cdr.objects.filter(src=user).get(uniqueid=uniqueid)\n    context = {\n        'cdr': cdr\n    }\n    template_name = 'pages/pbx/cdr/cdr_detail.html'\n    return render(request, template_name, context)\n@login_required\ndef cel_issabel(request):",
+        "peekOfCode": "def cdr_issabel_detail(request, uniqueid):\n    user = request.user\n    cdr = Cdr.objects.filter(src=user).get(uniqueid=uniqueid)\n    context = {\n        'cdr': cdr\n    }\n    template_name = 'pages/issabel/cdr/cdr_detail.html'\n    return render(request, template_name, context)\n@login_required\ndef cel_issabel(request):",
         "detail": "issabel.views",
         "documentation": {}
     },
@@ -6489,7 +6489,7 @@
         "kind": 2,
         "importPath": "issabel.views",
         "description": "issabel.views",
-        "peekOfCode": "def cel_issabel_detail(request, uniqueid):\n    \"\"\"\n        CEL detail\n    \"\"\"\n    user = request.user\n    cel = Cel.objects.filter(cid_num=user).get(uniqueid=uniqueid)\n    context = {\n        'cel': cel\n    }\n    template_name = 'pages/pbx/cel/cel_detail.html'",
+        "peekOfCode": "def cel_issabel_detail(request, uniqueid):\n    \"\"\"\n        CEL detail\n    \"\"\"\n    user = request.user\n    cel = Cel.objects.filter(cid_num=user).get(uniqueid=uniqueid)\n    context = {\n        'cel': cel\n    }\n    template_name = 'pages/issabel/cel/cel_detail.html'",
         "detail": "issabel.views",
         "documentation": {}
     },

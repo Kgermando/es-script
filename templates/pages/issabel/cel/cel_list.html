@@ -70,7 +70,7 @@
                             
                                     {% for cel in cel_list %}
                                     <tr>
-                                        <th><a href="{% url 'pbx:cel_detail' cel.uniqueid %} ">{{cel.eventtime}}</a>
+                                        <th><a href="{% url 'issabel:cel_issabel_detail' cel.uniqueid %} ">{{cel.eventtime}}</a>
                                         </th>
                                         <td>{{cel.uniqueid}}</td>
                                         <td>{{cel.amaflags}}</td>

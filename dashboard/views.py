@@ -221,7 +221,7 @@ def dashboard_admin_view(request):
     cdr_failed = Cdr.objects.all().filter(disposition='FAILED').count()
     cdr_congestion = Cdr.objects.all().filter(disposition='CONGESTION').count()
     cdr_total = Cdr.objects.all().count()
-    cdr_list = Cdr.objects.all().order_by('-calldate')[:5]
+    cdr_list = Cdr.objects.all().order_by('-calldate')[:5] 
     cdr_duration = Cdr.objects.all().order_by('-calldate')[:1]
 
 

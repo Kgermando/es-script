@@ -119,20 +119,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row align-items-center">
+                                <div class="row align-items-center">
                                     <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="fas fa-signal text-c-red f-24"></i>
+                                                <i class="bi bi-alarm text-c-red f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>0</h5>
-                                                <p class="text-muted m-b-0">IVR</p>
+                                                {% for time in cdr_duration %}
+                                                  <h5>{{time.billsec_norm}} </h5>  
+                                                {% endfor %}
+                                                <p class="text-muted m-b-0">DERNIER APPEL</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
-                                        <div class="row align-items-center text-center">
+                                        <!-- <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
                                                 <i class="fas fa-wifi text-c-blue f-24"></i>
                                             </div>
@@ -140,9 +142,9 @@
                                                 <h5>100%</h5>
                                                 <p class="text-muted m-b-0">Total Agents</p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,7 +183,7 @@
                         
                         <div class="card table-card">
                             <div class="card-header">
-                                <h5>STATUT SCRIPTING</h5>
+                                <h5>STATUTS KPIs</h5>
                                 <div class="card-header-right">
                                     <ul class="list-unstyled card-option">
                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>
