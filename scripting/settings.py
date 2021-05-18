@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Extern Apps
     'daterangefilter',
     'bootstrap_datepicker_plus',
+    'bootstrap_modal_forms',
 
     # My Apps
     'accounts',
@@ -118,7 +119,7 @@ DATABASES_MARIADB = {
         'NAME': 'asteriskcdrdb',
         'USER': 'root',
         'PASSWORD': 'gk0838',
-        'HOST': '192.168.43.232',
+        'HOST': '192.168.11.108',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8',
@@ -129,7 +130,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_MARIADB
+DATABASES = DATABASES_SQLITE
 
 
 # Password validation

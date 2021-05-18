@@ -91,55 +91,45 @@
                                                 Permettez-moi de vérifier vos coordonnées (KYC)
                                             </p>
                                             <div class="container">
-                                                <div class="pl-4">
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Nom" name="Nom" class="form-control" placeholder="Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Post_Nom" name="Post_Nom" class="form-control" placeholder="Post Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Prenom" name="Prenom" class="form-control" placeholder="Prénom">
+                                            
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-default">
+                                                            <label class="col col-form-label">Selectionnez le Contact</label>
+                                                            {{form.Contact}}
                                                         </div>
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Numero" name="Numero" class="form-control" placeholder="N°">
+                                                    <div class="col-md-6">
+                                                        
+
+                                                        <div id="modal-btn" class="button">Click Here</div>
+                                                        
+                                                        <div id="my-modal" class="modal">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <span class="close">&times;</span>
+                                                                    <h2>Modal Header</h2>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>This is my modal</p>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus nisi, sunt consectetur ipsa
+                                                                        velit
+                                                                        repudiandae aperiam modi quisquam nihil nam asperiores doloremque mollitia dolor deleniti quibusdam nemo
+                                                                        commodi ab.
+                                                                    </p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button>hell</button>
+                                                                    <h3>Modal Footer</h3>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Rue" name="Rue" class="form-control"
-                                                                placeholder="Rue">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Quartier" name="Quartier" class="form-control"
-                                                                placeholder="Quartier">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Commune" name="Commune" class="form-control" placeholder="Commune">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Ville" name="Ville" class="form-control" placeholder="Ville">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <!-- <label>Province</label> -->
-                                                            {{form.Province}}
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <input type="text" id="Tel1" name="Tel1" class="form-control" placeholder="Téléphone">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                          <input type="email" id="Email" name="Email" class="form-control" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-12">
-                                                            <input type="text" id="Remarque" name="Remarque" class="form-control" placeholder="Remarque">
-                                                        </div>
+                                                        
+
                                                     </div>
                                                 </div>
+                                            
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -234,59 +224,7 @@
                                             </p>
                                             <div class="container">
                                                 <div class="pl-4">
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Nom" name="Nom" class="form-control" placeholder="Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Post_Nom" name="Post_Nom" class="form-control"
-                                                                placeholder="Post_Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Prenom" name="Prenom" class="form-control"
-                                                                placeholder="Prénom">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Numero" name="Numero" class="form-control"
-                                                                placeholder="N°">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Rue" name="Rue" class="form-control"
-                                                                placeholder="Rue">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Quartier" name="Quartier" class="form-control"
-                                                                placeholder="Quartier">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Commune" name="Commune" class="form-control"
-                                                                placeholder="Commune">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Ville" name="Ville" class="form-control" placeholder="Ville">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <!-- <label>Province</label> -->
-                                                            {{form.Province}}
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <input type="text" id="Tel1" name="Tel1" class="form-control"
-                                                                placeholder="Téléphone">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <input type="email" id="Email" name="Email" class="form-control"
-                                                                placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-12">
-                                                            <input type="text" id="Remarque" name="Remarque" class="form-control" placeholder="Remarque">
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -332,3 +270,5 @@
 {% include 'pages/dat/dat_js.html' %}
 
 {% endblock content %}
+
+

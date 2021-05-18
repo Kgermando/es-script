@@ -2409,22 +2409,6 @@
         "documentation": {}
     },
     {
-        "label": "PROVINCES",
-        "importPath": "forms.province",
-        "description": "forms.province",
-        "isExtraImport": true,
-        "detail": "forms.province",
-        "documentation": {}
-    },
-    {
-        "label": "PROVINCES",
-        "importPath": "forms.province",
-        "description": "forms.province",
-        "isExtraImport": true,
-        "detail": "forms.province",
-        "documentation": {}
-    },
-    {
         "label": "STATUTS",
         "importPath": "forms.statut",
         "description": "forms.statut",
@@ -2657,14 +2641,6 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponseNotFound",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -2698,6 +2674,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -3282,6 +3266,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
@@ -3524,14 +3516,6 @@
     },
     {
         "label": "PastDateRangeFilter",
-        "importPath": "daterangefilter.filters",
-        "description": "daterangefilter.filters",
-        "isExtraImport": true,
-        "detail": "daterangefilter.filters",
-        "documentation": {}
-    },
-    {
-        "label": "FutureDateRangeFilter",
         "importPath": "daterangefilter.filters",
         "description": "daterangefilter.filters",
         "isExtraImport": true,
@@ -3853,6 +3837,22 @@
         "documentation": {}
     },
     {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
+        "documentation": {}
+    },
+    {
         "label": "PAYS",
         "importPath": "forms.pays",
         "description": "forms.pays",
@@ -4063,14 +4063,6 @@
         "documentation": {}
     },
     {
-        "label": "BOUND",
-        "importPath": "dat.models",
-        "description": "dat.models",
-        "isExtraImport": true,
-        "detail": "dat.models",
-        "documentation": {}
-    },
-    {
         "label": "Dat",
         "importPath": "dat.models",
         "description": "dat.models",
@@ -4140,23 +4132,6 @@
         "description": "renouvellement.models",
         "isExtraImport": true,
         "detail": "renouvellement.models",
-        "documentation": {}
-    },
-    {
-        "label": "bootstrap_datepicker_plus",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "bootstrap_datepicker_plus",
-        "description": "bootstrap_datepicker_plus",
-        "detail": "bootstrap_datepicker_plus",
-        "documentation": {}
-    },
-    {
-        "label": "DatePickerInput",
-        "importPath": "bootstrap_datepicker_plus",
-        "description": "bootstrap_datepicker_plus",
-        "isExtraImport": true,
-        "detail": "bootstrap_datepicker_plus",
         "documentation": {}
     },
     {
@@ -6030,7 +6005,7 @@
         "kind": 6,
         "importPath": "dat.admin",
         "description": "dat.admin",
-        "peekOfCode": "class DatAdmin(admin.ModelAdmin):\n    list_display = (\n        'user', 'created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', \n        'Tel1', 'Email', 'Statut', 'Bound', 'Remarque'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter), \n        'user', 'Statut', 'Bound'\n    )\n    actions = [export_to_csv]",
+        "peekOfCode": "class DatAdmin(admin.ModelAdmin):\n    list_display = (\n        'user', 'created_date', 'questions1', 'questions2', 'Statut', 'Bound'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter), \n        'user', 'Statut', 'Bound'\n    )\n    actions = [export_to_csv]\n    ordering = ['-created_date',]",
         "detail": "dat.admin",
         "documentation": {}
     },
@@ -6048,7 +6023,7 @@
         "kind": 5,
         "importPath": "dat.admin",
         "description": "dat.admin",
-        "peekOfCode": "export_to_csv.short_description = 'Export to CSV'\nclass DatAdmin(admin.ModelAdmin):\n    list_display = (\n        'user', 'created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', \n        'Tel1', 'Email', 'Statut', 'Bound', 'Remarque'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter), \n        'user', 'Statut', 'Bound'\n    )",
+        "peekOfCode": "export_to_csv.short_description = 'Export to CSV'\nclass DatAdmin(admin.ModelAdmin):\n    list_display = (\n        'user', 'created_date', 'questions1', 'questions2', 'Statut', 'Bound'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter), \n        'user', 'Statut', 'Bound'\n    )\n    actions = [export_to_csv]",
         "detail": "dat.admin",
         "documentation": {}
     },
@@ -6066,7 +6041,7 @@
         "kind": 6,
         "importPath": "dat.forms",
         "description": "dat.forms",
-        "peekOfCode": "class DatForm(forms.ModelForm):\n    class Meta:\n        model = Dat\n        fields = (\n            'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', \n            'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province',\n            'Tel1','Email', 'Statut', 'Bound', 'Remarque',\n        ) \n    questions1 = forms.CharField(\n        label='',",
+        "peekOfCode": "class DatForm(forms.ModelForm):\n    class Meta:\n        model = Dat\n        fields = (\n            'questions1', 'questions2', 'Contact', 'Statut', 'Bound',\n        ) \n    questions1 = forms.CharField(\n        label='',\n        required=True,\n        widget=forms.TextInput(",
         "detail": "dat.forms",
         "documentation": {}
     },
@@ -6075,7 +6050,7 @@
         "kind": 6,
         "importPath": "dat.models",
         "description": "dat.models",
-        "peekOfCode": "class Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Nom              = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Post_Nom         = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Prenom           = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Numero           = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')\n    Rue              = models.CharField(max_length=100, null=True, blank=True, default='-')",
+        "peekOfCode": "class Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ManyToManyField(Contact)\n    Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)\n    Bound            = models.CharField(max_length=20, null=True)\n    def __str__(self):\n        return self.Nom",
         "detail": "dat.models",
         "documentation": {}
     },
@@ -6084,7 +6059,7 @@
         "kind": 5,
         "importPath": "dat.models",
         "description": "dat.models",
-        "peekOfCode": "BOUND = (\n    ('OUTBOUND', 'OUTBOUND'),\n    ('INBOUND', 'INBOUND'),\n)\nclass Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Nom              = models.CharField(max_length=100, null=True, blank=True, default='-')",
+        "peekOfCode": "BOUND = (\n    ('OUTBOUND', 'OUTBOUND'),\n    ('INBOUND', 'INBOUND'),\n)\nclass Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ManyToManyField(Contact)",
         "detail": "dat.models",
         "documentation": {}
     },
@@ -7362,7 +7337,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.43.232',\n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
+        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.11.108',\n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7371,7 +7346,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES = DATABASES_MARIADB\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
+        "peekOfCode": "DATABASES = DATABASES_SQLITE\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
         "detail": "scripting.settings",
         "documentation": {}
     },

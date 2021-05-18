@@ -1,6 +1,8 @@
 from django.contrib import admin
-
-from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
+from django.http import HttpResponse
+from datetime import datetime
+import csv
+from daterangefilter.filters import PastDateRangeFilter
 
 from dat.models import Dat
 # Register your models here.
@@ -34,8 +36,7 @@ export_to_csv.short_description = 'Export to CSV'
 
 class DatAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 'created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', 
-        'Tel1', 'Email', 'Statut', 'Bound', 'Remarque'
+        'user', 'created_date', 'questions1', 'questions2', 'Statut', 'Bound'
     )
 
     list_filter = (

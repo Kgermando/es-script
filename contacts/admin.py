@@ -2,7 +2,7 @@ from django.contrib import admin
 import operator
 from re import compile
 from django.db import models
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponse
+from django.http import HttpResponse, HttpResponse
 from datetime import datetime, timedelta
 import csv
 from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
