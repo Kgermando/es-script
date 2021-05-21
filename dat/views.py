@@ -11,6 +11,8 @@ import csv
 from dat.models import Dat
 from dat.forms import DatForm
 
+from contacts.forms import ContactForm
+
 # Create your views here.
 @login_required
 def dat_add(request):
@@ -32,12 +34,25 @@ def dat_add(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = DatForm()
+
+    formContact = ContactForm(request.POST)
+    if request.method == 'POST':
+        if formContact.is_valid():
+            contact = formContact.save(commit=False)
+            contact.user = request.user
+            contact.save()
+            messages.success(request, "Contact enregistrées!")
+            # redirect to a new URL:
+            # return HttpResponseRedirect(reverse('contacts:contact_view'))
+        else:
+            formContact = ContactForm()
+
     context = {
-        'form': form
+        'form': form,
+        'formContact': formContact
     }
     template_name = 'pages/dat/dat_add.html'
     return render(request, template_name, context)
-
 
 
 @login_required

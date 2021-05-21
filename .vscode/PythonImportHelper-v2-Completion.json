@@ -656,6 +656,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -3975,6 +3991,14 @@
         "documentation": {}
     },
     {
+        "label": "ContactForm",
+        "importPath": "contacts.forms",
+        "description": "contacts.forms",
+        "isExtraImport": true,
+        "detail": "contacts.forms",
+        "documentation": {}
+    },
+    {
         "label": "dashboard_view",
         "importPath": "dashboard.views",
         "description": "dashboard.views",
@@ -6001,6 +6025,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "dat.migrations.0015_auto_20210521_1256",
+        "description": "dat.migrations.0015_auto_20210521_1256",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('contacts', '0001_initial'),\n        ('dat', '0014_auto_20210506_0940'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='dat',\n            name='Commune',\n        ),",
+        "detail": "dat.migrations.0015_auto_20210521_1256",
+        "documentation": {}
+    },
+    {
         "label": "DatAdmin",
         "kind": 6,
         "importPath": "dat.admin",
@@ -6257,7 +6290,7 @@
         "kind": 5,
         "importPath": "forms.statut",
         "description": "forms.statut",
-        "peekOfCode": "STATUTS = (\n    ('Statuts de reporting', 'Statuts de reporting'),\n    ('Accord', 'Accord'),\n    ('Déjà payé son crédit', 'Déjà payé son crédit'),\n    ('Refus', 'Refus'),\n    ('Rappel', 'Rappel (interlocuteur demande de rappeler)'),\n    ('Injoignable', 'Injoignable'),\n    ('Absent', 'Absent'),\n    ('Faux numéro', 'Faux numéro'),\n    ('Réfléchir', 'Réfléchir'),",
+        "peekOfCode": "STATUTS = (\n    ('---------', '--------------'),\n    ('Accord', 'Accord'),\n    ('Déjà payé son crédit', 'Déjà payé son crédit'),\n    ('Refus', 'Refus'),\n    ('Rappel', 'Rappel (interlocuteur demande de rappeler)'),\n    ('Injoignable', 'Injoignable'),\n    ('Absent', 'Absent'),\n    ('Faux numéro', 'Faux numéro'),\n    ('Réfléchir', 'Réfléchir'),",
         "detail": "forms.statut",
         "documentation": {}
     },

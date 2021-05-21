@@ -1,6 +1,6 @@
 
 STATUTS = (
-    ('Statuts de reporting', 'Statuts de reporting'),
+    ('---------', '--------------'),
     ('Accord', 'Accord'),
     ('Déjà payé son crédit', 'Déjà payé son crédit'),
     ('Refus', 'Refus'),
