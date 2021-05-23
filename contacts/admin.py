@@ -39,12 +39,19 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = (
         'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville',
         'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',
-        'Twitter', 'LinkedIn', 'Remarque', 'created_date'
+        'Twitter', 'LinkedIn', 'Remarque', 'created_date', 'user'
+    )
+
+    search_fields = (
+        'Nom', 'Post_Nom', 'Prenom', 'Tel1', 'Tel2', 'Email', 'Province',
     )
 
     list_filter = (
         ('created_date', PastDateRangeFilter),
+        'Province',
     )
+
+
 
     actions = [export_to_csv]
 

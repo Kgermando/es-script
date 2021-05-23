@@ -69,7 +69,7 @@
                     {% endif %}
                     <a href="#!" class="waves-effect waves-light">
                         <img src="{{user.profile.profile_picture.url}}" width="80px" height="40px" class="img-radius" >
-                        <span>{{user.first_name}} {{user.last_name}}</span>
+                        <span>{{user.first_name | capfirst}} {{user.last_name| capfirst}}</span>
                         <i class="ti-angle-down"></i>
                     </a>
                     <ul class="show-notification profile-notification">

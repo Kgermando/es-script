@@ -1,7 +1,7 @@
 
 
 PROVINCES = (
-    ('--------', '--------'),
+    # ('--------', '--------'),
     ('Bas-Uele', 'Bas-Uele'),
     ('Équateur', 'Équateur'),
     ('Haut-Katanga', 'Haut-Katanga'),

@@ -50,6 +50,23 @@ def contact_view(request):
     return render(request, template_name, context)
 
 
+def kyc_view(request):
+    formContact = ContactForm(request.POST)
+    if request.method == 'POST':
+        if formContact.is_valid():
+            contact = formContact.save(commit=False)
+            contact.user = request.user
+            contact.save()
+            # messages.success(request, "Contact enregistrées!")
+            return JsonResponse({'contact': 'success'})
+    #     else:
+    #         formContact = ContactForm()
+    # context = {
+    #     'form': form,
+    #     'formContact': formContact
+    # }
+
+
 
 @login_required
 def upload_contact_csv(request):

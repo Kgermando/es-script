@@ -14,10 +14,9 @@ class Dat(models.Model):
     created_date     = models.DateTimeField(auto_now_add=True)
     questions1       = models.CharField(max_length=200, null=True, default='-')
     questions2       = models.CharField(max_length=200, null=True, default='-')
-    Contact          = models.ManyToManyField(Contact)
+    Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)
     Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)
     Bound            = models.CharField(max_length=20, null=True)
 
     def __str__(self):
-        return self.Nom
-
+        return self.Statut

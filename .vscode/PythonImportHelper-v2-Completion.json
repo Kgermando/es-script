@@ -200,142 +200,6 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -361,62 +225,6 @@
     },
     {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -576,127 +384,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -832,6 +520,174 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -896,6 +752,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -921,6 +793,22 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -2537,14 +2425,6 @@
         "documentation": {}
     },
     {
-        "label": "STATUTS",
-        "importPath": "forms.statut",
-        "description": "forms.statut",
-        "isExtraImport": true,
-        "detail": "forms.statut",
-        "documentation": {}
-    },
-    {
         "label": "acquisition_add",
         "importPath": "acquisition.views",
         "description": "acquisition.views",
@@ -2714,6 +2594,14 @@
     },
     {
         "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -3949,6 +3837,14 @@
         "documentation": {}
     },
     {
+        "label": "kyc_view",
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "isExtraImport": true,
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
         "label": "get_template",
         "importPath": "django.template.loader",
         "description": "django.template.loader",
@@ -4963,6 +4859,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "acquisition.migrations.0002_auto_20210522_0726",
+        "description": "acquisition.migrations.0002_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('acquisition', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='acquisition',\n            name='Statut',\n            field=models.CharField(choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], max_length=30, null=True),\n        ),",
+        "detail": "acquisition.migrations.0002_auto_20210522_0726",
+        "documentation": {}
+    },
+    {
         "label": "AcquisitionConfig",
         "kind": 6,
         "importPath": "acquisition.apps",
@@ -5359,6 +5264,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "commprom.migrations.0008_auto_20210522_0726",
+        "description": "commprom.migrations.0008_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('commprom', '0007_auto_20210506_0952'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='commprom',\n            name='Statut',\n            field=models.CharField(choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], max_length=30, null=True),\n        ),",
+        "detail": "commprom.migrations.0008_auto_20210522_0726",
+        "documentation": {}
+    },
+    {
         "label": "CommpromAdmin",
         "kind": 6,
         "importPath": "commprom.admin",
@@ -5494,6 +5408,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "comptedormant.migrations.0004_auto_20210522_0726",
+        "description": "comptedormant.migrations.0004_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('comptedormant', '0003_compte_dormant_raison'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='compte_dormant',\n            name='Statut',\n            field=models.CharField(choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], max_length=30, null=True),\n        ),",
+        "detail": "comptedormant.migrations.0004_auto_20210522_0726",
+        "documentation": {}
+    },
+    {
         "label": "Compte_dormantAdmin",
         "kind": 6,
         "importPath": "comptedormant.admin",
@@ -5624,7 +5547,7 @@
         "kind": 6,
         "importPath": "contacts.admin",
         "description": "contacts.admin",
-        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\n        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville',\n        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',\n        'Twitter', 'LinkedIn', 'Remarque', 'created_date'\n    )\n    list_filter = (\n        ('created_date', PastDateRangeFilter),\n    )\n    actions = [export_to_csv]",
+        "peekOfCode": "class ContactAdmin(admin.ModelAdmin):\n    list_display = (\n        'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville',\n        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',\n        'Twitter', 'LinkedIn', 'Remarque', 'created_date', 'user'\n    )\n    search_fields = (\n        'Nom', 'Post_Nom', 'Prenom', 'Tel1', 'Tel2', 'Email', 'Province',\n    )\n    list_filter = (",
         "detail": "contacts.admin",
         "documentation": {}
     },
@@ -5660,7 +5583,7 @@
         "kind": 6,
         "importPath": "contacts.models",
         "description": "contacts.models",
-        "peekOfCode": "class Contact(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date = models.DateTimeField(auto_now_add=True)\n    Nom             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Numero          = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')\n    Rue             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Quartier        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Commune         = models.CharField(max_length=100, null=True, blank=True, default='-')",
+        "peekOfCode": "class Contact(models.Model):\n    user            = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date    = models.DateTimeField(auto_now_add=True)\n    Nom             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Numero          = models.CharField(max_length=20, null=True, blank=True, default='-', verbose_name='N°')\n    Rue             = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Quartier        = models.CharField(max_length=100, null=True, blank=True, default='-')\n    Commune         = models.CharField(max_length=100, null=True, blank=True, default='-')",
         "detail": "contacts.models",
         "documentation": {}
     },
@@ -5669,7 +5592,7 @@
         "kind": 5,
         "importPath": "contacts.urls",
         "description": "contacts.urls",
-        "peekOfCode": "urlpatterns = [\n    path('contact_view/', contact_view, name='contact_view'),\n    path('upload/csv/', upload_contact_csv, name='upload_contact_csv'),\n    path('export/xls/', export_contact_xls, name='export_contact_xls'), \n    path('export/csv/', export_contact_csv, name='export_contact_csv'),\n    path('export/pdf/', export_contact_pdf, name='export_contact_pdf'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('contact_view/', contact_view, name='contact_view'),\n    path('kyc_view/', kyc_view, name='kyc_view'),\n    path('upload/csv/', upload_contact_csv, name='upload_contact_csv'),\n    path('export/xls/', export_contact_xls, name='export_contact_xls'), \n    path('export/csv/', export_contact_csv, name='export_contact_csv'),\n    path('export/pdf/', export_contact_pdf, name='export_contact_pdf'),\n]",
         "detail": "contacts.urls",
         "documentation": {}
     },
@@ -5679,6 +5602,15 @@
         "importPath": "contacts.views",
         "description": "contacts.views",
         "peekOfCode": "def contact_view(request):\n    user = request.user\n    contact = Contact.objects.filter(user=user).order_by('-created_date')\n    paginator = Paginator(contact, 10)\n    page = request.GET.get('page')\n    try:\n        contact_list = paginator.page(page)\n    except PageNotAnInteger:\n        contact_list = paginator.page(1)\n    except EmptyPage:",
+        "detail": "contacts.views",
+        "documentation": {}
+    },
+    {
+        "label": "kyc_view",
+        "kind": 2,
+        "importPath": "contacts.views",
+        "description": "contacts.views",
+        "peekOfCode": "def kyc_view(request):\n    formContact = ContactForm(request.POST)\n    if request.method == 'POST':\n        if formContact.is_valid():\n            contact = formContact.save(commit=False)\n            contact.user = request.user\n            contact.save()\n            # messages.success(request, \"Contact enregistrées!\")\n            return JsonResponse({'contact': 'success'})\n    #     else:",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5903,134 +5835,8 @@
         "kind": 6,
         "importPath": "dat.migrations.0001_initial",
         "description": "dat.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Dat',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('contacts', '0001_initial'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Dat',\n            fields=[",
         "detail": "dat.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0002_auto_20210502_0911",
-        "description": "dat.migrations.0002_auto_20210502_0911",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='dat',\n            name='Bound',\n            field=models.CharField(choices=[('OUTBOUND', 'OUTBOUND'), ('INBOUND', 'INBOUND')], max_length=20, null=True),\n        ),",
-        "detail": "dat.migrations.0002_auto_20210502_0911",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0003_auto_20210502_1400",
-        "description": "dat.migrations.0003_auto_20210502_1400",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0002_auto_20210502_0911'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='Bound',\n            field=models.CharField(max_length=20, null=True),\n        ),",
-        "detail": "dat.migrations.0003_auto_20210502_1400",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0004_auto_20210502_1845",
-        "description": "dat.migrations.0004_auto_20210502_1845",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0003_auto_20210502_1400'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='Statut',\n            field=models.CharField(choices=[('Statuts de reporting', 'Statuts de reporting'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], max_length=30, null=True),\n        ),",
-        "detail": "dat.migrations.0004_auto_20210502_1845",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0005_auto_20210503_0413",
-        "description": "dat.migrations.0005_auto_20210503_0413",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0004_auto_20210502_1845'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='Email',\n            field=models.EmailField(blank=True, default='contact@advans.com', max_length=254, null=True),\n        ),",
-        "detail": "dat.migrations.0005_auto_20210503_0413",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0006_auto_20210503_1031",
-        "description": "dat.migrations.0006_auto_20210503_1031",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0005_auto_20210503_0413'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='questions1',\n            field=models.CharField(max_length=200, null=True),\n        ),",
-        "detail": "dat.migrations.0006_auto_20210503_1031",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0007_auto_20210503_1036",
-        "description": "dat.migrations.0007_auto_20210503_1036",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0006_auto_20210503_1031'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='questions1',\n            field=models.BooleanField(max_length=200, null=True),\n        ),",
-        "detail": "dat.migrations.0007_auto_20210503_1036",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0008_auto_20210503_1039",
-        "description": "dat.migrations.0008_auto_20210503_1039",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0007_auto_20210503_1036'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='questions1',\n            field=models.CharField(default='NON', max_length=200, null=True),\n        ),",
-        "detail": "dat.migrations.0008_auto_20210503_1039",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0009_auto_20210503_1112",
-        "description": "dat.migrations.0009_auto_20210503_1112",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0008_auto_20210503_1039'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='Province',\n            field=models.CharField(blank=True, choices=[('--------', '--------'), ('Bas-Uele', 'Bas-Uele'), ('Équateur', 'Équateur'), ('Haut-Katanga', 'Haut-Katanga'), ('Haut-Lomami', 'Haut-Lomami'), ('Haut-Uele', 'Haut-Uele'), ('Ituri', 'Ituri'), ('Kasaï', 'Kasaï'), ('Kasaï-Central', 'Kasaï-Central'), ('Kasaï oriental', 'Kasaï oriental'), ('Kinshasa', 'Kinshasa'), ('Kongo central1', 'Kongo central1'), ('Kwango', 'Kwango'), ('Kwilu', 'Kwilu'), ('Lomami', 'Lomami'), ('Lualaba', 'Lualaba'), ('Mai-Ndombe', 'Mai-Ndombe'), ('Maniema', 'Maniema'), ('Mongala', 'Mongala'), ('Nord-Kivu', 'Nord-Kivu'), ('Nord-Ubangi', 'Nord-Ubangi'), ('Sankuru', 'Sankuru'), ('Sud-Kivu', 'Sud-Kivu'), ('Sud-Ubangi', 'Sud-Ubangi'), ('Tanganyika', 'Tanganyika'), ('Tshopo', 'Tshopo'), ('Tshuapa', 'Tshuapa')], default='Kinshasa', max_length=20, null=True),\n        ),",
-        "detail": "dat.migrations.0009_auto_20210503_1112",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0010_dat_remarque",
-        "description": "dat.migrations.0010_dat_remarque",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0009_auto_20210503_1112'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='dat',\n            name='Remarque',\n            field=models.CharField(blank=True, max_length=200, null=True),\n        ),",
-        "detail": "dat.migrations.0010_dat_remarque",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0011_auto_20210504_0711",
-        "description": "dat.migrations.0011_auto_20210504_0711",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0010_dat_remarque'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='dat',\n            name='Remarque',\n            field=models.CharField(blank=True, default='-', max_length=200, null=True),\n        ),",
-        "detail": "dat.migrations.0011_auto_20210504_0711",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0012_auto_20210504_1103",
-        "description": "dat.migrations.0012_auto_20210504_1103",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0011_auto_20210504_0711'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='dat',\n            old_name='questions1',\n            new_name='questons1',\n        ),",
-        "detail": "dat.migrations.0012_auto_20210504_1103",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0013_auto_20210504_1130",
-        "description": "dat.migrations.0013_auto_20210504_1130",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0012_auto_20210504_1103'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='dat',\n            old_name='questons1',\n            new_name='questions1',\n        ),",
-        "detail": "dat.migrations.0013_auto_20210504_1130",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0014_auto_20210506_0940",
-        "description": "dat.migrations.0014_auto_20210506_0940",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('dat', '0013_auto_20210504_1130'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='dat',\n            name='Rue',\n            field=models.CharField(blank=True, default='-', max_length=100, null=True),\n        ),",
-        "detail": "dat.migrations.0014_auto_20210506_0940",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "dat.migrations.0015_auto_20210521_1256",
-        "description": "dat.migrations.0015_auto_20210521_1256",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('contacts', '0001_initial'),\n        ('dat', '0014_auto_20210506_0940'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='dat',\n            name='Commune',\n        ),",
-        "detail": "dat.migrations.0015_auto_20210521_1256",
         "documentation": {}
     },
     {
@@ -6083,7 +5889,7 @@
         "kind": 6,
         "importPath": "dat.models",
         "description": "dat.models",
-        "peekOfCode": "class Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ManyToManyField(Contact)\n    Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)\n    Bound            = models.CharField(max_length=20, null=True)\n    def __str__(self):\n        return self.Nom",
+        "peekOfCode": "class Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)\n    Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)\n    Bound            = models.CharField(max_length=20, null=True)\n    def __str__(self):\n        return self.Statut",
         "detail": "dat.models",
         "documentation": {}
     },
@@ -6092,7 +5898,7 @@
         "kind": 5,
         "importPath": "dat.models",
         "description": "dat.models",
-        "peekOfCode": "BOUND = (\n    ('OUTBOUND', 'OUTBOUND'),\n    ('INBOUND', 'INBOUND'),\n)\nclass Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ManyToManyField(Contact)",
+        "peekOfCode": "BOUND = (\n    ('OUTBOUND', 'OUTBOUND'),\n    ('INBOUND', 'INBOUND'),\n)\nclass Dat(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)",
         "detail": "dat.models",
         "documentation": {}
     },
@@ -6223,6 +6029,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "forms.migrations.0007_auto_20210522_0726",
+        "description": "forms.migrations.0007_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('forms', '0006_delete_contact'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='kyc',\n            name='Statut',\n            field=models.CharField(blank=True, choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], default='-', max_length=30, null=True),\n        ),",
+        "detail": "forms.migrations.0007_auto_20210522_0726",
+        "documentation": {}
+    },
+    {
         "label": "scriptAdmin",
         "kind": 6,
         "importPath": "forms.admin",
@@ -6281,7 +6096,7 @@
         "kind": 5,
         "importPath": "forms.province",
         "description": "forms.province",
-        "peekOfCode": "PROVINCES = (\n    ('--------', '--------'),\n    ('Bas-Uele', 'Bas-Uele'),\n    ('Équateur', 'Équateur'),\n    ('Haut-Katanga', 'Haut-Katanga'),\n    (\"Haut-Lomami\", \"Haut-Lomami\"),\t\n    ('Haut-Uele', 'Haut-Uele'),\n    ('Ituri', 'Ituri'),\n    ('Kasaï', 'Kasaï'),\n    ('Kasaï-Central', 'Kasaï-Central'),",
+        "peekOfCode": "PROVINCES = (\n    # ('--------', '--------'),\n    ('Bas-Uele', 'Bas-Uele'),\n    ('Équateur', 'Équateur'),\n    ('Haut-Katanga', 'Haut-Katanga'),\n    (\"Haut-Lomami\", \"Haut-Lomami\"),\t\n    ('Haut-Uele', 'Haut-Uele'),\n    ('Ituri', 'Ituri'),\n    ('Kasaï', 'Kasaï'),\n    ('Kasaï-Central', 'Kasaï-Central'),",
         "detail": "forms.province",
         "documentation": {}
     },
@@ -7024,6 +6839,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "recouvrement.migrations.0004_auto_20210522_0726",
+        "description": "recouvrement.migrations.0004_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('recouvrement', '0003_auto_20210506_1022'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='recouvrement',\n            name='Statut',\n            field=models.CharField(choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], max_length=30, null=True),\n        ),",
+        "detail": "recouvrement.migrations.0004_auto_20210522_0726",
+        "documentation": {}
+    },
+    {
         "label": "RecouvrementAdmin",
         "kind": 6,
         "importPath": "recouvrement.admin",
@@ -7147,6 +6971,15 @@
         "description": "renouvellement.migrations.0002_auto_20210505_0021",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('renouvellement', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='renouvellement',\n            old_name='Facebook',\n            new_name='Rue',\n        ),",
         "detail": "renouvellement.migrations.0002_auto_20210505_0021",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "renouvellement.migrations.0003_auto_20210522_0726",
+        "description": "renouvellement.migrations.0003_auto_20210522_0726",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('renouvellement', '0002_auto_20210505_0021'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='renouvellement',\n            name='Statut',\n            field=models.CharField(blank=True, choices=[('---------', '--------------'), ('Accord', 'Accord'), ('Déjà payé son crédit', 'Déjà payé son crédit'), ('Refus', 'Refus'), ('Rappel', 'Rappel (interlocuteur demande de rappeler)'), ('Injoignable', 'Injoignable'), ('Absent', 'Absent'), ('Faux numéro', 'Faux numéro'), ('Réfléchir', 'Réfléchir')], default='-', max_length=30, null=True),\n        ),",
+        "detail": "renouvellement.migrations.0003_auto_20210522_0726",
         "documentation": {}
     },
     {
@@ -7370,7 +7203,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.11.108',\n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
+        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.43.232',\n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7379,7 +7212,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES = DATABASES_SQLITE\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
+        "peekOfCode": "DATABASES = DATABASES_MARIADB\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },",
         "detail": "scripting.settings",
         "documentation": {}
     },

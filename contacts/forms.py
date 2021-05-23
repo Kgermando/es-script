@@ -17,6 +17,7 @@ class ContactForm(forms.ModelForm):
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
+                    "id": "Nom",
                     "placeholder": "Nom"
                 }
             )
@@ -105,7 +106,7 @@ class ContactForm(forms.ModelForm):
             choices=PROVINCES,
             widget=forms.Select(
                 attrs={
-                    "class": "form-control",
+                    "class": "form-group col-md-6",
                     "name": "Province",
                 }
             )

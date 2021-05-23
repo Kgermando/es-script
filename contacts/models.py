@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 from forms.pays import PAYS
 from forms.province import PROVINCES
-from forms.statut import STATUTS
+
 # Create your models here.
 class Contact(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(auto_now_add=True)
+    user            = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_date    = models.DateTimeField(auto_now_add=True)
     Nom             = models.CharField(max_length=100, null=True, blank=True, default='-')
     Post_Nom        = models.CharField(max_length=100, null=True, blank=True, default='-')
     Prenom          = models.CharField(max_length=100, null=True, blank=True, default='-')
@@ -29,5 +29,5 @@ class Contact(models.Model):
     LinkedIn        = models.CharField(max_length=100, null=True, blank=True, default='-')
     Remarque        = models.CharField(max_length=200, null=True, blank=True, default='-')
 
-    def __str__(self):
-        return self.Nom 
+    # def __str__(self):
+    #     return self.Nom

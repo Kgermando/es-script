@@ -119,7 +119,7 @@ DATABASES_MARIADB = {
         'NAME': 'asteriskcdrdb',
         'USER': 'root',
         'PASSWORD': 'gk0838',
-        'HOST': '192.168.11.108',
+        'HOST': '192.168.43.232',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8',
@@ -130,7 +130,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_SQLITE
+DATABASES = DATABASES_MARIADB
 
 
 # Password validation

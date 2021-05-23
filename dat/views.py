@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages  # for message
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-
+from django.http import JsonResponse
 import xlwt
 import csv
 
@@ -41,16 +41,15 @@ def dat_add(request):
             contact = formContact.save(commit=False)
             contact.user = request.user
             contact.save()
-            messages.success(request, "Contact enregistrées!")
-            # redirect to a new URL:
-            # return HttpResponseRedirect(reverse('contacts:contact_view'))
+            # messages.success(request, "Contact enregistrées!")
+            return JsonResponse({'contact': 'success'})
         else:
             formContact = ContactForm()
-
     context = {
         'form': form,
         'formContact': formContact
     }
+
     template_name = 'pages/dat/dat_add.html'
     return render(request, template_name, context)
 

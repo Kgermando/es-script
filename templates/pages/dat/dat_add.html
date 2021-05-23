@@ -101,35 +101,14 @@
                                                     </div>
                                                     <div class="col-md-6">
 
-                                                        <div id="modal-btn" class="button">Nouveau Contact</div>
-                                                        
-                                                        <div id="my-modal" class="modal">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h2>Nouveau contact</h2>
-                                                                    <span class="close">&times;</span>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div class="container">
-                                                                        <div class="row">
-                                                                            <form action="." method="POST" enctype="multipart/form-data" class="form-material">
-                                                                                {% csrf_token %}
-                                                                                <div class="col-md-12">
-                                                                                    {{ formContact.as_table }}  
-                                                                                </div>
-                                                                                <div class="container">
-                                                                                    <input type="submit" class="close" value="Soumettre"> 
-                                                                                </div>
-                                                                            </form>  
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
+                                                        <div id="modal-btn" class="button">
+                                                            <i class="bi bi-plus"></i>
+                                                            Nouveau Contact
                                                         </div>
-
+                                                        
                                                     </div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -223,8 +202,21 @@
                                                 Permettez-moi de vérifier vos coordonnées (KYC)
                                             </p>
                                             <div class="container">
-                                                <div class="pl-4">
-                                                    
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-default">
+                                                            <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
+                                                            {{form.Contact}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                
+                                                        <div id="modal-btn" class="button">
+                                                            <i class="bi bi-plus"></i>
+                                                            Nouveau Contact
+                                                        </div>
+                                                
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,6 +248,108 @@
                     
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="my-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Nouveau contact</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="form-row">
+                            <form action="{% url 'dat:dat_add' %}" method="POST" id="contact-form" enctype="multipart/form-data" class="form-material">
+                                {% csrf_token %}
+
+                                <div class="container">
+                                    <div class="pl-4">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Nom" name="Nom" class="form-control" placeholder="Nom">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Post_Nom" name="Post_Nom" class="form-control" placeholder="Post Nom">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Prenom" name="Prenom" class="form-control" placeholder="Prénom">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Numero" name="Numero" class="form-control" placeholder="N°">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Rue" name="Rue" class="form-control" placeholder="Rue">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Quartier" name="Quartier" class="form-control" placeholder="Quartier">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Commune" name="Commune" class="form-control" placeholder="Commune">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" id="Ville" name="Ville" class="form-control" placeholder="Ville">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Province</label>
+                                                {{formContact.Province}}
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel1" name="Tel1" class="form-control" placeholder="Téléphone">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel2" name="Tel2" class="form-control" placeholder="Téléphone 2">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel3" name="Tel3" class="form-control" placeholder="Téléphone 3">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="email" id="Email" name="Email" class="form-control" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" id="Website" name="Website" class="form-control" placeholder="Website">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Facebook" name="Facebook" class="form-control" placeholder="Facebook">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Instagram" name="Instagram" class="form-control" placeholder="Instagram">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Twitter" name="Twitter" class="form-control" placeholder="Twitter">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="LinkedIn" name="LinkedIn" class="form-control" placeholder="LinkedIn">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <input type="text" id="Remarque" name="Remarque" class="form-control" placeholder="Remarque">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                                        <!-- <input type="submit" class="close" value="Soumettre"> -->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+        
                 </div>
             </div>
         </div>

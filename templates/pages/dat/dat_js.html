@@ -69,9 +69,8 @@
                 }
             });
         });
-</script>
 
-<script>
+
     // Get DOM Elements
     const modal = document.querySelector('#my-modal');
     const modalBtn = document.querySelector('#modal-btn');
@@ -98,4 +97,82 @@
             modal.style.display = 'none';
         }
     }
+
+
+
+    $(document).ready(function () {
+        $('#contact-form').submit(function (event) {
+            var Nom = $('#Nom').val();
+            var Post_Nom = $('#Post_Nom').val();
+            var Prenom = $('#Prenom').val();
+            var Numero = $('#Numero').val();
+            var Rue = $('#Rue').val();
+            var Quartier = $('#Quartier').val();
+            var Commune = $('#Commune').val();
+            var Ville = $('#Ville').val();
+            var Province = $('#Province').val();
+            var Tel1 = $('#Tel1').val();
+            var Tel2 = $('#Tel2').val();
+            var Tel3 = $('#Tel3').val();
+            var Email = $('#Email').val();
+            var Website = $('#Website').val();
+            var Facebook = $('#Facebook').val();
+            var Instagram = $('#Instagram').val();
+            var Twitter = $('#Twitter').val();
+            var LinkedIn = $('#LinkedIn').val();
+            var Remarque = $('#Remarque').val();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'dat:dat_add' %}",
+                data: {
+                    'csrfmiddlewaretoken': '{{csrf_token}}',
+                    'Nom': Nom,
+                    'Post_Nom': Post_Nom,
+                    'Prenom': Prenom,
+                    'Numero': Numero,
+                    'Rue': Rue,
+                    'Quartier': Quartier,
+                    'Commune': Commune,
+                    'Ville': Ville,
+                    'Province': Province,
+                    'Tel1': Tel1,
+                    'Tel2': Tel2,
+                    'Tel3': Tel3,
+                    'Email': Email,
+                    'Website': Website,
+                    'Facebook': Facebook,
+                    'Instagram': Instagram,
+                    'Twitter': Twitter,
+                    'LinkedIn': LinkedIn,
+                    'Remarque': Remarque,
+                },
+                dataType: 'json',
+                encode: true,
+            })
+
+            console.log(data)
+                
+
+            event.preventDefault();
+        });
+    });
+
+
+
+    // function refresh() {
+    //     $.ajax({
+    //         url: "{% url 'dat:dat_add' %}",
+    //         success: function (data) {
+    //             $('#test').html(data);
+    //             setTimeout(refresh, 10000);
+    //         }
+
+    //     });
+    // }
+
+    // $(function () {
+    //     refresh();
+    // });
 </script>
+
+
