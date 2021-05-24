@@ -5886,7 +5886,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_view(request):\n    # online\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all()\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.filter(src=user).filter(disposition='BUSY').count()\n    cdr_failed = Cdr.objects.filter(src=user).filter(disposition='FAILED').count()\n    cdr_congestion = Cdr.objects.filter(src=user).filter(disposition='CONGESTION').count()",
+        "peekOfCode": "def dashboard_view(request):\n    # online\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all()\n    user = request.user\n    # report CDR \n    cdr_answered = Cdr.objects.filter(src=user).filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.filter(src=user).filter(disposition='BUSY').count()\n    cdr_no_answered = Cdr.objects.filter(src=user).filter(disposition='NO ANSWER').count()\n    cdr_congestion = Cdr.objects.filter(src=user).filter(disposition='CONGESTION').count()",
         "detail": "dashboard.views",
         "documentation": {}
     },
@@ -5895,7 +5895,7 @@
         "kind": 2,
         "importPath": "dashboard.views",
         "description": "dashboard.views",
-        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.all().filter(disposition='BUSY').count()\n    cdr_failed = Cdr.objects.all().filter(disposition='FAILED').count()\n    cdr_congestion = Cdr.objects.all().filter(disposition='CONGESTION').count()\n    cdr_total = Cdr.objects.all().count()",
+        "peekOfCode": "def dashboard_admin_view(request):\n    user = request.user\n    users_online = Profile.objects.filter(is_online=True).count()\n    user_list = User.objects.all().count()\n    # report CDR \n    cdr_answered = Cdr.objects.all().filter(disposition='ANSWERED').count()\n    cdr_busy = Cdr.objects.all().filter(disposition='BUSY').count()\n    cdr_no_answered = Cdr.objects.all().filter(disposition='NO ANSWER').count()\n    cdr_congestion = Cdr.objects.all().filter(disposition='CONGESTION').count()\n    cdr_total = Cdr.objects.all().count()",
         "detail": "dashboard.views",
         "documentation": {}
     },

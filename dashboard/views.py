@@ -47,7 +47,7 @@ def dashboard_view(request):
     # report CDR 
     cdr_answered = Cdr.objects.filter(src=user).filter(disposition='ANSWERED').count()
     cdr_busy = Cdr.objects.filter(src=user).filter(disposition='BUSY').count()
-    cdr_failed = Cdr.objects.filter(src=user).filter(disposition='FAILED').count()
+    cdr_no_answered = Cdr.objects.filter(src=user).filter(disposition='NO ANSWER').count()
     cdr_congestion = Cdr.objects.filter(src=user).filter(disposition='CONGESTION').count()
     cdr_total = Cdr.objects.filter(src=user).count()
     cdr_list = Cdr.objects.filter(src=user).order_by('-calldate')[:5]
@@ -128,7 +128,7 @@ def dashboard_view(request):
         'users_online': users_online,
         'cdr_answered': cdr_answered,
         'cdr_busy': cdr_busy,
-        'cdr_failed': cdr_failed,
+        'cdr_no_answered': cdr_no_answered,
         'cdr_congestion': cdr_congestion,
         'cdr_total': cdr_total,
         'cdr_list': cdr_list,
@@ -218,7 +218,7 @@ def dashboard_admin_view(request):
     # report CDR 
     cdr_answered = Cdr.objects.all().filter(disposition='ANSWERED').count()
     cdr_busy = Cdr.objects.all().filter(disposition='BUSY').count()
-    cdr_failed = Cdr.objects.all().filter(disposition='FAILED').count()
+    cdr_no_answered = Cdr.objects.all().filter(disposition='NO ANSWER').count()
     cdr_congestion = Cdr.objects.all().filter(disposition='CONGESTION').count()
     cdr_total = Cdr.objects.all().count()
     cdr_list = Cdr.objects.all().order_by('-calldate')[:5] 
@@ -306,7 +306,7 @@ def dashboard_admin_view(request):
         'user_list': user_list,
         'cdr_answered': cdr_answered,
         'cdr_busy': cdr_busy,
-        'cdr_failed': cdr_failed,
+        'cdr_no_answered': cdr_no_answered,
         'cdr_congestion': cdr_congestion,
         'cdr_total': cdr_total,
         'cdr_list': cdr_list,
