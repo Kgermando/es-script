@@ -19,16 +19,6 @@ from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
 
 from issabel.models import Cdr, Cel
 # Register your models here.
-def cdr_detail(obj):
-    return mark_safe('<a href="{}">View</a>'.format(
-        reverse('pbx:cdr_detail', args=[obj.uniqueid])))
-
-def cdr_pdf(obj):
-    return mark_safe('<a href="{}">PDF</a>'.format(
-        reverse('pbx:cdr_detail', args=[obj.uniqueid])))
-cdr_pdf.allow_tags = True
-cdr_pdf.short_description = 'PDF bill'
-
 
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
@@ -55,13 +45,23 @@ def export_to_csv(modeladmin, request, queryset):
 export_to_csv.short_description = 'Export to CSV'
 
 
+def cdr_detail(obj):
+    return mark_safe('<a href="{}">View</a>'.format(
+        reverse('issabel:cdr_issabel_detail', args=[obj.uniqueid]))) 
+
+def cdr_pdf(obj):
+    return mark_safe('<a href="{}">PDF</a>'.format(
+        reverse('issabel:cdr_issabel_detail', args=[obj.uniqueid])))
+cdr_pdf.allow_tags = True
+cdr_pdf.short_description = 'PDF bill'
+
 class CdrAdmin(admin.ModelAdmin):
     def billsec_norm(obj):
         return timedelta(seconds=obj.billsec)
     billsec_norm.short_description = u'Min.'
 
     def linksrc(self):
-        return u"""<a style='font-size: 12px' href='/admin/pbx/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>""" % (self.accountcode, self.src, self.src)
+        return u"""<a style='font-size: 12px' href='/admin/issabel/cdr/?accountcode=%s'><b>%s</b></a> <a href='?src=%s'><img style='float: right' src='/media/img/filter.png'></a>""" % (self.accountcode, self.src, self.src)
     linksrc.allow_tags = True
     linksrc.short_description = u'Numéro sortant | Filtre'
 
@@ -78,9 +78,9 @@ class CdrAdmin(admin.ModelAdmin):
     linkplay.allow_tags = True
     # linkplay.short_description = u''
 
-    list_display = ('calldate', linkplay, linksrc, linkdst, 'dcontext', billsec_norm, 'disposition', cdr_detail,)
+    list_display = ('calldate', 'dst', 'src', 'dst', 'dcontext', billsec_norm, 'disposition')
     list_filter = (('calldate', PastDateRangeFilter), 'dcontext', )
-    search_fields = ('src','dst',)
+    search_fields = ('src','dst', 'dcontext')
     actions = [export_to_csv]
 
     ordering = ['-calldate',]

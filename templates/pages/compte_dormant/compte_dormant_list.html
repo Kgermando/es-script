@@ -40,9 +40,20 @@
                 <!-- Hover table card start -->
                 <div class="row d-flex justify-content-end mb-4">
                     <button type="button" class="btn btn-primary">
-                        <a href="{% url 'compte_dormant:compte_dormant_add' %}"
-                            style="color: aliceblue; font-weight: 700;">NOUVEAU</a>
+                        <a href="{% url 'compte_dormant:compte_dormant_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
                     </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'compte_dormant:export_compte_dormant_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'compte_dormant:export_compte_dormant_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
@@ -91,16 +102,18 @@
                                         <td>{{compte_dormant.questions2}}</td>
                                         <td>{{compte_dormant.questions3}}</td>
                                         <td>{{compte_dormant.questions4}}</td>
-                                        <td>{{compte_dormant.Nom}}</td>
-                                        <td>{{compte_dormant.Post_Nom}}</td>
-                                        <td>{{compte_dormant.Prenom}}</td>
-                                        <td>N°{{compte_dormant.Numero}} {{compte_dormant.Rue}} {{compte_dormant.Quartier}} {{compte_dormant.Commune}} {{compte_dormant.Ville}}</td>
-                                        <td>{{compte_dormant.Province}}</td>
-                                        <td>{{compte_dormant.Tel1}}</td>
-                                        <td>{{compte_dormant.Email}}</td>
+                                        <td>{{compte_dormant.Contact.Nom}}</td>
+                                        <td>{{compte_dormant.Contact.Post_Nom}}</td>
+                                        <td>{{compte_dormant.Contact.Prenom}}</td>
+                                        <td>N°{{compte_dormant.Contact.Numero}} {{compte_dormant.Contact.Rue}} {{compte_dormant.Contact.Quartier}}
+                                            {{compte_dormant.Contact.Commune}}</td>
+                                        <td>{{compte_dormant.Contact.Ville}}</td>
+                                        <td>{{compte_dormant.Contact.Province}}</td>
+                                        <td>{{compte_dormant.Contact.Tel1}}</td>
+                                        <td>{{compte_dormant.Contact.Email}}</td>
                                         <td>{{compte_dormant.Statut}}</td>
                                         <td>{{compte_dormant.Raison}}</td>
-                                        <td>{{compte_dormant.Remarque}}</td>
+                                        <td>{{compte_dormant.Contact.Remarque}}</td>
                                         <td>{{compte_dormant.user}}</td>
                                         <td>{{compte_dormant.Bound}}</td>
                                         <td>

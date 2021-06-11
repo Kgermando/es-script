@@ -31,7 +31,7 @@ def cdr_issabel(request):
 @login_required
 def cdr_issabel_detail(request, uniqueid):
     user = request.user
-    cdr = Cdr.objects.filter(src=user).get(uniqueid=uniqueid)
+    cdr = Cdr.objects.get(uniqueid=uniqueid)
     context = {
         'cdr': cdr
     }

@@ -1,7 +1,7 @@
 from django import forms
 
 from acquisition.models import Acquisition, SERVICES
-from forms.province import PROVINCES
+from contacts.models import Contact
 from forms.statut import STATUTS
 
 # Forms 
@@ -9,9 +9,7 @@ class AcquisitionForm(forms.ModelForm):
     class Meta:
         model = Acquisition
         fields = (
-            'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 
-            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 
-            'Tel1', 'Email', 'Statut', 'Bound', 'Remarque', 'CommentaireQ5', 'CommentaireQ6',
+            'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'CommentaireQ5', 'CommentaireQ6',
         )
     
     questions1 = forms.CharField(
@@ -81,127 +79,18 @@ class AcquisitionForm(forms.ModelForm):
         )
     )
 
-    Nom = forms.CharField(
+    Contact = forms.ModelChoiceField(
         label='',
         required=False,
-        widget=forms.TextInput(
+        queryset= Contact.objects.all().order_by('-created_date'),
+        widget=forms.Select(
             attrs={
+                "id": "inputState",
                 "class": "form-control",
-                "placeholder": "Nom",
-                "name":"Nom",
+                "placeholder": "Hopital"
             }
         )
-    )
-
-    Post_Nom = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Post_Nom",
-            }
-        )
-    )
-
-    Prenom = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Prenom",
-            }
-        )
-    )
-
-    Numero = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Numero",
-            }
-        )
-    )
-
-    Rue = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Rue",
-            }
-        )
-    )
-
-    Quartier = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Quartier",
-            }
-        )
-    )
-
-    Commune = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Commune",
-            }
-        )
-    )
-
-    Ville = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Ville",
-            }
-        )
-    )
-
-    Province = forms.ChoiceField(
-        label = '',
-        required=False,
-        choices = PROVINCES,
-        widget = forms.Select(
-            attrs={
-                "class": "form-control",
-                "name": "Province",
-            }
-        )
-    )
-
-    Tel1 = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Tel1",
-            }
-        )
-    )
-
-    Email = forms.EmailField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Email",
-            }
-        )
+        
     )
 
     Statut = forms.ChoiceField(
@@ -227,16 +116,6 @@ class AcquisitionForm(forms.ModelForm):
         )
     )
 
-    Remarque = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name": "Remarque",
-            }
-        )
-    )
 
     CommentaireQ5 = forms.CharField(
         label = '',

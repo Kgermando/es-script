@@ -34,7 +34,7 @@ def export_to_csv(modeladmin, request, queryset):
         writer.writerow(data_row)
     return response
 
-
+ 
 @admin.register(Renouvellement)
 class RenouvellementAdmin(admin.ModelAdmin):
     list_display = (
@@ -42,9 +42,7 @@ class RenouvellementAdmin(admin.ModelAdmin):
         'questions10', 'questions12', 'questions13', 'questions15', 'questions16', 'Q19temps_a_contacter',
         'montant_de_pret', 'duree_de_credit', 'montant_a_rembourser_chaque_mois', 'montant_des_ventes_bonne_journee',
         'montant_des_ventes_mauvaise_journee', 'date_a_laquelle_recevoir_credit', 'Nom_du_garant', 'Activite',
-        'Remarque', 'Commentaire', 'Concurrent', 'CommentaireQ17',
-        'Nom_societe', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Rue', 'Commune', 'Ville', 'Province',
-        'Tel1', 'Email', 'Statut',
+        'Commentaire', 'Concurrent', 'CommentaireQ17', 'Statut',
     )
     list_filter = (
         # 'Nom_societe', 'Nom', 'Post_Nom', 'Prenom',

@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
 
-                                <div class="script pb-4" id="q3">
+                                <div class="pb-4" id="q3">
                                     <h5>Question 3</h5>
                                     <div class="form-group">
                                         <div class="form-check col">
@@ -92,9 +92,9 @@
                                             </p>
                                             <div class="container">
                                             
-                                                <div class="form-row">
+                                                <div class="form-row"> 
                                                     <div class="col-md-6">
-                                                        <div class="form-group form-default">
+                                                        <div id="kycContact" class="form-group form-default">
                                                             <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
                                                             {{form.Contact}}
                                                         </div>
@@ -194,7 +194,7 @@
                                     </div>
                                 </div>
                     
-                                <div class="script pb-4" id="qb3">
+                                <div class="pb-4" id="qb3">
                                     <h5>Question 3</h5>
                                     <div class="form-group">
                                         <div class="form-check col">
@@ -202,22 +202,24 @@
                                                 Permettez-moi de vérifier vos coordonnées (KYC)
                                             </p>
                                             <div class="container">
+                                
                                                 <div class="form-row">
                                                     <div class="col-md-6">
-                                                        <div class="form-group form-default">
+                                                        <div id="kycContact" class="form-group form-default">
                                                             <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
                                                             {{form.Contact}}
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                
+                                
                                                         <div id="modal-btn" class="button">
                                                             <i class="bi bi-plus"></i>
                                                             Nouveau Contact
                                                         </div>
-                                                
+                                
                                                     </div>
                                                 </div>
+                                
                                             </div>
                                         </div>
                                     </div>
@@ -255,13 +257,13 @@
         <div id="my-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Nouveau contact</h2>
-                    <span class="close">&times;</span>
+                    <h2>KYC</h2>
+                    <span id="close" class="close">&times;</span>
                 </div>
                 <div class="modal-body">
                     <div class="container">
                         <div class="form-row">
-                            <form action="{% url 'dat:dat_add' %}" method="POST" id="contact-form" enctype="multipart/form-data" class="form-material">
+                            <form action="{% url 'dat:dat_add' %}" method="POST" id="contact-form" class="form-material">
                                 {% csrf_token %}
 
                                 <div class="container">
@@ -297,7 +299,36 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Province</label>
-                                                {{formContact.Province}}
+                                                <!-- {{formContact.Province}} -->
+                                            
+                                                <select id="Province">
+                                                    <option value="Bas-Uele">Bas-Uele</option>
+                                                    <option value="Équateur" >Équateur</option>
+                                                    <option value="Haut-Katanga">Haut-Katanga</option>
+                                                    <option value="Haut-Lomami">Haut-Lomami</option>
+                                                    <option value="Haut-Uele" >Haut-Uele</option>
+                                                    <option value="Ituri">Ituri</option>
+                                                    <option value="Kasaï">Kasaï</option>
+                                                    <option value="Kasaï-Central">Kasaï-Central</option>
+                                                    <option value="Kasaï oriental">Kasaï oriental</option>
+                                                    <option value="Kinshasa" selected >Kinshasa</option>
+                                                    <option value="Kongo central" >Kongo central</option>
+                                                    <option value="Kwango">Kwango</option>
+                                                    <option value="Kwilu">Kwilu</option>
+                                                    <option value="Lomami" >Lomami</option>
+                                                    <option value="Lualaba">Lualaba</option>
+                                                    <option value="Mai-Ndombe">Mai-Ndombe</option>
+                                                    <option value="Maniema" >Maniema</option>
+                                                    <option value="Mongala">Mongala</option>
+                                                    <option value="Nord-Kivu">Nord-Kivu</option>
+                                                    <option value="Nord-Ubangi" >Nord-Ubangi</option>
+                                                    <option value="Sankuru">Sankuru</option>
+                                                    <option value="Sud-Kivu">Sud-Kivu</option>
+                                                    <option value="Sud-Ubangi" >Sud-Ubangi</option>
+                                                    <option value="Tanganyika">Tanganyika</option>
+                                                    <option value="Tshopo">Tshopo</option>
+                                                    <option value="Tshuapa" >Tshuapa</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -341,10 +372,8 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-3">
-                                        <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
-                                        <!-- <input type="submit" class="close" value="Soumettre"> -->
-                                    </div>
+                                    <button class="btn btn-primary btn-block" type="submit">Soumettre</button>
+                                    <div id="close" onclick="closeModal()" class="btn btn-secondary btn-block ">Fermer</div>
                                 </div>
                             </form>
                         </div>

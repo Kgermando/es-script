@@ -19,7 +19,8 @@ from contacts.forms import ContactForm
 def contact_view(request):
 
     user = request.user
-    contact = Contact.objects.filter(user=user).order_by('-created_date')
+    contact = Contact.objects.all().order_by('-created_date')
+    contact_count = Contact.objects.all().count()
     paginator = Paginator(contact, 10)
     page = request.GET.get('page')
     try:
@@ -44,7 +45,8 @@ def contact_view(request):
 
     context = {
         'form': form,
-        'contact_list': contact_list
+        'contact_list': contact_list,
+        'contact_count': contact_count
     }
     template_name = 'pages/contacts/contact_view.html'
     return render(request, template_name, context)

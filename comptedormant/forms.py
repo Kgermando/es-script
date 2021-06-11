@@ -2,7 +2,7 @@ from django import forms
 
 from comptedormant.models import Compte_dormant
  
-from forms.province import PROVINCES
+from contacts.models import Contact
 from forms.statut import STATUTS
 
 class Compte_dormantForm(forms.ModelForm):
@@ -10,11 +10,7 @@ class Compte_dormantForm(forms.ModelForm):
         model = Compte_dormant
         fields = (
             'questions1', 'questions2', 'questions3', 'questions4', 
-            'Raison', 'Nom', 
-            'Post_Nom', 'Prenom', 
-            'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 
-            'Province',
-            'Tel1','Email', 'Statut', 'Bound', 'Remarque',
+            'Raison', 'Statut', 'Bound', 'Contact',
         ) 
 
     questions1 = forms.CharField(
@@ -72,125 +68,15 @@ class Compte_dormantForm(forms.ModelForm):
         )
     )
 
-    Nom = forms.CharField(
+    Contact = forms.ModelChoiceField(
         label='',
         required=False,
-        widget=forms.TextInput(
+        queryset= Contact.objects.all().order_by('-created_date'),
+        widget=forms.Select(
             attrs={
+                "id": "inputState",
                 "class": "form-control",
-                "placeholder": "Nom",
-                "name":"Nom",
-            }
-        )
-    )
-
-    Post_Nom = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Post_Nom",
-            }
-        )
-    )
-
-    Prenom = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Prenom",
-            }
-        )
-    )
-
-    Numero = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Numero",
-            }
-        )
-    )
-
-    Rue = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Rue",
-            }
-        )
-    )
-
-    Quartier = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Quartier",
-            }
-        )
-    )
-
-    Commune = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Commune",
-            }
-        )
-    )
-
-    Ville = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Ville",
-            }
-        )
-    )
-
-    Province = forms.ChoiceField(
-        label = '',
-        required=False,
-        choices = PROVINCES,
-        widget = forms.Select(
-            attrs={
-                "class": "form-control",
-                "name": "Province",
-            }
-        )
-    )
-
-    Tel1 = forms.CharField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Tel1",
-            }
-        )
-    )
-
-    Email = forms.EmailField(
-        label = '',
-        required=False,
-        widget = forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "name":"Email",
+                "placeholder": "Hopital"
             }
         )
     )

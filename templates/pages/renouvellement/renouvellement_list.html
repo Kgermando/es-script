@@ -40,6 +40,19 @@
                     <button type="button" class="btn btn-primary">
                         <a href="{% url 'renouvellement:renouvellement_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
                     </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'renouvellement:export_renouvellement_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'renouvellement:export_renouvellement_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
@@ -59,8 +72,7 @@
                             <table class="table caption-top table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Date_de_création</th>
-                                        <th>Nom_socièté</th>
+                                        <th scope="col">renouvellemente_de_création</th>
                                         <th>Nom</th>
                                         <th>Post_Nom</th>
                                         <th>Prénom</th>
@@ -92,7 +104,7 @@
                                         <th>Montant_à_rembourser_chaque_mois</th>
                                         <th>Montant_des_ventes_bonne_journée</th>
                                         <th>Montant_des_ventes_mauvaise_journée</th>
-                                        <th>Date_à_laquelle_recevoir_le_credit</th>
+                                        <th>renouvellemente_à_laquelle_recevoir_le_credit</th>
                                         <th>Nom_du_garant</th>
                                         <th>Activité</th>
                                     </tr>
@@ -101,17 +113,17 @@
 
                                     {% for renouvellement in renouvellement_list %}
                                     <tr>
-                                        <td scope="row">{{renouvellement.created_date}}</td>
-                                        <td><a href="">{{renouvellement.Nom_societe}}</a></td>
-                                        <td>{{renouvellement.Nom}}</td>
-                                        <td>{{renouvellement.Post_Nom}}</td>
-                                        <td>{{renouvellement.Prenom}}</td>
-                                        <td>N°{{renouvellement.Numero}} {{renouvellement.Rue}} {{renouvellement.Quartier}} {{renouvellement.Ville}} {{renouvellement.Commune}}</td>
-                                        <td>{{renouvellement.Province}}</td>
-                                        <td>{{renouvellement.Tel1}}</td>
-                                        <td>{{renouvellement.Email}}</td>
+                                        <td scope="row">{{renouvellement.created_renouvellemente}}</td>
+                                        <td>{{renouvellement.Contact.Nom}}</td>
+                                        <td>{{renouvellement.Contact.Post_Nom}}</td>
+                                        <td>{{renouvellement.Contact.Prenom}}</td>
+                                        <td>N°{{renouvellement.Contact.Numero}} {{renouvellement.Contact.Rue}} {{renouvellement.Contact.Quartier}} {{renouvellement.Contact.Commune}}</td>
+                                        <td>{{renouvellement.Contact.Ville}}</td>
+                                        <td>{{renouvellement.Contact.Province}}</td>
+                                        <td>{{renouvellement.Contact.Tel1}}</td>
+                                        <td>{{renouvellement.Contact.Email}}</td>
                                         <td>{{renouvellement.Statut}}</td>
-                                        <td>{{renouvellement.Remarque}}</td>
+                                        <td>{{renouvellement.Contact.Remarque}}</td>
                                         <td>{{renouvellement.Commentaire}}</td>
                                         <td>{{renouvellement.questions1}}</td>
                                         <td>{{renouvellement.questions2}}</td>
@@ -134,11 +146,11 @@
                                         <td>{{renouvellement.montant_a_rembourser_chaque_mois}}</td>
                                         <td>{{renouvellement.montant_des_ventes_bonne_journée}}</td>
                                         <td>{{renouvellement.montant_des_ventes_mauvaise_journee}}</td>
-                                        <td>{{renouvellement.date_a_laquelle_recevoir_credit}}</td>
+                                        <td>{{renouvellement.renouvellemente_a_laquelle_recevoir_credit}}</td>
                                         <td>{{renouvellement.Nom_du_garant}}</td>
                                         <td>{{renouvellement.Activite}}</td>
                                         <td>
-                                            <a href="{% url 'renouvellement:renouvellement_update' renouvellement.id %} ">
+                                            <a href="{% url 'renouvellement:renouvellement_uprenouvellemente' renouvellement.id %} ">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                         </td>

@@ -42,6 +42,19 @@
                     <button type="button" class="btn btn-primary">
                         <a href="{% url 'acquisition:acquisition_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
                     </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'acquisition:export_acquisition_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'acquisition:export_acquisition_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
@@ -61,7 +74,7 @@
                             <table class="table caption-top table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Date_de_création</th>
+                                        <th scope="col">acquisitione_de_création</th>
                                         <th>Questions_1</th>
                                         <th>Questions_3</th>
                                         <th>Questions_4</th>
@@ -93,14 +106,14 @@
                                         <td>{{acquisition.questions4}}</td>
                                         <td>{{acquisition.questions5}}</td>
                                         <td>{{acquisition.questions6}}</td>
-                                        <td>{{acquisition.Nom}}</td>
-                                        <td>{{acquisition.Post_Nom}}</td>
-                                        <td>{{acquisition.Prenom}}</td>
-                                        <td>N°{{acquisition.Numero}} {{acquisition.Rue}} {{acquisition.Quartier}} {{acquisition.Commune}}</td>
-                                        <td>{{acquisition.Ville}}</td>
-                                        <td>{{acquisition.Province}}</td>
-                                        <td>{{acquisition.Tel1}}</td>
-                                        <td>{{acquisition.Email}}</td>
+                                        <td>{{acquisition.Contact.Nom}}</td>
+                                        <td>{{acquisition.Contact.Post_Nom}}</td>
+                                        <td>{{acquisition.Contact.Prenom}}</td>
+                                        <td>N°{{acquisition.Contact.Numero}} {{acquisition.Contact.Rue}} {{acquisition.Contact.Quartier}} {{acquisition.Contact.Commune}}</td>
+                                        <td>{{acquisition.Contact.Ville}}</td>
+                                        <td>{{acquisition.Contact.Province}}</td>
+                                        <td>{{acquisition.Contact.Tel1}}</td>
+                                        <td>{{acquisition.Contact.Email}}</td>
                                         <td>{{acquisition.Statut}}</td>
                                         <td>{{acquisition.Remarque}}</td>
                                         <td>{{acquisition.CommentaireQ5}}</td>

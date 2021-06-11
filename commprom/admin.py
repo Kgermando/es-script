@@ -34,8 +34,7 @@ export_to_csv.short_description = 'Export to CSV'
 
 class CommpromAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 'created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Quartier', 'Commune', 'Province', 
-        'Tel1', 'Email', 'Statut', 'Bound', 'Remarque'
+        'user', 'created_date', 'questions1', 'questions2', 'Statut', 'Bound', 'Contact'
     )
 
     list_filter = (

@@ -4,9 +4,16 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages  # for message
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
+import xlwt
+import csv
 
 from acquisition.models import Acquisition
 from acquisition.forms import AcquisitionForm
+
+from contacts.models import Contact
+from contacts.forms import ContactForm
 # Create your views here.
 @login_required
 def acquisition_add(request):
@@ -28,11 +35,36 @@ def acquisition_add(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = AcquisitionForm()
-    context = {
-        'form': form
-    }
-    template_name = 'pages/acquisition/acquisition_add.html'
-    return render(request, template_name, context)
+
+    if request.method == 'POST':
+        if request.is_ajax():
+            formContact = ContactForm(request.POST)
+            if formContact.is_valid():
+                    formContact.cleaned_data
+                    formContact.user = request.user
+                    formContact.save()
+                    latest = Contact.objects.latest('id').id
+                    contact_object = model_to_dict(Contact.objects.get(pk=latest))  
+                
+                    return JsonResponse({'error': False, 'data': contact_object})
+            else:
+                    print(formContact.errors)
+                    return JsonResponse({'error': True, 'data': formContact.errors})
+        else:
+                error = {
+                    'message': 'Error, must be an Ajax call.'
+                }
+                return JsonResponse(error, content_type="application/json")
+    else:
+        formContact = ContactForm()
+
+
+        context = {
+            'form': form,
+            'formContact': formContact
+        }
+        template_name = 'pages/acquisition/acquisition_add.html'
+        return render(request, template_name, context)
 
 
 
@@ -83,7 +115,7 @@ def acquisition_update(request, id):
         Fonction de Mis à jour
     """
     acquisition = Acquisition.objects.get(id=id)
-    form = DatForm(request.POST, instance=dat)  
+    form = AcquisitionForm(request.POST, instance=acquisition)  
     if form.is_valid():  
         form.user = request.user
         form.save()  
@@ -109,3 +141,51 @@ def acquisition_destroy(request, id):
     acquisition.delete()  
     return redirect("acquisition:acquisition_list")  
 
+
+def export_acquisition_xls(request):
+    user = request.user
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="acquisition.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Acquisition')
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+
+    columns = ['user', 'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'Statut' ]
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+
+    # Sheet body, remaining rows
+    font_style = xlwt.XFStyle()
+
+    rows = Acquisition.objects.filter(user=user).values_list(
+        'user', 'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'Statut')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, row[col_num], font_style)
+
+    wb.save(response)
+    return response
+
+
+def export_acquisition_csv(request):
+    user = request.user
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="acquisition.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['user', 'created_date', 'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'Statut' ])
+
+    acquisition = Acquisition.objects.filter(user=user).values_list(
+        'user', 'created_date', 'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'Statut')
+    for acquisition in acquisition:
+        writer.writerow(acquisition)
+
+    return response

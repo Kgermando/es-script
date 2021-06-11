@@ -1,16 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
+import xlwt
+import csv
+from django.http import HttpResponse, HttpResponseRedirect, response
 from django.contrib import messages  # for message
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
-import xlwt
-import csv
+from django.forms.models import model_to_dict
 
 from dat.models import Dat
 from dat.forms import DatForm
 
+from contacts.models import Contact
 from contacts.forms import ContactForm
 
 # Create your views here.
@@ -35,23 +37,36 @@ def dat_add(request):
     else:
         form = DatForm()
 
-    formContact = ContactForm(request.POST)
+    
     if request.method == 'POST':
-        if formContact.is_valid():
-            contact = formContact.save(commit=False)
-            contact.user = request.user
-            contact.save()
-            # messages.success(request, "Contact enregistrées!")
-            return JsonResponse({'contact': 'success'})
+        if request.is_ajax():
+            formContact = ContactForm(request.POST)
+            if formContact.is_valid():
+                    formContact.cleaned_data
+                    formContact.user = request.user
+                    formContact.save()
+                    latest = Contact.objects.latest('id').id
+                    contact_object = model_to_dict(Contact.objects.get(pk=latest))  
+                
+                    return JsonResponse({'error': False, 'data': contact_object})
+            else:
+                    print(formContact.errors)
+                    return JsonResponse({'error': True, 'data': formContact.errors})
         else:
-            formContact = ContactForm()
-    context = {
-        'form': form,
-        'formContact': formContact
-    }
+                error = {
+                    'message': 'Error, must be an Ajax call.'
+                }
+                return JsonResponse(error, content_type="application/json")
+    else:
+        formContact = ContactForm()
 
-    template_name = 'pages/dat/dat_add.html'
-    return render(request, template_name, context)
+        context = {
+            'form': form,
+            'formContact': formContact
+        }
+
+        template_name = 'pages/dat/dat_add.html'
+        return render(request, template_name, context)
 
 
 @login_required
@@ -145,9 +160,7 @@ def export_dat_xls(request):
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
 
-    columns = ['questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 
-            'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province',
-            'Tel1','Email', 'Statut', 'Bound', 'Remarque', 'Agent',]
+    columns = ['questions1', 'questions2', 'Contact', 'Statut', 'Bound', 'Agent',]
 
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
@@ -155,9 +168,8 @@ def export_dat_xls(request):
     # Sheet body, remaining rows
     font_style = xlwt.XFStyle()
 
-    rows = Dat.objects.filter(user=user).values_list('questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom', 
-            'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province',
-            'Tel1','Email', 'Statut', 'Bound', 'Remarque', 'user')
+    rows = Dat.objects.filter(user=user).values_list(
+        'questions1', 'questions2', 'Contact',  'Statut', 'Bound', 'user')
     for row in rows:
         row_num += 1
         for col_num in range(len(row)):
@@ -167,19 +179,16 @@ def export_dat_xls(request):
     return response
 
 
+
 def export_dat_csv(request):
     user = request.user
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="dat.csv"'
 
     writer = csv.writer(response)
-    writer.writerow(['created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom',
-                     'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province',
-                     'Tel1', 'Email', 'Statut', 'Bound', 'Remarque', 'Agent', ])
+    writer.writerow(['created_date', 'questions1', 'questions2',  'Statut', 'Bound', 'Contact', 'Agent', ])
 
-    dat = Dat.objects.filter(user=user).values_list('created_date', 'questions1', 'questions2', 'Nom', 'Post_Nom', 'Prenom',
-                                                      'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province',
-                                                      'Tel1', 'Email', 'Statut', 'Bound', 'Remarque', 'user')
+    dat = Dat.objects.filter(user=user).values_list('created_date', 'questions1', 'questions2', 'Statut', 'Bound', 'Contact', 'user')
     for dat in dat:
         writer.writerow(dat)
 

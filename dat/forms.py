@@ -45,7 +45,6 @@ class DatForm(forms.ModelForm):
                 "placeholder": "Hopital"
             }
         )
-        
     )
 
 
