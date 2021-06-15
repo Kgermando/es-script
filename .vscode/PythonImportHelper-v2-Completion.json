@@ -5559,7 +5559,7 @@
         "kind": 2,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "def contact_view(request):\n    user = request.user\n    contact = Contact.objects.all().order_by('-created_date')\n    contact_count = Contact.objects.all().count()\n    paginator = Paginator(contact, 10)\n    page = request.GET.get('page')\n    try:\n        contact_list = paginator.page(page)\n    except PageNotAnInteger:\n        contact_list = paginator.page(1)",
+        "peekOfCode": "def contact_view(request):\n    # user = request.user\n    contact = Contact.objects.all().order_by('-created_date')\n    contact_count = Contact.objects.all().count()\n    paginator = Paginator(contact, 10)\n    page = request.GET.get('page')\n    try:\n        contact_list = paginator.page(page)\n    except PageNotAnInteger:\n        contact_list = paginator.page(1)",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5569,15 +5569,6 @@
         "importPath": "contacts.views",
         "description": "contacts.views",
         "peekOfCode": "def kyc_view(request):\n    formContact = ContactForm(request.POST)\n    if request.method == 'POST':\n        if formContact.is_valid():\n            contact = formContact.save(commit=False)\n            contact.user = request.user\n            contact.save()\n            # messages.success(request, \"Contact enregistrées!\")\n            return JsonResponse({'contact': 'success'})\n    #     else:",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "upload_contact_csv",
-        "kind": 2,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "def upload_contact_csv(request):\n\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_contact_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5609,65 +5600,11 @@
         "documentation": {}
     },
     {
-        "label": "\tdata",
-        "kind": 5,
+        "label": "upload_contact_csv",
+        "kind": 2,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\tdata = {}\n\tif \"GET\" == request.method:\n\t\treturn render(request, \"pages/contacts/upload_contact_csv.html\", data)\n    # if not GET, then proceed\n\ttry:\n\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n    # if file is too large, return",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tcsv_file",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\tcsv_file = request.FILES[\"csv_file\"]\n\t\tif not csv_file.name.endswith('.csv'):\n\t\t\tmessages.error(request,'File is not CSV type')\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n    # if file is too large, return\n\t\tif csv_file.multiple_chunks():\n\t\t\tmessages.error(request,\"Uploaded file is too big (%.2f MB).\" % (csv_file.size/(1000*1000),))\n\t\t\treturn HttpResponseRedirect(reverse(\"contacts:upload_contact_csv\"))\n\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tfile_data",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\tfile_data = csv_file.read().decode(\"utf-8\")\t\t\n\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\tlines",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\tlines = file_data.split(\"\\n\")\n\t\t# loop over the lines and save them in db. If error , store as string and then display\n\t\tfor line in lines:\t\t\t\t\t\t\n\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\tfields",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\t\tfields = line.split(\",\")\n\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\tdata_dict",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\t\tdata_dict = {\"Nom\", \"Post_Nom\", \"Prenom\", \"Numero\", \"Quartier\", \"Commune\", \"Province\", \"Pays\", \"Tel1\", \"Tel2\", \"Email\",\n                     \"Website\", \"Facebook\", \"Instagram\", \"Twitter\", \"LinkedIn\", \"Remarque\", \"user\", \"created_date\"}\n\t\t\t# data_dict[\"Nom\"] = fields[0]\n\t\t\t# data_dict[\"Post_Nom\"] = fields[1]\n\t\t\t# data_dict[\"Prenom\"] = fields[2]\n\t\t\t# data_dict[\"Numero\"] = fields[3]\n\t\t\ttry:\n\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t",
-        "detail": "contacts.views",
-        "documentation": {}
-    },
-    {
-        "label": "\t\t\t\tform",
-        "kind": 5,
-        "importPath": "contacts.views",
-        "description": "contacts.views",
-        "peekOfCode": "\t\t\t\tform = Contact(data_dict)\n\t\t\t\tif form.is_valid():\n\t\t\t\t\tform.save()\t\n\t\t\t\t\treturn HttpResponseRedirect(reverse(\"contacts:contact_view\"))\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tlogging.getLogger(\"error_logger\").error(form.errors.as_json())\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\texcept Exception as e:\n\t\t\t\tlogging.getLogger(\"error_logger\").error(repr(e))\t\t\t\t\t\n\t\t\t\tpass\n\texcept Exception as e:",
+        "peekOfCode": "def upload_contact_csv(request):\n    if 'GET' == request.method:\n        csvdata = Contact.objects.all()\n        context = {'csvdata': csvdata}\n        return render(request, 'pages/contacts/upload_contact_csv.html', context)\n    try:\n        csv_file = request.FILES[\"csv_file\"]\n        if len(csv_file) == 0:\n            messages.error(request, 'Empty File')\n            return render(request, 'pages/contacts/upload_contact_csv.html')",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5730,7 +5667,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\ttemplate = get_template(template_path)\n\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "peekOfCode": "\ttemplate = get_template(template_path)\n\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response\n@login_required\ndef upload_contact_csv(request):",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5739,7 +5676,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "peekOfCode": "\thtml = template.render(context)\n\t# create a pdf\n\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response\n@login_required\ndef upload_contact_csv(request):\n    if 'GET' == request.method:",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -5748,7 +5685,7 @@
         "kind": 5,
         "importPath": "contacts.views",
         "description": "contacts.views",
-        "peekOfCode": "\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response",
+        "peekOfCode": "\tpisa_status = pisa.CreatePDF(html, dest=response)\n\t# if error then show some funy view\n\tif pisa_status.err:\n\t\treturn HttpResponse('We had some errors <pre>' + html + '</pre>')\n\treturn response\n@login_required\ndef upload_contact_csv(request):\n    if 'GET' == request.method:\n        csvdata = Contact.objects.all()\n        context = {'csvdata': csvdata}",
         "detail": "contacts.views",
         "documentation": {}
     },
@@ -7179,7 +7116,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATETIME_FORMAT = 'Y-m-d H:i:s'\nTIME_FORMAT = 'H:i:s'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3",
+        "peekOfCode": "DATETIME_FORMAT = 'Y-m-d H:i:s'\nTIME_FORMAT = 'H:i:s'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7188,7 +7125,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "TIME_FORMAT = 'H:i:s'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {",
+        "peekOfCode": "TIME_FORMAT = 'H:i:s'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7197,7 +7134,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7206,7 +7143,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7215,7 +7152,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"static_root\")\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7224,7 +7161,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7233,7 +7170,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Use BOOTSTRAP3 if you are using Bootstrap 3o\nBOOTSTRAP4 = {\n    'include_jquery': True,\n}\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'",
         "detail": "scripting.settings",
         "documentation": {}
     },

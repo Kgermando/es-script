@@ -180,7 +180,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Use BOOTSTRAP3 if you are using Bootstrap 3
+# Use BOOTSTRAP3 if you are using Bootstrap 3o
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
