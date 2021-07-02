@@ -9,6 +9,9 @@ from django.forms.models import model_to_dict
 import xlwt
 import csv
 
+from django.views.generic import DetailView
+from scripting.utils import render_to_pdf
+
 from acquisition.models import Acquisition
 from acquisition.forms import AcquisitionForm
 
@@ -189,3 +192,18 @@ def export_acquisition_csv(request):
         writer.writerow(acquisition)
 
     return response
+
+
+class Export_Acquisition_pdf(DetailView):
+    """
+        For detail to pdf based function
+    """
+    model = Acquisition
+    def get(self, request, *args, **kwargs):
+        acquisition = Acquisition.objects.get(id=self.kwargs.get('id'))
+        data = {
+            'acquisition': acquisition,
+            # 'today': datetime.date.today(), 
+        }
+        pdf = render_to_pdf('pages/acquisition/acquisition_pdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')

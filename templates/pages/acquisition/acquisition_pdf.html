@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dp HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dp">
+<html>
+{% load static %}
+
+<head>
+    <title>acquisition</title>
+    <style type="text/css">
+        body {
+            font-weight: 200;
+            font-size: 14px;
+            /* background: url('../../../static/images/advans.png');
+            height: 100%;
+            width: 100%; */
+        }
+
+        .header {
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: #007cae;
+            font-weight: 700;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 100;
+            /* text-align: right;*/
+            padding: 10px 20px 0px 20px;
+        }
+
+        .title span {
+            color: #007cae;
+        }
+
+        .details {
+            padding: 10px 20px 0px 20px;
+            text-align: left !important;
+            /*margin-left: 40%;*/
+        }
+
+        .hrItem {
+            border: none;
+            height: 1px;
+            /* Set stronge hr color */
+            color: #333;
+            /* old IE */
+            background-color: #fff;
+            /* Modern Browsers */
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    <div class="d-flex justify-content-between">
+        <img src="{% static 'images/advans.png' %}"  height="200px">
+        <div class="p-2 bd-highlight">{{acquisition.created_date}}</div>
+    </div>
+
+    <div class='wrapper'>
+        <div class="d-flex justify-content-between">
+            <div class=''>
+                <h2 class='header'>Script Acquisition </h2>
+            </div>
+        </div>
+
+        <hr class='hrItem' />
+        <div>
+            <div class='details'>
+                <p><strong>Questions 1</strong>: <br>
+                    <i>J'aimerais vous poser quelques questions simples sur votre intérêt pour Advans ?</i>
+                    <br>
+                    R/ {{acquisition.questions1}}
+                </p>
+                <p><strong>Questions 2</strong>: <br>
+                    <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                    <i><strong>Nom</strong>: {{acquisition.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{acquisition.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{acquisition.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{acquisition.Contact.Numero}} {{acquisition.Contact.Rue}}
+                        {{acquisition.Contact.Quartier}}
+                        {{acquisition.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{acquisition.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{acquisition.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{acquisition.Contact.Tel1}}</i> <br>
+                    <i><strong>Email</strong>: {{acquisition.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{acquisition.Contact.Remarque}}</i> <br>
+                </p>
+                <p><strong>Questions 3</strong>: <br>
+                    <i>Pouvez-vous m’indiquer lequel de nos services vous intéresse particulièrement ?</i>
+                   <br> R/ {{acquisition.questions3}}
+                </p>
+                <p><strong>Questions 4</strong>: <br>
+                    <i>Puis je vous proposer de rencontrer notre commercial en agence sur nos produits et services ?</i>
+                    <br> R/ {{acquisition.questions4}}
+                </p>
+                <p><strong>Questions 5</strong>: <br>
+                    <i>Quelles date et heure vous arrangent ?</i>
+                    <br> R/ {{acquisition.questions5}} 
+                    <br> 
+                    <i><strong>Commentaires</strong>: 
+                        <br> R/ {{acquisition.CommentaireQ5}}
+                    </i>
+                </p>
+                <p><strong>Questions 6</strong>: <br>
+                    <i>AVEZ-VOUS DAUTRES QUESTIONS. Puis je vous proposer de rencontrer notre commercial en agence sur nos autres produits et
+                    services. Quelles date et heure vous arrangent ?</i>
+                    <br> R/ {{acquisition.questions6}}
+                    <br>
+                    <i><strong>Commentaires</strong>:
+                        <br> R/ {{acquisition.CommentaireQ6}}
+                    </i>
+                </p>
+                <p><strong>Questions 7</strong>: <br>
+                    <i>
+                        Merci pour votre temps aujourd'hui. Nous espérons que vous pourriez toujours être intéressé par Advans à l'avenir.
+                    </i>
+                    <br> R/ {{acquisition.Statut}}
+                </p>
+
+                
+                <p><strong>Remplie par l'agent</strong>: {{acquisition.user}}</p>
+                <!-- <p><strong>Bound</strong>: {{acquisition.Bound}}</p> -->
+
+            </div>
+        </div>
+</body>
+
+</html>

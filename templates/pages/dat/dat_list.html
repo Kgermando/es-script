@@ -50,11 +50,10 @@
                             aria-haspopup="true" aria-expanded="false">
                             REPORTING
                         </a>
-                    
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{% url 'dat:export_dat_xls' %}">Excel</a>
                             <a class="dropdown-item" href="{% url 'dat:export_dat_csv' %}">CSV</a>
-                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="" target="_blank">PDF</a>
                             <a class="dropdown-item" href="#">JSON</a>
                         </div>
                     </div>
@@ -97,33 +96,37 @@
                                 <tbody>
 
                                     {% for dat in dat_list %}
-                                    <tr>
-                                        <td scope="row">{{dat.created_date}}</td>
-                                        <td>{{dat.questions1}}</td>
-                                        <td>{{dat.questions2}}</td>
-                                        <td>{{dat.Contact.Nom}}</td>
-                                        <td>{{dat.Contact.Post_Nom}}</td>
-                                        <td>{{dat.Contact.Prenom}}</td>
-                                        <td>N°{{dat.Contact.Numero}} {{dat.Contact.Rue}} {{dat.Contact.Quartier}} {{dat.Contact.Commune}}</td>
-                                        <td>{{dat.Contact.Ville}}</td>
-                                        <td>{{dat.Contact.Province}}</td>
-                                        <td>{{dat.Contact.Tel1}}</td>
-                                        <td>{{dat.Contact.Email}}</td>
-                                        <td>{{dat.Statut}}</td>
-                                        <td>{{dat.Contact.Remarque}}</td>
-                                        <td>{{dat.user}}</td>
-                                        <td>{{dat.Bound}}</td>
-                                        <td>
-                                            <a href="{% url 'dat:dat_update' dat.id %} ">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{% url 'dat:dat_destroy' dat.id %} ">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td scope="row">
+                                                <a href="{% url 'dat:export_dat_pdf' dat.id %} ">
+                                                     {{dat.created_date}}
+                                                </a>
+                                            </td>
+                                            <td>{{dat.questions1}}</td>
+                                            <td>{{dat.questions2}}</td>
+                                            <td>{{dat.Contact.Nom}}</td>
+                                            <td>{{dat.Contact.Post_Nom}}</td>
+                                            <td>{{dat.Contact.Prenom}}</td>
+                                            <td>N°{{dat.Contact.Numero}} {{dat.Contact.Rue}} {{dat.Contact.Quartier}} {{dat.Contact.Commune}}</td>
+                                            <td>{{dat.Contact.Ville}}</td>
+                                            <td>{{dat.Contact.Province}}</td>
+                                            <td>{{dat.Contact.Tel1}}</td>
+                                            <td>{{dat.Contact.Email}}</td>
+                                            <td>{{dat.Statut}}</td>
+                                            <td>{{dat.Contact.Remarque}}</td>
+                                            <td>{{dat.user}}</td>
+                                            <td>{{dat.Bound}}</td>
+                                            <td>
+                                                <a href="{% url 'dat:dat_update' dat.id %} ">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'dat:dat_destroy' dat.id %} ">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     {% endfor %}
 
                                 </tbody>

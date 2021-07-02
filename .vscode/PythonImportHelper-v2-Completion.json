@@ -2017,7 +2017,7 @@
         "documentation": {}
     },
     {
-        "label": "response",
+        "label": "HttpResponseBadRequest",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -2026,6 +2026,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -2194,6 +2202,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -2939,6 +2955,14 @@
         "documentation": {}
     },
     {
+        "label": "Export_Acquisition_pdf",
+        "importPath": "acquisition.views",
+        "description": "acquisition.views",
+        "isExtraImport": true,
+        "detail": "acquisition.views",
+        "documentation": {}
+    },
+    {
         "label": "EmptyPage",
         "importPath": "django.core.paginator",
         "description": "django.core.paginator",
@@ -3209,6 +3233,46 @@
         "importPath": "xlwt",
         "description": "xlwt",
         "detail": "xlwt",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
         "documentation": {}
     },
     {
@@ -3822,6 +3886,30 @@
         "documentation": {}
     },
     {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "pisa",
+        "importPath": "xhtml2pdf",
+        "description": "xhtml2pdf",
+        "isExtraImport": true,
+        "detail": "xhtml2pdf",
+        "documentation": {}
+    },
+    {
         "label": "pisa",
         "importPath": "xhtml2pdf",
         "description": "xhtml2pdf",
@@ -4052,6 +4140,62 @@
         "description": "dat.views",
         "isExtraImport": true,
         "detail": "dat.views",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Dat_pdf",
+        "importPath": "dat.views",
+        "description": "dat.views",
+        "isExtraImport": true,
+        "detail": "dat.views",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "canvas",
+        "importPath": "reportlab.pdfgen",
+        "description": "reportlab.pdfgen",
+        "isExtraImport": true,
+        "detail": "reportlab.pdfgen",
+        "documentation": {}
+    },
+    {
+        "label": "letter",
+        "importPath": "reportlab.lib.pagesizes",
+        "description": "reportlab.lib.pagesizes",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.pagesizes",
+        "documentation": {}
+    },
+    {
+        "label": "landscape",
+        "importPath": "reportlab.lib.pagesizes",
+        "description": "reportlab.lib.pagesizes",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.pagesizes",
+        "documentation": {}
+    },
+    {
+        "label": "A4",
+        "importPath": "reportlab.lib.pagesizes",
+        "description": "reportlab.lib.pagesizes",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.pagesizes",
         "documentation": {}
     },
     {
@@ -4902,7 +5046,7 @@
         "kind": 5,
         "importPath": "acquisition.urls",
         "description": "acquisition.urls",
-        "peekOfCode": "app_name = 'acquisition'\nurlpatterns = [\n    path('acquisition_add/', acquisition_add, name='acquisition_add'),\n    path('acquisition_list/', acquisition_list, name='acquisition_list'),\n    path('acquisition_update/<int:id>/', acquisition_update, name='acquisition_update'),\n    path('acquisition_view/<int:id>/', acquisition_view, name='acquisition_view'),\n    path('acquisition_destroy/<int:id>/', acquisition_destroy, name='acquisition_destroy'),\n    path('export/xls/', export_acquisition_xls, name='export_acquisition_xls'),\n    path('export/csv/', export_acquisition_csv, name='export_acquisition_csv'),\n]",
+        "peekOfCode": "app_name = 'acquisition'\nurlpatterns = [\n    path('acquisition_add/', acquisition_add, name='acquisition_add'),\n    path('acquisition_list/', acquisition_list, name='acquisition_list'),\n    path('acquisition_update/<int:id>/', acquisition_update, name='acquisition_update'),\n    path('acquisition_view/<int:id>/', acquisition_view, name='acquisition_view'),\n    path('acquisition_destroy/<int:id>/', acquisition_destroy, name='acquisition_destroy'),\n    path('export/xls/', export_acquisition_xls, name='export_acquisition_xls'),\n    path('export/csv/', export_acquisition_csv, name='export_acquisition_csv'),\n    path('export/pdf/<int:id>/', Export_Acquisition_pdf.as_view(), name='export_acquisition_pdf'),",
         "detail": "acquisition.urls",
         "documentation": {}
     },
@@ -4911,8 +5055,17 @@
         "kind": 5,
         "importPath": "acquisition.urls",
         "description": "acquisition.urls",
-        "peekOfCode": "urlpatterns = [\n    path('acquisition_add/', acquisition_add, name='acquisition_add'),\n    path('acquisition_list/', acquisition_list, name='acquisition_list'),\n    path('acquisition_update/<int:id>/', acquisition_update, name='acquisition_update'),\n    path('acquisition_view/<int:id>/', acquisition_view, name='acquisition_view'),\n    path('acquisition_destroy/<int:id>/', acquisition_destroy, name='acquisition_destroy'),\n    path('export/xls/', export_acquisition_xls, name='export_acquisition_xls'),\n    path('export/csv/', export_acquisition_csv, name='export_acquisition_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('acquisition_add/', acquisition_add, name='acquisition_add'),\n    path('acquisition_list/', acquisition_list, name='acquisition_list'),\n    path('acquisition_update/<int:id>/', acquisition_update, name='acquisition_update'),\n    path('acquisition_view/<int:id>/', acquisition_view, name='acquisition_view'),\n    path('acquisition_destroy/<int:id>/', acquisition_destroy, name='acquisition_destroy'),\n    path('export/xls/', export_acquisition_xls, name='export_acquisition_xls'),\n    path('export/csv/', export_acquisition_csv, name='export_acquisition_csv'),\n    path('export/pdf/<int:id>/', Export_Acquisition_pdf.as_view(), name='export_acquisition_pdf'),\n]",
         "detail": "acquisition.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Acquisition_pdf",
+        "kind": 6,
+        "importPath": "acquisition.views",
+        "description": "acquisition.views",
+        "peekOfCode": "class Export_Acquisition_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Acquisition\n    def get(self, request, *args, **kwargs):\n        acquisition = Acquisition.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'acquisition': acquisition,\n            # 'today': datetime.date.today(), ",
+        "detail": "acquisition.views",
         "documentation": {}
     },
     {
@@ -5802,8 +5955,26 @@
         "kind": 5,
         "importPath": "dat.urls",
         "description": "dat.urls",
-        "peekOfCode": "urlpatterns = [\n    path('dat-add/', dat_add, name='dat_add'),\n    path('dat-list/', dat_list, name='dat_list'),\n    path('dat-update/<int:id>/', dat_update, name='dat_update'),\n    path('dat-view/<int:id>/', dat_view, name='dat_view'),\n    path('dat-destroy/<int:id>/', dat_destroy, name='dat_destroy'),\n    path('export/xls/', export_dat_xls, name='export_dat_xls'),\n    path('export/csv/', export_dat_csv, name='export_dat_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('dat-add/', dat_add, name='dat_add'),\n    path('dat-list/', dat_list, name='dat_list'),\n    path('dat-update/<int:id>/', dat_update, name='dat_update'),\n    path('dat-view/<int:id>/', dat_view, name='dat_view'),\n    path('dat-destroy/<int:id>/', dat_destroy, name='dat_destroy'),\n    path('export/xls/', export_dat_xls, name='export_dat_xls'),\n    path('export/csv/', export_dat_csv, name='export_dat_csv'),\n    path('export/pdf/<int:id>/', Export_Dat_pdf.as_view(), name='export_dat_pdf'),\n]",
         "detail": "dat.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Dat_pdf_List",
+        "kind": 6,
+        "importPath": "dat.views",
+        "description": "dat.views",
+        "peekOfCode": "class Export_Dat_pdf_List(View):\n    \"\"\"\n        For list to pdf to based function\n    \"\"\"\n    model = Dat\n    def get(self, request, *args, **kwargs):\n        dat = Dat.objects.filter(user=request.user).order_by('-created_date')\n        data = {\n            'dat': dat\n            # 'today': datetime.date.today(), ",
+        "detail": "dat.views",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Dat_pdf",
+        "kind": 6,
+        "importPath": "dat.views",
+        "description": "dat.views",
+        "peekOfCode": "class Export_Dat_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Dat\n    def get(self, request, *args, **kwargs):\n        dat = Dat.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'dat': dat,\n            # 'today': datetime.date.today(), ",
+        "detail": "dat.views",
         "documentation": {}
     },
     {
@@ -7271,6 +7442,15 @@
         "description": "scripting.urls",
         "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),\n    path('agenda/', include('agenda.urls')),\n    path('dat/', include('dat.urls')),\n    path('acquisition/', include('acquisition.urls')),",
         "detail": "scripting.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "kind": 2,
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "peekOfCode": "def render_to_pdf(template_src, context_dict={}):\n    template = get_template(template_src)\n    html  = template.render(context_dict)\n    result = BytesIO()\n    pdf = pisa.pisaDocument(BytesIO(html.encode(\"UTF-16\")), result)\n    if not pdf.err:\n        return HttpResponse(result.getvalue(), content_type='application/pdf')\n    return None",
+        "detail": "scripting.utils",
         "documentation": {}
     },
     {

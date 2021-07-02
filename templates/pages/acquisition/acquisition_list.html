@@ -100,7 +100,11 @@
 
                                     {% for acquisition in acquisition_list %}
                                     <tr>
-                                        <td scope="row">{{acquisition.created_date}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'acquisition:export_acquisition_pdf' acquisition.id %} ">
+                                                {{acquisition.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{acquisition.questions1}}</td>
                                         <td>{{acquisition.questions3}}</td>
                                         <td>{{acquisition.questions4}}</td>

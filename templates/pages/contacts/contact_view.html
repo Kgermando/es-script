@@ -37,7 +37,6 @@
             <div class="page-body">
                 {% include 'notifications/_alerts.html' %}
                 <div class="row d-flex justify-content-end mb-4">
-                    
                     <button type="button" class="btn btn-primary">
                         <a href="{% url 'contacts:upload_contact_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
                     </button>
@@ -46,7 +45,6 @@
                             aria-haspopup="true" aria-expanded="false">
                             REPORTING
                         </a>
-                
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{% url 'contacts:export_contact_xls' %}">Excel</a>
                             <a class="dropdown-item" href="{% url 'contacts:export_contact_csv' %}">CSV</a>
