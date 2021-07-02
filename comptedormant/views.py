@@ -4,6 +4,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages  # for message
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
+import xlwt
+import csv
+
+from contacts.models import Contact
+from contacts.forms import ContactForm
 
 from comptedormant.models import Compte_dormant
 from comptedormant.forms import Compte_dormantForm
@@ -30,11 +37,35 @@ def compte_dormant_add(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = Compte_dormantForm()
-    context = {
-        'form': form
-    }
-    template_name = 'pages/compte_dormant/compte_dormant_add.html'
-    return render(request, template_name, context)
+    
+    if request.method == 'POST':
+        if request.is_ajax():
+            formContact = ContactForm(request.POST)
+            if formContact.is_valid():
+                    formContact.cleaned_data
+                    formContact.user = request.user
+                    formContact.save()
+                    latest = Contact.objects.latest('id').id
+                    contact_object = model_to_dict(Contact.objects.get(pk=latest))  
+                
+                    return JsonResponse({'error': False, 'data': contact_object})
+            else:
+                    print(formContact.errors)
+                    return JsonResponse({'error': True, 'data': formContact.errors})
+        else:
+                error = {
+                    'message': 'Error, must be an Ajax call.'
+                }
+                return JsonResponse(error, content_type="application/json")
+    else:
+        formContact = ContactForm()
+
+        context = {
+            'form': form,
+            'formContact': formContact
+        }
+        template_name = 'pages/compte_dormant/compte_dormant_add.html'
+        return render(request, template_name, context)
 
 
 
@@ -84,7 +115,7 @@ def compte_dormant_update(request, id):
         Fonction de Mis à jour
     """
     compte_dormant = Compte_dormant.objects.get(id=id)
-    form = DatForm(request.POST, instance=Compte_dormant)
+    form = ContactForm(request.POST, instance=Compte_dormant)
     if form.is_valid():  
         form.user = request.user
         form.save()  
@@ -109,4 +140,54 @@ def compte_dormant_destroy(request, id):
     compte_dormant = Compte_dormant.objects.filter(user=user).get(id=id)  
     compte_dormant.delete()  
     return redirect("compte_dormant:compte_dormant_list")  
+
+
+
+def export_compte_dormant_xls(request):
+    user = request.user
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="compte_dormant.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Compte_dormant')
+
+    # Sheet header, first row
+    row_num = 0
+
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+
+    columns = ['user', 'questions1', 'questions2', 'questions3', 'questions4', 'Statut', 'Bound', 'Contact']
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+
+    # Sheet body, remaining rows
+    font_style = xlwt.XFStyle()
+
+    rows = Compte_dormant.objects.filter(user=user).values_list(
+        'user', 'questions1', 'questions2', 'questions3', 'questions4', 'Statut', 'Bound', 'Contact')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, row[col_num], font_style)
+
+    wb.save(response)
+    return response
+
+
+
+def export_compte_dormant_csv(request):
+    user = request.user
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="compte_dormant.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['user', 'created_date', 'questions1', 'questions2', 'questions3', 'questions4', 'Statut', 'Bound', 'Contact'])
+
+    compte_dormant = Compte_dormant.objects.filter(user=user).values_list('user', 'created_date', 'questions1', 'questions2', 'questions3', 'questions4', 'Statut', 'Bound', 'Contact')
+    for compte_dormant in compte_dormant:
+        writer.writerow(compte_dormant)
+
+    return response
 

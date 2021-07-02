@@ -70,4 +70,96 @@
     });
 
 
+
+    // Get DOM Elements
+        const modal = document.querySelector('#my-modal');
+        const modalBtn = document.querySelector('#modal-btn');
+        const closeBtn = document.querySelector('#close');
+
+        // Events
+        modalBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', outsideClick);
+
+        // Open
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        // Close
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close If Outside Click
+        function outsideClick(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+
+
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+                var formData = {
+                    'Nom': $('#Nom').val(),
+                    'Post_Nom': $('#Post_Nom').val(),
+                    'Prenom': $('#Prenom').val(),
+                    'Numero': $('#Numero').val(),
+                    'Rue': $('#Rue').val(),
+                    'Quartier': $('#Quartier').val(),
+                    'Commune': $('#Commune').val(),
+                    'Ville': $('#Ville').val(),
+                    'Province': $('#Province').val(),
+                    'Tel1': $('#Tel1').val(),
+                    'Tel2': $('#Tel2').val(),
+                    'Tel3': $('#Tel3').val(),
+                    'Email': $('#Email').val(),
+                    'Website': $('#Website').val(),
+                    'Facebook': $('#Facebook').val(),
+                    'Instagram': $('#Instagram').val(),
+                    'Twitter': $('#Twitter').val(),
+                    'LinkedIn': $('#LinkedIn').val(),
+                    'Remarque': $('#Remarque').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                    contentType: 'application/x-www-form-urlencoded',
+                    encode: true,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "{% url 'recouvrement:recouvrement_add' %}",
+                    data: formData,
+                    dataType: 'json',
+                }).done(function (data) {
+                    // console.log(formData);
+                    $("#contact-form").trigger("reset");
+                    // console.log(data)
+
+
+                    $('#kycContact').each(function () {
+                        setTimeout(10000);
+                    });
+                });
+
+
+
+                // e.preventDefault();
+            });
+        });
+
+
+
+    // function refresh() {
+    //     $.ajax({
+    //         url: "{% url 'dat:dat_add' %}",
+    //         success: function (data) {
+    //             $('#kycContact').html(data);
+    //             setTimeout(refresh, 10000);
+    //         }
+
+    //     });
+    // }
+
 </script>

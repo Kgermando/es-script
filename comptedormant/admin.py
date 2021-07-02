@@ -34,8 +34,7 @@ export_to_csv.short_description = 'Export to CSV'
 
 class Compte_dormantAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 'created_date', 'questions1', 'questions2', 'questions3', 'questions4', 'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 
-        'Tel1', 'Email', 'Statut', 'Bound', 'Remarque'
+        'user', 'created_date', 'questions1', 'questions2', 'questions3', 'questions4', 'Statut', 'Bound', 'Contact'
     )
 
     list_filter = (

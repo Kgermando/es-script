@@ -1,7 +1,7 @@
 
 
 PROVINCES = (
-    ('--------', '--------'),
+    # ('--------', '--------'),
     ('Bas-Uele', 'Bas-Uele'),
     ('Équateur', 'Équateur'),
     ('Haut-Katanga', 'Haut-Katanga'),
@@ -12,7 +12,7 @@ PROVINCES = (
     ('Kasaï-Central', 'Kasaï-Central'),
     ('Kasaï oriental', 'Kasaï oriental'),
     ('Kinshasa', 'Kinshasa'),
-    ('Kongo central1', 'Kongo central1'),
+    ('Kongo central', 'Kongo central'),
     ('Kwango', 'Kwango'),
     ('Kwilu', 'Kwilu'),
     ('Lomami', 'Lomami'),

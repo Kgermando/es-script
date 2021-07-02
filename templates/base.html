@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripting | {% block title %}{% endblock title %} </title>
+    <title>CRM | {% block title %}{% endblock title %} </title>
 
-    <meta name="keywords" content="Scripting Web Application" />
+    <meta name="keywords" content="CRM Web Application" />
     <meta name="Germain Kataku" content="https://eventdrc.com" />
     <!-- Favicon icon -->
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
@@ -15,6 +15,10 @@
     {% include 'static/css.html' %}
     
     <link rel="stylesheet" href="{% static 'bicons/bootstrap-icons.css' %}">
+
+    
+    {% block css_modal %}{% endblock css_modal %}
+        
 </head>
 <body>
     <!-- Pre-loader start -->
@@ -92,5 +96,8 @@
     </div>
 
     {% include 'static/js.html' %}
+    
+    {% block js_modal %}{% endblock js_modal %}
+        
 </body>
 </html>

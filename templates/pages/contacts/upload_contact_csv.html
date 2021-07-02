@@ -21,7 +21,7 @@
                     <li class="breadcrumb-item">
                         <a href="{% url 'dashboard:dashboard' %}"> <i class="fa fa-home"></i> </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="{% url 'forms:contact_view' %}">CONTACTS</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'contacts:contact_view' %}">CONTACTS</a></li>
                     <li class="breadcrumb-item"><a href="#!">CSV</a></li>
                 </ul>
             </div>
@@ -54,16 +54,26 @@
                     <div class="card-block table-border-style">
                         <form action="{% url 'contacts:upload_contact_csv' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <div>
-                                <label for="name">File: </label>
-                                <div>
-                                    <input type="file" name="csv_file" required="True">
-                                </div>
-                            </div>
-                            <br>
-                            <div>
-                                <div style="margin-bottom:10px;">
-                                    <button> <span style="margin-right:5px;"></span>Upload file </button>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-lg">
+                                            <div class="custom-file">
+                                                <input type="file" class="form-control custom-file-input file" name="csv_file" id="input01">
+                                                <label class="custom-file-label" id="fileLabel" for="input01">Selectionnez votre fichier  .csv</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-lg">
+                                            <div class="custom-file">
+                                                <button class="btn btn-primary btn-block" id="submitBtn" disabled type="submit">Upload
+                                                    &nbsp;&nbsp;&nbsp;<span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>

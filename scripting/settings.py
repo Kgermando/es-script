@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Extern Apps
     'daterangefilter',
     'bootstrap_datepicker_plus',
+    'bootstrap_modal_forms',
 
     # My Apps
     'accounts',
@@ -118,7 +119,7 @@ DATABASES_MARIADB = {
         'NAME': 'asteriskcdrdb',
         'USER': 'root',
         'PASSWORD': 'gk0838',
-        'HOST': '192.168.43.232',
+        'HOST': '192.168.11.104', 
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8',
@@ -129,7 +130,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_MARIADB
+DATABASES = DATABASES_SQLITE
 
 
 # Password validation
@@ -179,7 +180,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Use BOOTSTRAP3 if you are using Bootstrap 3
+# Use BOOTSTRAP3 if you are using Bootstrap 3o
 BOOTSTRAP4 = {
     'include_jquery': True,
 }

@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 venv/
-media-root/
+media-root/ 
 static-root/
 # C extensions
 *.so

@@ -61,6 +61,15 @@
                     </li>
                 {% endif%}
             </ul>
+            <ul class="pcoded-item pcoded-left-item">
+                <li class="{% if url_name == 'contact_view' %}active{% endif %}">
+                    <a href="{% url 'contacts:contact_view' %}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="bi bi-person-lines-fill"></i></span>
+                        <span class="pcoded-mtext">Contacts</span>
+                        <span class="pcoded-mcaret"></span>
+                    </a>
+                </li>
+            </ul>
             <div class="pcoded-navigation-label">Scripting</div>
             <ul class="pcoded-item pcoded-left-item">
                 <!-- <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
@@ -113,24 +122,15 @@
                     </a>
                 </li>
             </ul>
-            <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == 'contact_view' %}active{% endif %}">
-                    <a href="{% url 'contacts:contact_view' %}" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="bi bi-person-lines-fill"></i></span>
-                        <span class="pcoded-mtext">Contacts</span>
-                        <span class="pcoded-mcaret"></span>
-                    </a>
-                </li>
-            </ul>
             <div class="pcoded-navigation-label">Tables</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
+                <!-- <li class="{% if url_name == 'scripting_list' %}active{% endif %}">
                     <a href="{% url 'forms:scripting_list' %}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="ti-receipt"></i><b>S</b></span>
                         <span class="pcoded-mtext">Scripting list</span>
                         <span class="pcoded-mcaret"></span>
                     </a>
-                </li>
+                </li> -->
                 <li class="{% if url_name == 'cdr_issabel' %}active{% endif %}">
                     <a href="{% url 'issabel:cdr_issabel' %}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="bi bi-wallet"></i><b>C</b></span>

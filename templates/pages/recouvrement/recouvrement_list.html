@@ -39,9 +39,22 @@
                 {% include 'notifications/_alerts.html' %}
                 <!-- Hover table card start -->
                 <div class="row d-flex justify-content-end mb-4">
-                    <button type="button" class="btn btn-primary"><a href="{% url 'recouvrement:recouvrement_add' %}"
-                            style="color: aliceblue; font-weight: 700;">NOUVEAU</a></button>
-                </div>
+                    <button type="button" class="btn btn-primary">
+                        <a href="{% url 'recouvrement:recouvrement_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
+                    </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'recouvrement:export_recouvrement_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'recouvrement:export_recouvrement_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
+                </div> 
                 <div class="card">
                     <div class="card-header">
                         <h5>RECROUVREMENT OUTBOUND-INBOUND</h5>
@@ -84,14 +97,14 @@
                                             <td scope="row">{{recouvrement.created_date}}</td>
                                             <td>{{recouvrement.questions1}}</td>
                                             <td>{{recouvrement.questions2}}</td>
-                                            <td>{{recouvrement.Nom}}</td>
-                                            <td>{{recouvrement.Post_Nom}}</td>
-                                            <td>{{recouvrement.Prenom}}</td>
-                                            <td>N°{{recouvrement.Numero}} {{recouvrement.Rue}} {{recouvrement.Quartier}} {{recouvrement.Commune}}</td>
-                                            <td>{{recouvrement.Ville}}</td>
-                                            <td>{{recouvrement.Province}}</td>
-                                            <td>{{recouvrement.Tel1}}</td>
-                                            <td>{{recouvrement.Email}}</td>
+                                            <td>{{recouvrement.Contact.Nom}}</td>
+                                            <td>{{recouvrement.Contact.Post_Nom}}</td>
+                                            <td>{{recouvrement.Contact.Prenom}}</td>
+                                            <td>N°{{recouvrement.Contact.Numero}} {{recouvrement.Contact.Rue}} {{recouvrement.Contact.Quartier}} {{recouvrement.Contact.Commune}}</td>
+                                            <td>{{recouvrement.Contact.Ville}}</td>
+                                            <td>{{recouvrement.Contact.Province}}</td>
+                                            <td>{{recouvrement.Contact.Tel1}}</td>
+                                            <td>{{recouvrement.Contact.Email}}</td>
                                             <td>{{recouvrement.Statut}}</td>
                                             <td>{{recouvrement.Remarque}}</td>
                                             <td>{{recouvrement.user}}</td>

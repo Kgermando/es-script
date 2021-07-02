@@ -55,64 +55,24 @@
                                                 Permettez-moi de vérifier vos coordonnées (KYC)
                                             </p>
                                             <div class="container">
-                                                <div class="pl-4">
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Nom" name="Nom" class="form-control"
-                                                                placeholder="Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Post_Nom" name="Post_Nom"
-                                                                class="form-control" placeholder="Post Nom">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <input type="text" id="Prenom" name="Prenom"
-                                                                class="form-control" placeholder="Prénom">
+
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div id="kycContact" class="form-group form-default">
+                                                            <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
+                                                            {{form.Contact}}
                                                         </div>
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Numero" name="Numero"
-                                                                class="form-control" placeholder="N°">
+                                                    <div class="col-md-6">
+                                                
+                                                        <div id="modal-btn" class="button">
+                                                            <i class="bi bi-plus"></i>
+                                                            Nouveau Contact
                                                         </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Rue" name="Rue" class="form-control"
-                                                                placeholder="Rue">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Quartier" name="Quartier"
-                                                                class="form-control" placeholder="Quartier">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Commune" name="Commune"
-                                                                class="form-control" placeholder="Commune">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <input type="text" id="Ville" name="Ville"
-                                                                class="form-control" placeholder="Ville">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <!-- <label>Province</label> -->
-                                                            {{form.Province}}
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <input type="text" id="Tel1" name="Tel1"
-                                                                class="form-control" placeholder="Téléphone">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <input type="email" id="Email" name="Email"
-                                                                class="form-control" placeholder="Email">
-                                                        </div> 
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-12">
-                                                            <input type="text" id="Remarque" name="Remarque"
-                                                                class="form-control" placeholder="Remarque">
-                                                        </div>
+                                                
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -140,7 +100,7 @@
                                     <div class="form-group">
                                         <div class="form-check col">
                                             <P>
-                                                Puis je vous proposer de rencontrer notre commercial en agence sur nos produits et services.
+                                                Puis je vous proposer de rencontrer notre commercial en agence sur nos produits et services?
                                             </P>
                                             <div class="pl-4">
                                                 <label for="questions4OUI" class="radio-inline mr-3">
@@ -228,10 +188,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="pb-4" id="out">
+                                <!-- <div class="pb-4" id="out">
                                     <input type="text" hidden='true' id="Bound" name="Bound" class="form-control"
                                         placeholder="Bound" value="OUTBOUND">
-                                </div>
+                                </div> -->
 
                                 <button type="submit" class="btn btn-primary">Soumettre</button>
                             </form>
@@ -241,6 +201,152 @@
                 </div>
             </div>
 
+        </div>
+
+
+        <div id="my-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>KYC</h2>
+                    <span id="close" class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="form-row">
+                            <form action="{% url 'acquisition:acquisition_add' %}" method="POST" id="contact-form" class="form-material">
+                                {% csrf_token %}
+        
+                                <div class="container">
+                                    <div class="pl-4">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Nom" name="Nom" class="form-control" placeholder="Nom">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Post_Nom" name="Post_Nom" class="form-control"
+                                                    placeholder="Post Nom">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Prenom" name="Prenom" class="form-control"
+                                                    placeholder="Prénom">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Numero" name="Numero" class="form-control"
+                                                    placeholder="N°">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Rue" name="Rue" class="form-control" placeholder="Rue">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Quartier" name="Quartier" class="form-control"
+                                                    placeholder="Quartier">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Commune" name="Commune" class="form-control"
+                                                    placeholder="Commune">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" id="Ville" name="Ville" class="form-control"
+                                                    placeholder="Ville">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Province</label>
+                                                <!-- {{formContact.Province}} -->
+        
+                                                <select id="Province">
+                                                    <option value="Bas-Uele">Bas-Uele</option>
+                                                    <option value="Équateur">Équateur</option>
+                                                    <option value="Haut-Katanga">Haut-Katanga</option>
+                                                    <option value="Haut-Lomami">Haut-Lomami</option>
+                                                    <option value="Haut-Uele">Haut-Uele</option>
+                                                    <option value="Ituri">Ituri</option>
+                                                    <option value="Kasaï">Kasaï</option>
+                                                    <option value="Kasaï-Central">Kasaï-Central</option>
+                                                    <option value="Kasaï oriental">Kasaï oriental</option>
+                                                    <option value="Kinshasa" selected>Kinshasa</option>
+                                                    <option value="Kongo central">Kongo central</option>
+                                                    <option value="Kwango">Kwango</option>
+                                                    <option value="Kwilu">Kwilu</option>
+                                                    <option value="Lomami">Lomami</option>
+                                                    <option value="Lualaba">Lualaba</option>
+                                                    <option value="Mai-Ndombe">Mai-Ndombe</option>
+                                                    <option value="Maniema">Maniema</option>
+                                                    <option value="Mongala">Mongala</option>
+                                                    <option value="Nord-Kivu">Nord-Kivu</option>
+                                                    <option value="Nord-Ubangi">Nord-Ubangi</option>
+                                                    <option value="Sankuru">Sankuru</option>
+                                                    <option value="Sud-Kivu">Sud-Kivu</option>
+                                                    <option value="Sud-Ubangi">Sud-Ubangi</option>
+                                                    <option value="Tanganyika">Tanganyika</option>
+                                                    <option value="Tshopo">Tshopo</option>
+                                                    <option value="Tshuapa">Tshuapa</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel1" name="Tel1" class="form-control"
+                                                    placeholder="Téléphone">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel2" name="Tel2" class="form-control"
+                                                    placeholder="Téléphone 2">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" id="Tel3" name="Tel3" class="form-control"
+                                                    placeholder="Téléphone 3">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="email" id="Email" name="Email" class="form-control"
+                                                    placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" id="Website" name="Website" class="form-control"
+                                                    placeholder="Website">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Facebook" name="Facebook" class="form-control"
+                                                    placeholder="Facebook">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Instagram" name="Instagram" class="form-control"
+                                                    placeholder="Instagram">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="Twitter" name="Twitter" class="form-control"
+                                                    placeholder="Twitter">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <input type="text" id="LinkedIn" name="LinkedIn" class="form-control"
+                                                    placeholder="LinkedIn">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <input type="text" id="Remarque" name="Remarque" class="form-control"
+                                                    placeholder="Remarque">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button class="btn btn-primary btn-block" type="submit">Soumettre</button>
+                                    <div id="close" onclick="closeModal()" class="btn btn-secondary btn-block ">Fermer</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
         </div>
 
         <!-- Page body end -->

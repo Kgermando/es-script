@@ -37,7 +37,6 @@
             <div class="page-body">
                 {% include 'notifications/_alerts.html' %}
                 <div class="row d-flex justify-content-end mb-4">
-                    
                     <button type="button" class="btn btn-primary">
                         <a href="{% url 'contacts:upload_contact_csv' %}" style="color: aliceblue;font-weight: 700;">Upload file</a>
                     </button>
@@ -46,7 +45,6 @@
                             aria-haspopup="true" aria-expanded="false">
                             REPORTING
                         </a>
-                
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{% url 'contacts:export_contact_xls' %}">Excel</a>
                             <a class="dropdown-item" href="{% url 'contacts:export_contact_csv' %}">CSV</a>
@@ -58,7 +56,7 @@
                 <!-- Hover table card start -->
                 <div class="card">
                     <div class="card-header">
-                        <h5>CONTACTS LISTE</h5>
+                        <h5>LISTE CONTACTS</h5>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -193,23 +191,37 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="d-flex justify-content-start">
+                            <p>Total contacts: <b>{{contact_count}}</b>  </p>
+                        </div>
                         
-                        <!-- Pagination -->
                         <nav class="mb-50">
+                            {% if contact_list.has_other_pages %}
                             <ul class="pagination justify-content-center">
                                 {% if contact_list.has_previous %}
-                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                                </li>
+                                <li class="page-item"><a class="page-link" href="?page={{ contact_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
                                 {% endif %}
-                                <span class="current">
-                                    <li class="page-item"><a class="page-link" href="#">{{ contact_list.number }}</a>
-                                    </li>
-                                </span>
+                                {% for i in contact_list.paginator.page_range %}
+                                {% if contact_list.number == i %}
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        {{ i }}
+                                        <span class="sr-only">(current)</span>
+                                    </span>
+                                </li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                                {% endfor %}
                                 {% if contact_list.has_next %}
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="fa fa-angle-right"></i></a></li>
+                                <li class="page-item"><a class="page-link" href="?page={{ contact_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
                                 {% endif %}
                             </ul>
+                            {% endif %}
                         </nav>
                     </div>
                 </div>

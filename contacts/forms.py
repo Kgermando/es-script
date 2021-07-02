@@ -13,10 +13,11 @@ class ContactForm(forms.ModelForm):
 
         Nom = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
+                    "id": "Nom",
                     "placeholder": "Nom"
                 }
             )
@@ -24,7 +25,7 @@ class ContactForm(forms.ModelForm):
 
         Post_Nom = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -35,7 +36,7 @@ class ContactForm(forms.ModelForm):
 
         Prenom = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -46,7 +47,7 @@ class ContactForm(forms.ModelForm):
 
         Numero = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -57,7 +58,7 @@ class ContactForm(forms.ModelForm):
 
         Rue = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -68,7 +69,7 @@ class ContactForm(forms.ModelForm):
 
         Quartier = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -79,7 +80,7 @@ class ContactForm(forms.ModelForm):
 
         Commune = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -90,7 +91,7 @@ class ContactForm(forms.ModelForm):
 
         Ville = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -99,11 +100,10 @@ class ContactForm(forms.ModelForm):
             )
         )
 
-        Province = forms.ChoiceField(
+        Province = forms.CharField(
             label='',
-            required=True,
-            choices=PROVINCES,
-            widget=forms.Select(
+            required=False,
+            widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
                     "name": "Province",
@@ -111,9 +111,22 @@ class ContactForm(forms.ModelForm):
             )
         )
 
+        # Province = forms.ChoiceField(
+        #     label='',
+        #     required=False,
+        #     choices=PROVINCES,
+        #     widget=forms.Select(
+        #         attrs={
+        #             "class": "form-control",
+        #             "id": "Province",
+        #             "name": "Province",
+        #         }
+        #     )
+        # )
+
         Tel1 = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -124,7 +137,7 @@ class ContactForm(forms.ModelForm):
 
         Tel2 = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -135,7 +148,7 @@ class ContactForm(forms.ModelForm):
 
         Tel3 = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -146,7 +159,7 @@ class ContactForm(forms.ModelForm):
 
         Email = forms.EmailField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -157,7 +170,7 @@ class ContactForm(forms.ModelForm):
 
         Website = forms.URLField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -168,7 +181,7 @@ class ContactForm(forms.ModelForm):
 
         Facebook = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -179,7 +192,7 @@ class ContactForm(forms.ModelForm):
 
         Instagram = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -190,7 +203,7 @@ class ContactForm(forms.ModelForm):
 
         Twitter = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -201,7 +214,7 @@ class ContactForm(forms.ModelForm):
 
         LinkedIn = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
@@ -213,7 +226,7 @@ class ContactForm(forms.ModelForm):
 
         Remarque = forms.CharField(
             label='',
-            required=True,
+            required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",

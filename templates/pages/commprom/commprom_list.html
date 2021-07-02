@@ -40,8 +40,21 @@
                 <!-- Hover table card start -->
                 <div class="row d-flex justify-content-end mb-4">
                     <button type="button" class="btn btn-primary">
-                        <a href="{% url 'commprom:commprom_add' %}" style="color: aliceblue; font-weight: 700;">NOUVEAU</a>
+                        <a href="{% url 'commprom:commprom_add' %}" style="color: aliceblue;font-weight: 700;">NOUVEAU</a>
                     </button>
+                    <div class="dropdown ml-2">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            REPORTING
+                        </a>
+                
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'commprom:export_commprom_xls' %}">Excel</a>
+                            <a class="dropdown-item" href="{% url 'commprom:export_commprom_csv' %}">CSV</a>
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="#">JSON</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
@@ -61,7 +74,7 @@
                             <table class="table caption-top table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Date_de_création</th>
+                                        <th scope="col">commprome_de_création</th>
                                         <th>Questions_1</th>
                                         <th>Questions_2</th>
                                         <th>Nom</th>
@@ -85,16 +98,16 @@
                                         <td scope="row">{{commprom.created_date}}</td>
                                         <td>{{commprom.questions1}}</td>
                                         <td>{{commprom.questions2}}</td>
-                                        <td>{{commprom.Nom}}</td>
-                                        <td>{{commprom.Post_Nom}}</td>
-                                        <td>{{commprom.Prenom}}</td>
-                                        <td>N°{{commprom.Numero}} {{commprom.Rue}} {{commprom.Quartier}} {{commprom.Commune}}</td>
-                                        <td>{{commprom.Ville}}</td>
-                                        <td>{{commprom.Province}}</td>
-                                        <td>{{commprom.Tel1}}</td>
-                                        <td>{{commprom.Email}}</td>
+                                        <td>{{commprom.Contact.Nom}}</td>
+                                        <td>{{commprom.Contact.Post_Nom}}</td>
+                                        <td>{{commprom.Contact.Prenom}}</td>
+                                        <td>N°{{commprom.Contact.Numero}} {{commprom.Contact.Rue}} {{commprom.Contact.Quartier}} {{commprom.Contact.Commune}}</td>
+                                        <td>{{commprom.Contact.Ville}}</td>
+                                        <td>{{commprom.Contact.Province}}</td>
+                                        <td>{{commprom.Contact.Tel1}}</td>
+                                        <td>{{commprom.Contact.Email}}</td>
                                         <td>{{commprom.Statut}}</td>
-                                        <td>{{commprom.Remarque}}</td>
+                                        <td>{{commprom.Contact.Remarque}}</td>
                                         <td>{{commprom.user}}</td>
                                         <td>{{commprom.Bound}}</td>
                                         <td>

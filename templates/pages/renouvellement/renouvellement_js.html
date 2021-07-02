@@ -1,19 +1,5 @@
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#outbound').hide();
-        $('#inbound').hide();
-        // Traffic Bound
-        $("input[name=bound]").change(function () {
-            if ($("#OUTBOUND").is(':checked')) {
-                $('#outbound').show();
-                $('#inbound').hide();
-            } else if ($("#INBOUND").is(':checked')) {
-                $('#outbound').hide();
-                $('#inbound').show();
-            }
-        });
-    });
 
     $(document).ready(function () {
         // French
@@ -39,12 +25,12 @@
         $('#q21').hide();
 
 
-        $("input[name=questons1]").change(function () {
+        $("input[name=questions1]").change(function () {
 
-            if ($("#questons1OUI").is(':checked')) {
+            if ($("#questions1OUI").is(':checked')) {
                 $("#q2").show();
                 $("#q21").hide();
-            } else if ($("#questons1NON").is(':checked')) {
+            } else if ($("#questions1NON").is(':checked')) {
                 $("#q2").hide();
                 $("#q21").show();
             } else if ($("#reset").is(':checked')) {
@@ -72,9 +58,9 @@
             }
         });
 
-        $("input[name=questons2]").change(function () {
+        $("input[name=questions2]").change(function () {
 
-            if ($("#questons2OUI").is(':checked')) {
+            if ($("#questions2OUI").is(':checked')) {
                 $("#q3").show();
                 $("#q21").hide();
                 $("#q10").hide();
@@ -83,7 +69,7 @@
                 $("#q12").hide();
                 $("#q13").hide();
 
-            } else if ($("#questons2OUIAPRES").is(':checked')) {
+            } else if ($("#questions2OUIAPRES").is(':checked')) {
                 $("#q3").hide();
                 $("#q19").show();
                 $("#q21").show();
@@ -92,8 +78,14 @@
                 $("#q12").hide();
                 $("#q13").hide();
 
-            } else if ($("#questons2NON").is(':checked')) {
+            } else if ($("#questions2NON").is(':checked')) {
                 $("#q3").hide();
+                $("#q4").hide();
+                $("#q5").hide();
+                $("#q6").hide();
+                $("#q7").hide();
+                $("#q8").hide();
+                $("#q9").hide();
                 $("#q10").show();
                 $("#q11").show();
                 $("#q12").show();
@@ -104,16 +96,16 @@
             }
         });
 
-        $("input[name=questons3]").change(function () {
+        $("input[name=questions3]").change(function () {
 
-            if ($("#questons3OUI").is(':checked')) {
+            if ($("#questions3OUI").is(':checked')) {
                 $("#q4").show();
                 $("#q21").hide();
                 $("#q10").hide();
                 $("#q19").hide();
                 $('#q5').show();
 
-            } else if ($("#questons3NON").is(':checked')) {
+            } else if ($("#questions3NON").is(':checked')) {
                 $("#q4").hide();
                 $("#q19").show();
                 $("#q21").show();
@@ -121,14 +113,14 @@
             }
         });
 
-        $("input[name=questons5]").change(function () {
+        $("input[name=questions5]").change(function () {
 
-            if ($("#questons5OUI").is(':checked')) {
+            if ($("#questions5OUI").is(':checked')) {
                 $("#q7").show();
                 $("#q6").hide();
                 $("#q9").show();
 
-            } else if ($("#questons5NON").is(':checked')) {
+            } else if ($("#questions5NON").is(':checked')) {
                 $("#q7").hide();
                 $("#q6").show();
                 $("#q8").hide();
@@ -137,23 +129,23 @@
             }
         });
 
-        $("input[name=questons7]").change(function () {
+        $("input[name=questions7]").change(function () {
 
-            if ($("#questons7OUI").is(':checked')) {
+            if ($("#questions7OUI").is(':checked')) {
                 $("#q8").show();
                 $("#q9").show();
                 $("#q21").show();
 
-            } else if ($("#questons7NON").is(':checked')) {
+            } else if ($("#questions7NON").is(':checked')) {
                 $("#q8").hide();
                 $("#q9").show();
                 $("#q21").show();
             }
         });
 
-        $("input[name=questons13]").change(function () {
+        $("input[name=questions13]").change(function () {
 
-            if ($("#questons13OUI").is(':checked')) {
+            if ($("#questions13OUI").is(':checked')) {
                 $("#q14").show();
                 $("#q15").show();
                 $("#q16").show();
@@ -163,7 +155,7 @@
                 $("#q20").show();
                 $("#q21").show();
 
-            } else if ($("#questons13NON").is(':checked')) {
+            } else if ($("#questions13NON").is(':checked')) {
                 $("#q14").hide();
                 $("#q15").show();
                 $("#q16").show();
@@ -176,169 +168,102 @@
         });
     });
         
+ 
 
 
-
-    $(document).ready(function () {
-        // English
-        $('#qin2').hide();
-        $('#qin3').hide();
-        $('#qin4').hide();
-        $('#qin5').hide();
-        $('#qin6').hide();
-        $('#qin7').hide();
-        $('#qin8').hide();
-        $('#qin9').hide();
-        $('#qin10').hide();
-        $('#qin11').hide();
-        $('#qin12').hide();
-        $('#qin13').hide();
-        $('#qin14').hide();
-        $('#qin15').hide();
-        $('#qin16').hide();
-        $('#qin17').hide();
-        $('#qin18').hide();
-        $('#qin19').hide();
-        $('#qin20').hide();
-        $('#qin21').hide();
-
-        $("input[name=questions1]").change(function () {
-
-            if ($("#questions1inOUI").is(':checked')) {
-                $("#qin2").show();
-                $("#qin21").hide();
-            } else if ($("#questions1inNON").is(':checked')) {
-                $("#qin2").hide();
-                $("#qin21").show();
-            } else if ($("#resetin").is(':checked')) {
-                $("#qin2").hide();
-                $("#qin21").hide();
-                $('#qin3').hide();
-                $('#qin4').hide();
-                $('#qin5').hide();
-                $('#qin6').hide();
-                $('#qin7').hide();
-                $('#qin8').hide();
-                $('#qin9').hide();
-                $('#qin10').hide();
-                $('#qin11').hide();
-                $('#qin12').hide();
-                $('#qin13').hide();
-                $('#qin14').hide();
-                $('#qin15').hide();
-                $('#qin16').hide();
-                $('#qin17').hide();
-                $('#qin18').hide();
-                $('#qin19').hide();
-                $('#qin20').hide();
-                $('#qin21').hide();
-            }
-        });
-
-        $("input[name=questions2]").change(function () {
-
-            if ($("#questions2inOUI").is(':checked')) {
-                $("#qin3").show();
-                $("#qin21").hide();
-                $("#qin10").hide();
-                $("#qin19").hide();
-                $("#qin11").hide();
-                $("#qin12").hide();
-                $("#qin13").hide();
-
-            } else if ($("#questions2inOUIAPRES").is(':checked')) {
-                $("#qin3").hide();
-                $("#qin19").show();
-                $("#qin21").show();
-                $("#qin10").hide();
-                $("#qin11").hide();
-                $("#qin12").hide();
-                $("#qin13").hide();
-
-            } else if ($("#questions2inNON").is(':checked')) {
-                $("#qin3").hide();
-                $("#qin10").show();
-                $("#qin11").show();
-                $("#qin12").show();
-                $("#qin13").show();
-                $("#qin21").hide();
-                $("#qin19").hide();
-
-            }
-        });
-
-        $("input[name=questions3]").change(function () {
-
-            if ($("#questions3inOUI").is(':checked')) {
-                $("#qin4").show();
-                $("#qin21").hide();
-                $("#qin10").hide();
-                $("#qin19").hide();
-                $('#qin5').show();
-
-            } else if ($("#questions3inNON").is(':checked')) {
-                $("#qin4").hide();
-                $("#qin19").show();
-                $("#qin21").show();
-                $('#qin5').hide();
-            }
-        });
-
-        $("input[name=questions5]").change(function () {
-
-            if ($("#questions5inOUI").is(':checked')) {
-                $("#qin7").show();
-                $("#qin6").hide();
-                $("#qin9").show();
-
-            } else if ($("#questions5inNON").is(':checked')) {
-                $("#qin7").hide();
-                $("#qin6").show();
-                $("#qin8").hide();
-                $("#qin9").show();
-                $("#qin21").show();
-            }
-        });
-
-        $("input[name=questions7]").change(function () {
-
-            if ($("#questions7inOUI").is(':checked')) {
-                $("#qin8").show();
-                $("#qin9").show();
-                $("#qin21").show();
-
-            } else if ($("#questions7inNON").is(':checked')) {
-                $("#qin8").hide();
-                $("#qin9").show();
-                $("#qin21").show();
-            }
-        });
-
-        $("input[name=questions13]").change(function () {
-
-            if ($("#questions13inOUI").is(':checked')) {
-                $("#qin14").show();
-                $("#qin15").show();
-                $("#qin16").show();
-                $("#qin17").show();
-                $("#qin18").show();
-                $("#qin19").show();
-                $("#qin20").show();
-                $("#qin21").show();
-
-            } else if ($("#questions13inNON").is(':checked')) {
-                $("#qin14").hide();
-                $("#qin15").show();
-                $("#qin16").show();
-                $("#qin17").show();
-                $("#qin18").show();
-                $("#qin19").show();
-                $("#qin20").show();
-                $("#qin21").show();
-            }
-        });
-    });
         
+
+    
+        // Get DOM Elements
+        const modal = document.querySelector('#my-modal');
+        const modalBtn = document.querySelector('#modal-btn');
+        const closeBtn = document.querySelector('#close');
+
+        // Events
+        modalBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', outsideClick);
+
+        // Open
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        // Close
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close If Outside Click
+        function outsideClick(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+
+
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+                var formData = {
+                    'Nom': $('#Nom').val(),
+                    'Post_Nom': $('#Post_Nom').val(),
+                    'Prenom': $('#Prenom').val(),
+                    'Numero': $('#Numero').val(),
+                    'Rue': $('#Rue').val(),
+                    'Quartier': $('#Quartier').val(),
+                    'Commune': $('#Commune').val(),
+                    'Ville': $('#Ville').val(),
+                    'Province': $('#Province').val(),
+                    'Tel1': $('#Tel1').val(),
+                    'Tel2': $('#Tel2').val(),
+                    'Tel3': $('#Tel3').val(),
+                    'Email': $('#Email').val(),
+                    'Website': $('#Website').val(),
+                    'Facebook': $('#Facebook').val(),
+                    'Instagram': $('#Instagram').val(),
+                    'Twitter': $('#Twitter').val(),
+                    'LinkedIn': $('#LinkedIn').val(),
+                    'Remarque': $('#Remarque').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                    contentType: 'application/x-www-form-urlencoded',
+                    encode: true,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "{% url 'renouvellement:renouvellement_add' %}",
+                    data: formData,
+                    dataType: 'json',
+                }).done(function (data) {
+                    // console.log(formData);
+                    $("#contact-form").trigger("reset");
+                    // console.log(data)
+
+
+                    $('#kycContact').each(function () {
+                        setTimeout(10000);
+                    });
+                });
+
+
+
+                // e.preventDefault();
+            });
+        });
+
+
+
+    // function refresh() {
+    //     $.ajax({
+    //         url: "{% url 'dat:dat_add' %}",
+    //         success: function (data) {
+    //             $('#kycContact').html(data);
+    //             setTimeout(refresh, 10000);
+    //         }
+
+    //     });
+    // }
 
 
 </script>
