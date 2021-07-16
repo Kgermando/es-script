@@ -1,8 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//Dp HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dp">
 <html>
 {% load static %}
+
 <head>
-    <title>DAT</title>
+    <title>commprom</title>
     <style type="text/css">
         body {
             font-weight: 200;
@@ -52,55 +53,56 @@
 
 <body>
     <div class="d-flex justify-content-between">
-        <img src="../../../static/images/advans.png" height="200px">
-      <div class="p-2 bd-highlight">{{dat.created_date}}</div>  
+        <img src="{% static 'images/advans.png' %}" height="200px">
+        <div class="p-2 bd-highlight">{{commprom.created_date}}</div>
     </div>
-    
+
     <div class='wrapper'>
         <div class="d-flex justify-content-between">
             <div class=''>
-                <h2 class='header'>SCRIPT DAT</h2>
+                <h2 class='header'>SCRIPT COMMERCIALE-PROMOTION</h2>
             </div>
         </div>
-        
+
         <hr class='hrItem' />
         <div>
             <div class='details'>
                 <p><strong>Questions 1</strong>: <br>
-                    <i>Nous souhaiterions parler avec Mr/Mme X </i>
+                    <i>Nous souhaiterions parler avec Mr/Mme X</i>
                     <br>
-                    R/ {{dat.questions1}}
+                    R/ {{commprom.questions1}}
                 </p>
                 <p><strong>Questions 2</strong>: <br>
-                    <i>Nous constatons que vous n'avez pas encore renouvelé votre DAT alors que nous avons une campagne de promotion en cours.
-                    Puis-je suggérer de fixer un rendez-vous avec notre commercial pour reconduire votre DAT ?</i>
-                    <br>
-                    R/ {{dat.questions2}}
+                    <i>Nous souhaitons vous proposer notre nouvelle offre de service qui comprend les avantages suivants (expliquer)...</i>
+                    <br> R/ {{commprom.questions2}}
                 </p>
                 <p><strong>Questions 3</strong>: <br>
                     <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
-                    <i><strong>Nom</strong>: {{dat.Contact.Nom}}</i> <br>
-                    <i><strong>Post_Nom</strong>: {{dat.Contact.Post_Nom}}</i> <br>
-                    <i><strong>Prénom</strong>: {{dat.Contact.Prenom}}</i> <br>
-                    <i><strong>Adresse</strong>: N°{{dat.Contact.Numero}} {{dat.Contact.Rue}}
-                        {{dat.Contact.Quartier}}
-                        {{dat.Contact.Commune}}</i> <br>
-                    <i><strong>Ville</strong>: {{dat.Contact.Ville}}</i> <br>
-                    <i><strong>Province</strong>: {{dat.Contact.Province}}</i> <br>
-                    <i><strong>Téléphone</strong>: {{dat.Contact.Tel1}}</i> <br>
-                    <i><strong>Email</strong>: {{dat.Contact.Email}}</i> <br>
-                    <i><strong>Remarque</strong>: {{dat.Contact.Remarque}}</i> <br>
+                    <i><strong>Nom</strong>: {{commprom.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{commprom.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{commprom.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{commprom.Contact.Numero}} {{commprom.Contact.Rue}}
+                        {{commprom.Contact.Quartier}}
+                        {{commprom.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{commprom.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{commprom.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{commprom.Contact.Tel1}}</i> <br>
+                    <i><strong>Email</strong>: {{commprom.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{commprom.Contact.Remarque}}</i> <br>
                 </p>
                 <p><strong>Questions 4</strong>: <br>
-                    <i>(GOODBYE): Nous vous remercions du temps accordé et n'hésitez pas à nous contacter au besoin</i>
-                    <br>
-                    R/ {{dat.Statut}}
+                    <i>
+                        Merci pour votre temps aujourd'hui. Nous espérons que vous pourriez toujours être intéressé par
+                        Advans à l'avenir.
+                    </i>
+                    <br> R/ {{commprom.Statut}}
                 </p>
-                <p><strong>Type de trafic</strong>:
-                    <br>
-                    R/ {{dat.Bound}}
-                </p>
-                <p><strong>Remplie par l'agent</strong>: {{dat.user}}</p>
+                <p><strong>Type de trafic</strong>: {{commprom.Bound}}</p>
+
+
+                <p><strong>Remplie par l'agent</strong>: {{commprom.user}}</p>
+                
+
             </div>
         </div>
 </body>

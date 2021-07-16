@@ -101,7 +101,7 @@
                                     {% for acquisition in acquisition_list %}
                                     <tr>
                                         <td scope="row">
-                                            <a href="{% url 'acquisition:export_acquisition_pdf' acquisition.id %} ">
+                                            <a href="{% url 'acquisition:export_acquisition_pdf' acquisition.id %}" target="_blank">
                                                 {{acquisition.created_date}}
                                             </a>
                                         </td>

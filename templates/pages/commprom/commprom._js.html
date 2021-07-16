@@ -73,10 +73,12 @@
     // Get DOM Elements
         const modal = document.querySelector('#my-modal');
         const modalBtn = document.querySelector('#modal-btn');
+         const modalBtn2 = document.querySelector('#modal-btn-2');
         const closeBtn = document.querySelector('#close');
 
         // Events
         modalBtn.addEventListener('click', openModal);
+        modalBtn2.addEventListener('click', openModal);
         closeBtn.addEventListener('click', closeModal);
         window.addEventListener('click', outsideClick);
 

@@ -98,7 +98,7 @@
                                     {% for dat in dat_list %}
                                         <tr>
                                             <td scope="row">
-                                                <a href="{% url 'dat:export_dat_pdf' dat.id %} ">
+                                                <a href="{% url 'dat:export_dat_pdf' dat.id %}" target="_blank">
                                                      {{dat.created_date}}
                                                 </a>
                                             </td>

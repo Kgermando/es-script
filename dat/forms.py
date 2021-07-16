@@ -42,7 +42,7 @@ class DatForm(forms.ModelForm):
             attrs={
                 "id": "inputState",
                 "class": "form-control",
-                "placeholder": "Hopital"
+                "placeholder": "Contact"
             }
         )
     )

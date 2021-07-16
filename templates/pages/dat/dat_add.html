@@ -95,7 +95,6 @@
                                                 <div class="form-row"> 
                                                     <div class="col-md-6">
                                                         <div id="kycContact" class="form-group form-default">
-                                                            <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
                                                             {{form.Contact}}
                                                         </div>
                                                     </div>
@@ -160,11 +159,11 @@
                                             </p>
                                             <div class="pl-4">
                                                 <label class="radio-inline mr-3">
-                                                    <input type="radio" qin=qb1OUI id="questions1" name="questions1" value="OUI">
+                                                    <input type="radio" qin=qb1OUI id="qb1OUI" name="questions1" value="OUI">
                                                     OUI
                                                 </label>
                                                 <label class="radio-inline mr-3">
-                                                    <input type="radio" qin=qb1NON id="questions1" name="questions1" value="NON">
+                                                    <input type="radio" qin=qb1NON id="qb1NON" name="questions1" value="NON">
                                                     NON
                                                 </label>
                                             </div>
@@ -184,10 +183,10 @@
                                             </p>
                                             <div class="pl-4">
                                                 <label class="radio-inline mr-3">
-                                                    <input type="radio" qin=qb2OUI id="questions2" name="questions2" value="OUI"> OUI
+                                                    <input type="radio" qin=qb2OUI id="qb2OUI" name="questions2" value="OUI"> OUI
                                                 </label>
                                                 <label class="radio-inline mr-3">
-                                                    <input type="radio" qin=qb2NON id="questions2" name="questions2" value="NON"> NON
+                                                    <input type="radio" qin=qb2NON id="qb2NON" name="questions2" value="NON"> NON
                                                 </label>
                                             </div>
                                         </div>
@@ -206,17 +205,16 @@
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div id="kycContact" class="form-group form-default">
-                                                            <!-- <label class="col col-form-label">Selectionnez le Contact</label> -->
                                                             {{form.Contact}}
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                
-                                                        <div id="modal-btn" class="button">
+                                                
+                                                        <div id="modal-btn-2" class="button">
                                                             <i class="bi bi-plus"></i>
                                                             Nouveau Contact
                                                         </div>
-                                
+                                                
                                                     </div>
                                                 </div>
                                 
@@ -242,7 +240,7 @@
                                     </div>
                                 </div>
                                 <div class="pb-4" id="in">
-                                    <input type="text" hidden='true' id="Bound" name="Bound" class="form-control" placeholder="Bound"
+                                    <input type="text" hidden='true' id="inbound" name="Bound" class="form-control" placeholder="Bound"
                                         value="INBOUND">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Soumettre</button>
@@ -291,7 +289,7 @@
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <input type="text" id="Commune" name="Commune" class="form-control" placeholder="Commune">
-                                            </div>
+                                            </div> 
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
