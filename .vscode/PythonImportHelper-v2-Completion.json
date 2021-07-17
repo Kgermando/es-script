@@ -1665,6 +1665,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -2026,6 +2034,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -4047,6 +4063,14 @@
         "documentation": {}
     },
     {
+        "label": "Dat",
+        "importPath": "dat.models",
+        "description": "dat.models",
+        "isExtraImport": true,
+        "detail": "dat.models",
+        "documentation": {}
+    },
+    {
         "label": "Recouvrement",
         "importPath": "recouvrement.models",
         "description": "recouvrement.models",
@@ -4108,6 +4132,14 @@
         "description": "renouvellement.models",
         "isExtraImport": true,
         "detail": "renouvellement.models",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -4228,6 +4260,30 @@
         "description": "dat.forms",
         "isExtraImport": true,
         "detail": "dat.forms",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "DatSerializer",
+        "importPath": "dat.serializers",
+        "description": "dat.serializers",
+        "isExtraImport": true,
+        "detail": "dat.serializers",
         "documentation": {}
     },
     {
@@ -5984,6 +6040,15 @@
         "documentation": {}
     },
     {
+        "label": "DatSerializer",
+        "kind": 6,
+        "importPath": "dat.serializers",
+        "description": "dat.serializers",
+        "peekOfCode": "class DatSerializer(serializers.HyperlinkedModelSerializer):\n    class Meta:\n        model = Dat\n        fields = ('user', 'questions1', 'questions2', 'Contact', 'Statut')",
+        "detail": "dat.serializers",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "dat.urls",
@@ -6071,6 +6136,24 @@
         "description": "dat.views",
         "peekOfCode": "def export_dat_csv(request):\n    user = request.user\n    response = HttpResponse(content_type='text/csv')\n    response['Content-Disposition'] = 'attachment; filename=\"dat.csv\"'\n    writer = csv.writer(response)\n    writer.writerow(['created_date', 'questions1', 'questions2',  'Statut', 'Bound', 'Contact', 'Agent', ])\n    dat = Dat.objects.filter(user=user).values_list('created_date', 'questions1', 'questions2', 'Statut', 'Bound', 'Contact', 'user')\n    for dat in dat:\n        writer.writerow(dat)\n    return response",
         "detail": "dat.views",
+        "documentation": {}
+    },
+    {
+        "label": "datApi",
+        "kind": 2,
+        "importPath": "dat.views_api",
+        "description": "dat.views_api",
+        "peekOfCode": "def datApi(request):\n    if request.method == 'GET':\n        dats = Dat.objects.all()\n        serializer = DatSerializer(dats, many=True)\n        return Response(serializer.data)\n@api_view(['GET'])\ndef dat_element(request, pk):\n    try:\n        dat = Dat.objects.get(pk=pk)\n    except Dat.DoesNotExist:",
+        "detail": "dat.views_api",
+        "documentation": {}
+    },
+    {
+        "label": "dat_element",
+        "kind": 2,
+        "importPath": "dat.views_api",
+        "description": "dat.views_api",
+        "peekOfCode": "def dat_element(request, pk):\n    try:\n        dat = Dat.objects.get(pk=pk)\n    except Dat.DoesNotExist:\n        return HttpResponse(status=404)\n    if request.method == 'GET':\n        serializer = DatSerializer(dat)\n        return Response(serializer.data)",
+        "detail": "dat.views_api",
         "documentation": {}
     },
     {
@@ -7167,7 +7250,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Extern Apps",
+        "peekOfCode": "ALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7176,7 +7259,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Extern Apps\n    'daterangefilter',\n    'bootstrap_datepicker_plus',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    # Extern Apps\n    'daterangefilter',",
         "detail": "scripting.settings",
         "documentation": {}
     },
