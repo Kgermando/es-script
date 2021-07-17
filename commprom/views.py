@@ -9,6 +9,9 @@ from django.forms.models import model_to_dict
 import xlwt
 import csv
 
+from django.views.generic import DetailView
+from scripting.utils import render_to_pdf
+
 from contacts.models import Contact
 from contacts.forms import ContactForm
 
@@ -190,3 +193,19 @@ def export_commprom_csv(request):
         writer.writerow(commprom)
 
     return response
+
+
+
+class Export_Commprom_pdf(DetailView):
+    """
+        For detail to pdf based function
+    """
+    model = Commprom
+    def get(self, request, *args, **kwargs):
+        commprom = Commprom.objects.get(id=self.kwargs.get('id'))
+        data = {
+            'commprom': commprom,
+            # 'today': datetime.date.today(), 
+        }
+        pdf = render_to_pdf('pages/commprom/commprom_pdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')

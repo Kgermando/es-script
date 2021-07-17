@@ -95,7 +95,11 @@
 
                                     {% for commprom in commprom_list %}
                                     <tr>
-                                        <td scope="row">{{commprom.created_date}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'commprom:export_commprom_pdf' commprom.id %}" target="_blank">
+                                                {{commprom.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{commprom.questions1}}</td>
                                         <td>{{commprom.questions2}}</td>
                                         <td>{{commprom.Contact.Nom}}</td>

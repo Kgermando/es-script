@@ -3244,6 +3244,14 @@
         "documentation": {}
     },
     {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
         "label": "View",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -3257,6 +3265,14 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
         "documentation": {}
     },
     {
@@ -3614,6 +3630,14 @@
     },
     {
         "label": "export_commprom_csv",
+        "importPath": "commprom.views",
+        "description": "commprom.views",
+        "isExtraImport": true,
+        "detail": "commprom.views",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Commprom_pdf",
         "importPath": "commprom.views",
         "description": "commprom.views",
         "isExtraImport": true,
@@ -5433,8 +5457,17 @@
         "kind": 5,
         "importPath": "commprom.urls",
         "description": "commprom.urls",
-        "peekOfCode": "urlpatterns = [\n    path('commprom_add/', commprom_add, name='commprom_add'),\n    path('commprom_list/', commprom_list, name='commprom_list'),\n    path('commprom_update/<int:id>/', commprom_update, name='commprom_update'),\n    path('commprom_view/<int:id>/', commprom_view, name='commprom_view'),\n    path('commprom_destroy/<int:id>/', commprom_destroy, name='commprom_destroy'),\n    path('export/xls/', export_commprom_xls, name='export_commprom_xls'),\n    path('export/csv/', export_commprom_csv, name='export_commprom_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('commprom_add/', commprom_add, name='commprom_add'),\n    path('commprom_list/', commprom_list, name='commprom_list'),\n    path('commprom_update/<int:id>/', commprom_update, name='commprom_update'),\n    path('commprom_view/<int:id>/', commprom_view, name='commprom_view'),\n    path('commprom_destroy/<int:id>/', commprom_destroy, name='commprom_destroy'),\n    path('export/xls/', export_commprom_xls, name='export_commprom_xls'),\n    path('export/csv/', export_commprom_csv, name='export_commprom_csv'),\n    path('export/pdf/<int:id>/', Export_Commprom_pdf.as_view(), name='export_commprom_pdf'),\n]",
         "detail": "commprom.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Commprom_pdf",
+        "kind": 6,
+        "importPath": "commprom.views",
+        "description": "commprom.views",
+        "peekOfCode": "class Export_Commprom_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Commprom\n    def get(self, request, *args, **kwargs):\n        commprom = Commprom.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'commprom': commprom,\n            # 'today': datetime.date.today(), ",
+        "detail": "commprom.views",
         "documentation": {}
     },
     {
@@ -7107,7 +7140,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.43.106', '*']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7116,7 +7149,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.43.106', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7125,7 +7158,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['192.168.43.106', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7134,7 +7167,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['192.168.43.106', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Extern Apps",
+        "peekOfCode": "ALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Extern Apps",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7179,7 +7212,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'scripting.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES_SQLITE = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'crm.sqlite3',\n    }\n}\nDATABASES_PGSQL = {",
+        "peekOfCode": "WSGI_APPLICATION = 'scripting.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES_SQLITE = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'crm.sqlite3',\n    }\n}\nDATABASES_MARIADB = {",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7188,16 +7221,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_SQLITE = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'crm.sqlite3',\n    }\n}\nDATABASES_PGSQL = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': 'asterisk',",
-        "detail": "scripting.settings",
-        "documentation": {}
-    },
-    {
-        "label": "DATABASES_PGSQL",
-        "kind": 5,
-        "importPath": "scripting.settings",
-        "description": "scripting.settings",
-        "peekOfCode": "DATABASES_PGSQL = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': 'asterisk',\n        'USER': 'asterisk',\n        'HOST': '192.168.11.104',\n        'PASSWORD': 'asterisk',\n        'PORT': '5432'\n    }\n}",
+        "peekOfCode": "DATABASES_SQLITE = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'crm.sqlite3',\n    }\n}\nDATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7206,7 +7230,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.11.104', \n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
+        "peekOfCode": "DATABASES_MARIADB = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'asteriskcdrdb',\n        'USER': 'root',\n        'PASSWORD': 'gk0838',\n        'HOST': '192.168.43.232', \n        'PORT': '3306',\n        'OPTIONS': {\n            'charset': 'utf8',",
         "detail": "scripting.settings",
         "documentation": {}
     },

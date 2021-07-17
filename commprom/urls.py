@@ -2,8 +2,10 @@
 from django.urls import path
 
 from commprom.views import (commprom_add, 
-
-        commprom_list, commprom_update, commprom_view, commprom_destroy, export_commprom_xls, export_commprom_csv)
+        commprom_list, commprom_update, 
+        commprom_view, commprom_destroy, 
+        export_commprom_xls, 
+        export_commprom_csv, Export_Commprom_pdf)
 
 app_name= 'commprom'
 
@@ -15,4 +17,5 @@ urlpatterns = [
     path('commprom_destroy/<int:id>/', commprom_destroy, name='commprom_destroy'),
     path('export/xls/', export_commprom_xls, name='export_commprom_xls'),
     path('export/csv/', export_commprom_csv, name='export_commprom_csv'),
+    path('export/pdf/<int:id>/', Export_Commprom_pdf.as_view(), name='export_commprom_pdf'),
 ]
