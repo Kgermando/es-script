@@ -17,6 +17,8 @@ class Dat(models.Model):
     Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)
     Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)
     Bound            = models.CharField(max_length=20, null=True)
+    campaignname      = models.CharField(max_length=200, null=True, default='-')
 
     def __str__(self):
         return self.Statut
+ 

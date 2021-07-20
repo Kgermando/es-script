@@ -9,7 +9,7 @@ class DatForm(forms.ModelForm):
     class Meta:
         model = Dat
         fields = (
-            'questions1', 'questions2', 'Contact', 'Statut', 'Bound',
+            'questions1', 'questions2', 'Contact', 'Statut', 'Bound', 'campaignname',
         ) 
 
     questions1 = forms.CharField(
@@ -60,4 +60,14 @@ class DatForm(forms.ModelForm):
         )
     )
 
+    campaignname = forms.CharField(
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "name":"campaignname",
+            }
+        )
+    )
 

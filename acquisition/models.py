@@ -26,6 +26,8 @@ class Acquisition(models.Model):
     Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)
     CommentaireQ5    = models.CharField(max_length=200, null=True, blank=True, default='-')
     CommentaireQ6    = models.CharField(max_length=200, null=True, blank=True, default='-')
+    campaignname      = models.CharField(max_length=200, null=True, default='-')
 
     def __str__(self):
         return self.questions1
+ 

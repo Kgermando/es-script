@@ -9,7 +9,7 @@ class RecouvrementForm(forms.ModelForm):
     class Meta:
         model = Recouvrement
         fields = (
-            'questions1', 'questions2', 'Statut', 'Bound', 'Contact',
+            'questions1', 'questions2', 'Statut', 'Bound', 'Contact', 'campaignname',
         )
 
     questions1 = forms.CharField(
@@ -66,6 +66,17 @@ class RecouvrementForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "name": "Remarque",
+            }
+        )
+    )
+
+    campaignname = forms.CharField(
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "name":"campaignname",
             }
         )
     )

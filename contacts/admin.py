@@ -38,12 +38,12 @@ def export_to_csv(modeladmin, request, queryset):
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
         'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville',
-        'Province', 'Tel1', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',
+        'Province', 'phonenumber', 'Tel2', 'Email', 'Website', 'Facebook', 'Instagram',
         'Twitter', 'LinkedIn', 'Remarque', 'created_date', 'user'
     )
 
     search_fields = (
-        'Nom', 'Post_Nom', 'Prenom', 'Tel1', 'Tel2', 'Email', 'Province',
+        'Nom', 'Post_Nom', 'Prenom', 'phonenumber', 'Tel2', 'Email', 'Province',
     )
 
     list_filter = (

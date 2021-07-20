@@ -40,4 +40,4 @@ class Renouvellement(models.Model):
     Commentaire     = models.TextField(null=True, blank=True, default='-')
     Concurrent      = models.TextField(null=True, blank=True, default='-')
     CommentaireQ17  = models.TextField(null=True, blank=True, default='-')
-
+    campaignname      = models.CharField(max_length=200, null=True, default='-')
