@@ -488,6 +488,14 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -801,6 +809,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -990,6 +1006,14 @@
         "description": "accounts.models",
         "isExtraImport": true,
         "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -1345,6 +1369,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1498,6 +1530,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -1770,6 +1810,14 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -2210,6 +2258,14 @@
     },
     {
         "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseBadRequest",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -4664,6 +4720,14 @@
         "documentation": {}
     },
     {
+        "label": "paramurl_view",
+        "importPath": "paramurl.views",
+        "description": "paramurl.views",
+        "isExtraImport": true,
+        "detail": "paramurl.views",
+        "documentation": {}
+    },
+    {
         "label": "Ps_aors",
         "importPath": "pbx.models",
         "description": "pbx.models",
@@ -6744,6 +6808,33 @@
         "description": "issabel.views",
         "peekOfCode": "def cel_issabel_detail(request, uniqueid):\n    \"\"\"\n        CEL detail\n    \"\"\"\n    user = request.user\n    cel = Cel.objects.filter(cid_num=user).get(uniqueid=uniqueid)\n    context = {\n        'cel': cel\n    }\n    template_name = 'pages/issabel/cel/cel_detail.html'",
         "detail": "issabel.views",
+        "documentation": {}
+    },
+    {
+        "label": "ParamurlConfig",
+        "kind": 6,
+        "importPath": "paramurl.apps",
+        "description": "paramurl.apps",
+        "peekOfCode": "class ParamurlConfig(AppConfig):\n    name = 'paramurl'",
+        "detail": "paramurl.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "paramurl.urls",
+        "description": "paramurl.urls",
+        "peekOfCode": "urlpatterns = [\n    path('text/?<phonenuber>&<campaign>', paramurl_view, name='paramurl_view'),\n]",
+        "detail": "paramurl.urls",
+        "documentation": {}
+    },
+    {
+        "label": "paramurl_view",
+        "kind": 2,
+        "importPath": "paramurl.views",
+        "description": "paramurl.views",
+        "peekOfCode": "def paramurl_view(request, phonenumber, campagain):\n    try:\n        phonenumber = request.GET.get('phonenumber')\n        campagain = request.GET.get('campagain')\n    except:\n        return HttpResponseBadRequest",
+        "detail": "paramurl.views",
         "documentation": {}
     },
     {
