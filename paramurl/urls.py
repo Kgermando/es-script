@@ -6,5 +6,5 @@ from paramurl.views import paramurl_view
 app_name= 'param_url'
 
 urlpatterns = [
-    path('text/', paramurl_view),
+    path('', paramurl_view),
 ]

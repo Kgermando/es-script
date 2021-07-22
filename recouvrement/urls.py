@@ -4,7 +4,7 @@ from django.urls import path
 from recouvrement.views import (
     recouvrement_add, recouvrement_list, 
     recouvrement_view, recouvrement_update, 
-    recouvrement_destroy, export_recouvrement_xls, export_recouvrement_csv)
+    recouvrement_destroy, export_recouvrement_xls, export_recouvrement_csv, Export_Recouvrement_pdf)
 
 app_name= 'recouvrement'
 
@@ -16,4 +16,5 @@ urlpatterns = [
     path('recouvrement_destroy/<int:id>/', recouvrement_destroy, name='recouvrement_destroy'),
     path('export/xls/', export_recouvrement_xls, name='export_recouvrement_xls'),
     path('export/csv/', export_recouvrement_csv, name='export_recouvrement_csv'),
+    path('export/pdf/<int:id>/', Export_Recouvrement_pdf.as_view(), name='export_recouvrement_pdf'),
 ]

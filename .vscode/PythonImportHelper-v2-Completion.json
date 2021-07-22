@@ -7073,7 +7073,7 @@
         "kind": 5,
         "importPath": "paramurl.urls",
         "description": "paramurl.urls",
-        "peekOfCode": "urlpatterns = [\n    path('text/', paramurl_view),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', paramurl_view),\n]",
         "detail": "paramurl.urls",
         "documentation": {}
     },

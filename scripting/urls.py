@@ -45,7 +45,7 @@ urlpatterns = [
     path('renouvellement/', include('renouvellement.urls')),
     path('contacts/', include('contacts.urls')),
     path('issabel/', include('issabel.urls')),
-    path('', include('paramurl.urls')),
+    path('param/', include('paramurl.urls')),
 ]
 
 if settings.DEBUG:
