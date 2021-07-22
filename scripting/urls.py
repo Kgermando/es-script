@@ -30,7 +30,7 @@ handler503 = 'scripting.views_errors_page.handler503'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
+    path('', include('accounts.urls')),
     path('api/', GlobalSearchAPIView.as_view()),
     path('app/', include('app.urls')),
     path('dashboard/', include('dashboard.urls')),
