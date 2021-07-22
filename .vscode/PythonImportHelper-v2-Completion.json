@@ -5257,6 +5257,15 @@
         "documentation": {}
     },
     {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
+        "documentation": {}
+    },
+    {
         "label": "ObjectMultipleModelAPIView",
         "importPath": "drf_multiple_model.views",
         "description": "drf_multiple_model.views",
@@ -5326,6 +5335,14 @@
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "ImproperlyConfigured",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
         "documentation": {}
     },
     {
@@ -7915,6 +7932,42 @@
         "documentation": {}
     },
     {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "scripting.prod_settings",
+        "description": "scripting.prod_settings",
+        "peekOfCode": "DEBUG = False\nTEMPLATES_DEBUG = False\nDATABASES['default'] = dj_database_url.config()\nALLOWED_HOSTS = ['crm-advans.herokuapp.com']",
+        "detail": "scripting.prod_settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES_DEBUG",
+        "kind": 5,
+        "importPath": "scripting.prod_settings",
+        "description": "scripting.prod_settings",
+        "peekOfCode": "TEMPLATES_DEBUG = False\nDATABASES['default'] = dj_database_url.config()\nALLOWED_HOSTS = ['crm-advans.herokuapp.com']",
+        "detail": "scripting.prod_settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES['default']",
+        "kind": 5,
+        "importPath": "scripting.prod_settings",
+        "description": "scripting.prod_settings",
+        "peekOfCode": "DATABASES['default'] = dj_database_url.config()\nALLOWED_HOSTS = ['crm-advans.herokuapp.com']",
+        "detail": "scripting.prod_settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "scripting.prod_settings",
+        "description": "scripting.prod_settings",
+        "peekOfCode": "ALLOWED_HOSTS = ['crm-advans.herokuapp.com']",
+        "detail": "scripting.prod_settings",
+        "documentation": {}
+    },
+    {
         "label": "GlobalSearchAPIView",
         "kind": 6,
         "importPath": "scripting.search",
@@ -7924,11 +7977,20 @@
         "documentation": {}
     },
     {
+        "label": "get_env_variable",
+        "kind": 2,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "def get_env_variable(var_name, default_value=None):\n    try:\n        return os.environ[var_name]\n    except KeyError:\n        if default_value is None:\n            error_msg = \"Set the {} environmemt variable\".format(var_name)\n            raise ImproperlyConfigured(error_msg)\n        else:\n            return default_value\n# Build paths inside the project like this: BASE_DIR / 'subdir'.",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
         "label": "BASE_DIR",
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\n# SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\nSECRET_KEY = get_env_variable('SECRET_KEY', '-kk=0-5_6#g9v!1@wv(vs!$ma%m3(m^_!fgbb1@7&&ck^oenxl')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7937,7 +7999,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = get_env_variable('SECRET_KEY', '-kk=0-5_6#g9v!1@wv(vs!$ma%m3(m^_!fgbb1@7&&ck^oenxl')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.11.104', '*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -7973,7 +8035,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'scripting.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n]",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -8171,7 +8233,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -8180,7 +8242,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "LOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}",
+        "peekOfCode": "LOGIN_URL = '/'\nLOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -8189,7 +8251,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}",
+        "peekOfCode": "LOGIN_REDIRECT_URL = '/'\nLOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -8198,7 +8260,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "LOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}",
+        "peekOfCode": "LOGOUT_REDIRECT_URL = '/'\nREST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "scripting.settings",
         "documentation": {}
     },
@@ -8207,7 +8269,16 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "scripting.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "scripting.settings",
+        "description": "scripting.settings",
+        "peekOfCode": "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "scripting.settings",
         "documentation": {}
     },
