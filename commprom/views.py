@@ -9,6 +9,10 @@ from django.forms.models import model_to_dict
 import xlwt
 import csv
 
+from django.views.generic import View, DetailView
+from scripting.utils import render_to_pdf
+from django.template.loader import get_template
+
 from django.views.generic import DetailView
 from scripting.utils import render_to_pdf
 

@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from scripting.search import GlobalSearchAPIView
+
 
 handler400 = 'scripting.views_errors_page.handler400'
 handler403 = 'scripting.views_errors_page.handler403'
@@ -28,7 +30,8 @@ handler503 = 'scripting.views_errors_page.handler503'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('api/', GlobalSearchAPIView.as_view()),
     path('app/', include('app.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('forms/', include('forms.urls')),
@@ -42,6 +45,7 @@ urlpatterns = [
     path('renouvellement/', include('renouvellement.urls')),
     path('contacts/', include('contacts.urls')),
     path('issabel/', include('issabel.urls')),
+    path('', include('paramurl.urls')),
 ]
 
 if settings.DEBUG:

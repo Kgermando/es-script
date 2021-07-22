@@ -97,7 +97,11 @@
 
                                     {% for compte_dormant in compte_dormant_list %}
                                     <tr>
-                                        <td scope="row">{{compte_dormant.created_date}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'compte_dormant:export_compte_dormant_pdf' compte_dormant.id %}" target="_blank">
+                                                {{compte_dormant.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{compte_dormant.questions1}}</td>
                                         <td>{{compte_dormant.questions2}}</td>
                                         <td>{{compte_dormant.questions3}}</td>
@@ -109,7 +113,7 @@
                                             {{compte_dormant.Contact.Commune}}</td>
                                         <td>{{compte_dormant.Contact.Ville}}</td>
                                         <td>{{compte_dormant.Contact.Province}}</td>
-                                        <td>{{compte_dormant.Contact.Tel1}}</td>
+                                        <td>{{compte_dormant.Contact.phonenumber}}</td>
                                         <td>{{compte_dormant.Contact.Email}}</td>
                                         <td>{{compte_dormant.Statut}}</td>
                                         <td>{{compte_dormant.Raison}}</td>

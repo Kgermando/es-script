@@ -9,7 +9,7 @@ class AcquisitionForm(forms.ModelForm):
     class Meta:
         model = Acquisition
         fields = (
-            'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'CommentaireQ5', 'CommentaireQ6',
+            'questions1', 'questions3', 'questions4', 'questions5', 'questions6', 'Contact', 'CommentaireQ5', 'CommentaireQ6', 'campaignname',
         )
     
     questions1 = forms.CharField(
@@ -135,6 +135,17 @@ class AcquisitionForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "name": "CommentaireQ6",
+            }
+        )
+    )
+
+    campaignname = forms.CharField(
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "name":"campaignname",
             }
         )
     )

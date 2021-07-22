@@ -1,0 +1,75 @@
+{% extends 'base_params.html' %}
+{% load static %}
+
+{% block title %} DAT {% endblock title %}
+
+
+{% block param_url %}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>CAMPAIGN <strong>{{dat_campaign.campaignname |upper}}</strong></h6>
+            <div class="row">
+                <h2>APPEL DE <strong>{{dat_campaign.Contact.phonenumber}}</strong></h2>
+                <div class="d-flex justify-content-end">
+                    <a href="{% url 'dat:dat_update' dat_campaign.id %}" role="button" class="btn btn-primary mr-2" style="color: aliceblue;font-weight: 700;">
+                        MODIFIER
+                    </a>
+                    <a class="btn btn-info" href="{% url 'dat:export_dat_pdf' dat_campaign.id %}" target="_blank">
+                        PDF
+                    </a>
+                </div>
+            </div>  
+        </div>
+        
+        <div class="card-body">
+            <div class='details'>
+                <p><strong>Questions 1</strong>: <br>
+                    <i>Nous souhaiterions parler avec Mr/Mme X </i>
+                    <br>
+                    R/ {{dat_campaign.questions1}}
+                </p>
+                <p><strong>Questions 2</strong>: <br>
+                    <i>Nous constatons que vous n'avez pas encore renouvelé votre dat_campaign alors que nous avons une campagne de
+                        promotion en cours.
+                        Puis-je suggérer de fixer un rendez-vous avec notre commercial pour reconduire votre dat_campaign ?</i>
+                    <br>
+                    R/ {{dat_campaign.questions2}}
+                </p>
+                <p><strong>Questions 3</strong>: <br>
+                    <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                    <i><strong>Nom</strong>: {{dat_campaign.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{dat_campaign.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{dat_campaign.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{dat_campaign.Contact.Numero}} {{dat_campaign.Contact.Rue}}
+                        {{dat_campaign.Contact.Quartier}}
+                        {{dat_campaign.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{dat_campaign.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{dat_campaign.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{dat_campaign.Contact.phonenumber}}</i> <br>
+                    <i><strong>Email</strong>: {{dat_campaign.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{dat_campaign.Contact.Remarque}}</i> <br>
+                </p>
+                <p><strong>Questions 4</strong>: <br>
+                    <i>(GOODBYE): Nous vous remercions du temps accordé et n'hésitez pas à nous contacter au besoin</i>
+                    <br>
+                    R/ {{dat_campaign.Statut}}
+                </p>
+                <p><strong>Type de trafic</strong>:
+                    <br>
+                    R/ {{dat_campaign.Bound}}
+                </p>
+                <p><strong>Campaign name</strong>:
+                    <br>
+                    R/ {{dat_campaign.campaignname}}
+                </p>
+                <p><strong>Remplie par l'agent</strong>: {{dat_campaign.user}}</p>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+
+{% endblock param_url %}

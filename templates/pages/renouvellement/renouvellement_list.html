@@ -113,14 +113,18 @@
 
                                     {% for renouvellement in renouvellement_list %}
                                     <tr>
-                                        <td scope="row">{{renouvellement.created_renouvellemente}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'renouvellement:export_renouvellement_pdf' renouvellement.id %}" target="_blank">
+                                                {{renouvellement.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{renouvellement.Contact.Nom}}</td>
                                         <td>{{renouvellement.Contact.Post_Nom}}</td>
                                         <td>{{renouvellement.Contact.Prenom}}</td>
                                         <td>N°{{renouvellement.Contact.Numero}} {{renouvellement.Contact.Rue}} {{renouvellement.Contact.Quartier}} {{renouvellement.Contact.Commune}}</td>
                                         <td>{{renouvellement.Contact.Ville}}</td>
                                         <td>{{renouvellement.Contact.Province}}</td>
-                                        <td>{{renouvellement.Contact.Tel1}}</td>
+                                        <td>{{renouvellement.Contact.phonenumber}}</td>
                                         <td>{{renouvellement.Contact.Email}}</td>
                                         <td>{{renouvellement.Statut}}</td>
                                         <td>{{renouvellement.Contact.Remarque}}</td>

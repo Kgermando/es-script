@@ -1,0 +1,98 @@
+{% extends 'base_params.html' %}
+{% load static %}
+
+{% block title %} ACQUISITION {% endblock title %}
+
+
+{% block param_url %}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>CAMPAIGN <strong>{{acquisition_campaign.campaignname |upper}}</strong></h6>
+            <div class="row">
+                <h2>APPEL DE <strong>{{acquisition_campaign.Contact.phonenumber}}</strong></h2>
+                <div class="d-flex justify-content-end">
+                    <a href="{% url 'acquisition:acquisition_update' acquisition_campaign.id %}" role="button" class="btn btn-primary mr-2"
+                        style="color: aliceblue;font-weight: 700;">
+                        MODIFIER
+                    </a>
+                    <a class="btn btn-info" href="{% url 'acquisition:export_acquisition_pdf' acquisition_campaign.id %}" target="_blank">
+                        PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class='details'>
+                <p><strong>Questions 1</strong>: <br>
+                    <i>J'aimerais vous poser quelques questions simples sur votre intérêt pour Advans ?</i>
+                    <br>
+                    R/ {{acquisition_campaign.questions1}}
+                </p>
+                <p><strong>Questions 2</strong>: <br>
+                    <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                    <i><strong>Nom</strong>: {{acquisition_campaign.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{acquisition_campaign.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{acquisition_campaign.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{acquisition_campaign.Contact.Numero}} {{acquisition_campaign.Contact.Rue}}
+                        {{acquisition_campaign.Contact.Quartier}}
+                        {{acquisition_campaign.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{acquisition_campaign.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{acquisition_campaign.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{acquisition_campaign.Contact.phonenumber}}</i> <br>
+                    <i><strong>Email</strong>: {{acquisition_campaign.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{acquisition_campaign.Contact.Remarque}}</i> <br>
+                </p>
+                <p><strong>Questions 3</strong>: <br>
+                    <i>Pouvez-vous m’indiquer lequel de nos services vous intéresse particulièrement ?</i>
+                    <br> R/ {{acquisition_campaign.questions3}}
+                </p>
+                <p><strong>Questions 4</strong>: <br>
+                    <i>Puis je vous proposer de rencontrer notre commercial en agence sur nos produits et services ?</i>
+                    <br> R/ {{acquisition_campaign.questions4}}
+                </p>
+                <p><strong>Questions 5</strong>: <br>
+                    <i>Quelles date et heure vous arrangent ?</i>
+                    <br> R/ {{acquisition_campaign.questions5}}
+                    <br>
+                    <i><strong>Commentaires</strong>:
+                        <br> R/ {{acquisition_campaign.CommentaireQ5}}
+                    </i>
+                </p>
+                <p><strong>Questions 6</strong>: <br>
+                    <i>AVEZ-VOUS DAUTRES QUESTIONS. Puis je vous proposer de rencontrer notre commercial en agence sur nos autres
+                        produits et
+                        services. Quelles date et heure vous arrangent ?</i>
+                    <br> R/ {{acquisition_campaign.questions6}}
+                    <br>
+                    <i><strong>Commentaires</strong>:
+                        <br> R/ {{acquisition_campaign.CommentaireQ6}}
+                    </i>
+                </p>
+                <p><strong>Questions 7</strong>: <br>
+                    <i>
+                        Merci pour votre temps aujourd'hui. Nous espérons que vous pourriez toujours être intéressé par Advans à
+                        l'avenir.
+                    </i>
+                    <br> R/ {{acquisition_campaign.Statut}}
+                </p>
+            
+                <p><strong>Campaign name</strong>:
+                    <br>
+                    R/ {{acquisition_campaign.campaignname}}
+                </p>
+            
+            
+                <p><strong>Remplie par l'agent</strong>: {{acquisition_campaign.user}}</p>
+                <!-- <p><strong>Bound</strong>: {{acquisition.Bound}}</p> -->
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock param_url %}

@@ -4,8 +4,6 @@ from daterangefilter.filters import PastDateRangeFilter, FutureDateRangeFilter
 
 from commprom.models import Commprom
 # Register your models here.
-
-
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')

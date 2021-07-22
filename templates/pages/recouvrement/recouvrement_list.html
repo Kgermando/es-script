@@ -94,7 +94,11 @@
 
                                     {% for recouvrement in recouvrement_list %}
                                         <tr>
-                                            <td scope="row">{{recouvrement.created_date}}</td>
+                                            <td scope="row">
+                                                <a href="{% url 'recouvrement:export_recouvrement_pdf' recouvrement.id %}" target="_blank">
+                                                    {{recouvrement.created_date}}
+                                                </a>
+                                            </td>
                                             <td>{{recouvrement.questions1}}</td>
                                             <td>{{recouvrement.questions2}}</td>
                                             <td>{{recouvrement.Contact.Nom}}</td>
@@ -103,7 +107,7 @@
                                             <td>N°{{recouvrement.Contact.Numero}} {{recouvrement.Contact.Rue}} {{recouvrement.Contact.Quartier}} {{recouvrement.Contact.Commune}}</td>
                                             <td>{{recouvrement.Contact.Ville}}</td>
                                             <td>{{recouvrement.Contact.Province}}</td>
-                                            <td>{{recouvrement.Contact.Tel1}}</td>
+                                            <td>{{recouvrement.Contact.phonenumber}}</td>
                                             <td>{{recouvrement.Contact.Email}}</td>
                                             <td>{{recouvrement.Statut}}</td>
                                             <td>{{recouvrement.Remarque}}</td>

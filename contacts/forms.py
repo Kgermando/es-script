@@ -7,7 +7,7 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = (
-            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',
+            'Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'phonenumber', 'Tel2', 'Tel3',
             'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'
         )
 
@@ -124,13 +124,13 @@ class ContactForm(forms.ModelForm):
         #     )
         # )
 
-        Tel1 = forms.CharField(
+        phonenumber = forms.CharField(
             label='',
             required=False,
             widget=forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "name": "Tel1",
+                    "name": "phonenumber",
                 }
             )
         )

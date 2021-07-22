@@ -9,6 +9,10 @@ import xlwt
 import csv
 from django.forms.models import model_to_dict
 
+from django.views.generic import View, DetailView
+from scripting.utils import render_to_pdf
+from django.template.loader import get_template
+
 from renouvellement.models import Renouvellement
 from renouvellement.forms import RenouvellementForm
 
@@ -207,3 +211,19 @@ def export_renouvellement_csv(request):
         writer.writerow(renouvellement)
 
     return response
+
+
+class Export_Renouvellement_pdf(DetailView):
+    """
+        For detail to pdf based function
+    """
+    model = Renouvellement
+    def get(self, request, *args, **kwargs):
+        renouvellement = Renouvellement.objects.get(id=self.kwargs.get('id'))
+        data = {
+            'renouvellement': renouvellement,
+            # 'today': datetime.date.today(), 
+        }
+        pdf = render_to_pdf('pages/renouvellement/renouvellement_pdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
+

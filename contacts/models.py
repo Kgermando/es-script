@@ -18,7 +18,7 @@ class Contact(models.Model):
     Ville           = models.CharField(max_length=100, null=True, blank=True, default='-')
     Province        = models.CharField(max_length=20, choices=PROVINCES, null=True, blank=True, default='-')
     # Pays            = models.CharField(max_length=100, choices=PAYS, null=True, blank=True, default='-')
-    Tel1            = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 1")
+    phonenumber      = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 1")
     Tel2            = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 2")
     Tel3            = models.CharField(max_length=13, null=True, blank=True, default='-', verbose_name="Téléphone 3")
     Email           = models.EmailField(null=True, blank=True, default='contact@advans.com')

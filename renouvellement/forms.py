@@ -13,7 +13,7 @@ class RenouvellementForm(forms.ModelForm):
             'questions10', 'questions12', 'questions13', 'questions15', 'questions16', 'Q19temps_a_contacter',
             'montant_de_pret', 'duree_de_credit', 'montant_a_rembourser_chaque_mois', 'montant_des_ventes_bonne_journee', 
             'montant_des_ventes_mauvaise_journee', 'date_a_laquelle_recevoir_credit', 'Nom_du_garant', 'Activite', 
-            'Commentaire', 'Concurrent', 'CommentaireQ17', 'Statut', 'Contact',
+            'Commentaire', 'Concurrent', 'CommentaireQ17', 'Statut', 'Contact', 'campaignname',
         )
     
     Contact = forms.ModelChoiceField(
@@ -27,7 +27,6 @@ class RenouvellementForm(forms.ModelForm):
                 "placeholder": "Hopital"
             }
         )
-        
     )
 
     questions1 = forms.CharField(
@@ -337,6 +336,17 @@ class RenouvellementForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "name":"CommentaireQ17",
+            }
+        )
+    )
+
+    campaignname = forms.CharField(
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "name":"campaignname",
             }
         )
     )

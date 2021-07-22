@@ -10,7 +10,7 @@ class Compte_dormantForm(forms.ModelForm):
         model = Compte_dormant
         fields = (
             'questions1', 'questions2', 'questions3', 'questions4', 
-            'Raison', 'Statut', 'Bound', 'Contact',
+            'Raison', 'Statut', 'Bound', 'Contact', 'campaignname',
         ) 
 
     questions1 = forms.CharField(
@@ -115,5 +115,14 @@ class Compte_dormantForm(forms.ModelForm):
         )
     )
 
-    
+    campaignname = forms.CharField(
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "name":"campaignname",
+            }
+        )
+    )
 

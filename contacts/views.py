@@ -89,7 +89,7 @@ def export_contact_xls(request):
     # Sheet body, remaining rows
     font_style = xlwt.XFStyle()
 
-    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',
+    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'phonenumber', 'Tel2', 'Tel3',
             'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque')
     for row in rows:
         row_num += 1
@@ -109,7 +109,7 @@ def export_contact_csv(request):
     writer.writerow(['Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Téléphone 1', 'Téléphone 2', 
 	'Téléphone 3', 'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque'])
 
-    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'Tel1', 'Tel2', 'Tel3',
+    rows = Contact.objects.filter(user=user).values_list('Nom', 'Post_Nom', 'Prenom', 'Numero', 'Rue', 'Quartier', 'Commune', 'Ville', 'Province', 'phonenumber', 'Tel2', 'Tel3',
             'Email', 'Website', 'Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'Remarque')
     for row in rows:
         writer.writerow(row)
@@ -173,7 +173,7 @@ def upload_contact_csv(request):
                 if (fields[0] == 'created_date') and (fields[1] == 'Nom') and (fields[2] == 'Post_Nom') and (
                     fields[3] == 'Prenom') and (fields[4] == 'Numero') and (fields[5] == 'Rue') and (
                     fields[6] == 'Quartier') and (fields[7] == 'Commune') and (fields[8] == 'Ville') and (fields[9] == 'Province') and (
-                    fields[10] == 'Tel1') and (fields[11] == 'Tel2') and (fields[12] == 'Tel3') and (fields[13] == 'Email') and (
+                    fields[10] == 'phonenumber') and (fields[11] == 'Tel2') and (fields[12] == 'Tel3') and (fields[13] == 'Email') and (
                     fields[14] == 'Website') and (fields[15] == 'Facebook') and (fields[16] == 'Instagram')  and (
                     fields[17] == 'Twitter')  and (fields[18] == 'LinkedIn')  and (fields[19] == 'Remarque') and (fields[20] == 'user'):
                     pass
@@ -194,7 +194,7 @@ def upload_contact_csv(request):
                     Commune=fields[7],
                     Ville=fields[8],
                     Province=fields[9],
-                    Tel1=fields[10],
+                    phonenumber=fields[10],
                     Tel2=fields[11],
                     Tel3=fields[12],
                     Email=fields[13],
