@@ -9,6 +9,10 @@ from django.forms.models import model_to_dict
 import xlwt
 import csv
 
+from django.views.generic import View, DetailView
+from scripting.utils import render_to_pdf
+from django.template.loader import get_template
+
 from recouvrement.models import Recouvrement
 from recouvrement.forms import RecouvrementForm
 
@@ -190,3 +194,18 @@ def export_recouvrement_csv(request):
         writer.writerow(recouvrement)
 
     return response
+
+class Export_Recouvrement_pdf(DetailView):
+    """
+        For detail to pdf based function
+    """
+    model = Recouvrement
+    def get(self, request, *args, **kwargs):
+        recouvrement = Recouvrement.objects.get(id=self.kwargs.get('id'))
+        data = {
+            'recouvrement': recouvrement,
+            # 'today': datetime.date.today(), 
+        }
+        pdf = render_to_pdf('pages/recouvrement/recouvrement_pdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
+

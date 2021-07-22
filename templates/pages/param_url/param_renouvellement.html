@@ -1,0 +1,246 @@
+{% extends 'base_params.html' %}
+{% load static %}
+
+{% block title %} RENOUVELLEMENT {% endblock title %}
+
+
+{% block param_url %}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>CAMPAIGN <strong>{{renouvellement_campaign.campaignname |upper}}</strong></h6>
+            <div class="row">
+                <h2>APPEL DE <strong>{{renouvellement_campaign.Contact.phonenumber}}</strong></h2>
+                <div class="d-flex justify-content-end">
+                    <a href="{% url 'renouvellement:renouvellement_update' renouvellement_campaign.id %}" role="button"
+                        class="btn btn-primary mr-2" style="color: aliceblue;font-weight: 700;">
+                        MODIFIER
+                    </a>
+                    <a class="btn btn-info"
+                        href="{% url 'renouvellement:renouvellement_pdf' renouvellement_campaign.id %}"
+                        target="_blank">
+                        PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class='details'>
+                <p><strong>Questions 1</strong>: <br>
+                    <i>Bonjour, c'est {{user.profile.sexe|lower}} <strong>{{ user.first_name|capfirst}}</strong>
+                        de Advans.
+                        Nous souhaiterions parler avec Mr/Mme X </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions1}}
+                </p>
+                <p><strong>Questions 2</strong>: <br>
+                    <i>
+                        Nous constatons que vous n'avez pas encore RECONDUIT votre CREDIT que vous avez soldé. Puis-je
+                        suggérer de fixer un
+                        rendez-vous avec notre commercial pour reconduire un nouveau crédit 
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions2}}
+                </p>
+                <p><strong>Questions 3</strong>: <br>
+                    <i>
+                    Merci de nous renouveler votre confiance. Si vous le voulez bien, je vais prendre les premiers
+                    éléments de votre demande.
+                    Avant de commencer, j'aimerais vous rappeler qu'un crédit est un engagement et doit être remboursé.
+                    Nous vous
+                    expliquerons toutes les conditions du prêt qui correspond à vos besoins lorsque vous irez dans votre
+                    agence.
+                    Remplir la demande de crédit aujourd'hui devrait prendre environ 10 à 15 minutes, n'est-ce pas
+                    grave?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions3}}
+                </p>
+                <p><strong>Questions 4</strong>: <br>
+                    <i>
+                        Puis j'avoir plus d'information au sujet de votre prêt?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.montant_de_prêt}}
+                </p>
+                <p>
+                    <i>
+                        Quelle durée de crédit souhaiteriez-vous:
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.durée_de_crédit}}
+                </p>
+                <p>
+                    <i>
+                        Combien pensez-vous pouvoir rembourser chaque mois?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.montant_a_rembourser_chaque_mois}}
+                </p>
+                <p>
+                    <i>
+                        Pouvez-vous me dire le montant des ventes que vous réalisez pendant une bonne
+                        journée pour votre entreprise ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.montant_des_ventes_bonne_journée}}
+                </p>
+                <p>
+                    <i>
+                        Pouvez-vous me dire le montant des ventes que vous réalisez pendant une
+                        mauvaise journée pour votre entreprise ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.montant_des_ventes_mauvaise_journée}}
+                </p>
+                <p>
+                    <i>
+                        Est-ce que vous avez une date à laquelle vous aimeriez recevoir votre
+                        crédit?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.date_a_laquelle_recevoir_credit}}
+                </p>
+
+                <p><strong>Questions 5</strong>: <br>
+                    <i>
+                        Est-ce que vous avez besoin de changer de garant depuis votre dernier prêt?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions5}}
+                </p>
+
+                <p><strong>Questions 6</strong>: <br>
+                    <i>
+                        Peut-on prendre le nom du nouveau garant et son activité ?
+                    </i>
+                    <br>
+                    <i>
+                        Nom du garant
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.Nom_du_garant}}
+                    <br>
+                        <i>
+                            Activite
+                        </i>
+                    <br>
+                    R/ {{renouvellement_campaign.Activite}}
+                </p>
+                <p><strong>Questions 7</strong>: <br>
+                    <i>
+                        Est-ce que vous avez changé d’adresse d’entreprise depuis votre dernier crédit ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions7}}
+                </p>
+
+                <p><strong>KYC</strong>: <br>
+                    <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                    <i><strong>Nom</strong>: {{renouvellement_campaign.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{renouvellement_campaign.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{renouvellement_campaign.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{renouvellement_campaign.Contact.Numero}}
+                        {{renouvellement_campaign.Contact.Rue}}
+                        {{renouvellement_campaign.Contact.Quartier}}
+                        {{renouvellement_campaign.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{renouvellement_campaign.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{renouvellement_campaign.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{renouvellement_campaign.Contact.phonenumber}}</i> <br>
+                    <i><strong>Email</strong>: {{renouvellement_campaign.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{renouvellement_campaign.Contact.Remarque}}</i> <br>
+                </p>
+
+                <p><strong>Questions 10</strong>: <br>
+                    <i>
+                        J’aimerais vous poser quelques questions sur votre décision de ne pas renouveler votre prêt. Cela
+                        devrait prendre entre
+                        5 et 10 minutes, êtes-vous d’accord pour me répondre ?
+                        Tout d’abord, pourriez-vous me donner la raison principale pour laquelle vous ne voulez pas un
+                        nouveau crédit ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions10}}
+                </p>
+                <p><strong>Question 11</strong>:
+                    <i>
+                        Avez-vous d’autres commentaires sur la raison pour laquelle vous ne souhaitez pas reprendre un
+                        crédit ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.Commentaire}}
+                </p>
+                <p><strong>Question 12</strong>:
+                    <i>
+                        Pensez-vous reprendre un crédit ou utiliser d’autres services Advans à l’avenir ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions12}}
+                </p>
+                <p><strong>Question 13</strong>:
+                    <i>
+                        Avez-vous contracté un crédit chez une autre institution financière depuis l’échéance de votre
+                        crédit chez Advans ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions13}}
+                </p>
+                <p><strong>Question 14</strong>:
+                    <i>
+                        Pouvez-vous nous indiquer chez qui ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.Concurrent}}
+                </p>
+                <p><strong>Question 15</strong>:
+                    <i>
+                        Quel est votre niveau de satisfaction globale chez Advans ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions15}}
+                </p>
+                <p><strong>Question 16</strong>:
+                    <i>
+                        Quel est votre niveau de satisfaction avec votre contact
+                        principal (Chargé(e) de clientèle chez Advans?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.questions16}}
+                </p>
+                <p><strong>Question 17</strong>:
+                    <i>
+                        Avez-vous d’autres commentaires sur Advans en général ?
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.CommentaireQ17}}
+                </p>
+                <p><strong>Question 19</strong>:
+                    <i>
+                        Très bien, pouvez-vous m'indiquer dans combien de mois je peux vous contacter.
+                    </i>
+                    <br>
+                    R/ {{renouvellement_campaign.Q19temps_a_contacter}}
+                </p>
+                <p><strong>Merçi! Au revoir</strong>:
+                    <br>
+                    R/ {{renouvellement_campaign.Statut}}
+                </p>
+                <p><strong>Type de trafic</strong>:
+                    <br>
+                    R/ {{renouvellement_campaign.Bound}}
+                </p>
+                <p><strong>Campaign name</strong>:
+                    <br>
+                    R/ {{renouvellement_campaign.campaignname}}
+                </p>
+                <p><strong>Remplie par l'agent</strong>: {{renouvellement_campaign.user}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock param_url %}

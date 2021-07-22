@@ -1,0 +1,122 @@
+{% extends 'base_params.html' %}
+{% load static %}
+
+{% block title %} COMPTE DORMANT {% endblock title %}
+
+
+{% block param_url %}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>CAMPAIGN <strong>{{comptedormant_campaign.campaignname |upper}}</strong></h6>
+            <div class="row">
+                <h2>APPEL DE <strong>{{comptedormant_campaign.Contact.phonenumber}}</strong></h2>
+                <div class="d-flex justify-content-end">
+                    <a href="{% url 'compte_dormant:compte_dormant_update' comptedormant_campaign.id %}" role="button"
+                        class="btn btn-primary mr-2" style="color: aliceblue;font-weight: 700;">
+                        MODIFIER
+                    </a>
+                    <a class="btn btn-info"
+                        href="{% url 'compte_dormant:compte_dormant_pdf' comptedormant_campaign.id %}" target="_blank">
+                        PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class='details'>
+                <p><strong>Questions 1</strong>: <br>
+                    <i>Bonjour, c'est {{user.profile.sexe}} <strong>{{user.first_name|upper}}</strong> de Advans.
+                    Nous souhaiterions parler avec Mr/Mme X</i>
+                    <br>
+                    R/ {{comptedormant_campaign.questions1}}
+                </p>
+                <p><strong>Questions 2</strong>: <br>
+                    <i>
+                        Je constate que vous n’opérez plus de mouvement sur votre compte depuis un certain temps.
+                    </i>
+                    <br>
+                    R/ {{comptedormant_campaign.questions2}}
+                </p>
+                <p>
+                    <i>
+                        Puis-j ’en connaître la raison?
+                    </i>
+                    <br>
+                    R/ {{comptedormant_campaign.Raison}}
+                </p>
+                <p><strong>Questions 3</strong>: <br>
+                    <i>
+                        Quand envisagez-vous d'alimenter votre compte ?
+                    </i>
+                    <!-- <i>
+                        Avez-vous votre agenda pour fixer un RDV avec l’un de nos conseillers ?
+                    </i> -->
+                    <br>
+                    R/ {{comptedormant_campaign.questions3}}
+                </p>
+                <p><strong>Questions 4</strong>: <br>
+                    <i>
+                        Quelle date vous convient pour alimenter ce compte. Plutôt le X ou le Y ; à telle heure ou plutôt à telle :
+                    </i>
+                    <br>
+                    R/ {{comptedormant_campaign.questions4}}
+                </p>
+                <p><strong>Questions 5</strong>: <br>
+                    <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                    <i><strong>Nom</strong>: {{comptedormant_campaign.Contact.Nom}}</i> <br>
+                    <i><strong>Post_Nom</strong>: {{comptedormant_campaign.Contact.Post_Nom}}</i> <br>
+                    <i><strong>Prénom</strong>: {{comptedormant_campaign.Contact.Prenom}}</i> <br>
+                    <i><strong>Adresse</strong>: N°{{comptedormant_campaign.Contact.Numero}}
+                        {{comptedormant_campaign.Contact.Rue}}
+                        {{comptedormant_campaign.Contact.Quartier}}
+                        {{comptedormant_campaign.Contact.Commune}}</i> <br>
+                    <i><strong>Ville</strong>: {{comptedormant_campaign.Contact.Ville}}</i> <br>
+                    <i><strong>Province</strong>: {{comptedormant_campaign.Contact.Province}}</i> <br>
+                    <i><strong>Téléphone</strong>: {{comptedormant_campaign.Contact.phonenumber}}</i> <br>
+                    <i><strong>Email</strong>: {{comptedormant_campaign.Contact.Email}}</i> <br>
+                    <i><strong>Remarque</strong>: {{comptedormant_campaign.Contact.Remarque}}</i> <br>
+                </p>
+                <p><strong>Questions 6</strong>: <br>
+                    <i>AVEZ-VOUS DAUTRES QUESTIONS. Puis je vous proposer de rencontrer notre commercial en agence sur
+                        nos autres
+                        produits et
+                        services. Quelles date et heure vous arrangent ?</i>
+                    <br> R/ {{comptedormant_campaign.questions6}}
+                    <br>
+                    <i><strong>Commentaires</strong>:
+                        <br> R/ {{comptedormant_campaign.CommentaireQ6}}
+                    </i>
+                </p>
+                <p><strong>Statut</strong>: <br>
+                    <i>
+                        Nous vous remercions du temps accordé et n'hésitez pas à nous
+                        contacter au besoin
+                    </i>
+                    <br> R/ {{comptedormant_campaign.Statut}}
+                </p>
+
+                <p><strong>Trafic</strong>:
+                    <br>
+                    R/ {{comptedormant_campaign.Bound}}
+                </p>
+
+                <p><strong>Campaign name</strong>:
+                    <br>
+                    R/ {{comptedormant_campaign.campaignname}}
+                </p>
+
+
+                <p><strong>Remplie par l'agent</strong>: {{comptedormant_campaign.user}}</p>
+                <!-- <p><strong>Bound</strong>: {{acquisition.Bound}}</p> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock param_url %}

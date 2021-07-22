@@ -1561,6 +1561,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1826,6 +1834,14 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -2258,6 +2274,22 @@
     },
     {
         "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -2776,6 +2808,22 @@
         "description": "acquisition.models",
         "isExtraImport": true,
         "detail": "acquisition.models",
+        "documentation": {}
+    },
+    {
+        "label": "Acquisition",
+        "importPath": "acquisition.models",
+        "description": "acquisition.models",
+        "isExtraImport": true,
+        "detail": "acquisition.models",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "importPath": "contacts.models",
+        "description": "contacts.models",
+        "isExtraImport": true,
+        "detail": "contacts.models",
         "documentation": {}
     },
     {
@@ -3492,6 +3540,22 @@
         "documentation": {}
     },
     {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
         "label": "DetailView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -3513,6 +3577,86 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_pdf",
+        "importPath": "scripting.utils",
+        "description": "scripting.utils",
+        "isExtraImport": true,
+        "detail": "scripting.utils",
         "documentation": {}
     },
     {
@@ -3837,6 +3981,14 @@
         "documentation": {}
     },
     {
+        "label": "Commprom",
+        "importPath": "commprom.models",
+        "description": "commprom.models",
+        "isExtraImport": true,
+        "detail": "commprom.models",
+        "documentation": {}
+    },
+    {
         "label": "commprom_add",
         "importPath": "commprom.views",
         "description": "commprom.views",
@@ -3901,11 +4053,75 @@
         "documentation": {}
     },
     {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
         "label": "CommpromForm",
         "importPath": "commprom.forms",
         "description": "commprom.forms",
         "isExtraImport": true,
         "detail": "commprom.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Compte_dormant",
+        "importPath": "comptedormant.models",
+        "description": "comptedormant.models",
+        "isExtraImport": true,
+        "detail": "comptedormant.models",
         "documentation": {}
     },
     {
@@ -3998,6 +4214,14 @@
     },
     {
         "label": "export_compte_dormant_csv",
+        "importPath": "comptedormant.views",
+        "description": "comptedormant.views",
+        "isExtraImport": true,
+        "detail": "comptedormant.views",
+        "documentation": {}
+    },
+    {
+        "label": "Export_compte_dormant_pdf",
         "importPath": "comptedormant.views",
         "description": "comptedormant.views",
         "isExtraImport": true,
@@ -4166,30 +4390,6 @@
         "documentation": {}
     },
     {
-        "label": "get_template",
-        "importPath": "django.template.loader",
-        "description": "django.template.loader",
-        "isExtraImport": true,
-        "detail": "django.template.loader",
-        "documentation": {}
-    },
-    {
-        "label": "get_template",
-        "importPath": "django.template.loader",
-        "description": "django.template.loader",
-        "isExtraImport": true,
-        "detail": "django.template.loader",
-        "documentation": {}
-    },
-    {
-        "label": "get_template",
-        "importPath": "django.template.loader",
-        "description": "django.template.loader",
-        "isExtraImport": true,
-        "detail": "django.template.loader",
-        "documentation": {}
-    },
-    {
         "label": "pisa",
         "importPath": "xhtml2pdf",
         "description": "xhtml2pdf",
@@ -4319,11 +4519,11 @@
         "documentation": {}
     },
     {
-        "label": "Recouvrement",
-        "importPath": "recouvrement.models",
-        "description": "recouvrement.models",
+        "label": "Dat",
+        "importPath": "dat.models",
+        "description": "dat.models",
         "isExtraImport": true,
-        "detail": "recouvrement.models",
+        "detail": "dat.models",
         "documentation": {}
     },
     {
@@ -4356,6 +4556,30 @@
         "description": "recouvrement.models",
         "isExtraImport": true,
         "detail": "recouvrement.models",
+        "documentation": {}
+    },
+    {
+        "label": "Recouvrement",
+        "importPath": "recouvrement.models",
+        "description": "recouvrement.models",
+        "isExtraImport": true,
+        "detail": "recouvrement.models",
+        "documentation": {}
+    },
+    {
+        "label": "Recouvrement",
+        "importPath": "recouvrement.models",
+        "description": "recouvrement.models",
+        "isExtraImport": true,
+        "detail": "recouvrement.models",
+        "documentation": {}
+    },
+    {
+        "label": "Renouvellement",
+        "importPath": "renouvellement.models",
+        "description": "renouvellement.models",
+        "isExtraImport": true,
+        "detail": "renouvellement.models",
         "documentation": {}
     },
     {
@@ -4928,6 +5152,14 @@
         "documentation": {}
     },
     {
+        "label": "Export_Recouvrement_pdf",
+        "importPath": "recouvrement.views",
+        "description": "recouvrement.views",
+        "isExtraImport": true,
+        "detail": "recouvrement.views",
+        "documentation": {}
+    },
+    {
         "label": "RecouvrementForm",
         "importPath": "recouvrement.forms",
         "description": "recouvrement.forms",
@@ -4985,6 +5217,14 @@
     },
     {
         "label": "export_renouvellement_csv",
+        "importPath": "renouvellement.views",
+        "description": "renouvellement.views",
+        "isExtraImport": true,
+        "detail": "renouvellement.views",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Renouvellement_pdf",
         "importPath": "renouvellement.views",
         "description": "renouvellement.views",
         "isExtraImport": true,
@@ -5843,7 +6083,7 @@
         "kind": 6,
         "importPath": "commprom.models",
         "description": "commprom.models",
-        "peekOfCode": "class Commprom(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)\n    Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)\n    Bound            = models.CharField(max_length=20, null=True)\n    campaignname      = models.CharField(max_length=200, null=True, default='-')\n    def __str__(self):",
+        "peekOfCode": "class Commprom(models.Model):\n    user             = models.ForeignKey(User, on_delete=models.CASCADE)\n    created_date     = models.DateTimeField(auto_now_add=True)\n    questions1       = models.CharField(max_length=200, null=True, default='-')\n    questions2       = models.CharField(max_length=200, null=True, default='-')\n    Contact          = models.ForeignKey(Contact, on_delete=models.CASCADE)\n    Statut           = models.CharField(max_length=30, choices=STATUTS, null=True)\n    Bound            = models.CharField(max_length=20, null=True)\n    campaignname      = models.CharField(max_length=200, null=True, default='-')\n    # def __str__(self):",
         "detail": "commprom.models",
         "documentation": {}
     },
@@ -6023,7 +6263,7 @@
         "kind": 5,
         "importPath": "comptedormant.urls",
         "description": "comptedormant.urls",
-        "peekOfCode": "app_name = 'compte_dormant'\nurlpatterns = [\n    path('compte_dormant_add/', compte_dormant_add, name='compte_dormant_add'),\n    path('compte_dormant_list/', compte_dormant_list, name='compte_dormant_list'),\n    path('compte_dormant_update/<int:id>/', compte_dormant_update, name='compte_dormant_update'),\n    path('compte_dormant_view/<int:id>/', compte_dormant_view, name='compte_dormant_view'),\n    path('compte_dormant_destroy/<int:id>/', compte_dormant_destroy, name='compte_dormant_destroy'),\n    path('export/xls/', export_compte_dormant_xls, name='export_compte_dormant_xls'),\n    path('export/csv/', export_compte_dormant_csv, name='export_compte_dormant_csv'),\n]",
+        "peekOfCode": "app_name = 'compte_dormant'\nurlpatterns = [\n    path('compte_dormant_add/', compte_dormant_add, name='compte_dormant_add'),\n    path('compte_dormant_list/', compte_dormant_list, name='compte_dormant_list'),\n    path('compte_dormant_update/<int:id>/', compte_dormant_update, name='compte_dormant_update'),\n    path('compte_dormant_view/<int:id>/', compte_dormant_view, name='compte_dormant_view'),\n    path('compte_dormant_destroy/<int:id>/', compte_dormant_destroy, name='compte_dormant_destroy'),\n    path('export/xls/', export_compte_dormant_xls, name='export_compte_dormant_xls'),\n    path('export/csv/', export_compte_dormant_csv, name='export_compte_dormant_csv'),\n    path('export/pdf/<int:id>/',",
         "detail": "comptedormant.urls",
         "documentation": {}
     },
@@ -6032,8 +6272,17 @@
         "kind": 5,
         "importPath": "comptedormant.urls",
         "description": "comptedormant.urls",
-        "peekOfCode": "urlpatterns = [\n    path('compte_dormant_add/', compte_dormant_add, name='compte_dormant_add'),\n    path('compte_dormant_list/', compte_dormant_list, name='compte_dormant_list'),\n    path('compte_dormant_update/<int:id>/', compte_dormant_update, name='compte_dormant_update'),\n    path('compte_dormant_view/<int:id>/', compte_dormant_view, name='compte_dormant_view'),\n    path('compte_dormant_destroy/<int:id>/', compte_dormant_destroy, name='compte_dormant_destroy'),\n    path('export/xls/', export_compte_dormant_xls, name='export_compte_dormant_xls'),\n    path('export/csv/', export_compte_dormant_csv, name='export_compte_dormant_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('compte_dormant_add/', compte_dormant_add, name='compte_dormant_add'),\n    path('compte_dormant_list/', compte_dormant_list, name='compte_dormant_list'),\n    path('compte_dormant_update/<int:id>/', compte_dormant_update, name='compte_dormant_update'),\n    path('compte_dormant_view/<int:id>/', compte_dormant_view, name='compte_dormant_view'),\n    path('compte_dormant_destroy/<int:id>/', compte_dormant_destroy, name='compte_dormant_destroy'),\n    path('export/xls/', export_compte_dormant_xls, name='export_compte_dormant_xls'),\n    path('export/csv/', export_compte_dormant_csv, name='export_compte_dormant_csv'),\n    path('export/pdf/<int:id>/',\n         Export_compte_dormant_pdf.as_view(), name='export_compte_dormant_pdf'),",
         "detail": "comptedormant.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_compte_dormant_pdf",
+        "kind": 6,
+        "importPath": "comptedormant.views",
+        "description": "comptedormant.views",
+        "peekOfCode": "class Export_compte_dormant_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Compte_dormant\n    def get(self, request, *args, **kwargs):\n        dat = Compte_dormant.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'compte_dormant': compte_dormant,\n            # 'today': datetime.date.today(), ",
+        "detail": "comptedormant.views",
         "documentation": {}
     },
     {
@@ -6824,7 +7073,7 @@
         "kind": 5,
         "importPath": "paramurl.urls",
         "description": "paramurl.urls",
-        "peekOfCode": "urlpatterns = [\n    path('text/?<phonenuber>&<campaign>', paramurl_view, name='paramurl_view'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('text/', paramurl_view),\n]",
         "detail": "paramurl.urls",
         "documentation": {}
     },
@@ -6833,7 +7082,7 @@
         "kind": 2,
         "importPath": "paramurl.views",
         "description": "paramurl.views",
-        "peekOfCode": "def paramurl_view(request, phonenumber, campagain):\n    try:\n        phonenumber = request.GET.get('phonenumber')\n        campagain = request.GET.get('campagain')\n    except:\n        return HttpResponseBadRequest",
+        "peekOfCode": "def paramurl_view(request):\n    # Get value\n    phonenumber = request.GET.get('phonenumber', '')\n    campaignname = request.GET.get('campaignname', '')\n    # Campaign\n    dat = 'dat',\n    commprom = 'commprom',\n    comptedormant = 'comptedormant',\n    acquisition = 'acquisition',\n    recouvrement = 'recouvrement',",
         "detail": "paramurl.views",
         "documentation": {}
     },
@@ -7418,8 +7667,17 @@
         "kind": 5,
         "importPath": "recouvrement.urls",
         "description": "recouvrement.urls",
-        "peekOfCode": "urlpatterns = [\n    path('recouvrement_add/', recouvrement_add, name='recouvrement_add'),\n    path('recouvrement_list/', recouvrement_list, name='recouvrement_list'),\n    path('recouvrement_view/<int:id>/', recouvrement_view, name='recouvrement_view'),\n    path('recouvrement_update/<int:id>/', recouvrement_update, name='recouvrement_update'),\n    path('recouvrement_destroy/<int:id>/', recouvrement_destroy, name='recouvrement_destroy'),\n    path('export/xls/', export_recouvrement_xls, name='export_recouvrement_xls'),\n    path('export/csv/', export_recouvrement_csv, name='export_recouvrement_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('recouvrement_add/', recouvrement_add, name='recouvrement_add'),\n    path('recouvrement_list/', recouvrement_list, name='recouvrement_list'),\n    path('recouvrement_view/<int:id>/', recouvrement_view, name='recouvrement_view'),\n    path('recouvrement_update/<int:id>/', recouvrement_update, name='recouvrement_update'),\n    path('recouvrement_destroy/<int:id>/', recouvrement_destroy, name='recouvrement_destroy'),\n    path('export/xls/', export_recouvrement_xls, name='export_recouvrement_xls'),\n    path('export/csv/', export_recouvrement_csv, name='export_recouvrement_csv'),\n    path('export/pdf/<int:id>/', Export_Recouvrement_pdf.as_view(), name='export_recouvrement_pdf'),\n]",
         "detail": "recouvrement.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Recouvrement_pdf",
+        "kind": 6,
+        "importPath": "recouvrement.views",
+        "description": "recouvrement.views",
+        "peekOfCode": "class Export_Recouvrement_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Recouvrement\n    def get(self, request, *args, **kwargs):\n        recouvrement = Recouvrement.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'recouvrement': recouvrement,\n            # 'today': datetime.date.today(), ",
+        "detail": "recouvrement.views",
         "documentation": {}
     },
     {
@@ -7562,7 +7820,7 @@
         "kind": 5,
         "importPath": "renouvellement.urls",
         "description": "renouvellement.urls",
-        "peekOfCode": "app_name = 'renouvellement'\nurlpatterns = [\n    path('renouvellement_add/', renouvellement_add, name='renouvellement_add'),\n    path('renouvellement_list/', renouvellement_list, name='renouvellement_list'),\n    path('renouvellement_update/<int:id>/', renouvellement_update, name='renouvellement_update'),\n    path('renouvellement_view/<int:id>/', renouvellement_view, name='renouvellement_view'),\n    path('renouvellement_destroy/<int:id>/', renouvellement_destroy, name='renouvellement_destroy'),\n    path('export/xls/', export_renouvellement_xls, name='export_renouvellement_xls'),\n    path('export/csv/', export_renouvellement_csv, name='export_renouvellement_csv'),\n]",
+        "peekOfCode": "app_name = 'renouvellement'\nurlpatterns = [\n    path('renouvellement_add/', renouvellement_add, name='renouvellement_add'),\n    path('renouvellement_list/', renouvellement_list, name='renouvellement_list'),\n    path('renouvellement_update/<int:id>/', renouvellement_update, name='renouvellement_update'),\n    path('renouvellement_view/<int:id>/', renouvellement_view, name='renouvellement_view'),\n    path('renouvellement_destroy/<int:id>/', renouvellement_destroy, name='renouvellement_destroy'),\n    path('export/xls/', export_renouvellement_xls, name='export_renouvellement_xls'),\n    path('export/csv/', export_renouvellement_csv, name='export_renouvellement_csv'),\n    path('export/pdf/<int:id>/', Export_Renouvellement_pdf.as_view(), name='export_renouvellement_pdf'),",
         "detail": "renouvellement.urls",
         "documentation": {}
     },
@@ -7571,8 +7829,17 @@
         "kind": 5,
         "importPath": "renouvellement.urls",
         "description": "renouvellement.urls",
-        "peekOfCode": "urlpatterns = [\n    path('renouvellement_add/', renouvellement_add, name='renouvellement_add'),\n    path('renouvellement_list/', renouvellement_list, name='renouvellement_list'),\n    path('renouvellement_update/<int:id>/', renouvellement_update, name='renouvellement_update'),\n    path('renouvellement_view/<int:id>/', renouvellement_view, name='renouvellement_view'),\n    path('renouvellement_destroy/<int:id>/', renouvellement_destroy, name='renouvellement_destroy'),\n    path('export/xls/', export_renouvellement_xls, name='export_renouvellement_xls'),\n    path('export/csv/', export_renouvellement_csv, name='export_renouvellement_csv'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('renouvellement_add/', renouvellement_add, name='renouvellement_add'),\n    path('renouvellement_list/', renouvellement_list, name='renouvellement_list'),\n    path('renouvellement_update/<int:id>/', renouvellement_update, name='renouvellement_update'),\n    path('renouvellement_view/<int:id>/', renouvellement_view, name='renouvellement_view'),\n    path('renouvellement_destroy/<int:id>/', renouvellement_destroy, name='renouvellement_destroy'),\n    path('export/xls/', export_renouvellement_xls, name='export_renouvellement_xls'),\n    path('export/csv/', export_renouvellement_csv, name='export_renouvellement_csv'),\n    path('export/pdf/<int:id>/', Export_Renouvellement_pdf.as_view(), name='export_renouvellement_pdf'),\n]",
         "detail": "renouvellement.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Export_Renouvellement_pdf",
+        "kind": 6,
+        "importPath": "renouvellement.views",
+        "description": "renouvellement.views",
+        "peekOfCode": "class Export_Renouvellement_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Renouvellement\n    def get(self, request, *args, **kwargs):\n        renouvellement = Renouvellement.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'renouvellement': renouvellement,\n            # 'today': datetime.date.today(), ",
+        "detail": "renouvellement.views",
         "documentation": {}
     },
     {
@@ -7949,7 +8216,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler400 = 'scripting.views_errors_page.handler400'\nhandler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),",
+        "peekOfCode": "handler400 = 'scripting.views_errors_page.handler400'\nhandler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -7958,7 +8225,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),",
+        "peekOfCode": "handler403 = 'scripting.views_errors_page.handler403'\nhandler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -7967,7 +8234,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),",
+        "peekOfCode": "handler404 = 'scripting.views_errors_page.handler404'\nhandler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -7976,7 +8243,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),",
+        "peekOfCode": "handler500 = 'scripting.views_errors_page.handler500'\nhandler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -7985,7 +8252,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "handler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),\n    path('agenda/', include('agenda.urls')),",
+        "peekOfCode": "handler503 = 'scripting.views_errors_page.handler503'\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),\n    path('agenda/', include('agenda.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },
@@ -7994,7 +8261,7 @@
         "kind": 5,
         "importPath": "scripting.urls",
         "description": "scripting.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),\n    path('agenda/', include('agenda.urls')),\n    path('dat/', include('dat.urls')),",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('api/', GlobalSearchAPIView.as_view()),\n    path('app/', include('app.urls')),\n    path('dashboard/', include('dashboard.urls')),\n    path('forms/', include('forms.urls')),\n    path('pbx/', include('pbx.urls')),\n    path('agenda/', include('agenda.urls')),\n    path('dat/', include('dat.urls')),",
         "detail": "scripting.urls",
         "documentation": {}
     },

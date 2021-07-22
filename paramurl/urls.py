@@ -3,8 +3,8 @@ from django.urls import path
 
 from paramurl.views import paramurl_view
 
-app_name= 'paramurl'
+app_name= 'param_url'
 
 urlpatterns = [
-    path('text/?<phonenuber>&<campaign>', paramurl_view, name='paramurl_view'),
+    path('text/', paramurl_view),
 ]

@@ -9,6 +9,10 @@ from django.forms.models import model_to_dict
 import xlwt
 import csv
 
+from django.views.generic import View, DetailView
+from scripting.utils import render_to_pdf
+from django.template.loader import get_template
+
 from contacts.models import Contact
 from contacts.forms import ContactForm
 
@@ -190,4 +194,19 @@ def export_compte_dormant_csv(request):
         writer.writerow(compte_dormant)
 
     return response
+
+
+class Export_compte_dormant_pdf(DetailView):
+    """
+        For detail to pdf based function
+    """
+    model = Compte_dormant
+    def get(self, request, *args, **kwargs):
+        dat = Compte_dormant.objects.get(id=self.kwargs.get('id'))
+        data = {
+            'compte_dormant': compte_dormant,
+            # 'today': datetime.date.today(), 
+        }
+        pdf = render_to_pdf('pages/compte_dormant/compte_dormant_pdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
 

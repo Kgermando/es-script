@@ -1,0 +1,79 @@
+{% extends 'base_params.html' %}
+{% load static %}
+
+{% block title %} COMM & PROM {% endblock title %}
+
+
+{% block param_url %}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>CAMPAIGN <strong>{{commprom_campaign.campaignname |upper}}</strong></h6>
+            <div class="row">
+                <h2>APPEL DE <strong>{{commprom_campaign.Contact.phonenumber}}</strong></h2>
+                <div class="d-flex justify-content-end">
+                    <a href="{% url 'commprom:commprom_update' commprom_campaign.id %}" role="button"
+                        class="btn btn-primary mr-2" style="color: aliceblue;font-weight: 700;">
+                        MODIFIER
+                    </a>
+                    <a class="btn btn-info"
+                        href="{% url 'commprom:export_commprom_pdf' commprom_campaign.id %}" target="_blank">
+                        PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+        <div class='details'>
+            <p><strong>Questions 1</strong>: <br>
+                <i>Nous souhaiterions parler avec Mr/Mme X</i>
+                <br>
+                R/ {{commprom_campaign.questions1}}
+            </p>
+            <p><strong>Questions 2</strong>: <br>
+                <i>Nous souhaitons vous proposer notre nouvelle offre de service qui comprend les avantages suivants
+                    (expliquer)...</i>
+                <br> R/ {{commprom_campaign.questions2}}
+            </p>
+            <p><strong>Questions 3</strong>: <br>
+                <i>Permettez-moi de vérifier vos coordonnées (KYC)</i> <br>
+                <i><strong>Nom</strong>: {{commprom_campaign.Contact.Nom}}</i> <br>
+                <i><strong>Post_Nom</strong>: {{commprom_campaign.Contact.Post_Nom}}</i> <br>
+                <i><strong>Prénom</strong>: {{commprom_campaign.Contact.Prenom}}</i> <br>
+                <i><strong>Adresse</strong>: N°{{commprom_campaign.Contact.Numero}} {{commprom_campaign.Contact.Rue}}
+                    {{commprom_campaign.Contact.Quartier}}
+                    {{commprom_campaign.Contact.Commune}}</i> <br>
+                <i><strong>Ville</strong>: {{commprom_campaign.Contact.Ville}}</i> <br>
+                <i><strong>Province</strong>: {{commprom_campaign.Contact.Province}}</i> <br>
+                <i><strong>Téléphone</strong>: {{commprom_campaign.Contact.phonenumber}}</i> <br>
+                <i><strong>Email</strong>: {{commprom_campaign.Contact.Email}}</i> <br>
+                <i><strong>Remarque</strong>: {{commprom_campaign.Contact.Remarque}}</i> <br>
+            </p>
+            <p><strong>Questions 4</strong>: <br>
+                <i>
+                    Merci pour votre temps aujourd'hui. Nous espérons que vous pourriez toujours être intéressé par
+                    Advans à l'avenir.
+                </i>
+                <br> R/ {{commprom_campaign.Statut}}
+            </p>
+            <p><strong>Type de trafic</strong>: {{commprom_campaign.Bound}}</p>
+
+            <p><strong>Campaign name</strong>:
+                <br>
+                R/ {{commprom_campaign.campaignname}}
+            </p>
+        
+        
+            <p><strong>Remplie par l'agent</strong>: {{commprom_campaign.user}}</p>
+        
+        
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock param_url %}
