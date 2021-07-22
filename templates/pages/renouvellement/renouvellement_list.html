@@ -113,7 +113,11 @@
 
                                     {% for renouvellement in renouvellement_list %}
                                     <tr>
-                                        <td scope="row">{{renouvellement.created_renouvellemente}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'renouvellement:export_renouvellement_pdf' renouvellement.id %}" target="_blank">
+                                                {{renouvellement.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{renouvellement.Contact.Nom}}</td>
                                         <td>{{renouvellement.Contact.Post_Nom}}</td>
                                         <td>{{renouvellement.Contact.Prenom}}</td>

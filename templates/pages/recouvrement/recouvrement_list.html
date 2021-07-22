@@ -94,7 +94,11 @@
 
                                     {% for recouvrement in recouvrement_list %}
                                         <tr>
-                                            <td scope="row">{{recouvrement.created_date}}</td>
+                                            <td scope="row">
+                                                <a href="{% url 'recouvrement:export_recouvrement_pdf' recouvrement.id %}" target="_blank">
+                                                    {{recouvrement.created_date}}
+                                                </a>
+                                            </td>
                                             <td>{{recouvrement.questions1}}</td>
                                             <td>{{recouvrement.questions2}}</td>
                                             <td>{{recouvrement.Contact.Nom}}</td>

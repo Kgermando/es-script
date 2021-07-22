@@ -97,7 +97,11 @@
 
                                     {% for compte_dormant in compte_dormant_list %}
                                     <tr>
-                                        <td scope="row">{{compte_dormant.created_date}}</td>
+                                        <td scope="row">
+                                            <a href="{% url 'compte_dormant:export_compte_dormant_pdf' compte_dormant.id %}" target="_blank">
+                                                {{compte_dormant.created_date}}
+                                            </a>
+                                        </td>
                                         <td>{{compte_dormant.questions1}}</td>
                                         <td>{{compte_dormant.questions2}}</td>
                                         <td>{{compte_dormant.questions3}}</td>

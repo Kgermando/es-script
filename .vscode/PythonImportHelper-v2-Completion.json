@@ -6281,7 +6281,7 @@
         "kind": 6,
         "importPath": "comptedormant.views",
         "description": "comptedormant.views",
-        "peekOfCode": "class Export_compte_dormant_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Compte_dormant\n    def get(self, request, *args, **kwargs):\n        dat = Compte_dormant.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'compte_dormant': compte_dormant,\n            # 'today': datetime.date.today(), ",
+        "peekOfCode": "class Export_compte_dormant_pdf(DetailView):\n    \"\"\"\n        For detail to pdf based function\n    \"\"\"\n    model = Compte_dormant\n    def get(self, request, *args, **kwargs):\n        compte_dormant = Compte_dormant.objects.get(id=self.kwargs.get('id'))\n        data = {\n            'compte_dormant': compte_dormant,\n            # 'today': datetime.date.today(), ",
         "detail": "comptedormant.views",
         "documentation": {}
     },

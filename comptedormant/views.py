@@ -202,7 +202,7 @@ class Export_compte_dormant_pdf(DetailView):
     """
     model = Compte_dormant
     def get(self, request, *args, **kwargs):
-        dat = Compte_dormant.objects.get(id=self.kwargs.get('id'))
+        compte_dormant = Compte_dormant.objects.get(id=self.kwargs.get('id'))
         data = {
             'compte_dormant': compte_dormant,
             # 'today': datetime.date.today(), 
