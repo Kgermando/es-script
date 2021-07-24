@@ -5767,7 +5767,7 @@
         "kind": 2,
         "importPath": "acquisition.views",
         "description": "acquisition.views",
-        "peekOfCode": "def acquisition_update(request, id):\n    \"\"\"\n        Fonction de Mis à jour\n    \"\"\"\n    acquisition = Acquisition.objects.get(id=id)\n    form = AcquisitionForm(request.POST, instance=acquisition)  \n    if form.is_valid():  \n        form.user = request.user\n        form.save()  \n        messages.success(request, \"Acquisition modifié!\")",
+        "peekOfCode": "def acquisition_update(request, id):\n    \"\"\"\n        Fonction de Mis à jour\n    \"\"\"\n    acquisition = Acquisition.objects.get(id=id)\n    form = AcquisitionForm(request.POST, instance=acquisition)  \n    if form.is_valid():\n        form.user = request.user\n        form.save()  \n        messages.success(request, \"Acquisition modifié!\")",
         "detail": "acquisition.views",
         "documentation": {}
     },
@@ -6334,7 +6334,7 @@
         "kind": 2,
         "importPath": "comptedormant.views",
         "description": "comptedormant.views",
-        "peekOfCode": "def compte_dormant_update(request, id):\n    \"\"\"\n        Fonction de Mis à jour\n    \"\"\"\n    compte_dormant = Compte_dormant.objects.get(id=id)\n    form = ContactForm(request.POST, instance=Compte_dormant)\n    if form.is_valid():  \n        form.user = request.user\n        form.save()  \n        messages.success(request, \"Compte dormant modifié!\")",
+        "peekOfCode": "def compte_dormant_update(request, id):\n    \"\"\"\n        Fonction de Mis à jour\n    \"\"\"\n    compte_dormant = Compte_dormant.objects.get(id=id)\n    form = Compte_dormantForm(request.POST, instance=Compte_dormant)\n    if form.is_valid():  \n        form.user = request.user\n        form.save()  \n        messages.success(request, \"Compte dormant modifié!\")",
         "detail": "comptedormant.views",
         "documentation": {}
     },
@@ -7099,7 +7099,7 @@
         "kind": 2,
         "importPath": "paramurl.views",
         "description": "paramurl.views",
-        "peekOfCode": "def paramurl_view(request):\n    # Get value\n    phonenumber = request.GET.get('phonenumber', '')\n    campaignname = request.GET.get('campaignname', '')\n    # Campaign\n    dat = 'dat',\n    commprom = 'commprom',\n    comptedormant = 'comptedormant',\n    acquisition = 'acquisition',\n    recouvrement = 'recouvrement',",
+        "peekOfCode": "def paramurl_view(request):\n    # Get value\n    phonenumber = request.GET.get('phonenumber', None)\n    campaignname = request.GET.get('campaignname', None)\n    # Campaign\n    dat = 'dat',\n    commprom = 'commprom',\n    comptedormant = 'comptedormant',\n    acquisition = 'acquisition',\n    recouvrement = 'recouvrement',",
         "detail": "paramurl.views",
         "documentation": {}
     },

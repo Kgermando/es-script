@@ -119,7 +119,7 @@ def acquisition_update(request, id):
     """
     acquisition = Acquisition.objects.get(id=id)
     form = AcquisitionForm(request.POST, instance=acquisition)  
-    if form.is_valid():  
+    if form.is_valid():
         form.user = request.user
         form.save()  
         messages.success(request, "Acquisition modifié!")

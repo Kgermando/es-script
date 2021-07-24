@@ -125,7 +125,6 @@ def recouvrement_update(request, id):
         form.save()  
         messages.success(request, "Recouvrement modifié!")
         return redirect('recouvrement:recouvrement_list') 
-
     context = {
         'recouvrement': recouvrement,
         'form': form
