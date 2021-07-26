@@ -8080,7 +8080,7 @@
         "kind": 5,
         "importPath": "scripting.settings",
         "description": "scripting.settings",
-        "peekOfCode": "DATABASES_POSTGRESQL = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n        'NAME': 'crm',\n        'USER': 'sunphenix',\n        'PASSWORD': 'sunphenix',\n        'HOST': 'localhost',\n        'PORT': '',\n    }\n}",
+        "peekOfCode": "DATABASES_POSTGRESQL = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n        'NAME': 'crm',\n        'USER': 'sunphenix',\n        'PASSWORD': 'sunphenix',\n        'HOST': 'localhost',\n        'PORT': '5432',\n    }\n}",
         "detail": "scripting.settings",
         "documentation": {}
     },

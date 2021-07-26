@@ -132,7 +132,7 @@ DATABASES_POSTGRESQL = {
         'USER': 'sunphenix',
         'PASSWORD': 'sunphenix',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
