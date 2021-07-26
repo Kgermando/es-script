@@ -12,7 +12,21 @@
             <h5>MENU SCRIPTING</h5>
         </div>
         <div class="card-body">
-
+            {% if user.profile.campagne == 'acquisition' %}
+                    <button type="button" class="btn btn-primary">ACQUISITION</button>
+                {% elif user.profile.campagne == 'commprom' %}
+                    <button type="button" class="btn btn-secondary">COMMERCIAL ET PROMOTION</button>
+                {% elif user.profile.campagne == 'compte_dormant' %}
+                    <button type="button" class="btn btn-success">COMPTE DORMANT</button>
+                {% elif user.profile.campagne == 'dat' %}
+                    <button type="button" class="btn btn-danger">DAT</button>
+                {% elif user.profile.campagne == 'recouvrement' %}
+                    <button type="button" class="btn btn-warning">RECOUVREMENT</button>
+                {% elif user.profile.campagne == 'renouvellement' %}
+                    <button type="button" class="btn btn-info">RENOUVELLEMENT</button>
+                {% else %}
+                    <p>Pas de campaign</p>
+            {% endif %}
         </div>
     </div>
 </div>

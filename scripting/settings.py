@@ -38,12 +38,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-)s$pxdv1v^u$pp1#46^_4&!46$xj&0-$a41t)8!s(^s-$so&j5'
 
-SECRET_KEY = get_env_variable('SECRET_KEY', '-kk=0-5_6#g9v!1@wv(vs!$ma%m3(m^_!fgbb1@7&&ck^oenxl')
-
+# SECRET_KEY = get_env_variable('SECRET_KEY', '-kk=0-5_6#g9v!1@wv(vs!$ma%m3(m^_!fgbb1@7&&ck^oenxl')
+SECRET_KEY = '-kk=0-5_6#g9v!1@wv(vs!$ma%m3(m^_!fgbb1@7&&ck^oenxl'
+# 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.11.104', '*']
+ALLOWED_HOSTS = ['192.168.200.24', '*']
+
 
 
 # Application definition
@@ -123,6 +125,16 @@ DATABASES_SQLITE = {
         'NAME': BASE_DIR / 'crm.sqlite3',
     }
 }
+DATABASES_POSTGRESQL = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'crm',
+        'USER': 'sunphenix',
+        'PASSWORD': 'sunphenix',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 DATABASES_MARIADB = {
     'default': {
@@ -141,7 +153,7 @@ DATABASES_MARIADB = {
 }
 
 
-DATABASES = DATABASES_SQLITE
+DATABASES = DATABASES_POSTGRESQL
 
 
 # Password validation

@@ -89,4 +89,5 @@ def paramurl_view(request):
         except Contact.DoesNotExist:
             return HttpResponse('<h1>Le contact n\'existe pas</h1>')
     else:
-        return HttpResponse('<h1>La campaign n\'existe pas</h1>')
+        template_name = 'pages/param_url/param_url.html'
+        return render(request, template_name)
